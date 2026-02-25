@@ -1,0 +1,135 @@
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+
+const Header = () => {
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { path: '/', label: 'HOME' },
+    { path: '/services', label: 'SERVICES' },
+    { path: '/industries', label: 'INDUSTRIES' },
+    { path: '/about', label: 'ABOUT' },
+    { path: '/blog', label: 'BLOG' },
+    { path: '/contact', label: 'CONTACT' },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
+  return (
+    <>
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`
+          fixed top-0 left-0 right-0 z-50 transition-all duration-300
+          ${isScrolled ? 'bg-obsidian/95 backdrop-blur-sm border-b border-silver-steel/10' : 'bg-transparent'}
+        `}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-24 sm:h-32">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-4">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center">
+                <img 
+                  src="/images/logo.png" 
+                  alt="Divine Lab Worx"
+                  loading="lazy" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <span className="text-lg font-semibold tracking-tight text-optical-white">
+                  DIVINE LAB WORX
+                </span>
+                <span className="block text-xs font-mono text-accent-muted tracking-wider">
+                  PART OF SHARKTECH GLOBAL
+                </span>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`
+                    relative text-xs font-mono tracking-widest transition-colors duration-200
+                    ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted hover:text-optical-white'}
+                  `}
+                >
+                  {link.label}
+                  {isActive(link.path) && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-optical-white"
+                      transition={{ duration: 0.2 }}
+                    />
+                  )}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-optical-white"
+              aria-label="Menu"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+      </motion.header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-obsidian/98 backdrop-blur-md md:hidden"
+          >
+            <nav className="flex flex-col items-center justify-center h-full gap-8">
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.path}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`
+                      text-2xl font-mono tracking-widest transition-colors
+                      ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted'}
+                    `}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Header;
