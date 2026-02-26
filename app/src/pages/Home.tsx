@@ -1,6 +1,49 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff } from 'lucide-react';
+
+const workflowSteps = [
+  {
+    number: '01',
+    title: 'Site Intelligence',
+    description: 'Identify, validate and secure land with power proximity, zoning clearance, fibre path and water access.',
+    icon: MapPin,
+    tag: 'WE OWN THIS',
+    active: true,
+  },
+  {
+    number: '02',
+    title: 'Power & Utility',
+    description: 'Heavy utility interface — substation design, grid connection, medium-voltage delivery to your boundary.',
+    icon: Zap,
+    tag: 'WE OWN THIS',
+    active: true,
+  },
+  {
+    number: '03',
+    title: 'Permits & Safety',
+    description: 'Planning approvals, WHS compliance and industrial safety automation — cleared before you break ground.',
+    icon: Shield,
+    tag: 'WE OWN THIS',
+    active: true,
+  },
+  {
+    number: '04',
+    title: 'Build',
+    description: 'Civil, structural and MEP construction — accelerated because Phases 1-3 are already resolved.',
+    icon: Hammer,
+    tag: 'YOU / YOUR EPC',
+    active: false,
+  },
+  {
+    number: '05',
+    title: 'Energise',
+    description: 'Grid-connected, commissioned and ready for tenant fit-out and IT load.',
+    icon: ZapOff,
+    tag: 'YOU / YOUR EPC',
+    active: false,
+  },
+];
 
 const Home = () => {
   return (
@@ -53,36 +96,109 @@ const Home = () => {
         </div>
       </section>
 
-      {/* The Strategic Advantage Section */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-optical-white">
+      {/* Workflow Section */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-obsidian">
-                The Strategic Advantage
-              </h2>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <p className="text-base text-gray-700 leading-relaxed">
-                In the deployment of digital infrastructure, velocity is the ultimate competitive advantage. 
-                We secure and validate sites across Australia that are primed for hyperscale expansion. By 
-                vertically integrating site selection, heavy utility engineering, and industrial safety 
-                automation, we remove the friction from the development lifecycle. We manage the physical 
-                complexities so you can scale your compute without delay.
-              </p>
-            </motion.div>
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+              Our Process
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-4">
+              The Deployment Lifecycle
+            </h2>
+            <p className="text-base text-accent-muted max-w-2xl mx-auto">
+              We compress the critical path so your build starts ready — not waiting.
+            </p>
+          </motion.div>
+
+          {/* Workflow Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            {workflowSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative border rounded-lg p-6 sm:p-8 transition-all duration-300 ${
+                    step.active 
+                      ? 'border-gold/50 bg-obsidian/50 hover:border-gold' 
+                      : 'border-silver-steel/10 bg-obsidian/30 opacity-70'
+                  }`}
+                >
+                  {/* Top Row: Number & Icon */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className={`text-4xl sm:text-5xl font-bold ${
+                      step.active ? 'text-gold/20' : 'text-silver-steel/10'
+                    }`}>
+                      {step.number}
+                    </span>
+                    <div className={`w-12 h-12 rounded-lg border flex items-center justify-center ${
+                      step.active 
+                        ? 'border-gold/50 text-gold' 
+                        : 'border-silver-steel/20 text-silver-steel/50'
+                    }`}>
+                      <Icon size={20} />
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
+                    {step.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-accent-muted leading-relaxed mb-6">
+                    {step.description}
+                  </p>
+
+                  {/* Tag */}
+                  <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono tracking-wider ${
+                    step.active 
+                      ? 'bg-gold/20 text-gold border border-gold/30' 
+                      : 'bg-silver-steel/10 text-silver-steel border border-silver-steel/20'
+                  }`}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                    {step.tag}
+                  </div>
+
+                  {/* Active Indicator Line */}
+                  {step.active && (
+                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
+
+          {/* Bottom Legend */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 pt-8 border-t border-silver-steel/10"
+          >
+            <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-1 bg-gold rounded-full" />
+                <span className="text-accent-muted">Divine Lab Worx — fully managed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-1 bg-silver-steel/30 rounded-full" />
+                <span className="text-accent-muted">Client / EPC partner</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
