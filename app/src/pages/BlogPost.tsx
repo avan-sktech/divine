@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark, Twitter, Linkedin, Facebook } from 'lucide-react';
-import { useViewMode } from '../contexts/ViewModeContext';
 
 // Blog posts data with full content
 const blogPostsData: Record<string, BlogPostData> = {
@@ -529,7 +528,6 @@ interface BlogPostData {
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { isTechnical, isExecutive } = useViewMode();
   
   const post = slug ? blogPostsData[slug] : null;
   
@@ -850,10 +848,7 @@ const BlogPost = () => {
     Need Help?
                   </span>
                   <p className="text-sm text-accent-muted mb-4">
-                    {isTechnical 
-                      ? "Discuss deployment architecture for your specific market entry challenges."
-                      : "Get expert guidance on entering Australia profitably."
-                    }
+                    Discuss your infrastructure deployment and market entry challenges with our consulting team.
                   </p>
                   <Link
                     to="/contact"
