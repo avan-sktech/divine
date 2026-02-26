@@ -398,18 +398,37 @@ const Home = () => {
             className="border border-silver-steel/20 p-8 sm:p-12"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl sm:text-5xl font-semibold text-gold mb-2">7+</div>
-                <div className="text-xs font-mono text-accent-muted uppercase">Years Experience</div>
-              </div>
-              <div>
-                <div className="text-4xl sm:text-5xl font-semibold text-gold mb-2">10+</div>
-                <div className="text-xs font-mono text-accent-muted uppercase">Deployments</div>
-              </div>
-              <div>
-                <div className="text-4xl sm:text-5xl font-semibold text-gold mb-2">98%</div>
-                <div className="text-xs font-mono text-accent-muted uppercase">Success Rate</div>
-              </div>
+              {isExecutive ? (
+                <>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-semibold text-gold mb-2">$50M+</div>
+                    <div className="text-xs font-mono text-accent-muted uppercase">Capital Deployed</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-semibold text-gold mb-2">$120M+</div>
+                    <div className="text-xs font-mono text-accent-muted uppercase">Margin Unlocked</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-semibold text-gold mb-2">45MW</div>
+                    <div className="text-xs font-mono text-accent-muted uppercase">Sovereign Compute</div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-semibold text-gold mb-2">100%</div>
+                    <div className="text-xs font-mono text-accent-muted uppercase">PSPF Compliant</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-semibold text-gold mb-2">100%</div>
+                    <div className="text-xs font-mono text-accent-muted uppercase">SCEC Standards</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-semibold text-gold mb-2">45MW</div>
+                    <div className="text-xs font-mono text-accent-muted uppercase">Critical Infrastructure</div>
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
         </div>
