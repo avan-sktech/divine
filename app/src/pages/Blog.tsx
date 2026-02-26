@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
+import { Calendar, Clock, User } from 'lucide-react';
 
 const blogPosts = [
   {
@@ -136,8 +137,15 @@ const categories = [
 ];
 
 const Blog = () => {
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Filter posts based on selected category
+  const filteredPosts = selectedCategory === 'All' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+
+  const featuredPost = filteredPosts.find(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
     <div className="w-full">
@@ -176,7 +184,7 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      {featuredPost && (
+      {featuredPost && selectedCategory === 'All' && (
         <section className="py-8 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -241,11 +249,12 @@ const Blog = () => {
       <section className="py-8 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap gap-3">
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <button
                 key={category}
-                className={`px-4 py-2 text-xs font-mono tracking-widest uppercase transition-all ${
-                  index === 0
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 text-xs font-mono tracking-widest uppercase transition-all cursor-pointer ${
+                  selectedCategory === category
                     ? 'bg-optical-white text-obsidian'
                     : 'border border-silver-steel/30 text-accent-muted hover:border-gold hover:text-gold'
                 }`}
@@ -260,99 +269,60 @@ const Blog = () => {
       {/* Blog Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regularPosts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Link to={`/blog/${post.slug}`} className="group block h-full">
-                  <div className="border border-silver-steel/20 h-full flex flex-col hover:border-gold transition-all duration-300 overflow-hidden">
-                    {/* Image */}
-                    <div className="aspect-[16/10] relative overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-300 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
-                    </div>
-                    {/* Content */}
-                    <div className="p-6 flex flex-col flex-1">
-                      <span className="text-xs font-mono tracking-widest text-accent-muted uppercase mb-3">
-                        {post.category}
-                      </span>
-                      <h3 className="text-base font-semibold text-optical-white mb-3 tracking-tight group-hover:text-silver-steel transition-colors line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-xs text-accent-muted leading-relaxed mb-4 line-clamp-3 flex-1">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center gap-3 text-xs text-accent-muted">
-                        <span>{post.author}</span>
-                        <span>•</span>
-                        <span>{post.date}</span>
-                        <span>•</span>
-                        <span>{post.readTime}</span>
+          {regularPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {regularPosts.map((post, index) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Link to={`/blog/${post.slug}`} className="group block h-full">
+                    <div className="border border-silver-steel/20 h-full flex flex-col hover:border-gold transition-all duration-300 overflow-hidden">
+                      {/* Image */}
+                      <div className="aspect-[16/10] relative overflow-hidden">
+                        <img 
+                          src={post.image} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
+                      </div>
+                      {/* Content */}
+                      <div className="p-6 flex flex-col flex-1">
+                        <span className="text-xs font-mono tracking-widest text-accent-muted uppercase mb-3">
+                          {post.category}
+                        </span>
+                        <h3 className="text-base font-semibold text-optical-white mb-3 tracking-tight group-hover:text-silver-steel transition-colors line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-xs text-accent-muted leading-relaxed mb-4 line-clamp-3 flex-1">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center gap-3 text-xs text-accent-muted">
+                          <span>{post.author}</span>
+                          <span>•</span>
+                          <span>{post.date}</span>
+                          <span>•</span>
+                          <span>{post.readTime}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </motion.article>
-            ))}
-          </div>
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-accent-muted font-mono text-sm">
+                No articles found in this category.
+              </p>
+            </div>
+          )}
         </div>
       </section>
-
-      {/* Newsletter CTA */}
-      <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/australia-market.jpg" 
-            alt="Australia Market" 
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/95 to-obsidian" />
-        </div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="border border-silver-steel/20 p-8 sm:p-12 text-center"
-          >
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-4">
-              DEPLOYMENT INTELLIGENCE
-            </h2>
-            <p className="text-sm text-accent-muted mb-8 max-w-lg mx-auto">
-              Subscribe to receive market analysis, regulatory updates, and deployment 
-              architecture insights directly from our Commercial Architects.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="CORPORATE EMAIL"
-                className="flex-1 bg-transparent border border-silver-steel/30 px-4 py-3 text-sm font-mono text-optical-white placeholder:text-accent-muted/50 focus:border-optical-white outline-none transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-optical-white text-obsidian text-sm font-semibold tracking-tight hover:bg-silver-steel transition-colors"
-              >
-                SUBSCRIBE
-              </button>
-            </form>
-            <p className="mt-4 text-xs font-mono text-accent-muted/60">
-              NO SPAM. UNSUBSCRIBE ANYTIME.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
     </div>
   );
 };

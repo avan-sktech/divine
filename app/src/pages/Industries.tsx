@@ -37,10 +37,7 @@ const Industries = () => {
               in Australia's concentrated commercial landscape. Our expertise spans mission-critical 
               digital infrastructure and hyperscale compute deployments.
             </p>
-            <p className="text-sm text-accent-muted/70 mt-4 leading-relaxed">
-              <span className="text-gold">Coming soon:</span> Selective advisory services for premium 
-              consumer brands navigating Australia's retail duopoly.
-            </p>
+
           </motion.div>
         </div>
       </section>
