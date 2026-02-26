@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { useViewMode } from '../contexts/ViewModeContext';
 
 const About = () => {
+  const { isTechnical, isExecutive } = useViewMode();
+
   return (
     <div className="w-full">
       {/* Hero */}
@@ -24,17 +27,36 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
-              OPERATING PHILOSOPHY
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              BUILT FOR STRUCTURE
-            </h1>
-            <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              Divine Lab Worx exists to bridge the structural gap between engineering 
-              precision and market momentum. We are the deployment architecture layer 
-              for companies entering Australia's concentrated environments.
-            </p>
+            {isTechnical && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                  OPERATING PHILOSOPHY
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
+                  BUILT FOR STRUCTURE
+                </h1>
+                <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
+                  Divine Lab Worx exists to bridge the structural gap between engineering 
+                  precision and market momentum. We are the deployment architecture layer 
+                  for companies entering Australia's concentrated environments.
+                </p>
+              </>
+            )}
+            {isExecutive && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                  ABOUT US
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
+                  WE PROTECT YOUR PROFITS
+                </h1>
+                <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
+                  Divine Lab Worx helps international companies successfully enter Australia 
+                  while avoiding the costly mistakes that erode margins. We're part of 
+                  Sharktech Global, bringing intelligence-driven deployment to market entry.
+                </p>
+              </>
+            )}
           </motion.div>
         </div>
       </section>
@@ -49,30 +71,60 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
-                THE ORIGIN
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-6">
-                BRIDGING THE GAP
-              </h2>
-              <div className="space-y-4 text-sm text-accent-muted leading-relaxed">
-                <p>
-                  Divine Lab Worx was founded on a simple observation: the most brilliantly 
-                  engineered products and infrastructure systems often fail in market deployment 
-                  not because of technical flaws, but because of structural gaps in their 
-                  entry architecture.
-                </p>
-                <p>
-                  We observed companies with world-class engineering struggle against Australia's 
-                  unique market concentration—where two retailers control 65% of consumer goods 
-                  distribution, and where infrastructure deployment requires navigating complex 
-                  regulatory, environmental, and grid-connection challenges.
-                </p>
-                <p>
-                  DLW was built to solve this. As part of Sharktech Global, we bring 
-                  institutional-grade architecture thinking to market deployment challenges.
-                </p>
-              </div>
+              {isTechnical && (
+                <>
+                  <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                    THE ORIGIN
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-6">
+                    BRIDGING THE GAP
+                  </h2>
+                  <div className="space-y-4 text-sm text-accent-muted leading-relaxed">
+                    <p>
+                      Divine Lab Worx was founded on a simple observation: the most brilliantly 
+                      engineered products and infrastructure systems often fail in market deployment 
+                      not because of technical flaws, but because of structural gaps in their 
+                      entry architecture.
+                    </p>
+                    <p>
+                      We observed companies with world-class engineering struggle against Australia's 
+                      unique market concentration—where two retailers control 65% of consumer goods 
+                      distribution, and where infrastructure deployment requires navigating complex 
+                      regulatory, environmental, and grid-connection challenges.
+                    </p>
+                    <p>
+                      DLW was built to solve this. As part of Sharktech Global, we bring 
+                      institutional-grade architecture thinking to market deployment challenges.
+                    </p>
+                  </div>
+                </>
+              )}
+              {isExecutive && (
+                <>
+                  <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                    WHY WE EXIST
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-6">
+                    SOLVING A REAL PROBLEM
+                  </h2>
+                  <div className="space-y-4 text-sm text-accent-muted leading-relaxed">
+                    <p>
+                      We saw great companies with excellent products fail in Australia—not 
+                      because their products were bad, but because they didn't understand the 
+                      market structure.
+                    </p>
+                    <p>
+                      Australia's retail market is dominated by two major players controlling 
+                      65% of distribution. Without proper guidance, companies lose 15-25% of 
+                      their margins to pricing violations and channel conflicts.
+                    </p>
+                    <p>
+                      We built Divine Lab Worx to stop this. We help you enter Australia 
+                      profitably and protect your margins from day one.
+                    </p>
+                  </div>
+                </>
+              )}
             </motion.div>
 
             <motion.div

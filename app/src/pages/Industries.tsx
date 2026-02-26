@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShoppingCart, Cpu, Check } from 'lucide-react';
+import { useViewMode } from '../contexts/ViewModeContext';
 
-const consumerSectors = [
+const consumerSectorsTechnical = [
   'Engineered Appliances',
   'Smart Home Devices',
   'Regulated Health Products',
@@ -10,7 +11,15 @@ const consumerSectors = [
   'Sustainable Product Lines',
 ];
 
-const infrastructureSectors = [
+const consumerSectorsExecutive = [
+  'Home Appliances & Electronics',
+  'Health & Wellness Products',
+  'Smart Home Technology',
+  'Premium Consumer Brands',
+  'Sustainable Products',
+];
+
+const infrastructureSectorsTechnical = [
   'Cloud Service Providers',
   'AI Compute Infrastructure',
   'Data Centre Operators',
@@ -18,7 +27,17 @@ const infrastructureSectors = [
   'Renewable Energy Systems',
 ];
 
+const infrastructureSectorsExecutive = [
+  'Cloud & Data Center Companies',
+  'AI & Machine Learning Infrastructure',
+  'Digital Service Providers',
+  'Telecommunications Networks',
+  'Clean Energy Technology',
+];
+
 const Industries = () => {
+  const { isTechnical, isExecutive } = useViewMode();
+
   return (
     <div className="w-full">
       {/* Hero */}
@@ -40,17 +59,35 @@ const Industries = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
-              FOCUSED VERTICALS
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              THE COMBINED LANE
-            </h1>
-            <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              Divine Lab Worx owns the intersection of physical product deployment and 
-              digital infrastructure architecture. We operate where engineered systems 
-              meet market reality.
-            </p>
+            {isTechnical && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                  FOCUSED VERTICALS
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
+                  THE COMBINED LANE
+                </h1>
+                <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
+                  Divine Lab Worx owns the intersection of physical product deployment and 
+                  digital infrastructure architecture. We operate where engineered systems 
+                  meet market reality.
+                </p>
+              </>
+            )}
+            {isExecutive && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                  WHO WE SERVE
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
+                  TWO TYPES OF COMPANIES
+                </h1>
+                <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
+                  We help consumer goods companies and infrastructure providers successfully 
+                  enter Australia while protecting their margins from day one.
+                </p>
+              </>
+            )}
           </motion.div>
         </div>
       </section>
@@ -82,10 +119,10 @@ const Industries = () => {
                     </div>
                     <div>
                       <span className="font-mono text-xs tracking-widest text-accent-muted uppercase block">
-                        VERTICAL
+                        {isTechnical ? 'VERTICAL' : 'FOCUS AREA'}
                       </span>
                       <h2 className="text-xl font-semibold text-optical-white tracking-tight">
-                        CONSUMER & RETAIL
+                        {isTechnical ? 'CONSUMER & RETAIL' : 'CONSUMER PRODUCTS'}
                       </h2>
                     </div>
                   </div>
@@ -94,19 +131,20 @@ const Industries = () => {
                 {/* Content */}
                 <div className="p-8 border-b border-silver-steel/10">
                   <p className="text-sm text-accent-muted leading-relaxed">
-                    Engineered products entering Australia's concentrated retail ecosystems. 
-                    We structure deployment for brands seeking premium positioning and 
-                    sustainable market presence.
+                    {isTechnical 
+                      ? "Engineered products entering Australia's concentrated retail ecosystems. We structure deployment for brands seeking premium positioning and sustainable market presence."
+                      : "Companies selling physical products through Australian retailers. We help you navigate the duopoly market structure and protect your pricing integrity."
+                    }
                   </p>
                 </div>
 
                 {/* Sectors */}
                 <div className="p-8 border-b border-silver-steel/10">
                   <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-                    FOCUS SECTORS
+                    {isTechnical ? 'FOCUS SECTORS' : 'TYPICAL CLIENTS'}
                   </span>
                   <ul className="space-y-3">
-                    {consumerSectors.map((sector, i) => (
+                    {(isTechnical ? consumerSectorsTechnical : consumerSectorsExecutive).map((sector, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm text-silver-steel">
                         <Check className="w-4 h-4 text-silver-steel/50" />
                         {sector}
@@ -165,10 +203,10 @@ const Industries = () => {
                     </div>
                     <div>
                       <span className="font-mono text-xs tracking-widest text-accent-muted uppercase block">
-                        VERTICAL
+                        {isTechnical ? 'VERTICAL' : 'FOCUS AREA'}
                       </span>
                       <h2 className="text-xl font-semibold text-optical-white tracking-tight">
-                        DIGITAL & INFRASTRUCTURE
+                        {isTechnical ? 'DIGITAL & INFRASTRUCTURE' : 'INFRASTRUCTURE & TECHNOLOGY'}
                       </h2>
                     </div>
                   </div>
@@ -177,19 +215,20 @@ const Industries = () => {
                 {/* Content */}
                 <div className="p-8 border-b border-silver-steel/10">
                   <p className="text-sm text-accent-muted leading-relaxed">
-                    Structured pathways for Cloud and AI-first infrastructure providers 
-                    seeking staged execution in Australia's regulated and concentrated 
-                    digital markets.
+                    {isTechnical 
+                      ? "Structured pathways for Cloud and AI-first infrastructure providers seeking staged execution in Australia's regulated and concentrated digital markets."
+                      : "Technology companies building data centers or cloud infrastructure in Australia. We navigate regulatory requirements and connection challenges."
+                    }
                   </p>
                 </div>
 
                 {/* Sectors */}
                 <div className="p-8 border-b border-silver-steel/10">
                   <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-                    FOCUS SECTORS
+                    {isTechnical ? 'FOCUS SECTORS' : 'TYPICAL CLIENTS'}
                   </span>
                   <ul className="space-y-3">
-                    {infrastructureSectors.map((sector, i) => (
+                    {(isTechnical ? infrastructureSectorsTechnical : infrastructureSectorsExecutive).map((sector, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm text-silver-steel">
                         <Check className="w-4 h-4 text-silver-steel/50" />
                         {sector}

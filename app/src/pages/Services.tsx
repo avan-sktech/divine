@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, ClipboardCheck, Server, Shield, Eye, Lock, TrendingDown } from 'lucide-react';
+import { useViewMode } from '../contexts/ViewModeContext';
 
 const services = [
   {
@@ -66,7 +67,7 @@ const services = [
   },
 ];
 
-const integrityFeatures = [
+const integrityFeaturesTechnical = [
   {
     icon: Eye,
     title: 'SOVEREIGN OBSERVATION',
@@ -84,7 +85,27 @@ const integrityFeatures = [
   },
 ];
 
+const integrityFeaturesExecutive = [
+  {
+    icon: Eye,
+    title: '24/7 CHANNEL MONITORING',
+    description: 'We watch your distribution channels continuously. When a retailer drops your price below agreed levels, we alert you immediately.',
+  },
+  {
+    icon: Lock,
+    title: 'PRICE VIOLATION PROTECTION',
+    description: 'We catch unauthorized sellers and gray market products before they destroy your pricing structure and relationships with legitimate partners.',
+  },
+  {
+    icon: TrendingDown,
+    title: 'MARGIN RECOVERY',
+    description: 'Our clients typically recover 15-20% of lost margins in their first year by catching violations early and enforcing pricing discipline.',
+  },
+];
+
 const Services = () => {
+  const { isTechnical, isExecutive } = useViewMode();
+
   return (
     <div className="w-full">
       {/* Hero */}
@@ -106,16 +127,34 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
-              FRAMEWORK REPOSITORY
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              ADVISORY ARCHITECTURE
-            </h1>
-            <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              All services are framed as "Advisory Architecture" to maintain executive posture. 
-              We do not execute; we architect the pathway for your deployment success.
-            </p>
+            {isTechnical && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                  FRAMEWORK REPOSITORY
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
+                  ADVISORY ARCHITECTURE
+                </h1>
+                <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
+                  All services are framed as "Advisory Architecture" to maintain executive posture. 
+                  We do not execute; we architect the pathway for your deployment success.
+                </p>
+              </>
+            )}
+            {isExecutive && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
+                  HOW WE HELP
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
+                  SERVICES THAT PROTECT YOUR MARGINS
+                </h1>
+                <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
+                  We provide strategic guidance and monitoring to help you enter Australia successfully 
+                  while avoiding the costly mistakes that erode profits.
+                </p>
+              </>
+            )}
           </motion.div>
         </div>
       </section>
@@ -160,13 +199,18 @@ const Services = () => {
                     {/* Content */}
                     <div className="p-8">
                       <span className="font-mono text-xs tracking-widest text-accent-muted uppercase block mb-2">
-                        {service.subtitle}
+                        {isTechnical ? service.subtitle : 'SERVICE'}
                       </span>
                       <h3 className="text-lg font-semibold text-optical-white tracking-tight mb-4">
-                        {service.title}
+                        {isTechnical ? service.title : service.title.replace('MARKET ENTRY BLUEPRINT', 'MARKET ENTRY STRATEGY').replace('RETAIL READINESS', 'RETAIL PREPARATION').replace('INFRASTRUCTURE DEPLOYMENT', 'INFRASTRUCTURE SETUP').replace('MARKET INTEGRITY', 'MARGIN PROTECTION')}
                       </h3>
                       <p className="text-sm text-accent-muted leading-relaxed mb-6">
-                        {service.description}
+                        {isTechnical ? service.description : 
+                          service.id === 'market-entry' ? 'We help you identify the right channels and pricing strategy to enter Australia profitably.' :
+                          service.id === 'retail-readiness' ? 'We ensure your products meet retailer requirements and compliance standards before launch.' :
+                          service.id === 'infrastructure' ? 'We guide data center and cloud providers through regulatory and grid connection requirements.' :
+                          'We monitor your distribution channels 24/7 to catch pricing violations and unauthorized sellers before they hurt your profits.'
+                        }
                       </p>
 
                       {/* Features */}
@@ -215,21 +259,40 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-              CAPITAL PROTECTION
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
-              THE MARKET INTEGRITY FRAMEWORK
-            </h2>
-            <p className="text-base text-accent-muted max-w-2xl mx-auto leading-relaxed">
-              For MNCs entering Australia, margin leakage and channel conflict are existential threats. 
-              Our Sovereign Observation protocol provides independent verification and early warning 
-              before capital erosion begins.
-            </p>
+            {isTechnical && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                  CAPITAL PROTECTION
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
+                  THE MARKET INTEGRITY FRAMEWORK
+                </h2>
+                <p className="text-base text-accent-muted max-w-2xl mx-auto leading-relaxed">
+                  For MNCs entering Australia, margin leakage and channel conflict are existential threats. 
+                  Our Sovereign Observation protocol provides independent verification and early warning 
+                  before capital erosion begins.
+                </p>
+              </>
+            )}
+            {isExecutive && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                  MARGIN PROTECTION
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
+                  HOW WE STOP MONEY LEAKING FROM YOUR BUSINESS
+                </h2>
+                <p className="text-base text-accent-muted max-w-2xl mx-auto leading-relaxed">
+                  Most companies entering Australia lose 15-25% of their margins to pricing violations 
+                  and unauthorized sellers. We catch these issues within 24 hours—before they spread 
+                  across your distribution network.
+                </p>
+              </>
+            )}
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {integrityFeatures.map((feature, index) => {
+            {(isTechnical ? integrityFeaturesTechnical : integrityFeaturesExecutive).map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <motion.div
