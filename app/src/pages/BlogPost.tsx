@@ -573,7 +573,13 @@ const BlogPost = () => {
   const shareText = encodeURIComponent(post.title);
 
   return (
-    <div className="w-full">
+    <div className="w-full" style={{
+      backgroundImage: `
+        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+      `,
+      backgroundSize: '40px 40px'
+    }}>
       {/* SEO Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({

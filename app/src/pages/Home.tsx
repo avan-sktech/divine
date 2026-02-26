@@ -55,7 +55,13 @@ const workflowSteps = [
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="w-full" style={{
+      backgroundImage: `
+        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+      `,
+      backgroundSize: '40px 40px'
+    }}>
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 pb-12 sm:pb-0">
         {/* Background */}

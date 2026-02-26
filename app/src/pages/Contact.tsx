@@ -22,7 +22,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" style={{
+      backgroundImage: `
+        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+      `,
+      backgroundSize: '40px 40px'
+    }}>
       {/* Hero Section */}
       <section className="relative w-full pt-16 pb-12 px-4 sm:px-6 lg:px-8">
         {/* Background Image */}

@@ -12,7 +12,13 @@ const infrastructureSectors = [
 
 const Industries = () => {
   return (
-    <div className="w-full">
+    <div className="w-full" style={{
+      backgroundImage: `
+        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+      `,
+      backgroundSize: '40px 40px'
+    }}>
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 z-0">
