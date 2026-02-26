@@ -304,61 +304,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Topics Section */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-              EXPLORE BY TOPIC
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white">
-              KEY DEPLOYMENT CHALLENGES
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { title: 'Capital Protection', count: 2 },
-              { title: 'Market Integrity', count: 1 },
-              { title: 'Regulatory', count: 1 },
-              { title: 'Deployment Strategy', count: 1 },
-              { title: 'Infrastructure', count: 1 },
-              { title: 'Margin Leakage', count: 1 },
-              { title: 'Channel Conflict', count: 1 },
-              { title: 'AS/NZS Compliance', count: 1 },
-            ].map((topic, index) => (
-              <motion.div
-                key={topic.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-              >
-                <Link
-                  to="/blog"
-                  className="block border border-silver-steel/20 p-4 hover:border-optical-white transition-all duration-300 group"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-optical-white group-hover:text-silver-steel transition-colors">
-                      {topic.title}
-                    </span>
-                    <span className="text-xs font-mono text-accent-muted">
-                      {topic.count}
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
         <div className="max-w-4xl mx-auto text-center">
