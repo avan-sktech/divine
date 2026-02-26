@@ -196,25 +196,6 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Sub Footer */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-accent-muted">
-            © {new Date().getFullYear()} Divine Lab Worx. All rights reserved.
-          </p>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-accent-muted">Backed by</span>
-            <div className="w-24">
-              <img 
-                src="/images/sharktech-logo.png" 
-                alt="Sharktech Global"
-                className="w-full h-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
