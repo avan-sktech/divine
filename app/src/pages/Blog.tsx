@@ -324,14 +324,14 @@ const Blog = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { title: 'Margin Leakage', count: 12 },
-              { title: 'Channel Conflict', count: 8 },
-              { title: 'AS/NZS Compliance', count: 15 },
-              { title: 'Market Entry', count: 10 },
-              { title: 'Infrastructure', count: 6 },
-              { title: 'Retail Readiness', count: 9 },
-              { title: 'Capital Protection', count: 11 },
-              { title: 'Regulatory', count: 14 },
+              { title: 'Capital Protection', count: 2 },
+              { title: 'Market Integrity', count: 1 },
+              { title: 'Regulatory', count: 1 },
+              { title: 'Deployment Strategy', count: 1 },
+              { title: 'Infrastructure', count: 1 },
+              { title: 'Margin Leakage', count: 1 },
+              { title: 'Channel Conflict', count: 1 },
+              { title: 'AS/NZS Compliance', count: 1 },
             ].map((topic, index) => (
               <motion.div
                 key={topic.title}
