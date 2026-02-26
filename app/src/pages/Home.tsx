@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff } from 'lucide-react';
+import { ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff, Activity } from 'lucide-react';
 
 const workflowSteps = [
   {
@@ -40,6 +40,14 @@ const workflowSteps = [
     title: 'Energise',
     description: 'Grid-connected, commissioned and ready for tenant fit-out and IT load.',
     icon: ZapOff,
+    tag: 'YOU / YOUR EPC',
+    active: false,
+  },
+  {
+    number: '06',
+    title: 'Operate & Scale',
+    description: 'Live facility management, capacity planning and continuous optimisation for growth.',
+    icon: Activity,
     tag: 'YOU / YOUR EPC',
     active: false,
   },
