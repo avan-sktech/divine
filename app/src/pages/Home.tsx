@@ -99,9 +99,9 @@ const Home = () => {
             >
               {isTechnical ? (
                 <img 
-                  src="/images/australia-skyline.jpg" 
-                  alt="Australia Skyline" 
-                  className="w-full h-64 sm:h-80 object-cover border border-silver-steel/20"
+                  src="/images/australia-technical-architecture.svg" 
+                  alt="Australian Market Infrastructure Architecture - Network topology showing duopoly control" 
+                  className="w-full h-64 sm:h-80 object-contain border border-silver-steel/20 bg-obsidian"
                 />
               ) : (
                 <img 
