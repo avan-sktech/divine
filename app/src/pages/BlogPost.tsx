@@ -809,7 +809,7 @@ const BlogPost = () => {
                   </p>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-optical-white hover:text-silver-steel transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-gold hover:text-gold-light transition-colors"
                   >
                     SCHEDULE CONSULTATION
                     <ArrowLeft size={14} className="rotate-180" />

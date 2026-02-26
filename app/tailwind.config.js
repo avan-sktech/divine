@@ -54,6 +54,11 @@ module.exports = {
         'silver-steel': '#E4E4E7',
         'accent-muted': '#A1A1AA',
         'tile-bg': '#161616',
+        'gold': {
+          DEFAULT: '#D4AF37',
+          light: '#E5C158',
+          dark: '#B8962E',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

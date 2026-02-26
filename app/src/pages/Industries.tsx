@@ -345,7 +345,7 @@ const Industries = () => {
             </h2>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-optical-white text-obsidian text-sm font-semibold tracking-tight hover:bg-silver-steel transition-colors"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors"
             >
               INITIATE VERTICAL ASSESSMENT
               <ArrowRight size={18} />

@@ -21,7 +21,7 @@ const HeroContent = () => {
               <br />
               DEPLOYMENT OF
               <br />
-              <span className="text-silver-steel">ENGINEERED SYSTEMS</span>
+              <span className="text-gold">ENGINEERED SYSTEMS</span>
               <br />
               IN AUSTRALIA
             </h1>
@@ -40,7 +40,7 @@ const HeroContent = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tighter text-optical-white leading-[1.05] mb-6 sm:mb-8">
               ENTER AUSTRALIA
               <br />
-              <span className="text-silver-steel">WITHOUT LOSING</span>
+              <span className="text-gold">WITHOUT LOSING</span>
               <br />
               MONEY TO
               <br />
@@ -58,7 +58,7 @@ const HeroContent = () => {
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 bg-optical-white text-obsidian text-base font-semibold tracking-tight hover:bg-silver-steel transition-colors min-h-[52px] shadow-lg shadow-optical-white/10"
+            className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 bg-gold text-obsidian text-base font-semibold tracking-tight hover:bg-gold-light transition-colors min-h-[52px] shadow-lg shadow-gold/20"
           >
             BOOK A CONSULTATION
             <ArrowRight size={18} />

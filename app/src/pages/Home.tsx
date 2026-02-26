@@ -391,15 +391,15 @@ const Home = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-4xl sm:text-5xl font-semibold text-optical-white mb-2">7+</div>
+                <div className="text-4xl sm:text-5xl font-semibold text-gold mb-2">7+</div>
                 <div className="text-xs font-mono text-accent-muted uppercase">Years Experience</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl font-semibold text-optical-white mb-2">10+</div>
+                <div className="text-4xl sm:text-5xl font-semibold text-gold mb-2">10+</div>
                 <div className="text-xs font-mono text-accent-muted uppercase">Deployments</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl font-semibold text-optical-white mb-2">98%</div>
+                <div className="text-4xl sm:text-5xl font-semibold text-gold mb-2">98%</div>
                 <div className="text-xs font-mono text-accent-muted uppercase">Success Rate</div>
               </div>
             </div>
@@ -446,7 +446,7 @@ const Home = () => {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-optical-white text-obsidian text-sm font-semibold tracking-tight hover:bg-silver-steel transition-colors"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors"
                 >
                   INITIATE DEPLOYMENT REVIEW
                   <ArrowRight size={18} />
