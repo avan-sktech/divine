@@ -21,10 +21,6 @@ const Industries = () => {
     }}>
       {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/90 to-obsidian" />
-        </div>
-
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

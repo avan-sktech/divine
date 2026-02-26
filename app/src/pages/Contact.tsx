@@ -39,7 +39,6 @@ const Contact = () => {
             loading="lazy"
             className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/95 to-obsidian" />
         </div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10 pt-8">

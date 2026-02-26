@@ -164,7 +164,6 @@ const Blog = () => {
             loading="lazy"
             className="w-full h-full object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/90 to-obsidian" />
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
