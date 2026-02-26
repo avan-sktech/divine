@@ -77,14 +77,14 @@ const Industries = () => {
             {isExecutive && (
               <>
                 <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
-                  WHO WE SERVE
+                  STRATEGIC VERTICALS
                 </span>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-                  TWO TYPES OF COMPANIES
+                  DUAL MARKET COVERAGE
                 </h1>
                 <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-                  We help consumer goods companies and infrastructure providers successfully 
-                  enter Australia while protecting their margins from day one.
+                  We architect market entry for premium consumer brands and infrastructure 
+                  providers seeking established presence in Australia's concentrated commercial landscape.
                 </p>
               </>
             )}
