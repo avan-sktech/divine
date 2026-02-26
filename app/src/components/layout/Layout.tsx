@@ -1,15 +1,17 @@
 import { Outlet, Link } from 'react-router-dom';
 import Header from './Header';
 import GridBackground from '../GridBackground';
+import { ViewModeProvider } from '../../contexts/ViewModeContext';
 
 const Layout = () => {
   return (
-    <GridBackground>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 pt-16 sm:pt-20">
-          <Outlet />
-        </main>
+    <ViewModeProvider>
+      <GridBackground>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1 pt-16 sm:pt-20">
+            <Outlet />
+          </main>
           {/* Footer */}
           <footer className="w-full px-4 sm:px-6 lg:px-8 py-8 border-t border-silver-steel/10">
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -41,7 +43,8 @@ const Layout = () => {
             </div>
           </footer>
         </div>
-    </GridBackground>
+      </GridBackground>
+    </ViewModeProvider>
   );
 };
 

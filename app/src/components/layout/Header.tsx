@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import ViewToggle from '../ViewToggle';
 
 const Header = () => {
   const location = useLocation();
@@ -18,8 +19,10 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'HOME' },
-    { path: '/services', label: 'CAPABILITIES' },
-    { path: '/about', label: 'LEADERSHIP' },
+    { path: '/services', label: 'SERVICES' },
+    { path: '/industries', label: 'INDUSTRIES' },
+    { path: '/about', label: 'ABOUT' },
+    { path: '/blog', label: 'BLOG' },
     { path: '/contact', label: 'CONTACT' },
   ];
 
@@ -48,9 +51,23 @@ const Header = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
+              <div className="hidden sm:flex items-center gap-3">
+                <div className="h-10 w-px bg-silver-steel/30" />
+                <span className="text-xs font-mono tracking-widest text-accent-muted uppercase">
+                  Part of
+                </span>
+                <div className="w-28 sm:w-36">
+                  <img 
+                    src="/images/sharktech-logo.png" 
+                    alt="Sharktech Global"
+                    loading="lazy" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation + View Toggle */}
             <div className="hidden lg:flex items-center gap-8">
               <nav className="flex items-center gap-8">
                 {navLinks.map((link) => (
@@ -74,13 +91,13 @@ const Header = () => {
                 ))}
               </nav>
               
-              {/* CTA Button */}
-              <Link
-                to="/contact"
-                className="px-6 py-3 bg-gold text-obsidian text-xs font-semibold tracking-tight hover:bg-gold-light transition-colors"
-              >
-                ENGAGE DIVINE LAB WORX
-              </Link>
+              {/* View Mode Toggle */}
+              <ViewToggle />
+            </div>
+
+            {/* Mobile View Toggle */}
+            <div className="lg:hidden">
+              <ViewToggle />
             </div>
 
             {/* Mobile Menu Button */}
@@ -124,19 +141,6 @@ const Header = () => {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.1 }}
-              >
-                <Link
-                  to="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight"
-                >
-                  ENGAGE DIVINE LAB WORX
-                </Link>
-              </motion.div>
             </nav>
           </motion.div>
         )}
