@@ -21,7 +21,7 @@ const Header = () => {
     { path: '/services', label: 'CAPABILITIES' },
     { path: '/industries', label: 'INDUSTRIES' },
     { path: '/blog', label: 'BLOG' },
-    { path: '/about', label: 'LEADERSHIP' },
+    { path: '/about', label: 'ABOUT US' },
     { path: '/contact', label: 'CONTACT' },
   ];
 
