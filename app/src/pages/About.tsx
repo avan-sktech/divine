@@ -369,16 +369,19 @@ const About = () => {
               {/* Content */}
               <div className="p-8 sm:p-10 flex flex-col justify-center">
                 <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-3 block">
-                  CEO & FOUNDER
+                  CEO
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-optical-white mb-2 tracking-tight">
                   DAINU DEVIS
                 </h3>
                 <p className="text-sm font-mono text-silver-steel uppercase mb-6">
-                  CEO of Sharktech Global & Divine Lab Worx
+                  CEO OF SHARKTECH GLOBAL & DIVINE LAB WORX
                 </p>
                 <p className="text-sm text-accent-muted leading-relaxed">
-                  CEO of Sharktech Global and Divine Lab Worx, with end-to-end operational experience across Australian retail, logistics, and cloud infrastructure. Builders discipline: engineered commercial outcomes, not accidental ones.
+                  Operating at the intersection of applied artificial intelligence and critical infrastructure. With a background as a technologist, research scientist, and serial entrepreneur, executive experience spans cloud architecture, data science, and R&D across tier-one Australian enterprises, including Telstra, Ventia, and Aldi.
+                </p>
+                <p className="text-sm text-accent-muted leading-relaxed mt-4">
+                  The mandate for Divine Lab Worx is built on first-principles engineering: deploying capital-efficient, highly scalable physical infrastructure that serves as the enduring foundation for the next generation of global compute.
                 </p>
               </div>
             </div>
