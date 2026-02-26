@@ -599,7 +599,7 @@ const BlogPost = () => {
             name: 'Divine Lab Worx',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://divinelabworx.com/images/logo.png'
+              url: 'https://divinelabworx.com/images/logo.jpg'
             }
           },
           mainEntityOfPage: {

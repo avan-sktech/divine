@@ -44,7 +44,7 @@ const Header = () => {
             <Link to="/" className="flex items-center gap-3 sm:gap-4">
               <div className="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center">
                 <img 
-                  src="/images/logo.png" 
+                  src="/images/logo.jpg" 
                   alt="Divine Lab Worx"
                   loading="lazy" 
                   className="w-full h-full object-contain"
