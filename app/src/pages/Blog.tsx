@@ -111,6 +111,18 @@ const blogPosts = [
     featured: false,
     image: '/images/integrity-visual.jpg',
   },
+  {
+    id: 10,
+    slug: 'distribution-illusion-overseas-manufacturers',
+    title: 'The Distribution Illusion: Why Overseas Manufacturers Fail in Australian Retail (And How to Actually Win)',
+    excerpt: 'Australia is one of the most profitable retail markets on the planet. It is also one of the most aggressively concentrated. For high-capacity overseas manufacturers, finding a local distributor is usually where the capital is killed.',
+    author: 'Dainu Devis',
+    date: '2026-02-25',
+    readTime: '10 min',
+    category: 'Consumer & Retail',
+    featured: false,
+    image: '/images/retail-deployment.jpg',
+  },
 ];
 
 const categories = [
@@ -120,6 +132,7 @@ const categories = [
   'Deployment Strategy',
   'Regulatory',
   'Infrastructure',
+  'Consumer & Retail',
 ];
 
 const Blog = () => {
