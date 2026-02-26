@@ -42,8 +42,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24 sm:h-32">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4">
-              <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center">
+            <Link to="/" className="flex items-center gap-3 sm:gap-4">
+              <div className="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center">
                 <img 
                   src="/images/logo.png" 
                   alt="Divine Lab Worx"
@@ -51,13 +51,16 @@ const Header = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="hidden sm:block">
-                <span className="text-lg font-semibold tracking-tight text-optical-white">
-                  DIVINE LAB WORX
-                </span>
-                <span className="block text-xs font-mono text-accent-muted tracking-wider">
-                  PART OF SHARKTECH GLOBAL
-                </span>
+              <div className="hidden sm:flex items-center gap-3">
+                <div className="h-10 w-px bg-silver-steel/30" />
+                <div className="w-32 sm:w-40">
+                  <img 
+                    src="/images/sharktech-logo.png" 
+                    alt="Part of Sharktech Global"
+                    loading="lazy" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
               </div>
             </Link>
 
