@@ -2,37 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
+// Arranged in alphabetical order (ascending), excluding Advanced Liquid Cooling
 const capabilities = [
-  {
-    id: 'site-selection',
-    title: 'Site Selection & Rapid Due Diligence',
-    description: 'From single-site acquisitions to multi-node expansions across Australia, our due diligence is built for hyperscale velocity. We empower operators to make capital-efficient decisions that mitigate risk, guarantee business continuity, and accelerate time-to-market.',
-    services: [
-      { category: 'Desktop Services', items: 'Data room analysis, constraint mapping, and initial utility outreach (power, fiber, water).' },
-      { category: 'Field Services', items: 'Topological due diligence, environmental impact, and surface water profiling.' },
-      { category: 'Utility Forecasting', items: 'Comprehensive modeling of power load and water supply against forecasted capacity demands.' },
-    ],
-  },
-  {
-    id: 'power',
-    title: 'Power & Energy Infrastructure',
-    description: 'Power is the absolute bottleneck of digital infrastructure. We deliver high-availability, scalable energy solutions—from early-stage grid planning to full site energization—ensuring your facilities have the stranded capacity to grow.',
-    services: [
-      { category: 'Planning', items: 'Power system planning, high-voltage load forecasting, and utility coordination.' },
-      { category: 'Design', items: 'Dedicated substation design and medium/high-voltage distribution networks.' },
-      { category: 'Resilience', items: 'Redundancy modeling (concurrent maintainability, fault tolerance) and backup generation.' },
-      { category: 'Sustainability', items: 'Renewable energy integration and sustainable portfolio sourcing.' },
-    ],
-  },
-  {
-    id: 'cooling',
-    title: 'Advanced Liquid Cooling & Thermal Management',
-    description: 'The next generation of AI workloads requires a fundamental shift in thermal architecture. We engineer advanced cooling topologies to support extreme-density racks and precision manufacturing environments.',
-    services: [
-      { category: 'Hyperscale Data Centres', items: 'Chilled water loop design, Coolant Distribution Unit (CDU) integration, and thermal optimization for high-density AI retrofits.' },
-      { category: 'Cleanrooms', items: 'Process Cooling Water (PCW) systems, secondary loops, and strict controls for absolute purity.' },
-    ],
-  },
   {
     id: 'consulting',
     title: 'End-to-End Consulting',
@@ -42,16 +13,6 @@ const capabilities = [
       { category: 'Engineering', items: 'MEP design (Mechanical, Electrical, Plumbing, and Fire) tailored for mission-critical loads.' },
       { category: 'Project Controls', items: 'Rigorous cost estimation, schedule management, quantity surveying, and contract administration.' },
       { category: 'Delivery', items: 'BIM coordination, construction management, and continuous field services.' },
-    ],
-  },
-  {
-    id: 'water',
-    title: 'Water & Wastewater Engineering',
-    description: 'We architect water infrastructure for extreme resilience and scale. Our systems optimize Water Usage Effectiveness (WUE) to ensure continuous facility uptime and strict environmental compliance.',
-    services: [
-      { category: 'Treatment', items: 'Advanced treatment, filtration, and municipal water reclamation.' },
-      { category: 'Efficiency', items: 'Closed-loop and Zero-Liquid Discharge (ZLD) architectures.' },
-      { category: 'Monitoring', items: 'Telemetry and digital tools for remote optimization and continuous leak detection.' },
     ],
   },
   {
@@ -72,6 +33,37 @@ const capabilities = [
       { category: 'Maintenance', items: 'Preventative and predictive maintenance for critical power (UPS, generators) and cooling systems.' },
       { category: 'Optimization', items: 'Capacity management, thermal load testing, and facility optimization.' },
       { category: 'Continuity', items: 'Operational continuity planning and industrial safety automation monitoring.' },
+    ],
+  },
+  {
+    id: 'power',
+    title: 'Power & Energy Infrastructure',
+    description: 'Power is the absolute bottleneck of digital infrastructure. We deliver high-availability, scalable energy solutions—from early-stage grid planning to full site energization—ensuring your facilities have the stranded capacity to grow.',
+    services: [
+      { category: 'Planning', items: 'Power system planning, high-voltage load forecasting, and utility coordination.' },
+      { category: 'Design', items: 'Dedicated substation design and medium/high-voltage distribution networks.' },
+      { category: 'Resilience', items: 'Redundancy modeling (concurrent maintainability, fault tolerance) and backup generation.' },
+      { category: 'Sustainability', items: 'Renewable energy integration and sustainable portfolio sourcing.' },
+    ],
+  },
+  {
+    id: 'site-selection',
+    title: 'Site Selection & Rapid Due Diligence',
+    description: 'From single-site acquisitions to multi-node expansions across Australia, our due diligence is built for hyperscale velocity. We empower operators to make capital-efficient decisions that mitigate risk, guarantee business continuity, and accelerate time-to-market.',
+    services: [
+      { category: 'Desktop Services', items: 'Data room analysis, constraint mapping, and initial utility outreach (power, fiber, water).' },
+      { category: 'Field Services', items: 'Topological due diligence, environmental impact, and surface water profiling.' },
+      { category: 'Utility Forecasting', items: 'Comprehensive modeling of power load and water supply against forecasted capacity demands.' },
+    ],
+  },
+  {
+    id: 'water',
+    title: 'Water & Wastewater Engineering',
+    description: 'We architect water infrastructure for extreme resilience and scale. Our systems optimize Water Usage Effectiveness (WUE) to ensure continuous facility uptime and strict environmental compliance.',
+    services: [
+      { category: 'Treatment', items: 'Advanced treatment, filtration, and municipal water reclamation.' },
+      { category: 'Efficiency', items: 'Closed-loop and Zero-Liquid Discharge (ZLD) architectures.' },
+      { category: 'Monitoring', items: 'Telemetry and digital tools for remote optimization and continuous leak detection.' },
     ],
   },
 ];
@@ -101,6 +93,11 @@ const Services = () => {
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
               We provide full-lifecycle infrastructure consulting for mission-critical facilities. 
               From site selection to ongoing maintenance, we are your single point of accountability.
+            </p>
+            <p className="text-sm text-accent-muted/70 mt-4 leading-relaxed">
+              While our core expertise lies in digital infrastructure—including hyperscale data centres, 
+              fiber networks, and critical facilities—we also support premium consumer brands navigating 
+              Australia's concentrated retail landscape.
             </p>
           </motion.div>
         </div>

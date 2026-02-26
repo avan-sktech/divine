@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import VerticalSelector from '../components/portal/VerticalSelector';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Server, Network } from 'lucide-react';
 import DiagnosticForm from '../components/portal/DiagnosticForm';
 import MIRPreview from '../components/portal/MIRPreview';
 
-type VerticalType = 'consumer' | 'infrastructure' | null;
+type VerticalType = 'infrastructure' | null;
 
 const Contact = () => {
   const [selectedVertical, setSelectedVertical] = useState<VerticalType>(null);
   const [showForm, setShowForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleVerticalSelect = (vertical: 'consumer' | 'infrastructure') => {
+  const handleVerticalSelect = (vertical: 'infrastructure') => {
     setSelectedVertical(vertical);
     setTimeout(() => {
       setShowForm(true);
@@ -76,8 +77,8 @@ const Contact = () => {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                Select your primary deployment pathway to begin the structural audit process. 
-                Our team will review your market positioning against our Integrity Framework.
+                Select your deployment pathway to begin the structural audit process. 
+                We specialize in digital infrastructure, data centres, and mission-critical facilities.
               </motion.p>
             )}
           </motion.div>
@@ -99,18 +100,77 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             {!showForm ? (
-              /* Step 1: Vertical Selection */
+              /* Step 1: Infrastructure Selection - Single Option with subtle consumer mention */
               <motion.div
                 key="selector"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
+                className="w-full px-4 sm:px-6 lg:px-8 py-8"
               >
-                <VerticalSelector 
-                  selectedVertical={selectedVertical}
-                  onSelect={handleVerticalSelect}
-                />
+                <div className="max-w-4xl mx-auto">
+                  <motion.div 
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    {/* Primary: Digital & Infrastructure */}
+                    <motion.button
+                      onClick={() => handleVerticalSelect('infrastructure')}
+                      className="relative min-h-[280px] sm:min-h-[360px] p-6 sm:p-8 border border-gold bg-tile-bg transition-all duration-300 ease-out flex flex-col items-center justify-center text-center group cursor-pointer"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                    >
+                      <div className="mb-6 sm:mb-8 text-gold">
+                        <Server className="w-16 h-16 sm:w-20 sm:h-20" />
+                      </div>
+                      <h3 className="text-sm sm:text-base font-mono tracking-widest text-optical-white mb-2">
+                        DIGITAL & INFRASTRUCTURE
+                      </h3>
+                      <p className="text-xs font-mono text-accent-muted mb-4">
+                        Cloud, AI & Mission-Critical Facilities
+                      </p>
+                      <p className="text-xs sm:text-sm text-accent-muted max-w-[240px] leading-relaxed">
+                        Data centres, fibre networks, power systems, and hyperscale deployments
+                      </p>
+                      <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+                      </div>
+                    </motion.button>
+
+                    {/* Secondary: Consumer & Retail (subtle mention) */}
+                    <motion.div
+                      className="relative min-h-[280px] sm:min-h-[360px] p-6 sm:p-8 border border-silver-steel/20 bg-transparent flex flex-col items-center justify-center text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <div className="mb-6 sm:mb-8 text-silver-steel/50">
+                        <Network className="w-16 h-16 sm:w-20 sm:h-20" />
+                      </div>
+                      <h3 className="text-sm sm:text-base font-mono tracking-widest text-silver-steel/70 mb-2">
+                        CONSUMER & RETAIL
+                      </h3>
+                      <p className="text-xs font-mono text-accent-muted/50 mb-4">
+                        Selective Engagement
+                      </p>
+                      <p className="text-xs sm:text-sm text-accent-muted/60 max-w-[240px] leading-relaxed">
+                        For premium brands navigating Australia's concentrated retail landscape, please contact us directly
+                      </p>
+                      <Link 
+                        to="mailto:info@divinelabworx.com" 
+                        className="mt-6 text-xs font-mono text-gold hover:text-gold-light transition-colors"
+                      >
+                        CONTACT FOR RETAIL
+                      </Link>
+                    </motion.div>
+                  </motion.div>
+                </div>
               </motion.div>
             ) : (
               /* Step 2: Form + Preview */

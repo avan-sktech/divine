@@ -48,6 +48,20 @@ const Header = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
+              <div className="hidden sm:flex items-center gap-3">
+                <div className="h-10 w-px bg-silver-steel/30" />
+                <span className="text-xs font-mono tracking-widest text-accent-muted uppercase">
+                  Part of
+                </span>
+                <div className="w-28 sm:w-36">
+                  <img 
+                    src="/images/sharktech-logo.png" 
+                    alt="Sharktech Global"
+                    loading="lazy" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
