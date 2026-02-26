@@ -53,10 +53,13 @@ const Header = () => {
               </div>
               <div className="hidden sm:flex items-center gap-3">
                 <div className="h-10 w-px bg-silver-steel/30" />
-                <div className="w-32 sm:w-40">
+                <span className="text-xs font-mono tracking-widest text-accent-muted uppercase">
+                  Part of
+                </span>
+                <div className="w-28 sm:w-36">
                   <img 
                     src="/images/sharktech-logo.png" 
-                    alt="Part of Sharktech Global"
+                    alt="Sharktech Global"
                     loading="lazy" 
                     className="w-full h-auto object-contain"
                   />
