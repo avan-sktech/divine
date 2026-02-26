@@ -33,47 +33,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Sharktech Global Section */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="font-mono text-xs tracking-widest text-gold uppercase mb-6 block">
-                SHARKTECH GLOBAL
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-2">
-                Enterprise AI built in Australia,
-              </h2>
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-light italic text-gold">
-                deployed for real-world impact.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <p className="text-base text-accent-muted leading-relaxed mb-6">
-                Based in <span className="text-optical-white font-semibold">Liverpool, Sydney</span>, Sharktech Global builds AI technologies designed for 
-                real-world business impact, balancing innovation with responsible, ethical use.
-              </p>
-              <p className="text-base text-accent-muted leading-relaxed">
-                Our <span className="text-optical-white font-semibold">8-week implementation process</span> enables rapid deployment of functional AI 
-                systems, delivering measurable ROI where standard enterprise projects take 12-18 months. 
-                We serve Australian retail, manufacturing, fitness, restaurant, and infrastructure sectors.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* The Strategic Advantage */}
       <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
         <div className="max-w-6xl mx-auto">
@@ -163,6 +122,47 @@ const About = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Sharktech Global Section */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="font-mono text-xs tracking-widest text-gold uppercase mb-6 block">
+                SHARKTECH GLOBAL
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-2">
+                Enterprise AI built in Australia,
+              </h2>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-light text-gold">
+                deployed for real-world impact.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <p className="text-base text-accent-muted leading-relaxed mb-6">
+                Based in <span className="text-optical-white font-semibold">Liverpool, Sydney</span>, Sharktech Global builds AI technologies designed for 
+                real-world business impact, balancing innovation with responsible, ethical use.
+              </p>
+              <p className="text-base text-accent-muted leading-relaxed">
+                Our <span className="text-optical-white font-semibold">8-week implementation process</span> enables rapid deployment of functional AI 
+                systems, delivering measurable ROI where standard enterprise projects take 12-18 months. 
+                We serve Australian retail, manufacturing, fitness, restaurant, and infrastructure sectors.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
