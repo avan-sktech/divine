@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import ViewToggle from '../ViewToggle';
 
 const Header = () => {
   const location = useLocation();
@@ -60,33 +61,43 @@ const Header = () => {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`
-                    relative text-xs font-mono tracking-widest transition-colors duration-200
-                    ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted hover:text-optical-white'}
-                  `}
-                >
-                  {link.label}
-                  {isActive(link.path) && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute -bottom-1 left-0 right-0 h-px bg-optical-white"
-                      transition={{ duration: 0.2 }}
-                    />
-                  )}
-                </Link>
-              ))}
-            </nav>
+            {/* Desktop Navigation + View Toggle */}
+            <div className="hidden lg:flex items-center gap-8">
+              <nav className="flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`
+                      relative text-xs font-mono tracking-widest transition-colors duration-200
+                      ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted hover:text-optical-white'}
+                    `}
+                  >
+                    {link.label}
+                    {isActive(link.path) && (
+                      <motion.div
+                        layoutId="activeNav"
+                        className="absolute -bottom-1 left-0 right-0 h-px bg-optical-white"
+                        transition={{ duration: 0.2 }}
+                      />
+                    )}
+                  </Link>
+                ))}
+              </nav>
+              
+              {/* View Mode Toggle */}
+              <ViewToggle />
+            </div>
+
+            {/* Mobile View Toggle */}
+            <div className="lg:hidden">
+              <ViewToggle />
+            </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-optical-white"
+              className="lg:hidden p-2 text-optical-white"
               aria-label="Menu"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -102,7 +113,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-obsidian/98 backdrop-blur-md md:hidden"
+            className="fixed inset-0 z-40 bg-obsidian/98 backdrop-blur-md lg:hidden"
           >
             <nav className="flex flex-col items-center justify-center h-full gap-8">
               {navLinks.map((link, index) => (

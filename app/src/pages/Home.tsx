@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Layers, Network, ChevronDown } from 'lucide-react';
+import { useViewMode } from '../contexts/ViewModeContext';
+import HeroContent from '../components/content/HeroContent';
 
 const Home = () => {
+  const { isTechnical, isExecutive } = useViewMode();
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -23,63 +27,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-obsidian/60" />
         </div>
 
-        <div className="max-w-4xl mx-auto w-full relative z-10 text-center">
-          {/* Text Content - Centered */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tighter text-optical-white leading-[1.05] mb-6 sm:mb-8">
-              STRUCTURED
-              <br />
-              DEPLOYMENT OF
-              <br />
-              <span className="text-silver-steel">ENGINEERED SYSTEMS</span>
-              <br />
-              IN AUSTRALIA
-            </h1>
-
-            <p className="text-sm sm:text-base lg:text-lg text-accent-muted max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
-              Divine Lab Worx is part of Sharktech Global, serving as the market deployment architecture arm. 
-              We architect and structure commercial and digital infrastructure entry into 
-              Australia's concentrated environments.
-            </p>
-
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 bg-optical-white text-obsidian text-base font-semibold tracking-tight hover:bg-silver-steel transition-colors min-h-[52px] shadow-lg shadow-optical-white/10"
-              >
-                BOOK A CONSULTATION
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 border-2 border-silver-steel/30 text-optical-white text-base font-semibold tracking-tight hover:border-optical-white hover:bg-optical-white/5 transition-colors min-h-[52px]"
-              >
-                EXPLORE SERVICES
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-xs font-mono text-accent-muted uppercase">Scroll</span>
-            <ChevronDown size={16} className="text-accent-muted" />
-          </motion.div>
-        </motion.div>
+        <HeroContent />
       </section>
 
       {/* Australia Market Section with Image */}
@@ -101,21 +49,45 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-                MARKET FOCUS
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
-                AUSTRALIA'S CONCENTRATED MARKETS
-              </h2>
-              <p className="text-sm text-accent-muted leading-relaxed mb-6">
-                Australia's unique market structure presents both opportunity and challenge. 
-                With two major retailers controlling 65% of consumer goods distribution, 
-                successful deployment requires precise architecture—not broad-stroke marketing.
-              </p>
-              <p className="text-sm text-accent-muted leading-relaxed">
-                Our frameworks are designed specifically for this concentration, 
-                ensuring your engineered systems achieve sustainable market presence.
-              </p>
+              {isTechnical && (
+                <>
+                  <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                    MARKET FOCUS
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
+                    AUSTRALIA'S CONCENTRATED MARKETS
+                  </h2>
+                  <p className="text-sm text-accent-muted leading-relaxed mb-6">
+                    Australia's unique market structure presents both opportunity and challenge. 
+                    With two major retailers controlling 65% of consumer goods distribution, 
+                    successful deployment requires precise architecture—not broad-stroke marketing.
+                  </p>
+                  <p className="text-sm text-accent-muted leading-relaxed">
+                    Our frameworks are designed specifically for this concentration, 
+                    ensuring your engineered systems achieve sustainable market presence.
+                  </p>
+                </>
+              )}
+              
+              {isExecutive && (
+                <>
+                  <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                    THE MARKET REALITY
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
+                    AUSTRALIA IS A DUOPOLY
+                  </h2>
+                  <p className="text-sm text-accent-muted leading-relaxed mb-6">
+                    Two retailers control 65% of the market. This concentration creates 
+                    massive risk for new entrants—one pricing mistake can cost millions in 
+                    margin erosion across your entire distribution network.
+                  </p>
+                  <p className="text-sm text-accent-muted leading-relaxed">
+                    We provide the market intelligence and channel monitoring that protects 
+                    your bottom line while you scale.
+                  </p>
+                </>
+              )}
             </motion.div>
             
             <motion.div
@@ -145,12 +117,26 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-              DEPLOYMENT VERTICALS
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
-              THE DUAL-ENGINE
-            </h2>
+            {isTechnical && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                  DEPLOYMENT VERTICALS
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  THE DUAL-ENGINE
+                </h2>
+              </>
+            )}
+            {isExecutive && (
+              <>
+                <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                  HOW WE HELP
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  TWO WAYS WE PROTECT YOUR MARGINS
+                </h2>
+              </>
+            )}
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -175,13 +161,27 @@ const Home = () => {
                     <div className="mb-4">
                       <Layers className="w-8 h-8 text-silver-steel group-hover:text-optical-white transition-colors" />
                     </div>
-                    <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
-                      CONSUMER & RETAIL
-                    </h3>
-                    <p className="text-sm text-accent-muted leading-relaxed mb-4">
-                      Engineered products entering concentrated retail ecosystems. 
-                      Structured deployment for premium appliances, smart devices, and regulated health products.
-                    </p>
+                    {isTechnical ? (
+                      <>
+                        <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
+                          CONSUMER & RETAIL
+                        </h3>
+                        <p className="text-sm text-accent-muted leading-relaxed mb-4">
+                          Engineered products entering concentrated retail ecosystems. 
+                          Structured deployment for premium appliances, smart devices, and regulated health products.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
+                          PHYSICAL PRODUCTS
+                        </h3>
+                        <p className="text-sm text-accent-muted leading-relaxed mb-4">
+                          For companies selling appliances, electronics, or health products. 
+                          We monitor your retail channels to catch pricing violations before they spread.
+                        </p>
+                      </>
+                    )}
                     <div className="flex items-center gap-2 text-xs font-mono text-accent-muted group-hover:text-optical-white transition-colors">
                       <span>EXPLORE VERTICAL</span>
                       <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
@@ -212,13 +212,27 @@ const Home = () => {
                     <div className="mb-4">
                       <Network className="w-8 h-8 text-silver-steel group-hover:text-optical-white transition-colors" />
                     </div>
-                    <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
-                      DIGITAL & INFRASTRUCTURE
-                    </h3>
-                    <p className="text-sm text-accent-muted leading-relaxed mb-4">
-                      Structured pathways for Cloud and AI-first infrastructure. 
-                      Advisory deployment architecture for data centres and compute providers.
-                    </p>
+                    {isTechnical ? (
+                      <>
+                        <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
+                          DIGITAL & INFRASTRUCTURE
+                        </h3>
+                        <p className="text-sm text-accent-muted leading-relaxed mb-4">
+                          Structured pathways for Cloud and AI-first infrastructure. 
+                          Advisory deployment architecture for data centres and compute providers.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <h3 className="text-lg font-semibold text-optical-white mb-3 tracking-tight">
+                          CLOUD & INFRASTRUCTURE
+                        </h3>
+                        <p className="text-sm text-accent-muted leading-relaxed mb-4">
+                          For data center and cloud providers entering Australia. 
+                          We navigate regulatory requirements and grid connection challenges.
+                        </p>
+                      </>
+                    )}
                     <div className="flex items-center gap-2 text-xs font-mono text-accent-muted group-hover:text-optical-white transition-colors">
                       <span>EXPLORE VERTICAL</span>
                       <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
