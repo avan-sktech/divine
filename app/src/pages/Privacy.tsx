@@ -15,7 +15,7 @@ const Privacy = () => {
           >
             <Link 
               to="/" 
-              className="inline-flex items-center gap-2 text-xs font-mono text-accent-muted hover:text-optical-white transition-colors mb-8"
+              className="inline-flex items-center gap-2 text-xs font-mono text-accent-muted hover:text-gold transition-colors mb-8"
             >
               <ArrowLeft size={14} />
               BACK TO HOME

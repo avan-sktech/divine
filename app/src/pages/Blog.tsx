@@ -186,7 +186,7 @@ const Blog = () => {
               transition={{ duration: 0.6 }}
             >
               <Link to={`/blog/${featuredPost.slug}`} className="group block">
-                <div className="border border-silver-steel/20 hover:border-optical-white transition-all duration-300 overflow-hidden">
+                <div className="border border-silver-steel/20 hover:border-gold transition-all duration-300 overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     {/* Featured Image */}
                     <div className="aspect-video lg:aspect-auto relative overflow-hidden">
@@ -247,7 +247,7 @@ const Blog = () => {
                 className={`px-4 py-2 text-xs font-mono tracking-widest uppercase transition-all ${
                   index === 0
                     ? 'bg-optical-white text-obsidian'
-                    : 'border border-silver-steel/30 text-accent-muted hover:border-optical-white hover:text-optical-white'
+                    : 'border border-silver-steel/30 text-accent-muted hover:border-gold hover:text-gold'
                 }`}
               >
                 {category}
@@ -270,7 +270,7 @@ const Blog = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link to={`/blog/${post.slug}`} className="group block h-full">
-                  <div className="border border-silver-steel/20 h-full flex flex-col hover:border-optical-white transition-all duration-300 overflow-hidden">
+                  <div className="border border-silver-steel/20 h-full flex flex-col hover:border-gold transition-all duration-300 overflow-hidden">
                     {/* Image */}
                     <div className="aspect-[16/10] relative overflow-hidden">
                       <img 

@@ -172,7 +172,7 @@ const Industries = () => {
                 <div className="px-8 pb-8">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-optical-white transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
                   >
                     DISCUSS RETAIL DEPLOYMENT
                     <ArrowRight size={14} />
@@ -256,7 +256,7 @@ const Industries = () => {
                 <div className="px-8 pb-8">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-optical-white transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
                   >
                     DISCUSS INFRASTRUCTURE DEPLOYMENT
                     <ArrowRight size={14} />
@@ -317,7 +317,7 @@ const Industries = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border border-silver-steel/20 p-6 sm:p-8 text-center hover:border-optical-white transition-all duration-300"
+                className="border border-silver-steel/20 p-6 sm:p-8 text-center hover:border-gold transition-all duration-300"
               >
                 <h4 className="text-sm font-semibold text-optical-white mb-3 tracking-tight">
                   {item.title}

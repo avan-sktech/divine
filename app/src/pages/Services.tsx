@@ -173,7 +173,7 @@ const Services = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className={`border h-full transition-all duration-300 hover:border-optical-white hover:shadow-tile-hover group overflow-hidden ${
+                  <div className={`border h-full transition-all duration-300 hover:border-gold hover:shadow-tile-hover group overflow-hidden ${
                     service.highlight ? 'border-optical-white/40' : 'border-silver-steel/20'
                   }`}>
                     {/* Service Image */}
@@ -226,7 +226,7 @@ const Services = () => {
                       {/* CTA */}
                       <Link
                         to="/contact"
-                        className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted group-hover:text-optical-white transition-colors"
+                        className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted group-hover:text-gold transition-colors"
                       >
                         REQUEST CONSULTATION
                         <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
@@ -301,7 +301,7 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="border border-silver-steel/20 p-8 text-center hover:border-optical-white transition-all duration-300"
+                  className="border border-silver-steel/20 p-8 text-center hover:border-gold transition-all duration-300"
                 >
                   <div className="w-14 h-14 mx-auto mb-6 border border-silver-steel/30 flex items-center justify-center">
                     <Icon className="w-6 h-6 text-silver-steel" />

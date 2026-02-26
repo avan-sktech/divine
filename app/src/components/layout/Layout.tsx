@@ -30,10 +30,10 @@ const Layout = () => {
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <Link to="/privacy" className="text-xs font-mono text-accent-muted/60 hover:text-optical-white transition-colors">
+                <Link to="/privacy" className="text-xs font-mono text-accent-muted/60 hover:text-gold transition-colors">
                   Privacy Policy
                 </Link>
-                <Link to="/terms" className="text-xs font-mono text-accent-muted/60 hover:text-optical-white transition-colors">
+                <Link to="/terms" className="text-xs font-mono text-accent-muted/60 hover:text-gold transition-colors">
                   Terms of Service
                 </Link>
                 <p className="text-xs font-mono text-accent-muted/60">

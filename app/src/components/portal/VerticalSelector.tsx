@@ -158,7 +158,7 @@ const VerticalSelector: React.FC<VerticalSelectorProps> = ({ selectedVertical, o
                   group cursor-pointer
                   ${isSelected 
                     ? 'bg-tile-bg border-optical-white' 
-                    : 'bg-transparent border-silver-steel/30 hover:border-optical-white hover:shadow-tile-hover'
+                    : 'bg-transparent border-silver-steel/30 hover:border-gold hover:shadow-tile-hover'
                   }
                 `}
                 initial={{ opacity: 0, y: 20 }}
@@ -170,7 +170,7 @@ const VerticalSelector: React.FC<VerticalSelectorProps> = ({ selectedVertical, o
                 {/* Icon */}
                 <div className={`
                   mb-6 sm:mb-8 text-silver-steel transition-colors duration-300
-                  ${isSelected ? 'text-optical-white' : 'group-hover:text-optical-white'}
+                  ${isSelected ? 'text-gold' : 'group-hover:text-gold'}
                 `}>
                   <Icon />
                 </div>

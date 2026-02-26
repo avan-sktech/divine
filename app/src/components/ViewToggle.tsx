@@ -12,7 +12,7 @@ const ViewToggle = () => {
         className={`relative flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono tracking-wider transition-all duration-300 ${
           isTechnical
             ? 'text-obsidian'
-            : 'text-accent-muted hover:text-optical-white'
+            : 'text-accent-muted hover:text-gold'
         }`}
       >
         {isTechnical && (
@@ -33,7 +33,7 @@ const ViewToggle = () => {
         className={`relative flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono tracking-wider transition-all duration-300 ${
           !isTechnical
             ? 'text-obsidian'
-            : 'text-accent-muted hover:text-optical-white'
+            : 'text-accent-muted hover:text-gold'
         }`}
       >
         {!isTechnical && (

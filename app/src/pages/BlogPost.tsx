@@ -610,9 +610,9 @@ const BlogPost = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 py-4 border-b border-silver-steel/10">
         <div className="max-w-4xl mx-auto">
           <nav className="flex items-center gap-2 text-xs font-mono text-accent-muted">
-            <Link to="/" className="hover:text-optical-white transition-colors">HOME</Link>
+            <Link to="/" className="hover:text-gold transition-colors">HOME</Link>
             <span>/</span>
-            <Link to="/blog" className="hover:text-optical-white transition-colors">BLOG</Link>
+            <Link to="/blog" className="hover:text-gold transition-colors">BLOG</Link>
             <span>/</span>
             <span className="text-optical-white uppercase truncate">{post.category}</span>
           </nav>
@@ -642,7 +642,7 @@ const BlogPost = () => {
               {/* Back Link */}
               <Link 
                 to="/blog"
-                className="inline-flex items-center gap-2 text-xs font-mono text-accent-muted hover:text-optical-white transition-colors mb-8"
+                className="inline-flex items-center gap-2 text-xs font-mono text-accent-muted hover:text-gold transition-colors mb-8"
               >
                 <ArrowLeft size={14} />
                 BACK TO BLOG
@@ -736,7 +736,7 @@ const BlogPost = () => {
                       <Link
                         key={keyword}
                         to={`/blog?tag=${encodeURIComponent(keyword)}`}
-                        className="px-3 py-1.5 border border-silver-steel/20 text-xs text-accent-muted hover:border-optical-white hover:text-optical-white transition-colors"
+                        className="px-3 py-1.5 border border-silver-steel/20 text-xs text-accent-muted hover:border-gold hover:text-gold transition-colors"
                       >
                         {keyword}
                       </Link>
@@ -754,7 +754,7 @@ const BlogPost = () => {
                       href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${shareText}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 border border-silver-steel/20 text-accent-muted hover:border-optical-white hover:text-optical-white transition-colors"
+                      className="p-2 border border-silver-steel/20 text-accent-muted hover:border-gold hover:text-gold transition-colors"
                       aria-label="Share on Twitter"
                     >
                       <Twitter size={18} />
@@ -763,14 +763,14 @@ const BlogPost = () => {
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 border border-silver-steel/20 text-accent-muted hover:border-optical-white hover:text-optical-white transition-colors"
+                      className="p-2 border border-silver-steel/20 text-accent-muted hover:border-gold hover:text-gold transition-colors"
                       aria-label="Share on LinkedIn"
                     >
                       <Linkedin size={18} />
                     </a>
                     <button
                       onClick={() => navigator.clipboard.writeText(shareUrl)}
-                      className="p-2 border border-silver-steel/20 text-accent-muted hover:border-optical-white hover:text-optical-white transition-colors"
+                      className="p-2 border border-silver-steel/20 text-accent-muted hover:border-gold hover:text-gold transition-colors"
                       aria-label="Copy link"
                     >
                       <Bookmark size={18} />

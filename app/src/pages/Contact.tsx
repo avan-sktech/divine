@@ -186,7 +186,7 @@ const Contact = () => {
                 <p>
                   <a 
                     href="mailto:info@divinelabworx.com" 
-                    className="hover:text-optical-white transition-colors"
+                    className="hover:text-gold transition-colors"
                   >
                     info@divinelabworx.com
                   </a>

@@ -76,14 +76,14 @@ const Header = () => {
                     to={link.path}
                     className={`
                       relative text-xs font-mono tracking-widest transition-colors duration-200
-                      ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted hover:text-optical-white'}
+                      ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted hover:text-gold'}
                     `}
                   >
                     {link.label}
                     {isActive(link.path) && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute -bottom-1 left-0 right-0 h-px bg-optical-white"
+                        className="absolute -bottom-1 left-0 right-0 h-px bg-gold"
                         transition={{ duration: 0.2 }}
                       />
                     )}
@@ -134,7 +134,7 @@ const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`
                       text-2xl font-mono tracking-widest transition-colors
-                      ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted'}
+                      ${isActive(link.path) ? 'text-optical-white' : 'text-accent-muted hover:text-gold'}
                     `}
                   >
                     {link.label}

@@ -97,11 +97,19 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <img 
-                src="/images/australia-skyline.jpg" 
-                alt="Australia Skyline" 
-                className="w-full h-64 sm:h-80 object-cover border border-silver-steel/20"
-              />
+              {isTechnical ? (
+                <img 
+                  src="/images/australia-skyline.jpg" 
+                  alt="Australia Skyline" 
+                  className="w-full h-64 sm:h-80 object-cover border border-silver-steel/20"
+                />
+              ) : (
+                <img 
+                  src="/images/market-duopoly-chart.svg" 
+                  alt="Australian Retail Market Share - 65% controlled by two retailers" 
+                  className="w-full h-64 sm:h-80 object-contain border border-silver-steel/20 bg-obsidian"
+                />
+              )}
             </motion.div>
           </div>
         </div>
@@ -148,7 +156,7 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <Link to="/industries" className="group block h-full">
-                <div className="border border-silver-steel/20 h-full transition-all duration-300 hover:border-optical-white hover:shadow-tile-hover overflow-hidden">
+                <div className="border border-silver-steel/20 h-full transition-all duration-300 hover:border-gold hover:shadow-tile-hover overflow-hidden">
                   <div className="aspect-video overflow-hidden">
                     <img 
                       src="/images/retail-deployment.jpg" 
@@ -159,7 +167,7 @@ const Home = () => {
                   </div>
                   <div className="p-8">
                     <div className="mb-4">
-                      <Layers className="w-8 h-8 text-silver-steel group-hover:text-optical-white transition-colors" />
+                      <Layers className="w-8 h-8 text-silver-steel group-hover:text-gold transition-colors" />
                     </div>
                     {isTechnical ? (
                       <>
@@ -182,7 +190,7 @@ const Home = () => {
                         </p>
                       </>
                     )}
-                    <div className="flex items-center gap-2 text-xs font-mono text-accent-muted group-hover:text-optical-white transition-colors">
+                    <div className="flex items-center gap-2 text-xs font-mono text-accent-muted group-hover:text-gold transition-colors">
                       <span>EXPLORE VERTICAL</span>
                       <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -199,7 +207,7 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Link to="/industries" className="group block h-full">
-                <div className="border border-silver-steel/20 h-full transition-all duration-300 hover:border-optical-white hover:shadow-tile-hover overflow-hidden">
+                <div className="border border-silver-steel/20 h-full transition-all duration-300 hover:border-gold hover:shadow-tile-hover overflow-hidden">
                   <div className="aspect-video overflow-hidden">
                     <img 
                       src="/images/data-center.jpg" 
@@ -210,7 +218,7 @@ const Home = () => {
                   </div>
                   <div className="p-8">
                     <div className="mb-4">
-                      <Network className="w-8 h-8 text-silver-steel group-hover:text-optical-white transition-colors" />
+                      <Network className="w-8 h-8 text-silver-steel group-hover:text-gold transition-colors" />
                     </div>
                     {isTechnical ? (
                       <>
@@ -233,7 +241,7 @@ const Home = () => {
                         </p>
                       </>
                     )}
-                    <div className="flex items-center gap-2 text-xs font-mono text-accent-muted group-hover:text-optical-white transition-colors">
+                    <div className="flex items-center gap-2 text-xs font-mono text-accent-muted group-hover:text-gold transition-colors">
                       <span>EXPLORE VERTICAL</span>
                       <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -299,7 +307,7 @@ const Home = () => {
               </p>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-optical-white transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
               >
                 LEARN MORE ABOUT MARKET INTEGRITY
                 <ArrowRight size={14} />
@@ -339,7 +347,7 @@ const Home = () => {
             <div className="mt-12 flex justify-center">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-optical-white transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
               >
                 READ OUR PHILOSOPHY
                 <ArrowRight size={14} />

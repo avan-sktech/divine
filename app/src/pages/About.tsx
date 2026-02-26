@@ -222,7 +222,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="border border-silver-steel/20 p-8 sm:p-10 hover:border-optical-white transition-all duration-300"
+                  className="border border-silver-steel/20 p-8 sm:p-10 hover:border-gold transition-all duration-300"
                 >
                   <div className="w-12 h-12 border border-silver-steel/30 flex items-center justify-center mb-6">
                     <Icon className="w-5 h-5 text-silver-steel" />
@@ -355,7 +355,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border border-silver-steel/20 overflow-hidden hover:border-optical-white transition-all duration-300"
+            className="border border-silver-steel/20 overflow-hidden hover:border-gold transition-all duration-300"
           >
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Photo */}

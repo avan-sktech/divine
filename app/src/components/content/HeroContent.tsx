@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useViewMode } from '../../contexts/ViewModeContext';
 
 const HeroContent = () => {
@@ -65,29 +65,13 @@ const HeroContent = () => {
           </Link>
           <Link
             to="/services"
-            className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 border-2 border-silver-steel/30 text-optical-white text-base font-semibold tracking-tight hover:border-optical-white hover:bg-optical-white/5 transition-colors min-h-[52px]"
+            className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 border-2 border-silver-steel/30 text-optical-white text-base font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors min-h-[52px]"
           >
             EXPLORE SERVICES
           </Link>
         </div>
       </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-xs font-mono text-accent-muted uppercase">Scroll</span>
-          <ChevronDown size={16} className="text-accent-muted" />
-        </motion.div>
-      </motion.div>
     </div>
   );
 };
