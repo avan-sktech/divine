@@ -379,8 +379,7 @@ const DiagnosticForm: React.FC<DiagnosticFormProps> = ({ vertical, onSubmitSucce
               </h3>
               
               <p className="text-sm text-accent-muted max-w-md mx-auto leading-relaxed">
-                A Sharktech Global Commercial Architect will contact you within 24 hours 
-                to discuss your deployment architecture requirements.
+                A Divine Lab Worx consultant will contact you within 24 hours.
               </p>
               
               <div className="mt-8 pt-6 border-t border-silver-steel/20">
