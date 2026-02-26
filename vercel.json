@@ -2,24 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/dist",
-  "framework": "vite",
+  "framework": null,
   "installCommand": "cd app && npm install",
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/videos/(.*)",
-      "dest": "/videos/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "source": "/images/(.*)", "destination": "/images/$1" },
+    { "source": "/videos/(.*)", "destination": "/videos/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
