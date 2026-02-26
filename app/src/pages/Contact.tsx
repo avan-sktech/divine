@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Server } from 'lucide-react';
 import DiagnosticForm from '../components/portal/DiagnosticForm';
-import MIRPreview from '../components/portal/MIRPreview';
 
 type VerticalType = 'infrastructure' | null;
 
@@ -65,8 +64,8 @@ const Contact = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                Complete the diagnostic form below. Your input will generate a preliminary 
-                Market Integrity Brief for our Commercial Architects.
+                Complete the diagnostic form below. Our Commercial Architects will review 
+                your submission and contact you within 24 hours.
               </motion.p>
             ) : (
               <motion.p 
@@ -96,7 +95,7 @@ const Contact = () => {
 
       {/* Main Content Area */}
       <main className="flex-1 px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <AnimatePresence mode="wait">
             {!showForm ? (
               /* Step 1: Infrastructure Selection - Single Option */
@@ -140,42 +139,20 @@ const Contact = () => {
                 </div>
               </motion.div>
             ) : (
-              /* Step 2: Form + Preview */
+              /* Step 2: Form Only */
               <motion.div
                 key="form"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-                  {/* Form Column */}
-                  <div className="lg:col-span-7">
-                    <div className="border border-silver-steel/30 p-6 sm:p-8">
-                      {selectedVertical && (
-                        <DiagnosticForm 
-                          vertical={selectedVertical}
-                          onSubmitSuccess={handleFormSuccess}
-                        />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Preview Column - Hidden on mobile after submission */}
-                  <AnimatePresence>
-                    {!formSubmitted && (
-                      <motion.div 
-                        className="lg:col-span-5"
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
-                      >
-                        <div className="sticky top-24">
-                          <MIRPreview />
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                <div className="border border-silver-steel/30 p-6 sm:p-8">
+                  {selectedVertical && (
+                    <DiagnosticForm 
+                      vertical={selectedVertical}
+                      onSubmitSuccess={handleFormSuccess}
+                    />
+                  )}
                 </div>
               </motion.div>
             )}
