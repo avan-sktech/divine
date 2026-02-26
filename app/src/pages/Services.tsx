@@ -2,8 +2,18 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-// All 7 capabilities in ascending alphabetical order
+// 6 capabilities in ascending alphabetical order (Advanced Liquid Cooling removed)
 const capabilities = [
+  {
+    id: 'maintenance',
+    title: 'Critical Infrastructure Maintenance',
+    description: 'Once a facility is energized, uptime is non-negotiable. We provide the ongoing operational engineering required to maintain hyperscale availability.',
+    services: [
+      { category: 'Maintenance', items: 'Preventative and predictive maintenance for critical power (UPS, generators) and cooling systems.' },
+      { category: 'Optimization', items: 'Capacity management, thermal load testing, and facility optimization.' },
+      { category: 'Continuity', items: 'Operational continuity planning and industrial safety automation monitoring.' },
+    ],
+  },
   {
     id: 'consulting',
     title: 'End-to-End Consulting',
@@ -16,15 +26,6 @@ const capabilities = [
     ],
   },
   {
-    id: 'cooling',
-    title: 'Advanced Liquid Cooling & Thermal Management',
-    description: 'The next generation of AI workloads requires a fundamental shift in thermal architecture. We engineer advanced cooling topologies to support extreme-density racks and precision manufacturing environments.',
-    services: [
-      { category: 'Hyperscale Data Centres', items: 'Chilled water loop design, Coolant Distribution Unit (CDU) integration, and thermal optimization for high-density AI retrofits.' },
-      { category: 'Cleanrooms', items: 'Process Cooling Water (PCW) systems, secondary loops, and strict controls for absolute purity.' },
-    ],
-  },
-  {
     id: 'fiber',
     title: 'Fiber & Subsea Infrastructure',
     description: 'We engineer the digital backbone. Divine Lab Worx provides full-lifecycle advisory and design for the critical network pathways that connect hyperscale ecosystems with low-latency route diversity.',
@@ -32,16 +33,6 @@ const capabilities = [
       { category: 'Execution', items: 'Route feasibility analysis, permitting, and shore landing execution.' },
       { category: 'Design', items: 'Cable station design and secure terrestrial fiber duct planning.' },
       { category: 'Compliance', items: 'Navigating complex regulatory environments to accelerate network deployment.' },
-    ],
-  },
-  {
-    id: 'maintenance',
-    title: 'Critical Infrastructure Maintenance',
-    description: 'Once a facility is energized, uptime is non-negotiable. We provide the ongoing operational engineering required to maintain hyperscale availability.',
-    services: [
-      { category: 'Maintenance', items: 'Preventative and predictive maintenance for critical power (UPS, generators) and cooling systems.' },
-      { category: 'Optimization', items: 'Capacity management, thermal load testing, and facility optimization.' },
-      { category: 'Continuity', items: 'Operational continuity planning and industrial safety automation monitoring.' },
     ],
   },
   {
