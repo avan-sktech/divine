@@ -32,7 +32,7 @@ const blogPosts = [
     id: 3,
     slug: 'as-nzs-compliance',
     title: 'AS/NZS Compliance: The Non-Negotiable Entry Requirement',
-    excerpt: 'Australian standards are not suggestions—they are legal requirements. This guide covers the essential compliance checkpoints for engineered products entering the market.',
+    excerpt: 'Australian standards are not suggestions, they are legal requirements. This guide covers the essential compliance checkpoints for engineered products entering the market.',
     author: 'James Okonkwo',
     date: '2026-01-28',
     readTime: '10 min',

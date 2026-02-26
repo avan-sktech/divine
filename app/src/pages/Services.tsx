@@ -38,7 +38,7 @@ const capabilities = [
   {
     id: 'power',
     title: 'Power & Energy Infrastructure',
-    description: 'Power is the absolute bottleneck of digital infrastructure. We deliver high-availability, scalable energy solutions—from early-stage grid planning to full site energization—ensuring your facilities have the stranded capacity to grow.',
+    description: 'Power is the absolute bottleneck of digital infrastructure. We deliver high availability, scalable energy solutions, from early stage grid planning to full site energization, ensuring your facilities have the stranded capacity to grow.',
     services: [
       { category: 'Planning', items: 'Power system planning, high-voltage load forecasting, and utility coordination.' },
       { category: 'Design', items: 'Dedicated substation design and medium/high-voltage distribution networks.' },

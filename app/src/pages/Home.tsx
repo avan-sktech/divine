@@ -14,7 +14,7 @@ const workflowSteps = [
   {
     number: '02',
     title: 'Power & Utility',
-    description: 'Heavy utility interface — substation design, grid connection, medium-voltage delivery to your boundary.',
+    description: 'Heavy utility interface. Substation design, grid connection, medium voltage delivery to your boundary.',
     icon: Zap,
     tag: 'WE OWN THIS',
     active: true,
@@ -22,7 +22,7 @@ const workflowSteps = [
   {
     number: '03',
     title: 'Permits & Safety',
-    description: 'Planning approvals, WHS compliance and industrial safety automation — cleared before you break ground.',
+    description: 'Planning approvals, WHS compliance and industrial safety automation, cleared before you break ground.',
     icon: Shield,
     tag: 'WE OWN THIS',
     active: true,
@@ -30,7 +30,7 @@ const workflowSteps = [
   {
     number: '04',
     title: 'Build',
-    description: 'Civil, structural and MEP construction — accelerated because Phases 1-3 are already resolved.',
+    description: 'Civil, structural and MEP construction, accelerated because Phases 1 through 3 are already resolved.',
     icon: Hammer,
     tag: 'YOU / YOUR EPC',
     active: false,
@@ -74,7 +74,7 @@ const Home = () => {
             <p className="text-base sm:text-lg text-accent-muted max-w-3xl mx-auto leading-relaxed mb-10">
               As the Australian infrastructure consulting arm of Sharktech Global, we provide a single point 
               of accountability for deploying mission-critical facilities. We design, site, and build hyperscale 
-              data centres, semiconductor fabs, and advanced cleanrooms—turning complex capital projects into 
+              data centres, semiconductor fabs, and advanced cleanrooms, turning complex capital projects into 
               operational, high-yield assets.
             </p>
           </motion.div>
@@ -114,7 +114,7 @@ const Home = () => {
               The Deployment Lifecycle
             </h2>
             <p className="text-base text-accent-muted max-w-2xl mx-auto">
-              We compress the critical path so your build starts ready — not waiting.
+              We compress the critical path so your build starts ready, not waiting.
             </p>
           </motion.div>
 
@@ -191,7 +191,7 @@ const Home = () => {
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-1 bg-gold rounded-full" />
-                <span className="text-accent-muted">Divine Lab Worx — fully managed</span>
+                <span className="text-accent-muted">Divine Lab Worx, fully managed</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-1 bg-silver-steel/30 rounded-full" />
