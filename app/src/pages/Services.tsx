@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-// Arranged in alphabetical order (ascending), excluding Advanced Liquid Cooling
+// All 7 capabilities in ascending alphabetical order
 const capabilities = [
   {
     id: 'consulting',
@@ -13,6 +13,15 @@ const capabilities = [
       { category: 'Engineering', items: 'MEP design (Mechanical, Electrical, Plumbing, and Fire) tailored for mission-critical loads.' },
       { category: 'Project Controls', items: 'Rigorous cost estimation, schedule management, quantity surveying, and contract administration.' },
       { category: 'Delivery', items: 'BIM coordination, construction management, and continuous field services.' },
+    ],
+  },
+  {
+    id: 'cooling',
+    title: 'Advanced Liquid Cooling & Thermal Management',
+    description: 'The next generation of AI workloads requires a fundamental shift in thermal architecture. We engineer advanced cooling topologies to support extreme-density racks and precision manufacturing environments.',
+    services: [
+      { category: 'Hyperscale Data Centres', items: 'Chilled water loop design, Coolant Distribution Unit (CDU) integration, and thermal optimization for high-density AI retrofits.' },
+      { category: 'Cleanrooms', items: 'Process Cooling Water (PCW) systems, secondary loops, and strict controls for absolute purity.' },
     ],
   },
   {
@@ -94,11 +103,6 @@ const Services = () => {
               We provide full-lifecycle infrastructure consulting for mission-critical facilities. 
               From site selection to ongoing maintenance, we are your single point of accountability.
             </p>
-            <p className="text-sm text-accent-muted/70 mt-4 leading-relaxed">
-              While our core expertise lies in digital infrastructure—including hyperscale data centres, 
-              fiber networks, and critical facilities—we also support premium consumer brands navigating 
-              Australia's concentrated retail landscape.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -137,34 +141,6 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
-              Deploy with Velocity
-            </h2>
-            <p className="text-base text-accent-muted mb-8 max-w-2xl mx-auto leading-relaxed">
-              We eliminate friction from the development of critical infrastructure. If you are scaling 
-              compute, securing sites, or engineering advanced thermal architectures, engage our consulting 
-              team to accelerate your timeline.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors"
-            >
-              INITIATE STRATEGIC ENGAGEMENT
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>

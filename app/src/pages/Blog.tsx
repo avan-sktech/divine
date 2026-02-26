@@ -353,32 +353,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-6">
-              NEED SPECIFIC DEPLOYMENT GUIDANCE?
-            </h2>
-            <p className="text-sm text-accent-muted mb-8 max-w-xl mx-auto">
-              Our Commercial Architects provide personalized deployment architecture 
-              for your specific market entry challenges.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors"
-            >
-              SCHEDULE CONSULTATION
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
