@@ -1,7 +1,4 @@
 {
-  "version": 2,
-  "framework": "vite",
-  "rootDirectory": "app",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
