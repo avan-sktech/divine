@@ -1,6 +1,9 @@
 {
+  "version": 2,
   "framework": "vite",
-  "rootDirectory": "app",
+  "buildCommand": "cd app && npm install && npm run build",
+  "outputDirectory": "app/dist",
+  "installCommand": "echo 'Installed via buildCommand'",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
