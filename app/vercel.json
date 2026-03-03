@@ -1,8 +1,5 @@
 {
-  "buildCommand": "echo 'Using pre-built dist'",
-  "outputDirectory": "dist",
-  "installCommand": "echo 'No install needed'",
-  "framework": null,
+  "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
