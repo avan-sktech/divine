@@ -292,47 +292,68 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Focus Strip - Mobile Optimized */}
+        {/* Focus Strip - Sliding Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="relative z-[10] border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
+          className="relative z-[10] border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-            <div className="flex flex-col lg:flex-row">
-              {/* Label */}
-              <div className="flex items-center py-3 lg:py-0 lg:pr-8 border-b lg:border-b-0 lg:border-r border-silver-steel/10">
-                <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.2em] text-accent-muted uppercase whitespace-nowrap">
-                  We consult to
-                </span>
-              </div>
+          <div className="flex flex-col lg:flex-row">
+            {/* Label - Fixed on left */}
+            <div className="flex items-center justify-center lg:justify-start py-3 lg:py-0 lg:px-8 border-b lg:border-b-0 lg:border-r border-silver-steel/10 bg-obsidian/80 lg:bg-transparent flex-shrink-0">
+              <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.2em] text-accent-muted uppercase whitespace-nowrap">
+                We consult to
+              </span>
+            </div>
 
-              {/* Focus Items - 2 columns on mobile, 4 on desktop */}
-              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Sliding Marquee Container */}
+            <div className="flex-1 overflow-hidden py-3 sm:py-4">
+              <div className="flex animate-marquee">
+                {/* First set of items */}
                 {focusItems.map((item, index) => {
                   const FocusIcon = item.Icon;
                   return (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.8 + index * 0.08 }}
-                      className="flex items-center gap-3 px-3 sm:px-4 lg:px-6 py-3.5 sm:py-4 border-b sm:border-b-0 sm:border-r last:border-r-0 border-silver-steel/10 hover:bg-gold/5 transition-colors"
+                    <div
+                      key={`first-${item.title}`}
+                      className="flex items-center gap-3 px-6 sm:px-8 lg:px-10 flex-shrink-0 border-r border-silver-steel/10"
                     >
                       <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
                         <FocusIcon size={16} className="text-gold sm:hidden" />
                         <FocusIcon size={18} className="text-gold hidden sm:block" />
                       </div>
-                      <div className="flex flex-col min-w-0">
-                        <span className="font-semibold text-xs sm:text-sm text-optical-white leading-tight truncate">
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-xs sm:text-sm text-optical-white leading-tight whitespace-nowrap">
                           {item.title}
                         </span>
-                        <span className="font-mono text-[8px] sm:text-[9px] tracking-[0.1em] sm:tracking-[0.12em] text-accent-muted truncate">
+                        <span className="font-mono text-[8px] sm:text-[9px] tracking-[0.1em] sm:tracking-[0.12em] text-accent-muted whitespace-nowrap">
                           {item.sub}
                         </span>
                       </div>
-                    </motion.div>
+                    </div>
+                  );
+                })}
+                {/* Duplicate set for seamless loop */}
+                {focusItems.map((item, index) => {
+                  const FocusIcon = item.Icon;
+                  return (
+                    <div
+                      key={`second-${item.title}`}
+                      className="flex items-center gap-3 px-6 sm:px-8 lg:px-10 flex-shrink-0 border-r border-silver-steel/10"
+                    >
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
+                        <FocusIcon size={16} className="text-gold sm:hidden" />
+                        <FocusIcon size={18} className="text-gold hidden sm:block" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-xs sm:text-sm text-optical-white leading-tight whitespace-nowrap">
+                          {item.title}
+                        </span>
+                        <span className="font-mono text-[8px] sm:text-[9px] tracking-[0.1em] sm:tracking-[0.12em] text-accent-muted whitespace-nowrap">
+                          {item.sub}
+                        </span>
+                      </div>
+                    </div>
                   );
                 })}
               </div>
