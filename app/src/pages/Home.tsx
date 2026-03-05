@@ -113,6 +113,23 @@ const Home = () => {
     <div className="w-full overflow-x-hidden">
       {/* Hero Section - Mobile Optimized */}
       <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 sm:pt-24 lg:pt-20 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            poster="/images/hero-infrastructure.jpg"
+          >
+            <source src="/videos/hero-bg.mov" type="video/quicktime" />
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-obsidian/75" />
+        </div>
+
         {/* Grid Background - Hidden on mobile for performance */}
         <div 
           className="absolute inset-0 z-0 pointer-events-none hidden sm:block"
