@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff, Activity, Check } from 'lucide-react';
+import { 
+  ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff, Activity, Check,
+  Plug, ClipboardCheck, Globe, Droplets, ShieldCheck,
+  Server, Cpu, Microchip, Sparkles
+} from 'lucide-react';
 
 const workflowSteps = [
   {
@@ -55,27 +59,27 @@ const workflowSteps = [
 
 const criteriaItems = [
   {
-    icon: '⚡',
+    Icon: Plug,
     name: 'Power Proximity',
     desc: 'Grid access, substation distance & MW capacity',
   },
   {
-    icon: '📋',
+    Icon: ClipboardCheck,
     name: 'Zoning Clearance',
     desc: 'Planning approvals & industrial land classification',
   },
   {
-    icon: '🌐',
+    Icon: Globe,
     name: 'Fibre Path',
     desc: 'Dark fibre routes & latency to exchange points',
   },
   {
-    icon: '💧',
+    Icon: Droplets,
     name: 'Water Access',
     desc: 'Cooling supply, wastewater rights & flow rates',
   },
   {
-    icon: '🏗️',
+    Icon: ShieldCheck,
     name: 'WHS Compliance',
     desc: 'Industrial safety & construction regulatory readiness',
   },
@@ -83,22 +87,22 @@ const criteriaItems = [
 
 const focusItems = [
   {
-    icon: '🏢',
+    Icon: Server,
     title: 'Hyperscale Data Centres',
     sub: 'Large-scale compute & colocation',
   },
   {
-    icon: '⚡',
+    Icon: Cpu,
     title: 'Supercomputers & AI Factories',
     sub: 'Sovereign AI, GPU clusters & HPC',
   },
   {
-    icon: '🔬',
+    Icon: Microchip,
     title: 'Semiconductor Fabs',
     sub: 'Advanced chip manufacturing',
   },
   {
-    icon: '🧪',
+    Icon: Sparkles,
     title: 'Advanced Cleanrooms',
     sub: 'Precision-controlled environments',
   },
@@ -219,7 +223,9 @@ const Home = () => {
 
                 {/* Criteria List */}
                 <div className="divide-y divide-silver-steel/10">
-                  {criteriaItems.map((item, index) => (
+                  {criteriaItems.map((item, index) => {
+                      const CriteriaIcon = item.Icon;
+                      return (
                     <motion.div
                       key={item.name}
                       initial={{ opacity: 0, x: 20 }}
@@ -227,8 +233,8 @@ const Home = () => {
                       transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                       className="flex items-start gap-4 px-5 sm:px-6 py-4 hover:bg-gold/5 transition-colors"
                     >
-                      <div className="w-8 h-8 border border-gold/30 bg-gold/10 flex items-center justify-center flex-shrink-0 text-sm">
-                        {item.icon}
+                      <div className="w-8 h-8 border border-gold/30 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                        <CriteriaIcon size={16} className="text-gold" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="font-semibold text-sm text-optical-white mb-0.5">
@@ -243,7 +249,8 @@ const Home = () => {
                         VERIFIED
                       </span>
                     </motion.div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
@@ -268,25 +275,30 @@ const Home = () => {
 
               {/* Focus Items */}
               <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                {focusItems.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
-                    className="flex items-center gap-3 px-4 lg:px-6 py-4 border-b sm:border-b-0 sm:border-r last:border-r-0 border-silver-steel/10 hover:bg-gold/5 transition-colors"
-                  >
-                    <span className="text-lg opacity-80">{item.icon}</span>
-                    <div className="flex flex-col">
-                      <span className="font-semibold text-sm text-optical-white leading-tight">
-                        {item.title}
-                      </span>
-                      <span className="font-mono text-[9px] tracking-[0.12em] text-accent-muted">
-                        {item.sub}
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
+                {focusItems.map((item, index) => {
+                  const FocusIcon = item.Icon;
+                  return (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                      className="flex items-center gap-3 px-4 lg:px-6 py-4 border-b sm:border-b-0 sm:border-r last:border-r-0 border-silver-steel/10 hover:bg-gold/5 transition-colors"
+                    >
+                      <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <FocusIcon size={18} className="text-gold" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-sm text-optical-white leading-tight">
+                          {item.title}
+                        </span>
+                        <span className="font-mono text-[9px] tracking-[0.12em] text-accent-muted">
+                          {item.sub}
+                        </span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </div>
