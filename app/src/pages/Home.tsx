@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff, Activity } from 'lucide-react';
+import { ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff, Activity, Check } from 'lucide-react';
 
 const workflowSteps = [
   {
@@ -53,72 +53,244 @@ const workflowSteps = [
   },
 ];
 
+const criteriaItems = [
+  {
+    icon: '⚡',
+    name: 'Power Proximity',
+    desc: 'Grid access, substation distance & MW capacity',
+  },
+  {
+    icon: '📋',
+    name: 'Zoning Clearance',
+    desc: 'Planning approvals & industrial land classification',
+  },
+  {
+    icon: '🌐',
+    name: 'Fibre Path',
+    desc: 'Dark fibre routes & latency to exchange points',
+  },
+  {
+    icon: '💧',
+    name: 'Water Access',
+    desc: 'Cooling supply, wastewater rights & flow rates',
+  },
+  {
+    icon: '🏗️',
+    name: 'WHS Compliance',
+    desc: 'Industrial safety & construction regulatory readiness',
+  },
+];
+
+const focusItems = [
+  {
+    icon: '🏢',
+    title: 'Hyperscale Data Centres',
+    sub: 'Large-scale compute & colocation',
+  },
+  {
+    icon: '⚡',
+    title: 'Supercomputers & AI Factories',
+    sub: 'Sovereign AI, GPU clusters & HPC',
+  },
+  {
+    icon: '🔬',
+    title: 'Semiconductor Fabs',
+    sub: 'Advanced chip manufacturing',
+  },
+  {
+    icon: '🧪',
+    title: 'Advanced Cleanrooms',
+    sub: 'Precision-controlled environments',
+  },
+];
+
 const Home = () => {
   return (
-    <div className="w-full" style={{
-      backgroundImage: `
-        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
-      `,
-      backgroundSize: '40px 40px'
-    }}>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 pb-12 sm:pb-0 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/hero-bg.mov" type="video/quicktime" />
-            <source src="/videos/hero-bg.mov" type="video/mp4" />
-          </video>
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-obsidian/70" />
-        </div>
+    <div className="w-full">
+      {/* Hero Section - Updated Design */}
+      <section className="relative min-h-screen flex flex-col justify-center pt-24 sm:pt-20 overflow-hidden">
+        {/* Grid Background */}
+        <div 
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(228, 228, 231, 0.05) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(228, 228, 231, 0.05) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px',
+            maskImage: 'radial-gradient(ellipse 70% 80% at 60% 50%, rgba(0,0,0,0.6) 0%, transparent 80%)',
+          }}
+        />
+        
+        {/* Gold Glow */}
+        <div 
+          className="absolute z-0 pointer-events-none"
+          style={{
+            right: '-100px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: '700px',
+            height: '700px',
+            background: 'radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 65%)',
+          }}
+        />
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-optical-white mb-8 leading-tight">
-              Divine Lab Worx: Engineering the Physical Layer of the Digital Economy
-            </h1>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <p className="text-base sm:text-lg text-accent-muted max-w-3xl mx-auto leading-relaxed mb-10">
-              As the Australian infrastructure consulting arm of Sharktech Global, we provide a single point 
-              of accountability for deploying mission-critical facilities. We design, site, and build hyperscale 
-              data centres, semiconductor fabs, and advanced cleanrooms, turning complex capital projects into 
-              operational, high-yield assets.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 bg-gold text-obsidian text-base font-semibold tracking-tight hover:bg-gold-light transition-colors min-h-[52px] shadow-lg shadow-gold/20"
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Column - Headline & Copy */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="max-w-xl"
             >
-              ENGAGE DIVINE LAB WORX
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
+              {/* Kicker */}
+              <div className="inline-flex items-center gap-2.5 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                <span className="font-mono text-[10px] sm:text-xs tracking-[0.2em] text-gold uppercase">
+                  Australian Site Intelligence Consultancy
+                </span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold tracking-tight text-optical-white leading-[1.05] mb-6">
+                We Find Where
+                <br />
+                <span className="text-gold">Critical Infrastructure</span>
+                <br />
+                Belongs.
+              </h1>
+
+              {/* Gold Rule */}
+              <div className="w-14 h-0.5 bg-gold mb-6" />
+
+              {/* Body Copy */}
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-8 max-w-md">
+                Divine Lab Worx is Australia&apos;s specialist infrastructure consultancy — identifying and validating locations for mission-critical facilities, then staying with you through permits, power, and project management until your site is build-ready. As sovereign AI factories, hyperscale data centres, and semiconductor fabs race to deploy, the bottleneck is no longer capital — it&apos;s{' '}
+                <span className="text-optical-white font-medium">the right site, secured fast</span>.
+                That&apos;s exactly what we deliver.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-gold text-obsidian text-xs sm:text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors"
+                >
+                  Engage Our Consultants
+                </Link>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 border border-silver-steel/30 text-optical-white text-xs sm:text-sm font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors"
+                >
+                  What We Do →
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Criteria Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="lg:pl-8"
+            >
+              <div className="border border-silver-steel/10 bg-tile-bg/80 backdrop-blur-sm relative overflow-hidden">
+                {/* Top Gold Line */}
+                <div 
+                  className="absolute top-0 left-0 right-0 h-0.5"
+                  style={{
+                    background: 'linear-gradient(90deg, #D4AF37 0%, transparent 100%)',
+                  }}
+                />
+                
+                {/* Card Header */}
+                <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-silver-steel/10">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-gold uppercase">
+                    Site Validation Criteria
+                  </span>
+                  <span className="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.15em] text-emerald-500">
+                    <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
+                    Active Assessment
+                  </span>
+                </div>
+
+                {/* Criteria List */}
+                <div className="divide-y divide-silver-steel/10">
+                  {criteriaItems.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                      className="flex items-start gap-4 px-5 sm:px-6 py-4 hover:bg-gold/5 transition-colors"
+                    >
+                      <div className="w-8 h-8 border border-gold/30 bg-gold/10 flex items-center justify-center flex-shrink-0 text-sm">
+                        {item.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-sm text-optical-white mb-0.5">
+                          {item.name}
+                        </div>
+                        <div className="font-mono text-[10px] text-accent-muted leading-snug">
+                          {item.desc}
+                        </div>
+                      </div>
+                      <span className="flex items-center gap-1 font-mono text-[8px] tracking-[0.15em] text-emerald-500 flex-shrink-0">
+                        <Check size={10} />
+                        VERIFIED
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Focus Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="relative z-10 border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+            <div className="flex flex-col lg:flex-row">
+              {/* Label */}
+              <div className="flex items-center py-4 lg:py-0 lg:pr-8 border-b lg:border-b-0 lg:border-r border-silver-steel/10">
+                <span className="font-mono text-[10px] tracking-[0.2em] text-accent-muted uppercase whitespace-nowrap">
+                  We consult to
+                </span>
+              </div>
+
+              {/* Focus Items */}
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                {focusItems.map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                    className="flex items-center gap-3 px-4 lg:px-6 py-4 border-b sm:border-b-0 sm:border-r last:border-r-0 border-silver-steel/10 hover:bg-gold/5 transition-colors"
+                  >
+                    <span className="text-lg opacity-80">{item.icon}</span>
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-sm text-optical-white leading-tight">
+                        {item.title}
+                      </span>
+                      <span className="font-mono text-[9px] tracking-[0.12em] text-accent-muted">
+                        {item.sub}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Workflow Section */}
