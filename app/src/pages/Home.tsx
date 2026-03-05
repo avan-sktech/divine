@@ -114,7 +114,7 @@ const Home = () => {
       {/* Hero Section - Mobile Optimized */}
       <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 sm:pt-24 lg:pt-20 overflow-hidden">
         {/* Video Background - Optimized for mobile */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-[1]">
           {/* Desktop video - larger format */}
           <video
             autoPlay
@@ -141,14 +141,14 @@ const Home = () => {
           >
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
           </video>
-          
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-obsidian/80 sm:bg-obsidian/75" />
         </div>
+
+        {/* Dark overlay - separate layer above video */}
+        <div className="absolute inset-0 z-[2] bg-obsidian/60" />
 
         {/* Grid Background - Hidden on mobile for performance */}
         <div 
-          className="absolute inset-0 z-0 pointer-events-none hidden sm:block"
+          className="absolute inset-0 z-[3] pointer-events-none hidden sm:block"
           style={{
             backgroundImage: `
               linear-gradient(to right, rgba(228, 228, 231, 0.05) 1px, transparent 1px),
@@ -161,7 +161,7 @@ const Home = () => {
         
         {/* Gold Glow - Smaller on mobile */}
         <div 
-          className="absolute z-0 pointer-events-none"
+          className="absolute z-[3] pointer-events-none"
           style={{
             right: '-50px',
             top: '30%',
@@ -173,7 +173,7 @@ const Home = () => {
         />
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-20">
+        <div className="relative z-[10] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-start lg:items-center">
             
             {/* Left Column - Headline & Copy */}
@@ -297,7 +297,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="relative z-10 border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
+          className="relative z-[10] border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
             <div className="flex flex-col lg:flex-row">
