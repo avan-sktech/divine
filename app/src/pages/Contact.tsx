@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Server } from 'lucide-react';
 import DiagnosticForm from '../components/portal/DiagnosticForm';
@@ -22,14 +23,24 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full" style={{
-      backgroundImage: `
-        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
-      `,
-      backgroundSize: '40px 40px'
-    }}>
-      {/* Hero Section */}
+    <>
+      <Helmet>
+        <title>Contact | Divine Lab Worx - Start Your Deployment</title>
+        <meta name="description" content="Contact Divine Lab Worx to discuss your infrastructure deployment architecture needs in Australia." />
+        <link rel="canonical" href="https://divinelabworx.com/contact" />
+        <meta property="og:title" content="Contact | Divine Lab Worx" />
+        <meta property="og:description" content="Contact Divine Lab Worx to discuss your infrastructure deployment architecture needs in Australia." />
+        <meta property="og:url" content="https://divinelabworx.com/contact" />
+        <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+      </Helmet>
+      <div className="w-full" style={{
+        backgroundImage: `
+          linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px'
+      }}>
+        {/* Hero Section */}
       <section className="relative w-full pt-16 pb-12 px-4 sm:px-6 lg:px-8">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -205,7 +216,8 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

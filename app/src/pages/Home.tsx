@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { 
+import {
   ArrowRight, MapPin, Zap, Shield, Hammer, ZapOff, Activity, Check,
   Plug, ClipboardCheck, Globe, Droplets, ShieldCheck,
   Server, Cpu, Microchip, Sparkles
@@ -110,7 +111,17 @@ const focusItems = [
 
 const Home = () => {
   return (
-    <div className="w-full overflow-x-hidden">
+    <>
+      <Helmet>
+        <title>Divine Lab Worx | Deployment Architecture Australia</title>
+        <meta name="description" content="Divine Lab Worx architects market deployment for engineered systems in Australia. Capital protection, margin leakage prevention for MNCs." />
+        <link rel="canonical" href="https://divinelabworx.com" />
+        <meta property="og:title" content="Divine Lab Worx | Deployment Architecture for Australia" />
+        <meta property="og:description" content="Structured deployment of engineered systems in Australia. Capital protection and market integrity for MNCs." />
+        <meta property="og:url" content="https://divinelabworx.com" />
+        <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+      </Helmet>
+      <div className="w-full overflow-x-hidden">
       {/* Hero Section - Mobile Optimized */}
       <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 sm:pt-24 lg:pt-20 overflow-hidden">
         {/* Video Background */}
@@ -482,6 +493,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -1,10 +1,21 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
-    <div className="w-full" style={{
+    <>
+      <Helmet>
+        <title>About | Divine Lab Worx - Sharktech Global Subsidiary</title>
+        <meta name="description" content="Divine Lab Worx is a deployment architecture subsidiary of Sharktech Global, specializing in market entry for engineered systems in Australia." />
+        <link rel="canonical" href="https://divinelabworx.com/about" />
+        <meta property="og:title" content="About | Divine Lab Worx" />
+        <meta property="og:description" content="Deployment architecture subsidiary of Sharktech Global, specializing in market entry for engineered systems in Australia." />
+        <meta property="og:url" content="https://divinelabworx.com/about" />
+        <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+      </Helmet>
+      <div className="w-full" style={{
       backgroundImage: `
         linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
@@ -197,6 +208,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

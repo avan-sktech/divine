@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark, Twitter, Linkedin, Facebook } from 'lucide-react';
 
@@ -540,15 +541,6 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (post) {
-      // Update document title for SEO
-      document.title = `${post.title} | Divine Lab Worx Blog`;
-      
-      // Update meta description
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', post.excerpt);
-      }
-      
       // Scroll to top
       window.scrollTo(0, 0);
     }
@@ -573,13 +565,25 @@ const BlogPost = () => {
   const shareText = encodeURIComponent(post.title);
 
   return (
-    <div className="w-full" style={{
-      backgroundImage: `
-        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
-      `,
-      backgroundSize: '40px 40px'
-    }}>
+    <>
+      <Helmet>
+        <title>{`${post.title} | Divine Lab Worx Blog`}</title>
+        <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={`https://divinelabworx.com/blog/${post.slug}`} />
+        <meta property="og:title" content={`${post.title} | Divine Lab Worx Blog`} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:url" content={`https://divinelabworx.com/blog/${post.slug}`} />
+        <meta property="og:image" content={post.image ? `https://divinelabworx.com${post.image}` : 'https://divinelabworx.com/images/og-image.jpg'} />
+        <meta property="og:type" content="article" />
+        <meta name="keywords" content={post.keywords.join(', ')} />
+      </Helmet>
+      <div className="w-full" style={{
+        backgroundImage: `
+          linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px'
+      }}>
       {/* SEO Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({
@@ -870,6 +874,7 @@ const BlogPost = () => {
         </div>
       </article>
     </div>
+    </>
   );
 };
 

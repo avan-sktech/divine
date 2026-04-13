@@ -1,11 +1,20 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 const Terms = () => {
   return (
-    <div className="w-full">
-      {/* Hero */}
+    <>
+      <Helmet>
+        <title>Terms of Service | Divine Lab Worx</title>
+        <meta name="description" content="Divine Lab Worx terms of service. Terms and conditions governing use of our services." />
+        <link rel="canonical" href="https://divinelabworx.com/terms" />
+        <meta property="og:title" content="Terms of Service | Divine Lab Worx" />
+        <meta property="og:url" content="https://divinelabworx.com/terms" />
+      </Helmet>
+      <div className="w-full">
+        {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -176,7 +185,8 @@ const Terms = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

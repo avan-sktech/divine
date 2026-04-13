@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Server } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const infrastructureSectors = [
   'Cloud & Data Center Companies',
@@ -12,7 +13,17 @@ const infrastructureSectors = [
 
 const Industries = () => {
   return (
-    <div className="w-full" style={{
+    <>
+      <Helmet>
+        <title>Industries | Divine Lab Worx - Data Centre & Critical Infrastructure</title>
+        <meta name="description" content="Deployment architecture for data centres, AI infrastructure, telecommunications, and clean energy technology in Australia." />
+        <link rel="canonical" href="https://divinelabworx.com/industries" />
+        <meta property="og:title" content="Industries | Divine Lab Worx" />
+        <meta property="og:description" content="Deployment architecture for data centres, AI infrastructure, telecommunications, and clean energy technology in Australia." />
+        <meta property="og:url" content="https://divinelabworx.com/industries" />
+        <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+      </Helmet>
+      <div className="w-full" style={{
       backgroundImage: `
         linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
@@ -99,6 +110,7 @@ const Industries = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

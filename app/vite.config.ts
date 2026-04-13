@@ -4,9 +4,13 @@ import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base: '/',
-  plugins: [inspectAttr(), react()],
+  plugins: [
+    // Only include inspect plugin in dev mode (adds code-path attrs)
+    mode === 'development' && inspectAttr(),
+    react(),
+  ].filter(Boolean),
   build: {
     chunkSizeWarningLimit: 1000,
   },
@@ -15,4 +19,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));

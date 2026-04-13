@@ -1,11 +1,20 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 const Privacy = () => {
   return (
-    <div className="w-full">
-      {/* Hero */}
+    <>
+      <Helmet>
+        <title>Privacy Policy | Divine Lab Worx</title>
+        <meta name="description" content="Divine Lab Worx privacy policy. How we collect, use, and protect your data." />
+        <link rel="canonical" href="https://divinelabworx.com/privacy" />
+        <meta property="og:title" content="Privacy Policy | Divine Lab Worx" />
+        <meta property="og:url" content="https://divinelabworx.com/privacy" />
+      </Helmet>
+      <div className="w-full">
+        {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -163,7 +172,8 @@ const Privacy = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

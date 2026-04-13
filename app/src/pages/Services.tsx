@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 // 6 capabilities in ascending alphabetical order (Advanced Liquid Cooling removed)
 const capabilities = [
@@ -70,7 +71,17 @@ const capabilities = [
 
 const Services = () => {
   return (
-    <div className="w-full" style={{
+    <>
+      <Helmet>
+        <title>Services | Divine Lab Worx - Infrastructure Deployment Architecture</title>
+        <meta name="description" content="Site intelligence, power and utility interface, permits and safety for critical infrastructure deployment in Australia." />
+        <link rel="canonical" href="https://divinelabworx.com/services" />
+        <meta property="og:title" content="Services | Divine Lab Worx" />
+        <meta property="og:description" content="Site intelligence, power and utility interface, permits and safety for critical infrastructure deployment in Australia." />
+        <meta property="og:url" content="https://divinelabworx.com/services" />
+        <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+      </Helmet>
+      <div className="w-full" style={{
       backgroundImage: `
         linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
@@ -137,6 +148,7 @@ const Services = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

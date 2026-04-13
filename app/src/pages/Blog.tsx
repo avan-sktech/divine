@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, User } from 'lucide-react';
@@ -148,14 +149,24 @@ const Blog = () => {
   const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
-    <div className="w-full" style={{
-      backgroundImage: `
-        linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
-      `,
-      backgroundSize: '40px 40px'
-    }}>
-      {/* Hero */}
+    <>
+      <Helmet>
+        <title>Blog | Divine Lab Worx - Market Intelligence & Deployment Insights</title>
+        <meta name="description" content="Insights on Australian market deployment, capital protection, margin leakage prevention, and infrastructure deployment architecture." />
+        <link rel="canonical" href="https://divinelabworx.com/blog" />
+        <meta property="og:title" content="Blog | Divine Lab Worx" />
+        <meta property="og:description" content="Insights on Australian market deployment, capital protection, and infrastructure deployment architecture." />
+        <meta property="og:url" content="https://divinelabworx.com/blog" />
+        <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+      </Helmet>
+      <div className="w-full" style={{
+        backgroundImage: `
+          linear-gradient(to right, rgba(192, 192, 192, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(192, 192, 192, 0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px'
+      }}>
+        {/* Hero */}
       <section className="relative pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 z-0">
           <img 
@@ -328,7 +339,8 @@ const Blog = () => {
           )}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
