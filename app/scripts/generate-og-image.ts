@@ -1,9 +1,10 @@
 /**
- * Generate OG image using Playwright
+ * Generate OG image using puppeteer-core + @sparticuz/chromium
  * Creates a 1200x630 branded image for social media previews
  */
 
-import { chromium } from 'playwright';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -120,17 +121,21 @@ async function generateOgImage() {
     mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
+  const executablePath = await chromium.executablePath();
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: { width: 1200, height: 630 },
+    executablePath,
+    headless: true,
+  });
 
-  await page.setViewportSize({ width: 1200, height: 630 });
+  const page = await browser.newPage();
   await page.setContent(html);
-  await page.waitForTimeout(500);
+  await new Promise(r => setTimeout(r, 500));
 
   const screenshot = await page.screenshot({
     type: 'jpeg',
     quality: 90,
-    fullPage: false,
   });
 
   const outputPath = join(OUTPUT_DIR, 'og-image.jpg');

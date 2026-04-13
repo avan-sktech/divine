@@ -1,12 +1,13 @@
 /**
  * Post-build pre-rendering script
  *
- * Launches a static server on the dist/ folder, then uses Playwright
- * to visit each route, wait for JS to render, and save the full HTML.
- * This ensures crawlers (Google, LinkedIn, AI tools) see real content.
+ * Uses puppeteer-core + @sparticuz/chromium (serverless-compatible)
+ * to visit each route and save the rendered HTML.
+ * Works on both local machines and Vercel's build environment.
  */
 
-import { chromium } from 'playwright';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import { createServer } from 'http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'fs';
 import { join, dirname, extname } from 'path';
@@ -62,22 +63,14 @@ function createStaticServer() {
   };
 
   return createServer((req, res) => {
-    // Strip query string
     const urlPath = (req.url || '/').split('?')[0];
     let filePath = join(DIST_DIR, urlPath);
 
     try {
-      // If the path exists and is a directory, look for index.html inside
       if (existsSync(filePath) && statSync(filePath).isDirectory()) {
         const indexPath = join(filePath, 'index.html');
-        if (existsSync(indexPath)) {
-          filePath = indexPath;
-        } else {
-          // SPA fallback
-          filePath = join(DIST_DIR, 'index.html');
-        }
+        filePath = existsSync(indexPath) ? indexPath : join(DIST_DIR, 'index.html');
       } else if (!existsSync(filePath)) {
-        // File doesn't exist — SPA fallback to root index.html
         filePath = join(DIST_DIR, 'index.html');
       }
     } catch {
@@ -87,10 +80,8 @@ function createStaticServer() {
     try {
       const content = readFileSync(filePath);
       const ext = extname(filePath).toLowerCase();
-      const contentType = mimeTypes[ext] || 'application/octet-stream';
-
       res.writeHead(200, {
-        'Content-Type': contentType,
+        'Content-Type': mimeTypes[ext] || 'application/octet-stream',
         'Access-Control-Allow-Origin': '*',
       });
       res.end(content);
@@ -101,6 +92,26 @@ function createStaticServer() {
   });
 }
 
+// Find a Chrome executable for local development (Windows/Mac)
+function findLocalChrome(): string | null {
+  const paths = [
+    // Windows
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
+    // Mac
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // Linux
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+  ];
+  for (const p of paths) {
+    if (p && existsSync(p)) return p;
+  }
+  return null;
+}
+
 async function prerender() {
   console.log('🚀 Starting pre-render...\n');
 
@@ -109,45 +120,48 @@ async function prerender() {
   await new Promise<void>((resolve) => server.listen(PORT, resolve));
   console.log(`📦 Static server running on http://localhost:${PORT}\n`);
 
-  // Launch headless browser
-  const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext();
+  // Try @sparticuz/chromium first (Vercel/serverless), fall back to local Chrome
+  let executablePath: string;
+  let args: string[];
+
+  try {
+    executablePath = await chromium.executablePath();
+    // Verify it actually exists
+    if (!existsSync(executablePath)) throw new Error('Not found');
+    args = chromium.args;
+    console.log(`🌐 Using @sparticuz/chromium: ${executablePath}\n`);
+  } catch {
+    const localChrome = findLocalChrome();
+    if (!localChrome) {
+      throw new Error('No Chrome/Chromium found. Install Google Chrome or run on Vercel.');
+    }
+    executablePath = localChrome;
+    args = ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'];
+    console.log(`🌐 Using local Chrome: ${executablePath}\n`);
+  }
+
+  const browser = await puppeteer.launch({
+    args,
+    defaultViewport: { width: 1280, height: 800 },
+    executablePath,
+    headless: true,
+  });
 
   let successCount = 0;
   let failCount = 0;
 
   for (const route of routes) {
     try {
-      const page = await context.newPage();
+      const page = await browser.newPage();
       const url = `http://localhost:${PORT}${route}`;
 
-      // Log console errors for debugging
-      page.on('console', msg => {
-        if (msg.type() === 'error') {
-          console.log(`    [console.error] ${msg.text()}`);
-        }
-      });
-      page.on('pageerror', err => {
-        console.log(`    [pageerror] ${err.message}`);
-      });
-
       // Navigate and wait for network to settle
-      await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+      await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
 
-      // Wait for React to render and Framer Motion animations to start
-      await page.waitForTimeout(3000);
+      // Wait for React to render and Framer Motion animations
+      await new Promise(r => setTimeout(r, 3000));
 
-      // Verify the root div has content
-      const rootContent = await page.evaluate(() => {
-        const root = document.getElementById('root');
-        return root ? root.innerHTML.length : 0;
-      });
-
-      if (rootContent === 0) {
-        console.error(`  ⚠️  ${route} → Root div is empty! JS may not have executed.`);
-      }
-
-      // Force all framer-motion elements to be visible (override opacity: 0)
+      // Force all framer-motion elements to be visible
       await page.evaluate(() => {
         document.querySelectorAll('[style*="opacity: 0"]').forEach((el) => {
           (el as HTMLElement).style.opacity = '1';
@@ -156,6 +170,16 @@ async function prerender() {
           (el as HTMLElement).style.transform = 'none';
         });
       });
+
+      // Check root div has content
+      const rootContent = await page.evaluate(() => {
+        const root = document.getElementById('root');
+        return root ? root.innerHTML.length : 0;
+      });
+
+      if (rootContent === 0) {
+        console.error(`  ⚠️  ${route} → Root div is empty!`);
+      }
 
       // Get the full rendered HTML
       const html = await page.content();
@@ -167,7 +191,6 @@ async function prerender() {
 
       const outputFile = join(outputDir, 'index.html');
 
-      // Create directory if it doesn't exist
       if (!existsSync(outputDir)) {
         mkdirSync(outputDir, { recursive: true });
       }
