@@ -14,7 +14,7 @@ const blogPosts = [
     date: '2026-02-15',
     readTime: '8 min',
     category: 'Capital Protection',
-    featured: true,
+    featured: false,
     image: '/images/market-analysis.jpg',
   },
   {
@@ -86,7 +86,7 @@ const blogPosts = [
     date: '2026-02-20',
     readTime: '12 min',
     category: 'Infrastructure',
-    featured: true,
+    featured: false,
     image: '/images/data-center.jpg',
   },
   {
@@ -134,7 +134,7 @@ const blogPosts = [
     date: '2026-04-24',
     readTime: '8 min',
     category: 'Infrastructure',
-    featured: false,
+    featured: true,
     image: '/images/hero-infrastructure.jpg',
   },
 ];

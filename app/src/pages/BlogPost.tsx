@@ -742,18 +742,13 @@ const BlogPost = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Back Link */}
-              <Link 
+              <Link
                 to="/blog"
                 className="inline-flex items-center gap-2 text-xs font-mono text-accent-muted hover:text-gold transition-colors mb-8"
               >
                 <ArrowLeft size={14} />
                 BACK TO BLOG
               </Link>
-
-              {/* Category */}
-              <span className="inline-block px-3 py-1 bg-silver-steel/10 border border-silver-steel/20 text-xs font-mono tracking-widest text-silver-steel uppercase mb-6">
-                {post.category}
-              </span>
 
               {/* Title */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight text-optical-white leading-tight mb-6">
