@@ -125,6 +125,18 @@ const blogPosts = [
     featured: false,
     image: '/images/retail-deployment.jpg',
   },
+  {
+    id: 11,
+    slug: 'capital-ignores-physics',
+    title: 'Capital Ignores Physics at Its Peril: What Palm Jumeirah Teaches Infrastructure Investors in 2026',
+    excerpt: 'Palm Jumeirah cost $5 billion and is visibly decaying less than twenty years later. That is not a construction problem. It is what happens when you commit capital before you truly understand the site. Dainu Devis on the discipline that separates infrastructure that endures from infrastructure that corrodes.',
+    author: 'Dainu Devis',
+    date: '2026-04-24',
+    readTime: '8 min',
+    category: 'Infrastructure',
+    featured: false,
+    image: '/images/hero-infrastructure.jpg',
+  },
 ];
 
 const categories = [

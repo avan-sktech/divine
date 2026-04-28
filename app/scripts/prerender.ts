@@ -34,6 +34,7 @@ const routes = [
   '/blog/entering-australian-data-centre-market',
   '/blog/infrastructure-moat-data-centre-selection',
   '/blog/distribution-illusion-overseas-manufacturers',
+  '/blog/capital-ignores-physics',
   '/contact',
   '/privacy',
   '/terms',
