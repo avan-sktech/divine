@@ -2,19 +2,24 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Server } from 'lucide-react';
-import LeadConnectorForm from '../components/portal/LeadConnectorForm';
+import DiagnosticForm from '../components/portal/DiagnosticForm';
 
 type VerticalType = 'infrastructure' | null;
 
 const Contact = () => {
   const [selectedVertical, setSelectedVertical] = useState<VerticalType>(null);
   const [showForm, setShowForm] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleVerticalSelect = () => {
     setSelectedVertical('infrastructure');
     setTimeout(() => {
       setShowForm(true);
     }, 300);
+  };
+
+  const handleFormSuccess = () => {
+    setFormSubmitted(true);
   };
 
   return (
@@ -158,7 +163,12 @@ const Contact = () => {
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="border border-silver-steel/30 p-6 sm:p-8">
-                  {selectedVertical && <LeadConnectorForm />}
+                  {selectedVertical && (
+                    <DiagnosticForm 
+                      vertical={selectedVertical}
+                      onSubmitSuccess={handleFormSuccess}
+                    />
+                  )}
                 </div>
               </motion.div>
             )}
