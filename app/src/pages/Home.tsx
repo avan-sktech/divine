@@ -134,7 +134,6 @@ const Home = () => {
             className="w-full h-full object-cover"
             poster="/images/hero-infrastructure.jpg"
           >
-            <source src="/videos/hero-bg.mov" type="video/quicktime" />
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
           </video>
           {/* Dark overlay for text readability */}
