@@ -151,13 +151,18 @@ async function prerender() {
   let successCount = 0;
   let failCount = 0;
 
-  for (const route of routes) {
+  // Render a single route. Returns true on success, false on failure.
+  async function renderRoute(route: string): Promise<boolean> {
+    let page;
     try {
-      const page = await browser.newPage();
+      page = await browser.newPage();
       const url = `http://localhost:${PORT}${route}`;
 
-      // Navigate and wait for network to settle
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+      // Navigate and wait for network to settle.
+      // networkidle2 tolerates up to 2 lingering connections (font streams,
+      // analytics keep-alives, etc.) that would otherwise prevent
+      // networkidle0 from ever firing on Vercel's build machine.
+      await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
 
       // Wait for React to render and Framer Motion animations
       await new Promise(r => setTimeout(r, 3000));
@@ -199,13 +204,27 @@ async function prerender() {
       writeFileSync(outputFile, html, 'utf-8');
       const sizeKb = (Buffer.byteLength(html, 'utf-8') / 1024).toFixed(1);
       console.log(`  ✅ ${route} → ${outputFile.replace(DIST_DIR, 'dist')} (${sizeKb} KB, root: ${rootContent} chars)`);
-      successCount++;
-
-      await page.close();
+      return true;
     } catch (error) {
-      console.error(`  ❌ ${route} → Failed: ${error}`);
-      failCount++;
+      console.error(`  ❌ ${route} → ${error}`);
+      return false;
+    } finally {
+      if (page) {
+        try { await page.close(); } catch { /* ignore */ }
+      }
     }
+  }
+
+  for (const route of routes) {
+    // Try once, retry once on failure. Transient timeouts on Vercel build
+    // machines are common; a single retry catches most of them.
+    let ok = await renderRoute(route);
+    if (!ok) {
+      console.error(`  🔁 ${route} → retrying once`);
+      ok = await renderRoute(route);
+    }
+    if (ok) successCount++;
+    else failCount++;
   }
 
   await browser.close();
