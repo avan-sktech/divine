@@ -199,7 +199,7 @@ const Home = () => {
 
               {/* Body Copy */}
               <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-6 sm:mb-8 max-w-md">
-                Divine Lab Worx is Australia&apos;s specialist infrastructure consultancy — identifying and validating locations for mission-critical facilities, then staying with you through permits, power, and project management until your site is build-ready. As sovereign AI factories, hyperscale data centres, and semiconductor fabs race to deploy, the bottleneck is no longer capital — it&apos;s{' '}
+                Divine Lab Worx is Australia&apos;s specialist infrastructure consultancy, identifying and validating locations for mission-critical facilities, then staying with you through permits, power, and project management until your site is build-ready. As sovereign AI factories, hyperscale data centres, and semiconductor fabs race to deploy, the bottleneck is no longer capital. It&apos;s{' '}
                 <span className="text-optical-white font-medium">the right site, secured fast</span>.
                 That&apos;s exactly what we deliver.
               </p>
