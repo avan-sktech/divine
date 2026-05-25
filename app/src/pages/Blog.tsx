@@ -166,7 +166,7 @@ const blogPosts = [
     slug: 'dainu-devis-emerging-tech-ceo-australia',
     title: 'Dainu Devis: The Emerging Tech CEO Bridging Infrastructure Intelligence and AI Platform Deployment in Australia',
     excerpt: 'He built it without salary, without external capital, and without permission. Now the platforms Dainu Devis constructed inside the problem are the infrastructure layer that positions Sharktech Global and Australia for the sovereign AI era.',
-    author: 'DivineLABWorx Editorial',
+    author: 'Divine Lab Worx',
     date: '2026-05-22',
     readTime: '9 min',
     category: 'Infrastructure',
