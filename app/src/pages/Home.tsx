@@ -725,30 +725,6 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Advised by */}
-              <div className="mt-2 pt-6 border-t border-silver-steel/10">
-                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-                  Advised By
-                </span>
-                <a
-                  href="https://www.guidepoint.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                  title="Guidepoint"
-                >
-                  <img
-                    src="/images/partners/guidepoint.svg"
-                    alt="Guidepoint"
-                    loading="lazy"
-                    className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
-                  />
-                </a>
-                <p className="text-xs sm:text-[13px] text-accent-muted mt-3 max-w-md leading-relaxed">
-                  Our market evidence is strengthened by Guidepoint&apos;s global expert network.
-                </p>
-              </div>
             </motion.div>
 
             {/* Engagement Readiness Panel */}
@@ -788,6 +764,30 @@ const Home = () => {
                   No initiative is complete unless it defines a target customer, an acquisition
                   channel, a conversion mechanism and a measurable outcome. If one is missing,
                   the work goes back for refinement.
+                </p>
+              </div>
+
+              {/* Advised by */}
+              <div className="mt-8">
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-4 block">
+                  Advised By
+                </span>
+                <a
+                  href="https://www.guidepoint.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                  title="Guidepoint"
+                >
+                  <img
+                    src="/images/partners/guidepoint.svg"
+                    alt="Guidepoint"
+                    loading="lazy"
+                    className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </a>
+                <p className="text-xs sm:text-[13px] text-accent-muted mt-3 max-w-md leading-relaxed">
+                  Our market evidence is strengthened by Guidepoint&apos;s global expert network.
                 </p>
               </div>
             </motion.div>
