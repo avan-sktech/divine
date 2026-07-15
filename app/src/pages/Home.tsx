@@ -137,6 +137,15 @@ const whyItems = [
   },
 ];
 
+const clientLogos = [
+  { name: 'Natridy', src: '/images/clients/natridy.png', href: 'https://www.natridy.com/' },
+  { name: 'Samaria Australia', src: '/images/clients/samaria.png', href: 'https://samaria.com.au/' },
+];
+
+// One half of the marquee strip; the strip is rendered twice and the
+// animation translates -50%, so the loop is seamless
+const clientStrip = Array.from({ length: 4 }).flatMap(() => clientLogos);
+
 const credItems = [
   { big: 'Nearly a decade', label: 'of product launch and go-to-market strategy experience' },
   { big: 'Retail · Manufacturing · Housing', label: 'the industries we consult to in Australia' },
@@ -398,6 +407,49 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Clients Slider */}
+      <section className="py-12 sm:py-16 border-t border-silver-steel/10 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-8 sm:mb-10 block text-center px-4">
+            Some of Our Clients
+          </span>
+          <div className="relative">
+            {/* Edge fades */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-obsidian to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-obsidian to-transparent" />
+            <div className="flex w-max animate-marquee">
+              {[0, 1].map((half) => (
+                <div key={half} className="flex items-center" aria-hidden={half === 1}>
+                  {clientStrip.map((client, index) => (
+                    <a
+                      key={`${half}-${index}`}
+                      href={client.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      tabIndex={half === 1 ? -1 : undefined}
+                      className="flex items-center px-10 sm:px-16 flex-shrink-0"
+                      title={client.name}
+                    >
+                      <img
+                        src={client.src}
+                        alt={client.name}
+                        loading="lazy"
+                        className="h-9 sm:h-11 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Approach Section */}
       <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
         <div className="max-w-6xl mx-auto">
@@ -536,38 +588,6 @@ const Home = () => {
             })}
           </div>
 
-          {/* Selected Clients */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-12 pt-8 border-t border-silver-steel/10"
-          >
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-5 block text-center">
-              Selected Clients
-            </span>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto">
-              <a
-                href="https://www.natridy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-silver-steel/10 rounded-lg p-5 bg-obsidian/30 hover:border-gold/50 transition-all duration-300"
-              >
-                <span className="block text-base font-semibold text-optical-white tracking-tight">Natridy</span>
-                <span className="block text-xs text-accent-muted mt-1">Home appliances manufacturer</span>
-              </a>
-              <a
-                href="https://samaria.com.au/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-silver-steel/10 rounded-lg p-5 bg-obsidian/30 hover:border-gold/50 transition-all duration-300"
-              >
-                <span className="block text-base font-semibold text-optical-white tracking-tight">Samaria Australia</span>
-                <span className="block text-xs text-accent-muted mt-1">Retail and wholesale</span>
-              </a>
-            </div>
-          </motion.div>
         </div>
       </section>
 
