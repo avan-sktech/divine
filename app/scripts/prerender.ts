@@ -25,6 +25,7 @@ const routes = [
   '/capabilities',
   '/capabilities/concurrent-product-process-design',
   '/industries',
+  '/industries/critical-infrastructure',
   '/about',
   '/blog',
   '/blog/margin-leakage-australia',

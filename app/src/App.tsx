@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Capabilities from './pages/Capabilities';
 import CapabilityCPPD from './pages/CapabilityCPPD';
 import Industries from './pages/Industries';
+import IndustryCriticalInfrastructure from './pages/IndustryCriticalInfrastructure';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -22,6 +23,7 @@ function App() {
           {/* Legacy URL, also 301-redirected at the edge in vercel.json */}
           <Route path="services" element={<Navigate to="/capabilities" replace />} />
           <Route path="industries" element={<Industries />} />
+          <Route path="industries/critical-infrastructure" element={<IndustryCriticalInfrastructure />} />
           {/* Retired vertical, also 301-redirected at the edge in vercel.json */}
           <Route path="industries/electric-powersports" element={<Navigate to="/industries" replace />} />
           <Route path="about" element={<About />} />

@@ -14,6 +14,7 @@ const industryLinks = [
   { to: '/industries', label: 'Retail' },
   { to: '/industries', label: 'Manufacturing' },
   { to: '/industries', label: 'Sustainable & 3D homes' },
+  { to: '/industries/critical-infrastructure', label: 'Critical infrastructure' },
 ];
 
 const Layout = () => {

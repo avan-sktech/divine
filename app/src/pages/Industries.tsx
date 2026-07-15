@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ShoppingBag, Factory, Home as HomeIcon } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Factory, Home as HomeIcon, Server } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 const industryBlocks = [
@@ -74,12 +74,36 @@ const industryBlocks = [
       },
     ],
   },
+  {
+    eyebrow: 'Industry 04',
+    title: 'Critical infrastructure',
+    description: 'For operators deploying hyperscale data centres, AI factories, semiconductor fabs and advanced cleanrooms in Australia.',
+    icon: Server,
+    link: '/industries/critical-infrastructure',
+    cards: [
+      {
+        number: '01',
+        title: 'Site intelligence & selection',
+        description: 'Locations identified and validated for power proximity, zoning, fibre path and water access.',
+      },
+      {
+        number: '02',
+        title: 'Power, permits & utilities',
+        description: 'Grid connection, substation design, planning approvals and WHS compliance cleared before ground is broken.',
+      },
+      {
+        number: '03',
+        title: 'Delivery & operations',
+        description: 'Engineering, project controls and ongoing maintenance until the facility is energised and running.',
+      },
+    ],
+  },
 ];
 
 const faqs = [
   {
     question: 'Which industries does DivineLab Worx consult to?',
-    answer: 'Retail, manufacturing and sustainable housing including 3D-printed homes. In each, we act as a go-to-market strategist that takes a product, a range or a build system from concept to after-sales.',
+    answer: 'Retail, manufacturing, sustainable housing including 3D-printed homes, and critical infrastructure such as data centres and AI factories. In each, we act as one accountable team that takes a product, a range, a build system or a facility from concept to operation.',
   },
   {
     question: 'Do you work with international manufacturers entering Australia?',
@@ -116,11 +140,11 @@ const Industries = () => {
   return (
     <>
       <Helmet>
-        <title>Industries: Retail, Manufacturing & Sustainable Homes | DivineLab Worx</title>
-        <meta name="description" content="DivineLab Worx, the consultancy arm of Sharktech Global, is the go-to-market strategist for retail, manufacturing and sustainable housing in Australia. Nearly a decade of product launch and go-to-market strategy experience." />
+        <title>Industries: Retail, Manufacturing, Housing & Critical Infrastructure | DivineLab Worx</title>
+        <meta name="description" content="DivineLab Worx, the consultancy arm of Sharktech Global, consults to retail, manufacturing, sustainable housing and critical infrastructure in Australia. Nearly a decade of product launch and go-to-market strategy experience." />
         <link rel="canonical" href="https://divinelabworx.com/industries" />
-        <meta property="og:title" content="Industries: Retail, Manufacturing & Sustainable Homes | DivineLab Worx" />
-        <meta property="og:description" content="Go-to-market strategy for retailers, manufacturers and homebuilders in Australia. Part of Sharktech Global." />
+        <meta property="og:title" content="Industries: Retail, Manufacturing, Housing & Critical Infrastructure | DivineLab Worx" />
+        <meta property="og:description" content="Go-to-market strategy and critical infrastructure consulting for Australia. Part of Sharktech Global." />
         <meta property="og:url" content="https://divinelabworx.com/industries" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(industriesJsonLd)}</script>
@@ -145,12 +169,13 @@ const Industries = () => {
               Industries · <span className="text-gold">Nearly a decade</span> of product launch &amp; go-to-market experience
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              Retail, Manufacturing and <span className="text-gold">Sustainable Housing.</span>
+              Retail, Manufacturing, Housing and <span className="text-gold">Critical Infrastructure.</span>
             </h1>
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              We work across three Australian industries. Retail. Manufacturing. Sustainable housing.
-              In each one we take a product from concept to after sales. One team. One plan.
-              DivineLab Worx is the consultancy arm of Sharktech Global.
+              We work across four Australian industries. Retail. Manufacturing. Sustainable housing.
+              Critical infrastructure. We take a product, a range, a build system or a facility from
+              concept to operation. One team. One plan. DivineLab Worx is the consultancy arm of
+              Sharktech Global.
             </p>
           </motion.div>
         </div>
@@ -182,6 +207,15 @@ const Industries = () => {
                   <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
                     {block.description}
                   </p>
+                  {'link' in block && block.link && (
+                    <Link
+                      to={block.link}
+                      className="inline-flex items-center gap-2 mt-3 text-xs font-mono tracking-widest text-gold hover:text-gold-light transition-colors"
+                    >
+                      EXPLORE THIS INDUSTRY
+                      <ArrowRight size={13} />
+                    </Link>
+                  )}
                 </div>
               </motion.div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">

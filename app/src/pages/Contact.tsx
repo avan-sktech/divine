@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Server } from 'lucide-react';
+import { Server, Package } from 'lucide-react';
 import DiagnosticForm from '../components/portal/DiagnosticForm';
 
-type VerticalType = 'infrastructure' | null;
+type VerticalType = 'consumer' | 'infrastructure' | null;
 
 const Contact = () => {
   const [selectedVertical, setSelectedVertical] = useState<VerticalType>(null);
   const [showForm, setShowForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleVerticalSelect = () => {
-    setSelectedVertical('infrastructure');
+  const handleVerticalSelect = (vertical: 'consumer' | 'infrastructure') => {
+    setSelectedVertical(vertical);
     setTimeout(() => {
       setShowForm(true);
     }, 300);
@@ -123,20 +123,20 @@ const Contact = () => {
                 transition={{ duration: 0.4 }}
                 className="w-full px-4 sm:px-6 lg:px-8 py-8"
               >
-                <div className="max-w-xl mx-auto">
-                  <motion.div 
+                <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <motion.button
-                      onClick={handleVerticalSelect}
-                      className="relative w-full min-h-[320px] sm:min-h-[400px] p-6 sm:p-8 border border-gold bg-tile-bg transition-all duration-300 ease-out flex flex-col items-center justify-center text-center group cursor-pointer"
+                      onClick={() => handleVerticalSelect('consumer')}
+                      className="relative w-full min-h-[300px] sm:min-h-[360px] p-6 sm:p-8 border border-gold bg-tile-bg transition-all duration-300 ease-out flex flex-col items-center justify-center text-center group cursor-pointer"
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                     >
-                      <div className="mb-6 sm:mb-8 text-gold">
-                        <Server className="w-20 h-20 sm:w-24 sm:h-24" />
+                      <div className="mb-6 text-gold">
+                        <Package className="w-16 h-16 sm:w-20 sm:h-20" />
                       </div>
                       <h3 className="text-sm sm:text-base font-mono tracking-widest text-optical-white mb-2">
                         PRODUCT & MARKET ENTRY
@@ -147,7 +147,35 @@ const Contact = () => {
                       <p className="text-xs sm:text-sm text-accent-muted max-w-[280px] leading-relaxed">
                         New products, retail ranges, Australian market entry and housing build systems
                       </p>
-                      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+                      <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+                      </div>
+                    </motion.button>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <motion.button
+                      onClick={() => handleVerticalSelect('infrastructure')}
+                      className="relative w-full min-h-[300px] sm:min-h-[360px] p-6 sm:p-8 border border-silver-steel/30 hover:border-gold bg-tile-bg transition-all duration-300 ease-out flex flex-col items-center justify-center text-center group cursor-pointer"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                    >
+                      <div className="mb-6 text-gold">
+                        <Server className="w-16 h-16 sm:w-20 sm:h-20" />
+                      </div>
+                      <h3 className="text-sm sm:text-base font-mono tracking-widest text-optical-white mb-2">
+                        CRITICAL INFRASTRUCTURE
+                      </h3>
+                      <p className="text-xs font-mono text-accent-muted mb-4">
+                        Data Centres, AI Factories & Fabs
+                      </p>
+                      <p className="text-xs sm:text-sm text-accent-muted max-w-[280px] leading-relaxed">
+                        Site intelligence, power, permits and project delivery to build-ready
+                      </p>
+                      <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
                         <div className="w-1.5 h-1.5 rounded-full bg-gold" />
                       </div>
                     </motion.button>

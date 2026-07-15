@@ -21,6 +21,8 @@ const FRICTION_OPTIONS = [
   { id: 'channel', label: 'Channel Conflict' },
   { id: 'regulatory', label: 'Regulatory/AS-NZS Compliance' },
   { id: 'launch', label: 'Launch & Demand Generation' },
+  { id: 'infrastructure', label: 'Infrastructure Grid Density' },
+  { id: 'site', label: 'Site Selection & Permits' },
 ];
 
 const SUBMISSION_MESSAGES = [
@@ -158,7 +160,7 @@ const DiagnosticForm: React.FC<DiagnosticFormProps> = ({ vertical, onSubmitSucce
             {/* Terminal Header */}
             <div className="mb-8">
               <p className="font-mono text-xs tracking-widest text-accent-muted uppercase">
-                &gt; ENGAGEMENT PATHWAY: {vertical === 'consumer' ? 'CONSUMER & RETAIL' : 'PRODUCT & MARKET ENTRY'}
+                &gt; ENGAGEMENT PATHWAY: {vertical === 'consumer' ? 'PRODUCT & MARKET ENTRY' : 'CRITICAL INFRASTRUCTURE'}
               </p>
               <p className="font-mono text-xs tracking-widest text-accent-muted mt-1">
                 &gt; AUDIT STATUS: ACTIVE

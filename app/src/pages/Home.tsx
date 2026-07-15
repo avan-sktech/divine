@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Target, ShieldCheck, Network, Layers, Rocket, GitMerge,
-  ShoppingBag, Factory, Home as HomeIcon, Check,
+  ShoppingBag, Factory, Home as HomeIcon, Server, Check,
 } from 'lucide-react';
 
 const capabilities = [
@@ -101,16 +101,25 @@ const industries = [
     icon: ShoppingBag,
     title: 'Retail',
     description: 'Retailers and wholesalers scaling a range in Australia',
+    link: '/industries',
   },
   {
     icon: Factory,
     title: 'Manufacturing',
     description: 'Manufacturers bringing a new product to market',
+    link: '/industries',
   },
   {
     icon: HomeIcon,
     title: 'Sustainable & 3D homes',
     description: 'Sustainable and 3D-printed homes, from concept to market',
+    link: '/industries',
+  },
+  {
+    icon: Server,
+    title: 'Critical infrastructure',
+    description: 'Data centres, AI factories and fabs, from site to build-ready',
+    link: '/industries/critical-infrastructure',
   },
 ];
 
@@ -148,7 +157,7 @@ const clientStrip = Array.from({ length: 4 }).flatMap(() => clientLogos);
 
 const credItems = [
   { big: 'Nearly a decade', label: 'of product launch and go-to-market strategy experience' },
-  { big: 'Retail · Manufacturing · Housing', label: 'the industries we consult to in Australia' },
+  { big: 'Retail · Manufacturing · Housing · Infrastructure', label: 'the industries we consult to in Australia' },
   { big: 'One accountable team', label: 'from concept and specification to after-sales' },
   { big: 'Sharktech Global', label: 'DivineLab Worx is its specialist consultancy arm' },
 ];
@@ -166,6 +175,7 @@ const heroTags = [
   'Distribution & channel',
   'Product-to-market (CPPD)',
   'Launch & demand',
+  'Critical infrastructure',
 ];
 
 const Home = () => {
@@ -547,15 +557,16 @@ const Home = () => {
               Who We Work With
             </span>
             <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-optical-white mb-3 sm:mb-4">
-              We Consult to Retail, Manufacturing and Housing
+              We Consult to Retail, Manufacturing, Housing and Infrastructure
             </h2>
             <p className="text-sm sm:text-base text-accent-muted max-w-2xl mx-auto px-4 sm:px-0">
-              We work with retailers, manufacturers and homebuilders, turning a product, a range or
-              a build system into compliance, distribution, demand and revenue in the Australian market.
+              We work with retailers, manufacturers, homebuilders and infrastructure operators,
+              turning a product, a range, a build system or a facility into compliance,
+              distribution, demand and revenue in the Australian market.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
@@ -567,7 +578,7 @@ const Home = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Link
-                    to="/industries"
+                    to={industry.link}
                     className="flex items-start gap-4 border border-silver-steel/10 rounded-lg p-5 sm:p-6 bg-obsidian/30 hover:border-gold/50 transition-all duration-300 h-full"
                   >
                     <div className="w-10 h-10 rounded-lg border border-gold/50 text-gold flex items-center justify-center flex-shrink-0">

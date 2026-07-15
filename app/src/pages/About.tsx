@@ -40,9 +40,10 @@ const About = () => {
             </h1>
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
               DivineLab Worx is the consultancy arm of Sharktech Global. We bring products to
-              market in Australia for retail, manufacturing and sustainable housing. One
-              accountable team takes each launch from first concept and specification to
-              distribution, demand and after-sales.
+              market in Australia for retail, manufacturing and sustainable housing, and we
+              take critical infrastructure from site intelligence to build-ready. One
+              accountable team takes each engagement from first concept and specification to
+              delivery, demand and after-sales.
             </p>
           </motion.div>
         </div>
