@@ -25,11 +25,11 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact | Divine Lab Worx - Start Your Deployment</title>
-        <meta name="description" content="Contact Divine Lab Worx to discuss your infrastructure deployment architecture needs in Australia." />
+        <title>Contact | DivineLab Worx - Engage Our Strategists</title>
+        <meta name="description" content="Engage DivineLab Worx to bring your product, range or build system to the Australian market. One accountable team from concept to after-sales." />
         <link rel="canonical" href="https://divinelabworx.com/contact" />
-        <meta property="og:title" content="Contact | Divine Lab Worx" />
-        <meta property="og:description" content="Contact Divine Lab Worx to discuss your infrastructure deployment architecture needs in Australia." />
+        <meta property="og:title" content="Contact | DivineLab Worx" />
+        <meta property="og:description" content="Engage DivineLab Worx to bring your product, range or build system to the Australian market." />
         <meta property="og:url" content="https://divinelabworx.com/contact" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
       </Helmet>
@@ -62,9 +62,9 @@ const Contact = () => {
               STRATEGIC INTAKE PORTAL
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tighter text-optical-white leading-tight">
-              INITIATE DEPLOYMENT
+              INITIATE A STRATEGIC
               <br />
-              ARCHITECTURE REVIEW
+              ENGAGEMENT
             </h1>
           </motion.div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                Complete the diagnostic form below. Our Commercial Architects will review 
+                Complete the diagnostic form below. Our strategists will review
                 your submission and contact you within 24 hours.
               </motion.p>
             ) : (
@@ -91,8 +91,8 @@ const Contact = () => {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                Select your deployment pathway to begin the structural audit process. 
-                We specialize in digital infrastructure, data centres, and mission-critical facilities.
+                Select your pathway to begin. We bring products to market in Australia
+                for retail, manufacturing and sustainable housing.
               </motion.p>
             )}
           </motion.div>
@@ -139,13 +139,13 @@ const Contact = () => {
                         <Server className="w-20 h-20 sm:w-24 sm:h-24" />
                       </div>
                       <h3 className="text-sm sm:text-base font-mono tracking-widest text-optical-white mb-2">
-                        DIGITAL & INFRASTRUCTURE
+                        PRODUCT & MARKET ENTRY
                       </h3>
                       <p className="text-xs font-mono text-accent-muted mb-4">
-                        Cloud, AI & Mission-Critical Facilities
+                        Retail, Manufacturing & Sustainable Homes
                       </p>
                       <p className="text-xs sm:text-sm text-accent-muted max-w-[280px] leading-relaxed">
-                        Data centres, fibre networks, power systems, and hyperscale deployments
+                        New products, retail ranges, Australian market entry and housing build systems
                       </p>
                       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
                         <div className="w-1.5 h-1.5 rounded-full bg-gold" />
@@ -193,24 +193,25 @@ const Contact = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-optical-white mb-2">
-                  Divine Lab Worx
+                  DivineLab Worx
                 </h3>
                 <p className="text-sm text-accent-muted">
                   PART OF SHARKTECH GLOBAL
                 </p>
               </div>
-              
+
               <div className="space-y-3 text-sm text-silver-steel">
-                <p>244 Macquarie St, Liverpool NSW 2170, Australia</p>
+                <p>Level 1, 244 Macquarie St, Liverpool NSW 2170, Australia</p>
                 <p>+61 468 017 373</p>
                 <p>
-                  <a 
-                    href="mailto:info@divinelabworx.com" 
+                  <a
+                    href="mailto:dainudevis@sharktech.com.au"
                     className="hover:text-gold transition-colors"
                   >
-                    info@divinelabworx.com
+                    dainudevis@sharktech.com.au
                   </a>
                 </p>
+                <p>ABN 54 672 825 731</p>
               </div>
             </div>
           </motion.div>

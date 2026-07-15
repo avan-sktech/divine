@@ -18,14 +18,15 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'HOME' },
-    { path: '/services', label: 'CAPABILITIES' },
+    { path: '/capabilities', label: 'CAPABILITIES' },
     { path: '/industries', label: 'INDUSTRIES' },
-    { path: '/blog', label: 'BLOG' },
+    { path: '/blog', label: 'INSIGHTS' },
     { path: '/about', label: 'ABOUT US' },
     { path: '/contact', label: 'CONTACT' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) =>
+    location.pathname === path || (path !== '/' && location.pathname.startsWith(path + '/'));
 
   return (
     <>

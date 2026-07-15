@@ -20,12 +20,12 @@ const FRICTION_OPTIONS = [
   { id: 'margin', label: 'Margin Compression' },
   { id: 'channel', label: 'Channel Conflict' },
   { id: 'regulatory', label: 'Regulatory/AS-NZS Compliance' },
-  { id: 'infrastructure', label: 'Infrastructure Grid Density' },
+  { id: 'launch', label: 'Launch & Demand Generation' },
 ];
 
 const SUBMISSION_MESSAGES = [
   '[SCANNING MARKET INTEGRITY FRAMEWORK...]',
-  '[CROSS-REFERENCING DEPLOYMENT ARCHITECTURE...]',
+  '[CROSS-REFERENCING GO-TO-MARKET PROGRAMME...]',
   '[FINALISING STRATEGIC INTAKE...]',
 ];
 
@@ -142,7 +142,7 @@ const DiagnosticForm: React.FC<DiagnosticFormProps> = ({ vertical, onSubmitSucce
             className="py-12 flex items-center justify-center"
           >
             <div className="font-mono text-xs tracking-widest text-accent-muted">
-              <span className="terminal-cursor">INITIALIZING DEPLOYMENT AUDIT... [OK]</span>
+              <span className="terminal-cursor">INITIALIZING STRATEGIC INTAKE... [OK]</span>
             </div>
           </motion.div>
         )}
@@ -158,7 +158,7 @@ const DiagnosticForm: React.FC<DiagnosticFormProps> = ({ vertical, onSubmitSucce
             {/* Terminal Header */}
             <div className="mb-8">
               <p className="font-mono text-xs tracking-widest text-accent-muted uppercase">
-                &gt; DEPLOYMENT PATHWAY: {vertical === 'consumer' ? 'CONSUMER & RETAIL' : 'DIGITAL & INFRASTRUCTURE'}
+                &gt; ENGAGEMENT PATHWAY: {vertical === 'consumer' ? 'CONSUMER & RETAIL' : 'PRODUCT & MARKET ENTRY'}
               </p>
               <p className="font-mono text-xs tracking-widest text-accent-muted mt-1">
                 &gt; AUDIT STATUS: ACTIVE
@@ -379,7 +379,7 @@ const DiagnosticForm: React.FC<DiagnosticFormProps> = ({ vertical, onSubmitSucce
               </h3>
               
               <p className="text-sm text-accent-muted max-w-md mx-auto leading-relaxed">
-                A Divine Lab Worx consultant will contact you within 24 hours.
+                A DivineLab Worx strategist will contact you within 24 hours.
               </p>
               
               <div className="mt-8 pt-6 border-t border-silver-steel/20">

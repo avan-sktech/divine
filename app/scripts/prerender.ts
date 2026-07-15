@@ -18,9 +18,12 @@ const DIST_DIR = join(__dirname, '..', 'dist');
 const PORT = 4173;
 
 // All routes to pre-render
+// Note: /services and /industries/electric-powersports are NOT prerendered;
+// they 301-redirect at the edge (see vercel.json).
 const routes = [
   '/',
-  '/services',
+  '/capabilities',
+  '/capabilities/concurrent-product-process-design',
   '/industries',
   '/about',
   '/blog',
@@ -66,19 +69,33 @@ function createStaticServer() {
     '.xml': 'application/xml',
   };
 
+  // Snapshot the clean SPA shell before any route is rendered. Rendering '/'
+  // overwrites dist/index.html on disk, so serving index.html files from disk
+  // would leak the home page's head tags (title, canonical, JSON-LD) into
+  // every route rendered after it.
+  const shellHtml = readFileSync(join(DIST_DIR, 'index.html'));
+
   return createServer((req, res) => {
     const urlPath = (req.url || '/').split('?')[0];
-    let filePath = join(DIST_DIR, urlPath);
+    const filePath = join(DIST_DIR, urlPath);
 
+    let serveShell = false;
     try {
-      if (existsSync(filePath) && statSync(filePath).isDirectory()) {
-        const indexPath = join(filePath, 'index.html');
-        filePath = existsSync(indexPath) ? indexPath : join(DIST_DIR, 'index.html');
-      } else if (!existsSync(filePath)) {
-        filePath = join(DIST_DIR, 'index.html');
-      }
+      serveShell =
+        !existsSync(filePath) ||
+        statSync(filePath).isDirectory() ||
+        filePath.endsWith('index.html');
     } catch {
-      filePath = join(DIST_DIR, 'index.html');
+      serveShell = true;
+    }
+
+    if (serveShell) {
+      res.writeHead(200, {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+      });
+      res.end(shellHtml);
+      return;
     }
 
     try {
@@ -129,9 +146,11 @@ async function prerender() {
   let args: string[];
 
   try {
+    // @sparticuz/chromium ships a Linux-only binary; it can extract on
+    // Windows but can never launch there, so go straight to local Chrome
+    if (process.platform === 'win32') throw new Error('Linux-only');
     executablePath = await chromium.executablePath();
-    // Verify it actually exists
-    if (!existsSync(executablePath)) throw new Error('Not found');
+    if (!existsSync(executablePath) || !statSync(executablePath).isFile()) throw new Error('Not found');
     args = chromium.args;
     console.log(`🌐 Using @sparticuz/chromium: ${executablePath}\n`);
   } catch {

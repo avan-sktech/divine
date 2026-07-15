@@ -7,11 +7,11 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About | Divine Lab Worx - Sharktech Global Subsidiary</title>
-        <meta name="description" content="Divine Lab Worx is a deployment architecture subsidiary of Sharktech Global, specializing in market entry for engineered systems in Australia." />
+        <title>About | DivineLab Worx - The Consultancy Arm of Sharktech Global</title>
+        <meta name="description" content="DivineLab Worx is the go-to-market strategist and consultancy arm of Sharktech Global, serving retail, manufacturing and sustainable housing in Australia." />
         <link rel="canonical" href="https://divinelabworx.com/about" />
-        <meta property="og:title" content="About | Divine Lab Worx" />
-        <meta property="og:description" content="Deployment architecture subsidiary of Sharktech Global, specializing in market entry for engineered systems in Australia." />
+        <meta property="og:title" content="About | DivineLab Worx" />
+        <meta property="og:description" content="The go-to-market strategist and consultancy arm of Sharktech Global, serving retail, manufacturing and sustainable housing in Australia." />
         <meta property="og:url" content="https://divinelabworx.com/about" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
       </Helmet>
@@ -36,12 +36,13 @@ const About = () => {
               ABOUT US
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              Engineering the Physical Layer
+              The Go-to-Market Strategist for Australia
             </h1>
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              Divine Lab Worx is the Australian infrastructure consulting arm of Sharktech Global. 
-              We provide a single point of accountability for deploying mission-critical facilities, 
-              turning complex capital projects into operational, high-yield assets.
+              DivineLab Worx is the consultancy arm of Sharktech Global. We bring products to
+              market in Australia for retail, manufacturing and sustainable housing. One
+              accountable team takes each launch from first concept and specification to
+              distribution, demand and after-sales.
             </p>
           </motion.div>
         </div>
@@ -69,11 +70,12 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-base text-accent-muted leading-relaxed">
-                In the deployment of digital infrastructure, velocity is the ultimate competitive advantage. 
-                We secure and validate sites across Australia that are primed for hyperscale expansion. By 
-                vertically integrating site selection, heavy utility engineering, and industrial safety 
-                automation, we remove the friction from the development lifecycle. We manage the physical 
-                complexities so you can scale your compute without delay.
+                A product without distribution is a liability. Most launches fail on execution,
+                not idea, because the specification, the approval pathway, the channel economics
+                and the launch evidence sit with four disconnected advisers. We connect them in
+                one accountable programme. Assumptions become written quotes, test records, named
+                owners and issue registers the board can rely on. Nearly a decade of product
+                launch and go-to-market strategy experience sits behind every engagement.
               </p>
             </motion.div>
           </div>
@@ -129,9 +131,9 @@ const About = () => {
                   including Telstra, Ventia, and Aldi.
                 </p>
                 <p className="text-sm text-accent-muted leading-relaxed mt-4">
-                  The mandate for Divine Lab Worx is built on first-principles engineering: deploying 
-                  capital-efficient, highly scalable physical infrastructure that serves as the enduring 
-                  foundation for the next generation of global compute.
+                  The mandate for DivineLab Worx is built on evidence discipline: taking a product,
+                  a range or a build system from concept to a compliant, distributed and selling
+                  offer in the Australian market, with one team accountable for the result.
                 </p>
               </div>
             </div>
@@ -190,12 +192,12 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-6">
-              Deploy with Velocity
+              Bring Your Product to Market with One Accountable Team
             </h2>
             <p className="text-base text-accent-muted mb-8 max-w-2xl mx-auto leading-relaxed">
-              We eliminate friction from the development of critical infrastructure. If you are scaling 
-              compute, securing sites, or engineering advanced thermal architectures, engage our consulting 
-              team to accelerate your timeline.
+              If you are launching a new product, growing a retail range, entering the Australian
+              market or building sustainable homes, engage our strategists to compress the critical
+              path and protect your capital.
             </p>
             <Link
               to="/contact"

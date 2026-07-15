@@ -1,6 +1,8 @@
 {
   "version": 2,
   "routes": [
+    { "src": "/industries/electric-powersports/?", "status": 301, "headers": { "Location": "/industries" } },
+    { "src": "/services/?", "status": 301, "headers": { "Location": "/capabilities" } },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]

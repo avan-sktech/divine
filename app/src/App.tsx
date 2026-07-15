@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
-import Services from './pages/Services';
+import Capabilities from './pages/Capabilities';
+import CapabilityCPPD from './pages/CapabilityCPPD';
 import Industries from './pages/Industries';
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -16,8 +17,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="services" element={<Services />} />
+          <Route path="capabilities" element={<Capabilities />} />
+          <Route path="capabilities/concurrent-product-process-design" element={<CapabilityCPPD />} />
+          {/* Legacy URL, also 301-redirected at the edge in vercel.json */}
+          <Route path="services" element={<Navigate to="/capabilities" replace />} />
           <Route path="industries" element={<Industries />} />
+          {/* Retired vertical, also 301-redirected at the edge in vercel.json */}
+          <Route path="industries/electric-powersports" element={<Navigate to="/industries" replace />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<BlogPost />} />

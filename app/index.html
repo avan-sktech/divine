@@ -1,163 +1,80 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary SEO Meta Tags -->
-    <title>Divine Lab Worx | Critical Infrastructure Site Consultancy Australia</title>
-    <meta name="description" content="Divine Lab Worx identifies and validates locations for mission-critical facilities in Australia: data centres, AI factories, semiconductor fabs. Site intelligence, power, permits and project management until your site is build-ready." />
-    <meta name="keywords" content="critical infrastructure consultancy Australia, data centre site selection, AI factory location, semiconductor fab Australia, hyperscale data centre, infrastructure site validation, power proximity, zoning clearance, Sharktech Global, build-ready sites Australia" />
-    <meta name="author" content="Divine Lab Worx" />
+
+    <!-- Global SEO Meta Tags. Title, description, canonical, OG and Twitter
+         title/description/url/image are page-specific and managed per route
+         via react-helmet-async, so they are intentionally absent here. -->
+    <meta name="keywords" content="go-to-market strategist Australia, product launch strategy, market entry Australia, retail consulting, manufacturing product development, sustainable homes consultant, 3D printed homes Australia, Concurrent Product and Process Design, CPPD, DivineLab Worx, Sharktech Global" />
+    <meta name="author" content="DivineLab Worx, a division of Sharktech Global" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://divinelabworx.com" />
-
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph / Social Media (global) -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://divinelabworx.com" />
-    <meta property="og:title" content="Divine Lab Worx | We Find Where Critical Infrastructure Belongs" />
-    <meta property="og:description" content="Australia's specialist infrastructure consultancy. We identify and validate sites for hyperscale data centres, AI factories and semiconductor fabs. We then manage power, permits and project delivery until build-ready." />
-    <meta property="og:site_name" content="Divine Lab Worx" />
-    <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
+    <meta property="og:site_name" content="DivineLab Worx" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card (global; title/description fall back to OG tags) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Divine Lab Worx | We Find Where Critical Infrastructure Belongs" />
-    <meta name="twitter:description" content="Australia's specialist consultancy for data centre, AI factory and semiconductor fab site selection. Power, permits and project management to build-ready." />
-
-    <!-- AEO (Answer Engine Optimization) -->
-    <meta name="answer-engine:question" content="How do you find and secure sites for data centres and AI factories in Australia?" />
-    <meta name="answer-engine:answer" content="Divine Lab Worx identifies and validates locations for mission-critical facilities across Australia, assessing power proximity, zoning clearance, fibre path and water access, then managing permits and project delivery until the site is build-ready." />
 
     <!-- Geo Tags -->
     <meta name="geo.region" content="AU" />
     <meta name="geo.placename" content="Australia" />
 
-    <!-- Structured Data - Organization -->
+    <!-- Structured Data - ProfessionalService -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Divine Lab Worx",
-      "alternateName": "DLW",
-      "description": "Australia's specialist infrastructure consultancy, identifying and validating locations for mission-critical facilities including hyperscale data centres, sovereign AI factories, and semiconductor fabs. A subsidiary of Sharktech Global.",
+      "@type": "ProfessionalService",
+      "@id": "https://divinelabworx.com/#org",
+      "name": "DivineLab Worx",
+      "alternateName": "Divine Lab Worx",
+      "description": "Go-to-market strategist for retail, manufacturing and sustainable housing in Australia. The consultancy arm of Sharktech Global.",
       "url": "https://divinelabworx.com",
+      "email": "dainudevis@sharktech.com.au",
+      "telephone": "+61468017373",
       "parentOrganization": {
         "@type": "Organization",
         "name": "Sharktech Global",
         "url": "https://sharktech.com.au"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Level 1, 244 Macquarie St",
+        "addressLocality": "Liverpool",
+        "addressRegion": "NSW",
+        "postalCode": "2170",
+        "addressCountry": "AU"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ABN",
+        "value": "54 672 825 731"
       },
       "areaServed": {
         "@type": "Country",
         "name": "Australia"
       },
       "serviceType": [
-        "Infrastructure Site Intelligence",
-        "Power & Utility Consulting",
-        "Permits & Regulatory Clearance",
-        "Critical Facility Project Management"
+        "Market-entry strategy",
+        "Regulatory and compliance pathway",
+        "Distribution and channel design",
+        "Concurrent Product and Process Design",
+        "Launch and demand generation",
+        "Programme integration"
       ],
       "knowsAbout": [
-        "Hyperscale Data Centre Site Selection",
-        "Sovereign AI Factory Deployment",
-        "Semiconductor Fabrication Facilities",
-        "Advanced Cleanroom Site Validation",
-        "Grid Connection and Substation Design",
-        "Australian Planning Approvals",
-        "WHS Compliance"
+        "Go-to-market strategy",
+        "Australian market entry",
+        "Product launch",
+        "Retail range strategy",
+        "Manufacturing product development",
+        "Sustainable and 3D-printed homes",
+        "Homologation and compliance",
+        "Distribution and channel design"
       ],
       "foundingDate": "2019"
-    }
-    </script>
-
-    <!-- Structured Data - Service -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Critical Infrastructure Site Consultancy",
-      "provider": {
-        "@type": "Organization",
-        "name": "Divine Lab Worx"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Infrastructure Consultancy Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Site Intelligence",
-              "description": "Identify, validate and secure land with power proximity, zoning clearance, fibre path and water access assessment."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Power & Utility",
-              "description": "Heavy utility interface including substation design, grid connection and medium voltage delivery to site boundary."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Permits & Safety",
-              "description": "Planning approvals, WHS compliance and industrial safety cleared before ground is broken."
-            }
-          }
-        ]
-      }
-    }
-    </script>
-
-    <!-- Structured Data - FAQ for AEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does Divine Lab Worx do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Divine Lab Worx is Australia's specialist infrastructure consultancy. We identify and validate locations for mission-critical facilities: hyperscale data centres, sovereign AI factories, semiconductor fabs and advanced cleanrooms. We then stay with you through power, permits and project management until your site is build-ready."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the bottleneck when deploying data centres and AI factories in Australia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "As sovereign AI factories, hyperscale data centres and semiconductor fabs race to deploy, the bottleneck is no longer capital. It's finding the right site, secured fast. Divine Lab Worx specialises in exactly this: site intelligence, power proximity assessment, zoning clearance, fibre path mapping and water access validation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What site validation criteria does Divine Lab Worx assess?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Divine Lab Worx validates five critical criteria for every site: Power Proximity (grid access, substation distance and MW capacity), Zoning Clearance (planning approvals and industrial land classification), Fibre Path (dark fibre routes and latency to exchange points), Water Access (cooling supply, wastewater rights and flow rates), and WHS Compliance (industrial safety and construction regulatory readiness)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which types of facilities does Divine Lab Worx consult for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Divine Lab Worx consults for hyperscale data centres, supercomputers and sovereign AI factories, semiconductor fabrication plants, and advanced cleanrooms requiring precision-controlled environments across Australia."
-          }
-        }
-      ]
     }
     </script>
     
@@ -188,12 +105,12 @@
     <div id="root"></div>
     <noscript>
       <div style="padding: 40px; font-family: 'Inter', system-ui, sans-serif; color: #F8F8F8; background: #0A0A0A; min-height: 100vh;">
-        <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Divine Lab Worx</h1>
-        <p style="color: #D4AF37; font-size: 1.1rem; margin-bottom: 1.5rem;">We Find Where Critical Infrastructure Belongs.</p>
-        <p>Divine Lab Worx is Australia's specialist infrastructure consultancy, identifying and validating locations for mission-critical facilities including hyperscale data centres, sovereign AI factories, and semiconductor fabs. We manage site intelligence, power, permits and project delivery until your site is build-ready.</p>
+        <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">DivineLab Worx</h1>
+        <p style="color: #D4AF37; font-size: 1.1rem; margin-bottom: 1.5rem;">Complete product launch, from concept to after-sales.</p>
+        <p>DivineLab Worx is the go-to-market strategist and consultancy arm of Sharktech Global. We bring products to market in Australia for retail, manufacturing and sustainable housing, taking each launch from first concept and specification to compliance, distribution, demand and after-sales as one accountable programme.</p>
         <nav style="margin-top: 2rem;">
           <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 0.5rem;"><a href="/services" style="color: #D4AF37;">Services</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/capabilities" style="color: #D4AF37;">Capabilities</a></li>
             <li style="margin-bottom: 0.5rem;"><a href="/industries" style="color: #D4AF37;">Industries</a></li>
             <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #D4AF37;">About</a></li>
             <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #D4AF37;">Blog</a></li>
