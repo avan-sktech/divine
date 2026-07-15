@@ -155,6 +155,31 @@ const clientLogos = [
 // animation translates -50%, so the loop is seamless
 const clientStrip = Array.from({ length: 4 }).flatMap(() => clientLogos);
 
+const spotlights = [
+  {
+    eyebrow: 'Industry Spotlight · Retail',
+    title: 'Build and Scale a Retail Range in Australia',
+    description: 'For retailers and wholesalers building a product range. We define what to stock, make the range compliant and supportable, and launch it online and in store with measurable conversion.',
+    image: '/images/retail-deployment.jpg',
+    imageAlt: 'Retail deployment in Australia',
+    points: ['Range strategy and positioning', 'Supplier, compliance and warranty readiness', 'Channel, launch and demand generation'],
+    link: '/industries',
+    linkLabel: 'EXPLORE RETAIL',
+    imageRight: false,
+  },
+  {
+    eyebrow: 'Industry Spotlight · Critical Infrastructure',
+    title: 'We Find Where Critical Infrastructure Belongs',
+    description: 'Sites for hyperscale data centres, AI factories, semiconductor fabs and advanced cleanrooms. Validated for power, zoning, fibre and water, then managed through permits and delivery until build-ready.',
+    image: '/images/data-center.jpg',
+    imageAlt: 'Hyperscale data centre infrastructure',
+    points: ['Site intelligence and selection', 'Power, permits and utilities', 'Delivery, energisation and operations'],
+    link: '/industries/critical-infrastructure',
+    linkLabel: 'EXPLORE CRITICAL INFRASTRUCTURE',
+    imageRight: true,
+  },
+];
+
 const credItems = [
   { big: 'Nearly a decade', label: 'of product launch and go-to-market strategy experience' },
   { big: 'Retail · Manufacturing · Housing · Infrastructure', label: 'the industries we consult to in Australia' },
@@ -599,6 +624,55 @@ const Home = () => {
             })}
           </div>
 
+          {/* Industry Spotlights */}
+          <div className="mt-10 sm:mt-14 space-y-6 sm:space-y-8">
+            {spotlights.map((spotlight) => (
+              <motion.div
+                key={spotlight.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 lg:grid-cols-2 border border-silver-steel/10 rounded-lg overflow-hidden bg-obsidian/30 hover:border-gold/40 transition-colors duration-300"
+              >
+                <div className={`relative min-h-[220px] sm:min-h-[280px] lg:min-h-0 ${spotlight.imageRight ? 'lg:order-2' : ''}`}>
+                  <img
+                    src={spotlight.image}
+                    alt={spotlight.imageAlt}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-obsidian/20" />
+                </div>
+                <div className={`p-6 sm:p-10 lg:p-12 ${spotlight.imageRight ? 'lg:order-1' : ''}`}>
+                  <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-4 block">
+                    {spotlight.eyebrow}
+                  </span>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-optical-white mb-3">
+                    {spotlight.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-5">
+                    {spotlight.description}
+                  </p>
+                  <ul className="space-y-2.5 mb-6">
+                    {spotlight.points.map((point) => (
+                      <li key={point} className="flex items-center gap-3 text-xs sm:text-sm text-accent-muted">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={spotlight.link}
+                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-gold hover:text-gold-light transition-colors"
+                  >
+                    {spotlight.linkLabel}
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
