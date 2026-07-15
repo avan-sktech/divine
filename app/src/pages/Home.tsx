@@ -184,9 +184,9 @@ const Home = () => {
             loop
             playsInline
             className="w-full h-full object-cover"
-            poster="/images/hero-infrastructure.jpg"
+            poster="/images/hero-robot-poster.jpg"
           >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            <source src="/videos/hero-robot.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-obsidian/70" />
         </div>
