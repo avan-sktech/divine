@@ -43,14 +43,17 @@ const Header = () => {
           <div className="flex items-center justify-between h-24 sm:h-32">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 sm:gap-4">
-              <div className="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center">
-                <img 
-                  src="/images/logo.png" 
+              <div className="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center flex-shrink-0">
+                <img
+                  src="/images/logo.png"
                   alt="Divine Lab Worx"
-                  loading="lazy" 
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </div>
+              <span className="text-sm sm:text-lg font-semibold tracking-tight text-optical-white whitespace-nowrap">
+                DIVINE LAB WORX
+              </span>
               <div className="hidden sm:flex items-center gap-3">
                 <div className="h-10 w-px bg-silver-steel/30" />
                 <span className="text-xs font-mono tracking-widest text-accent-muted uppercase">
