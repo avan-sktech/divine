@@ -173,16 +173,176 @@ const blogPosts = [
     featured: false,
     image: '/images/hero-infrastructure.jpg',
   },
+  {
+    id: 15,
+    slug: 'business-consultancy-services-australia',
+    title: 'What Actually Separates Good Business Consultancy Services From a Wasted Retainer',
+    excerpt: 'Comparing business consultancy services across Australia? What separates a firm that gets you to first sale from one that leaves a report is who owns the outcome after the recommendation lands.',
+    author: 'Alexander Chen',
+    date: '2026-06-03',
+    readTime: '6 min',
+    category: 'Deployment Strategy',
+    featured: false,
+    image: '/images/partnership.jpg',
+  },
+  {
+    id: 16,
+    slug: 'retail-business-consultancy-australia',
+    title: "The Retail Business Consultancy Checklist Category Buyers Wish You'd Use First",
+    excerpt: 'A category buyer can spot an underprepared range pitch within the first few questions. This checklist closes the compliance, warranty and range-story gaps before the meeting, not after.',
+    author: 'Sarah Mitchell',
+    date: '2026-06-05',
+    readTime: '6 min',
+    category: 'Consumer & Retail',
+    featured: false,
+    image: '/images/retail-deployment.jpg',
+  },
+  {
+    id: 17,
+    slug: 'australian-market-entry-consultant',
+    title: 'Australian Market Entry Consultant: What Overseas Manufacturers Need Before Launching',
+    excerpt: 'What an Australian market entry consultant should deliver before you commit inventory, appoint a distributor or launch: compliance scope, channel economics, pilot evidence and a costed path to first sale.',
+    author: 'Divine Lab Worx Editorial Team',
+    date: '2026-06-10',
+    readTime: '12 min',
+    category: 'Market Entry',
+    featured: false,
+    image: '/images/australia-market.jpg',
+  },
+  {
+    id: 18,
+    slug: 'manufacturing-product-launch-strategy-australia',
+    title: 'A Manufacturing Product Launch Strategy Only Works in One Order',
+    excerpt: 'Most manufacturing launch plans fail on sequencing, not engineering. Compliance shapes the specification, channel economics decide the cost structure, and the pilot comes before national inventory.',
+    author: 'James Okonkwo',
+    date: '2026-06-12',
+    readTime: '6 min',
+    category: 'Manufacturing',
+    featured: false,
+    image: '/images/video-frame-1.jpg',
+  },
+  {
+    id: 19,
+    slug: 'boots-on-the-ground-australia-market-entry',
+    title: 'What "Boots on the Ground" Should Actually Mean for Your Australian Launch',
+    excerpt: 'A distributor agreement signed over video calls is not a market entry strategy. What genuine local presence means for compliance, channel relationships and reading the Australian market in real time.',
+    author: 'Dainu Devis',
+    date: '2026-06-17',
+    readTime: '7 min',
+    category: 'Market Entry',
+    featured: false,
+    image: '/images/australia-skyline.jpg',
+  },
+  {
+    id: 20,
+    slug: 'manufacturing-consultancy-australia',
+    title: 'Manufacturing Consultancy Australia: Designing Products for Australian Conditions',
+    excerpt: 'A product is not ready for Australia simply because it can be manufactured. How CPPD connects design, compliance, landed cost, service and route to market before tooling locks in.',
+    author: 'Divine Lab Worx Editorial Team',
+    date: '2026-06-19',
+    readTime: '11 min',
+    category: 'Manufacturing',
+    featured: false,
+    image: '/images/market-analysis.jpg',
+  },
+  {
+    id: 21,
+    slug: 'go-to-market-strategist-vs-business-consultant',
+    title: 'Go-to-Market Strategist vs Business Consultant, Compared Honestly',
+    excerpt: 'Both titles show up on the same shortlist. Compared side by side, the scope splits at one question: who owns the outcome when compliance and channel timing collide.',
+    author: 'Alexander Chen',
+    date: '2026-06-24',
+    readTime: '5 min',
+    category: 'Deployment Strategy',
+    featured: false,
+    image: '/images/team-meeting.jpg',
+  },
+  {
+    id: 22,
+    slug: 'retail-consulting-services-australia',
+    title: 'Retail Consulting Services Australia: From Product Range to First Sale',
+    excerpt: 'Good retail consulting is not marketing or store design. From range architecture and supplier readiness to landed cost, channel and after-sales, a range has to work as one commercial system.',
+    author: 'Divine Lab Worx Editorial Team',
+    date: '2026-06-26',
+    readTime: '12 min',
+    category: 'Consumer & Retail',
+    featured: false,
+    image: '/images/retail-deployment.jpg',
+  },
+  {
+    id: 23,
+    slug: 'product-launch-strategy-australia',
+    title: 'Three Patterns Behind Every Stalled Product Launch Strategy in Australia',
+    excerpt: 'When a launch stalls in Australia, the product is rarely the problem. Three sequencing patterns explain most of them, and all three are avoidable before the budget is committed.',
+    author: 'Sarah Mitchell',
+    date: '2026-07-01',
+    readTime: '6 min',
+    category: 'Product Launch',
+    featured: false,
+    image: '/images/distribution-network.jpg',
+  },
+  {
+    id: 24,
+    slug: 'product-launch-consulting-australia',
+    title: 'Product Launch Consulting Australia: Why Strategy Needs Boots on the Ground',
+    excerpt: 'A launch plan created overseas can look complete and still fail in execution. Why product launch consulting needs local validation, controlled pilots and boots on the ground.',
+    author: 'Divine Lab Worx Editorial Team',
+    date: '2026-07-03',
+    readTime: '11 min',
+    category: 'Product Launch',
+    featured: false,
+    image: '/images/australia-market.jpg',
+  },
+  {
+    id: 25,
+    slug: 'ai-business-transformation-australia-market-entry',
+    title: 'Bringing an AI Business Transformation Platform to Market in Australia',
+    excerpt: 'Australian SMEs hit 44 percent AI adoption, but an AI platform still needs the Privacy Act mapped, a channel strategy and pilot evidence before the sales team goes wide.',
+    author: 'Alexander Chen',
+    date: '2026-07-08',
+    readTime: '6 min',
+    category: 'AI & Technology',
+    featured: false,
+    image: '/images/hero-robot-poster.jpg',
+  },
+  {
+    id: 26,
+    slug: 'agentic-ai-deployment-australia',
+    title: 'What Agentic AI Deployment in Australia Actually Requires From a Vendor',
+    excerpt: 'Australian organisations want agentic AI and worry about governance in equal measure. What a vendor needs resolved before enterprise buyers commit past the pilot.',
+    author: 'James Okonkwo',
+    date: '2026-07-10',
+    readTime: '6 min',
+    category: 'AI & Technology',
+    featured: false,
+    image: '/images/hero-robot-poster.jpg',
+  },
+  {
+    id: 27,
+    slug: 'smb-ai-enablement-australia-market-entry',
+    title: 'Taking an SMB AI Enablement Platform to Market in Australia',
+    excerpt: 'SMB AI platforms sell on a different cycle to enterprise. Distribution through trusted intermediaries, fast onboarding and a provable new-revenue story decide whether it scales.',
+    author: 'Sarah Mitchell',
+    date: '2026-07-15',
+    readTime: '6 min',
+    category: 'AI & Technology',
+    featured: false,
+    image: '/images/command-center.jpg',
+  },
 ];
 
 const categories = [
   'All',
+  'Market Entry',
+  'Product Launch',
+  'Manufacturing',
+  'Consumer & Retail',
+  'AI & Technology',
+  'Deployment Strategy',
+  'Infrastructure',
   'Capital Protection',
   'Market Integrity',
-  'Deployment Strategy',
   'Regulatory',
-  'Infrastructure',
-  'Consumer & Retail',
 ];
 
 const Blog = () => {
@@ -199,11 +359,11 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Divine Lab Worx - Market Intelligence & Deployment Insights</title>
-        <meta name="description" content="Insights on Australian market deployment, capital protection, margin leakage prevention, and infrastructure deployment architecture." />
+        <title>Insights | DivineLab Worx - Market Entry, Product Launch & Infrastructure</title>
+        <meta name="description" content="Practical thinking on product launch, market entry, retail, manufacturing, AI platforms and critical infrastructure in Australia. Written by the team that runs the launches." />
         <link rel="canonical" href="https://divinelabworx.com/blog" />
-        <meta property="og:title" content="Blog | Divine Lab Worx" />
-        <meta property="og:description" content="Insights on Australian market deployment, capital protection, and infrastructure deployment architecture." />
+        <meta property="og:title" content="Insights | DivineLab Worx" />
+        <meta property="og:description" content="Practical thinking on product launch, market entry, retail, manufacturing, AI platforms and critical infrastructure in Australia." />
         <meta property="og:url" content="https://divinelabworx.com/blog" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
       </Helmet>
@@ -233,15 +393,15 @@ const Blog = () => {
             className="max-w-3xl"
           >
             <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-6 block">
-              INTELLIGENCE & INSIGHTS
+              INSIGHTS
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              DEPLOYMENT ARCHITECTURE JOURNAL
+              THE DIVINELAB WORX JOURNAL
             </h1>
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              Strategic intelligence for MNCs entering Australia. Market analysis, 
-              regulatory updates, and deployment architecture best practices from 
-              our Commercial Architects.
+              Practical thinking for companies bringing products, platforms and
+              infrastructure to the Australian market. Market entry, product launch,
+              retail, manufacturing and AI, written by the team that runs the launches.
             </p>
           </motion.div>
         </div>
