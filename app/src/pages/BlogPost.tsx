@@ -944,7 +944,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If you're evaluating consultancy options for an Australian launch, <a href="/capabilities">our capabilities</a> set out exactly where the accountability sits at each stage, so you can compare that against what's actually on offer elsewhere.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'retail-business-consultancy-australia': {
@@ -990,7 +990,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>Before the next retailer meeting, the honest test is whether you can answer, on the spot, what that buyer's legal and category team will ask about compliance and warranty. If the answer is vague, <a href="/industries">our retail work</a> is built around closing exactly that gap before the pitch, not after.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'australian-market-entry-consultant': {
@@ -1006,7 +1006,7 @@ const blogPostsData: Record<string, BlogPostData> = {
     keywords: ['Australian market entry consultant', 'go-to-market strategy Australia', 'on-the-ground business support Australia'],
     content: `
       <h2>Direct answer</h2>
-      <p>An Australian market entry consultant helps an overseas manufacturer decide what must be validated, changed and funded before inventory is committed. <a href="/">DivineLab Worx</a> connects product readiness, Australian compliance, channel economics, distributor assessment, pilot planning and after-sales into one market-entry programme.</p>
+      <p>An Australian market entry consultant helps an overseas manufacturer decide what must be validated, changed and funded before inventory is committed. <a href="/">Divine Lab Worx</a> connects product readiness, Australian compliance, channel economics, distributor assessment, pilot planning and after-sales into one market-entry programme.</p>
 
       <p>Entering Australia is not the same as registering a company or finding a distributor. A physical product still has to meet local requirements, suit the customer, work within the channel margin, arrive with the right evidence and be supported after the sale.</p>
 
@@ -1120,11 +1120,11 @@ const blogPostsData: Record<string, BlogPostData> = {
       <p>Start with a contained market-entry and product-readiness review before appointing a national distributor or committing large inventory.</p>
 
       <h2>Start with evidence before inventory</h2>
-      <p>DivineLab Worx can run a contained Australian market-entry and product-readiness review. The output is a target customer, compliance scope, channel plan, evidence register and costed path to first sale.</p>
+      <p>Divine Lab Worx can run a contained Australian market-entry and product-readiness review. The output is a target customer, compliance scope, channel plan, evidence register and costed path to first sale.</p>
 
-      <p><a href="/">DivineLab Worx</a> is the consultancy arm of Sharktech, led by Dainu Devis. The consultancy supports manufacturers, retailers and international businesses with Australian market entry, product commercialisation, distribution, launch planning and local execution. Learn more about Dainu Devis and his broader work at <a href="https://dainudevis.com/" target="_blank" rel="noopener noreferrer">DainuDevis.com</a>.</p>
+      <p><a href="/">Divine Lab Worx</a> is the consultancy arm of Sharktech, led by Dainu Devis. The consultancy supports manufacturers, retailers and international businesses with Australian market entry, product commercialisation, distribution, launch planning and local execution. Learn more about Dainu Devis and his broader work at <a href="https://dainudevis.com/" target="_blank" rel="noopener noreferrer">DainuDevis.com</a>.</p>
 
-      <p>Discuss an Australian market-entry and product-readiness review with <a href="/contact">DivineLab Worx</a>. The review can provide a target customer, compliance scope, channel plan, evidence register and costed route to first sale.</p>
+      <p>Discuss an Australian market-entry and product-readiness review with <a href="/contact">Divine Lab Worx</a>. The review can provide a target customer, compliance scope, channel plan, evidence register and costed route to first sale.</p>
 
       <h2>Sources</h2>
       <ol>
@@ -1179,7 +1179,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If you're bringing a new product to market Australia wide, <a href="/capabilities/concurrent-product-process-design">our approach to product-to-market design</a> sets out how compliance, channel and specification get built together rather than discovered in sequence.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'boots-on-the-ground-australia-market-entry': {
@@ -1225,7 +1225,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If your Australian entry plan currently rests on a distributor you've met over video calls, that's not yet an Australian market entry strategy built to last. <a href="/capabilities">Our approach to market entry</a> is built around operating in that regulatory and retail reality directly, not advising on it from a distance.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the operating thinking of Sharktech Global's founder and CEO, Dainu Devis, whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the operating thinking of Sharktech Global's founder and CEO, Dainu Devis, whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'manufacturing-consultancy-australia': {
@@ -1241,7 +1241,7 @@ const blogPostsData: Record<string, BlogPostData> = {
     keywords: ['manufacturing consultancy Australia', 'go-to-market strategy Australia', 'on-the-ground business support Australia'],
     content: `
       <h2>Direct answer</h2>
-      <p>Manufacturing consultancy in Australia should connect product design, production, compliance, landed cost, service and route to market before tooling or inventory is locked in. <a href="/">DivineLab Worx</a> applies Concurrent Product and Process Design to make those dependencies visible early.</p>
+      <p>Manufacturing consultancy in Australia should connect product design, production, compliance, landed cost, service and route to market before tooling or inventory is locked in. <a href="/">Divine Lab Worx</a> applies Concurrent Product and Process Design to make those dependencies visible early.</p>
 
       <p>A product is not ready for Australia simply because it can be manufactured. It must meet the required standards, perform in its intended conditions, arrive at a viable landed cost, fit the selected channel and remain supportable after the sale.</p>
 
@@ -1345,7 +1345,7 @@ const blogPostsData: Record<string, BlogPostData> = {
       <p>The design determines how easily the product can be diagnosed, repaired and supported. After-sales performance directly affects margin and customer trust.</p>
 
       <h2>Design the product and market pathway together</h2>
-      <p>DivineLab Worx helps manufacturers and product developers turn a concept or existing product into a compliant, supportable and commercially viable Australian offer. The first step is a contained product, process and market-readiness review before major tooling, inventory or launch commitments. Read more about <a href="/capabilities/concurrent-product-process-design">our CPPD capability</a> or <a href="/contact">start the conversation</a>.</p>
+      <p>Divine Lab Worx helps manufacturers and product developers turn a concept or existing product into a compliant, supportable and commercially viable Australian offer. The first step is a contained product, process and market-readiness review before major tooling, inventory or launch commitments. Read more about <a href="/capabilities/concurrent-product-process-design">our CPPD capability</a> or <a href="/contact">start the conversation</a>.</p>
 
       <h2>Sources</h2>
       <ol>
@@ -1436,7 +1436,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p><a href="/capabilities">How our engagements are structured</a> sets out what staying accountable through to first sale looks like, rather than at the recommendation stage.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'retail-consulting-services-australia': {
@@ -1452,7 +1452,7 @@ const blogPostsData: Record<string, BlogPostData> = {
     keywords: ['retail consulting services Australia', 'go-to-market strategy Australia', 'on-the-ground business support Australia'],
     content: `
       <h2>Direct answer</h2>
-      <p>Retail consulting services in Australia should connect product range, supplier readiness, compliance, margin, channel selection, launch and after-sales. <a href="/">DivineLab Worx</a> helps retailers, wholesalers and manufacturers build ranges that customers can understand and the business can support commercially.</p>
+      <p>Retail consulting services in Australia should connect product range, supplier readiness, compliance, margin, channel selection, launch and after-sales. <a href="/">Divine Lab Worx</a> helps retailers, wholesalers and manufacturers build ranges that customers can understand and the business can support commercially.</p>
 
       <p>Good retail consulting is not limited to marketing, store design or a sales forecast. A product range has to make commercial sense from supplier to customer.</p>
 
@@ -1518,7 +1518,7 @@ const blogPostsData: Record<string, BlogPostData> = {
       <p>Warranty and returns affect margin, customer trust, retailer relationships and local support requirements. They should be designed before launch.</p>
 
       <h2>Build the range before buying the stock</h2>
-      <p>DivineLab Worx helps retailers, wholesalers and international manufacturers build product ranges that are commercially viable, compliant, supportable and ready to launch in Australia. A contained range and launch review can provide the category position, supplier assessment, compliance scope, margin model, channel plan and pilot. See <a href="/industries">our retail work</a> or <a href="/contact">discuss a range review</a>.</p>
+      <p>Divine Lab Worx helps retailers, wholesalers and international manufacturers build product ranges that are commercially viable, compliant, supportable and ready to launch in Australia. A contained range and launch review can provide the category position, supplier assessment, compliance scope, margin model, channel plan and pilot. See <a href="/industries">our retail work</a> or <a href="/contact">discuss a range review</a>.</p>
 
       <h2>Sources</h2>
       <ol>
@@ -1569,7 +1569,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If you're building a product launch strategy for Australia, the same sequencing discipline applies whether it's a single product or a full market entry Australia programme. <a href="/capabilities">Our launch and demand generation approach</a> is built around sequencing compliance, distribution and pilot evidence before national commitment, not after.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'product-launch-consulting-australia': {
@@ -1585,7 +1585,7 @@ const blogPostsData: Record<string, BlogPostData> = {
     keywords: ['product launch consulting Australia', 'go-to-market strategy Australia', 'on-the-ground business support Australia'],
     content: `
       <h2>Direct answer</h2>
-      <p>Product launch consulting in Australia should turn a market plan into a controlled local programme. <a href="/">DivineLab Worx</a> coordinates product readiness, compliance, channel selection, local representation, pilot delivery and after-sales before national scale.</p>
+      <p>Product launch consulting in Australia should turn a market plan into a controlled local programme. <a href="/">Divine Lab Worx</a> coordinates product readiness, compliance, channel selection, local representation, pilot delivery and after-sales before national scale.</p>
 
       <p>A launch plan created from another country can look complete and still fail in execution. The product may be delayed by compliance questions. A distributor may overstate its coverage. Retail feedback may not reach the factory. Samples may sit with the wrong people. Warranty responsibility may remain unclear until the first customer problem.</p>
 
@@ -1699,7 +1699,7 @@ const blogPostsData: Record<string, BlogPostData> = {
       <p>After the product, compliance pathway, service model, channel and pilot evidence meet agreed release criteria.</p>
 
       <h2>Launch locally, report clearly and scale from evidence</h2>
-      <p>DivineLab Worx connects product, compliance, distribution, demand and after-sales in one Australian product-launch programme. The engagement can include product readiness, compliance coordination, channel assessment, local meetings, pilot design, demand generation, service planning and a controlled path from first sale to scale. See <a href="/capabilities">our capabilities</a> or <a href="/contact">discuss a launch programme</a>.</p>
+      <p>Divine Lab Worx connects product, compliance, distribution, demand and after-sales in one Australian product-launch programme. The engagement can include product readiness, compliance coordination, channel assessment, local meetings, pilot design, demand generation, service planning and a controlled path from first sale to scale. See <a href="/capabilities">our capabilities</a> or <a href="/contact">discuss a launch programme</a>.</p>
 
       <h2>Sources</h2>
       <ol>
@@ -1739,7 +1739,7 @@ const blogPostsData: Record<string, BlogPostData> = {
       <p>A pilot structure that produces evidence a local buying committee can act on. Australian enterprise buyers are, on the whole, less willing to commit to a platform-wide rollout without a contained, measured pilot first, and building that pilot structure into the go-to-market plan from day one avoids months of back-and-forth negotiating it deal by deal.</p>
 
       <h2>Why this looks a lot like any other market entry</h2>
-      <p>Strip away the word "AI" and this is the same sequencing problem DivineLab Worx works through for physical products entering Australia: specification and compliance mapped before the sales motion starts, distribution partners vetted on real capability rather than a capabilities deck, and demand proven through a pilot before national or enterprise-wide spend commits. The technology behind an enterprise AI vendor market entry is different. The market-entry mechanics that decide whether it actually sells here are not, and a genuine AI go-to-market strategy Australia buyers respond to treats both halves as one connected piece of work.</p>
+      <p>Strip away the word "AI" and this is the same sequencing problem Divine Lab Worx works through for physical products entering Australia: specification and compliance mapped before the sales motion starts, distribution partners vetted on real capability rather than a capabilities deck, and demand proven through a pilot before national or enterprise-wide spend commits. The technology behind an enterprise AI vendor market entry is different. The market-entry mechanics that decide whether it actually sells here are not, and a genuine AI go-to-market strategy Australia buyers respond to treats both halves as one connected piece of work.</p>
 
       <h2>Common questions</h2>
       <h3>What compliance requirements matter most for an AI platform entering Australia?</h3>
@@ -1753,7 +1753,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If you're bringing an AI business transformation platform into the Australian market, <a href="/capabilities">our approach to market entry</a> covers how compliance, distribution and pilot evidence get sequenced before the sales team goes wide.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'agentic-ai-deployment-australia': {
@@ -1797,7 +1797,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If you're bringing an agentic AI platform to the Australian market, <a href="/capabilities">our approach to market entry</a> covers how governance, compliance and pilot evidence get sequenced so a strong product doesn't stall in review.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   },
   'smb-ai-enablement-australia-market-entry': {
@@ -1841,7 +1841,7 @@ const blogPostsData: Record<string, BlogPostData> = {
 
       <p>If you're bringing an SMB AI enablement platform to the Australian market, this is exactly the kind of AI platform market entry Australia work <a href="/capabilities">our approach to market entry</a> is built around: distribution, channel and pricing sequenced to match how the buyer actually decides, not how the platform was sold in another market.</p>
 
-      <p><em>DivineLab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
+      <p><em>Divine Lab Worx is the go-to-market consultancy arm of Sharktech Global, working alongside Sharktech's broader business consultancy practice on market entry, compliance and distribution across Australia. This piece draws on the same operating thinking behind Sharktech Global's founder and CEO, Dainu Devis, a business strategist whose background spans concurrent product and process design at UNSW, national telecommunications infrastructure delivery across 2,200 network sites for Telstra, and market entry advisory for Asian manufacturers entering Australia and New Zealand. For deeper insight into how he approaches go-to-market strategy and category building, visit <a href="https://www.dainudevis.com/" target="_blank" rel="noopener noreferrer">dainudevis.com</a>.</em></p>
     `
   }
 };

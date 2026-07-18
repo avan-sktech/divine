@@ -50,8 +50,8 @@ const capabilities = [
 
 const faqs = [
   {
-    question: 'What does DivineLab Worx do?',
-    answer: 'DivineLab Worx is the go-to-market strategist and consultancy arm of Sharktech Global. We take a product, a range or a build system from concept to after-sales in the Australian market. Strategy, compliance, distribution, launch and demand run as one accountable programme.',
+    question: 'What does Divine Lab Worx do?',
+    answer: 'Divine Lab Worx is the go-to-market strategist and consultancy arm of Sharktech Global. We take a product, a range or a build system from concept to after-sales in the Australian market. Strategy, compliance, distribution, launch and demand run as one accountable programme.',
   },
   {
     question: 'Who are these capabilities for?',
@@ -92,10 +92,10 @@ const Capabilities = () => {
   return (
     <>
       <Helmet>
-        <title>Capabilities | DivineLab Worx - Go-to-Market Strategy Australia</title>
+        <title>Capabilities | Divine Lab Worx - Go-to-Market Strategy Australia</title>
         <meta name="description" content="Market-entry strategy, compliance pathway, distribution design, CPPD, launch and demand, and programme integration. One accountable team from concept to after-sales in Australia." />
         <link rel="canonical" href="https://divinelabworx.com/capabilities" />
-        <meta property="og:title" content="Capabilities | DivineLab Worx" />
+        <meta property="og:title" content="Capabilities | Divine Lab Worx" />
         <meta property="og:description" content="Six connected capabilities that take a product from concept to first sale in Australia, as one accountable programme." />
         <meta property="og:url" content="https://divinelabworx.com/capabilities" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />

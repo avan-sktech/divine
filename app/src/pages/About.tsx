@@ -7,10 +7,10 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About | DivineLab Worx - The Consultancy Arm of Sharktech Global</title>
-        <meta name="description" content="DivineLab Worx is the go-to-market strategist and consultancy arm of Sharktech Global, serving retail, manufacturing and sustainable housing in Australia." />
+        <title>About | Divine Lab Worx - The Consultancy Arm of Sharktech Global</title>
+        <meta name="description" content="Divine Lab Worx is the go-to-market strategist and consultancy arm of Sharktech Global, serving retail, manufacturing and sustainable housing in Australia." />
         <link rel="canonical" href="https://divinelabworx.com/about" />
-        <meta property="og:title" content="About | DivineLab Worx" />
+        <meta property="og:title" content="About | Divine Lab Worx" />
         <meta property="og:description" content="The go-to-market strategist and consultancy arm of Sharktech Global, serving retail, manufacturing and sustainable housing in Australia." />
         <meta property="og:url" content="https://divinelabworx.com/about" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
@@ -39,7 +39,7 @@ const About = () => {
               The Go-to-Market Strategist for Australia
             </h1>
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
-              DivineLab Worx is the consultancy arm of Sharktech Global. We bring products to
+              Divine Lab Worx is the consultancy arm of Sharktech Global. We bring products to
               market in Australia for retail, manufacturing and sustainable housing, and we
               take critical infrastructure from site intelligence to build-ready. One
               accountable team takes each engagement from first concept and specification to
@@ -132,7 +132,7 @@ const About = () => {
                   including Telstra, Ventia, and Aldi.
                 </p>
                 <p className="text-sm text-accent-muted leading-relaxed mt-4">
-                  The mandate for DivineLab Worx is built on evidence discipline: taking a product,
+                  The mandate for Divine Lab Worx is built on evidence discipline: taking a product,
                   a range or a build system from concept to a compliant, distributed and selling
                   offer in the Australian market, with one team accountable for the result.
                 </p>

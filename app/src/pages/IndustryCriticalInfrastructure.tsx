@@ -57,7 +57,7 @@ const capabilities = [
   {
     id: 'fiber',
     title: 'Fibre & Subsea Infrastructure',
-    description: 'We engineer the digital backbone. DivineLab Worx provides full-lifecycle advisory and design for the critical network pathways that connect hyperscale ecosystems with low-latency route diversity.',
+    description: 'We engineer the digital backbone. Divine Lab Worx provides full-lifecycle advisory and design for the critical network pathways that connect hyperscale ecosystems with low-latency route diversity.',
     services: [
       { category: 'Execution', items: 'Route feasibility analysis, permitting, and shore landing execution.' },
       { category: 'Design', items: 'Cable station design and secure terrestrial fibre duct planning.' },
@@ -88,7 +88,7 @@ const capabilities = [
 
 const faqs = [
   {
-    question: 'What does DivineLab Worx do for critical infrastructure?',
+    question: 'What does Divine Lab Worx do for critical infrastructure?',
     answer: 'We identify and validate locations for mission-critical facilities in Australia, then stay with you through power, permits and project management until the site is build-ready. The practice covers hyperscale data centres, sovereign AI factories, semiconductor fabs and advanced cleanrooms.',
   },
   {
@@ -113,7 +113,7 @@ const infraJsonLd = {
       serviceType: 'Critical Infrastructure Site Consultancy',
       provider: {
         '@type': 'ProfessionalService',
-        name: 'DivineLab Worx',
+        name: 'Divine Lab Worx',
         parentOrganization: { '@type': 'Organization', name: 'Sharktech Global' },
       },
       areaServed: 'AU',
@@ -142,10 +142,10 @@ const IndustryCriticalInfrastructure = () => {
   return (
     <>
       <Helmet>
-        <title>Critical Infrastructure | DivineLab Worx - Data Centre & AI Factory Sites Australia</title>
+        <title>Critical Infrastructure | Divine Lab Worx - Data Centre & AI Factory Sites Australia</title>
         <meta name="description" content="Site intelligence, power, permits and project delivery for hyperscale data centres, sovereign AI factories, semiconductor fabs and advanced cleanrooms in Australia. Part of Sharktech Global." />
         <link rel="canonical" href="https://divinelabworx.com/industries/critical-infrastructure" />
-        <meta property="og:title" content="Critical Infrastructure | DivineLab Worx" />
+        <meta property="og:title" content="Critical Infrastructure | Divine Lab Worx" />
         <meta property="og:description" content="We find where critical infrastructure belongs. Site intelligence, power, permits and project delivery until your site is build-ready." />
         <meta property="og:url" content="https://divinelabworx.com/industries/critical-infrastructure" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />

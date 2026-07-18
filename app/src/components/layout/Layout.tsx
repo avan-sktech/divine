@@ -33,7 +33,7 @@ const Layout = () => {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-sm font-semibold tracking-tight text-optical-white">
-                    DIVINELAB WORX
+                    DIVINE LAB WORX
                   </span>
                   <div className="h-4 w-px bg-silver-steel/30" />
                   <div className="w-24 sm:w-28">
@@ -108,7 +108,7 @@ const Layout = () => {
             {/* Bottom bar */}
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-silver-steel/10">
               <p className="text-xs font-mono text-accent-muted/60">
-                © 2026 DIVINELAB WORX · A division of Sharktech Global
+                © 2026 DIVINE LAB WORX · A division of Sharktech Global
               </p>
               <div className="flex items-center gap-6">
                 <Link to="/privacy" className="text-xs font-mono text-accent-muted/60 hover:text-gold transition-colors">

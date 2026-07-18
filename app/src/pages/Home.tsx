@@ -56,28 +56,28 @@ const approachSteps = [
     number: '01',
     title: 'Diagnose & position',
     description: 'Product reality check, target customer, positioning and the fastest defensible route to market.',
-    tag: 'DIVINELAB OWNS',
+    tag: 'DIVINE LAB OWNS',
     active: true,
   },
   {
     number: '02',
     title: 'Specification & compliance',
     description: 'Australian specification, evidence register and homologation scope, coordinated with specialists.',
-    tag: 'DIVINELAB OWNS',
+    tag: 'DIVINE LAB OWNS',
     active: true,
   },
   {
     number: '03',
     title: 'Distribution & partners',
     description: 'Partner sourcing, due diligence, channel economics and agreements to a signed, accountable distributor.',
-    tag: 'DIVINELAB OWNS',
+    tag: 'DIVINE LAB OWNS',
     active: true,
   },
   {
     number: '04',
     title: 'Go-to-market & demand',
     description: 'Trial, affiliate and scale phases, each with a defined audience, channel and measurable outcome.',
-    tag: 'DIVINELAB OWNS',
+    tag: 'DIVINE LAB OWNS',
     active: true,
   },
   {
@@ -184,7 +184,7 @@ const credItems = [
   { big: 'Nearly a decade', label: 'of product launch and go-to-market strategy experience' },
   { big: 'Retail · Manufacturing · Housing · Infrastructure', label: 'the industries we consult to in Australia' },
   { big: 'One accountable team', label: 'from concept and specification to after-sales' },
-  { big: 'Sharktech Global', label: 'DivineLab Worx is its specialist consultancy arm' },
+  { big: 'Sharktech Global', label: 'Divine Lab Worx is its specialist consultancy arm' },
 ];
 
 const readinessRows = [
@@ -207,15 +207,15 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>DivineLab Worx | Go-to-Market Strategist for Australia</title>
-        <meta name="description" content="DivineLab Worx is the go-to-market strategist for companies bringing products to the Australian market. Market entry, compliance, distribution, launch and demand, as one accountable programme. Part of Sharktech Global." />
+        <title>Divine Lab Worx | Go-to-Market Strategist for Australia</title>
+        <meta name="description" content="Divine Lab Worx is the go-to-market strategist for companies bringing products to the Australian market. Market entry, compliance, distribution, launch and demand, as one accountable programme. Part of Sharktech Global." />
         <link rel="canonical" href="https://divinelabworx.com" />
-        <meta property="og:title" content="DivineLab Worx | Go-to-Market Strategist for Australia" />
+        <meta property="og:title" content="Divine Lab Worx | Go-to-Market Strategist for Australia" />
         <meta property="og:description" content="Complete product launch, from concept to after-sales. One accountable team for retail, manufacturing and sustainable housing in Australia." />
         <meta property="og:url" content="https://divinelabworx.com" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
-        <meta name="answer-engine:question" content="What does DivineLab Worx do?" />
-        <meta name="answer-engine:answer" content="DivineLab Worx is the go-to-market strategist and consultancy arm of Sharktech Global. It brings products to market in Australia for retail, manufacturing and sustainable housing, taking each launch from first concept and specification to compliance, distribution, demand and after-sales as one accountable programme." />
+        <meta name="answer-engine:question" content="What does Divine Lab Worx do?" />
+        <meta name="answer-engine:answer" content="Divine Lab Worx is the go-to-market strategist and consultancy arm of Sharktech Global. It brings products to market in Australia for retail, manufacturing and sustainable housing, taking each launch from first concept and specification to compliance, distribution, demand and after-sales as one accountable programme." />
       </Helmet>
       <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
@@ -273,7 +273,7 @@ const Home = () => {
             <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
               <span className="font-mono text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.2em] text-gold uppercase">
-                DivineLab Worx · Consultancy arm of Sharktech Global
+                Divine Lab Worx · Consultancy arm of Sharktech Global
               </span>
             </div>
 
@@ -557,7 +557,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-6 sm:w-8 h-1 bg-gold rounded-full" />
-                <span className="text-accent-muted">DivineLab Worx owns this</span>
+                <span className="text-accent-muted">Divine Lab Worx owns this</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 sm:w-8 h-1 bg-silver-steel/30 rounded-full" />
@@ -687,7 +687,7 @@ const Home = () => {
               transition={{ duration: 0.5 }}
             >
               <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 sm:mb-4 block">
-                Why DivineLab Worx
+                Why Divine Lab Worx
               </span>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-optical-white mb-3 sm:mb-4">
                 The Enabler and the Integrator

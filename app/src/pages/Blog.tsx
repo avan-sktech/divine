@@ -359,10 +359,10 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Insights | DivineLab Worx - Market Entry, Product Launch & Infrastructure</title>
+        <title>Insights | Divine Lab Worx - Market Entry, Product Launch & Infrastructure</title>
         <meta name="description" content="Practical thinking on product launch, market entry, retail, manufacturing, AI platforms and critical infrastructure in Australia. Written by the team that runs the launches." />
         <link rel="canonical" href="https://divinelabworx.com/blog" />
-        <meta property="og:title" content="Insights | DivineLab Worx" />
+        <meta property="og:title" content="Insights | Divine Lab Worx" />
         <meta property="og:description" content="Practical thinking on product launch, market entry, retail, manufacturing, AI platforms and critical infrastructure in Australia." />
         <meta property="og:url" content="https://divinelabworx.com/blog" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
@@ -396,7 +396,7 @@ const Blog = () => {
               INSIGHTS
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white mb-6">
-              THE DIVINELAB WORX JOURNAL
+              THE DIVINE LAB WORX JOURNAL
             </h1>
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
               Practical thinking for companies bringing products, platforms and

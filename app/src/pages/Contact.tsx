@@ -25,11 +25,11 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact | DivineLab Worx - Engage Our Strategists</title>
-        <meta name="description" content="Engage DivineLab Worx to bring your product, range or build system to the Australian market. One accountable team from concept to after-sales." />
+        <title>Contact | Divine Lab Worx - Engage Our Strategists</title>
+        <meta name="description" content="Engage Divine Lab Worx to bring your product, range or build system to the Australian market. One accountable team from concept to after-sales." />
         <link rel="canonical" href="https://divinelabworx.com/contact" />
-        <meta property="og:title" content="Contact | DivineLab Worx" />
-        <meta property="og:description" content="Engage DivineLab Worx to bring your product, range or build system to the Australian market." />
+        <meta property="og:title" content="Contact | Divine Lab Worx" />
+        <meta property="og:description" content="Engage Divine Lab Worx to bring your product, range or build system to the Australian market." />
         <meta property="og:url" content="https://divinelabworx.com/contact" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
       </Helmet>
@@ -221,7 +221,7 @@ const Contact = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl sm:text-2xl font-semibold text-optical-white mb-2">
-                  DivineLab Worx
+                  Divine Lab Worx
                 </h3>
                 <p className="text-sm text-accent-muted">
                   PART OF SHARKTECH GLOBAL

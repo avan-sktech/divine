@@ -121,8 +121,8 @@ const faqs = [
     answer: 'Manufacturers, importers and brands bringing an engineered or physical product to the Australian market, especially where compliance, cost, quality and after-sales service decide success, such as retail, manufacturing and sustainable housing.',
   },
   {
-    question: 'How much experience does DivineLab Worx have?',
-    answer: 'DivineLab Worx, the consultancy arm of Sharktech Global, brings nearly a decade of product launch and go-to-market strategy experience across engineered and physical products in Australia.',
+    question: 'How much experience does Divine Lab Worx have?',
+    answer: 'Divine Lab Worx, the consultancy arm of Sharktech Global, brings nearly a decade of product launch and go-to-market strategy experience across engineered and physical products in Australia.',
   },
   {
     question: 'How is this different from a marketing agency?',
@@ -130,7 +130,7 @@ const faqs = [
   },
   {
     question: 'Where do you sit within Sharktech Global?',
-    answer: 'DivineLab Worx is the specialist consultancy arm of Sharktech Global, drawing on the wider group for marketing, technology and industry partnerships while running product-to-market strategy as a dedicated practice.',
+    answer: 'Divine Lab Worx is the specialist consultancy arm of Sharktech Global, drawing on the wider group for marketing, technology and industry partnerships while running product-to-market strategy as a dedicated practice.',
   },
 ];
 
@@ -142,7 +142,7 @@ const cppdJsonLd = {
       serviceType: 'Concurrent Product and Process Design',
       provider: {
         '@type': 'ProfessionalService',
-        name: 'DivineLab Worx',
+        name: 'Divine Lab Worx',
         parentOrganization: { '@type': 'Organization', name: 'Sharktech Global' },
       },
       areaServed: 'AU',
@@ -171,10 +171,10 @@ const CapabilityCPPD = () => {
   return (
     <>
       <Helmet>
-        <title>Concurrent Product & Process Design (CPPD) | DivineLab Worx</title>
-        <meta name="description" content="DivineLab Worx, the consultancy arm of Sharktech Global, applies Concurrent Product and Process Design (CPPD) to bring engineered products to market in Australia. Nearly a decade of product launch and go-to-market strategy experience." />
+        <title>Concurrent Product & Process Design (CPPD) | Divine Lab Worx</title>
+        <meta name="description" content="Divine Lab Worx, the consultancy arm of Sharktech Global, applies Concurrent Product and Process Design (CPPD) to bring engineered products to market in Australia. Nearly a decade of product launch and go-to-market strategy experience." />
         <link rel="canonical" href="https://divinelabworx.com/capabilities/concurrent-product-process-design" />
-        <meta property="og:title" content="Concurrent Product & Process Design (CPPD) | DivineLab Worx" />
+        <meta property="og:title" content="Concurrent Product & Process Design (CPPD) | Divine Lab Worx" />
         <meta property="og:description" content="The go-to-market strategist that designs the product, its process and its service together, so a launch starts ready. Part of Sharktech Global." />
         <meta property="og:url" content="https://divinelabworx.com/capabilities/concurrent-product-process-design" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
@@ -213,7 +213,7 @@ const CapabilityCPPD = () => {
               We design the product, its process, its compliance and its service together. From the
               concept stage, not after. The result is simple. A product that wins on the specs buyers
               care about, is built at cost and quality, and is ready to sell in Australia on day one.
-              DivineLab Worx is the consultancy arm of Sharktech Global.
+              Divine Lab Worx is the consultancy arm of Sharktech Global.
             </p>
           </motion.div>
         </div>
@@ -395,7 +395,7 @@ const CapabilityCPPD = () => {
             className="max-w-3xl mb-12"
           >
             <span className="font-mono text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-              Why Partner with DivineLab Worx
+              Why Partner with Divine Lab Worx
             </span>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-4">
               The Reason a Retailer, Manufacturer or Homebuilder Engages Us

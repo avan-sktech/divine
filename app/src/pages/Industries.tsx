@@ -102,7 +102,7 @@ const industryBlocks = [
 
 const faqs = [
   {
-    question: 'Which industries does DivineLab Worx consult to?',
+    question: 'Which industries does Divine Lab Worx consult to?',
     answer: 'Retail, manufacturing, sustainable housing including 3D-printed homes, and critical infrastructure such as data centres and AI factories. In each, we act as one accountable team that takes a product, a range, a build system or a facility from concept to operation.',
   },
   {
@@ -110,7 +110,7 @@ const faqs = [
     answer: 'Yes. We act as the local go-to-market partner for manufacturers and product developers, handling positioning, compliance, distribution, launch and service so the product reaches the Australian market ready to sell.',
   },
   {
-    question: 'How much experience does DivineLab Worx have?',
+    question: 'How much experience does Divine Lab Worx have?',
     answer: 'Nearly a decade of product launch and go-to-market strategy experience, backed by the wider Sharktech Global group.',
   },
 ];
@@ -140,10 +140,10 @@ const Industries = () => {
   return (
     <>
       <Helmet>
-        <title>Industries: Retail, Manufacturing, Housing & Critical Infrastructure | DivineLab Worx</title>
-        <meta name="description" content="DivineLab Worx, the consultancy arm of Sharktech Global, consults to retail, manufacturing, sustainable housing and critical infrastructure in Australia. Nearly a decade of product launch and go-to-market strategy experience." />
+        <title>Industries: Retail, Manufacturing, Housing & Critical Infrastructure | Divine Lab Worx</title>
+        <meta name="description" content="Divine Lab Worx, the consultancy arm of Sharktech Global, consults to retail, manufacturing, sustainable housing and critical infrastructure in Australia. Nearly a decade of product launch and go-to-market strategy experience." />
         <link rel="canonical" href="https://divinelabworx.com/industries" />
-        <meta property="og:title" content="Industries: Retail, Manufacturing, Housing & Critical Infrastructure | DivineLab Worx" />
+        <meta property="og:title" content="Industries: Retail, Manufacturing, Housing & Critical Infrastructure | Divine Lab Worx" />
         <meta property="og:description" content="Go-to-market strategy and critical infrastructure consulting for Australia. Part of Sharktech Global." />
         <meta property="og:url" content="https://divinelabworx.com/industries" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
@@ -174,7 +174,7 @@ const Industries = () => {
             <p className="text-base sm:text-lg text-accent-muted leading-relaxed">
               We work across four Australian industries. Retail. Manufacturing. Sustainable housing.
               Critical infrastructure. We take a product, a range, a build system or a facility from
-              concept to operation. One team. One plan. DivineLab Worx is the consultancy arm of
+              concept to operation. One team. One plan. Divine Lab Worx is the consultancy arm of
               Sharktech Global.
             </p>
           </motion.div>

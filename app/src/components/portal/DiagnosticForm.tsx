@@ -381,7 +381,7 @@ const DiagnosticForm: React.FC<DiagnosticFormProps> = ({ vertical, onSubmitSucce
               </h3>
               
               <p className="text-sm text-accent-muted max-w-md mx-auto leading-relaxed">
-                A DivineLab Worx strategist will contact you within 24 hours.
+                A Divine Lab Worx strategist will contact you within 24 hours.
               </p>
               
               <div className="mt-8 pt-6 border-t border-silver-steel/20">
