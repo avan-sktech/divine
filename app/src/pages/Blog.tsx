@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, User } from 'lucide-react';
 
-const blogPosts = [
+export const blogPosts = [
   {
     id: 1,
     slug: 'margin-leakage-australia',
