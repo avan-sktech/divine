@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Website Terms | DivineLab Worx" description="Read the terms governing use of the DivineLab Worx website, general information, engagement status, content accuracy and updates.">
+  <PageHero eyebrow="Legal" title="Website <em>terms.</em>" lede="Terms governing use of the DivineLab Worx website and its general information." index="LGL / 02" primaryLabel="Contact us" />
+  <section class="section section-paper"><div class="shell legal">
+    <p>Last updated: 24 July 2026</p>
+    <h2>General information</h2><p>The website provides general information about DivineLab Worx, its capabilities and perspectives. It is not legal, financial, engineering, regulatory or other specialist advice.</p>
+    <h2>No engagement created</h2><p>Using the website or sending an enquiry does not create a client or advisory relationship. The scope, responsibilities and commercial terms of any engagement must be agreed separately in writing.</p>
+    <h2>Accuracy and change</h2><p>We take reasonable care with website information but do not guarantee that it is complete, current or suitable for a particular decision. Content may change without notice.</p>
+    <h2>Contact</h2><p>Questions about these terms can be sent to <a class="text-link" href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  </div></section>
+</BaseLayout>

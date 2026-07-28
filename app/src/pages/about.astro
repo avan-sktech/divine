@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RevampHero from '../components/RevampHero.astro';
+import EditorialMedia from '../components/EditorialMedia.astro';
+import CTA from '../components/CTA.astro';
+import { breadcrumbSchema, site } from '../data/site';
+
+const title = 'About DivineLab Worx and Dainu Devis';
+const description =
+  'DivineLab Worx is the business strategy and transformation consultancy division of Sharktech Global, supporting Australian and international mandates.';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Dainu Devis',
+    jobTitle: 'Strategist and CEO',
+    worksFor: { '@id': `${site.url}/#organisation` },
+    url: `${site.url}/about`,
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema} pageClass="revamp-page">
+  <RevampHero
+    eyebrow="About"
+    title="One accountable team, led by the strategist who built the <em>method.</em>"
+    support="Independent commercial thinking connected to the technology and delivery capability required to carry it forward."
+    primaryLabel="Start an engagement"
+    primaryHref="/contact"
+    secondaryLabel="See capabilities"
+    secondaryHref="/capabilities"
+    code="ORG / INTL"
+  />
+
+  <section class="revamp-answer">
+    <div class="shell revamp-answer-grid" data-reveal>
+      <div>
+        <p class="revamp-eyebrow">Direct answer</p>
+        <h2>Who is DivineLab Worx?</h2>
+      </div>
+      <p>
+        DivineLab Worx is the business strategy and transformation consultancy division of Sharktech Global. Led by Dainu Devis, it helps organisations enter markets, launch new offers, evaluate complex opportunities and grow from existing capacity across Australian and international mandates.
+      </p>
+    </div>
+  </section>
+
+  <EditorialMedia
+    image="/images/editorial/executive-workshop.webp"
+    alt="Business leaders in a focused executive strategy workshop"
+    eyebrow="Executive alignment"
+    caption="Complex mandates move faster when commercial choices, stakeholder expectations and delivery constraints are visible in the same room."
+    index="ORG / 02"
+    position="center 44%"
+  />
+
+  <section class="revamp-section">
+    <div class="shell article-grid">
+      <div class="article-sticky" data-reveal>
+        <p class="revamp-eyebrow">Why the firm exists</p>
+        <h2>Close the gap between a recommendation and revenue.</h2>
+      </div>
+      <div class="article-body" data-reveal>
+        <section>
+          <h2>Strategy should survive contact with the market.</h2>
+          <p>
+            A commercial recommendation is only as strong as the approvals, channel economics, customer behaviour and delivery system behind it. DivineLab Worx was formed to keep those decisions connected from the beginning.
+          </p>
+          <p>
+            The work is structured around a clear target customer, acquisition channel, conversion mechanism and measurable outcome. This keeps every phase answerable to the commercial mandate.
+          </p>
+        </section>
+        <section>
+          <h2>One team from decision to action.</h2>
+          <p>
+            DivineLab Worx leads strategy, market evidence and commercial design. Sharktech Global provides connected technology and implementation capability when the mandate requires it. Specialist advisers are introduced where legal, regulatory, engineering or technical confirmation is needed.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section revamp-section-dark">
+    <div class="shell leadership-revamp">
+      <div data-reveal>
+        <p class="revamp-eyebrow">Leadership</p>
+        <h2>Dainu Devis</h2>
+        <p class="leadership-title">Strategist and CEO</p>
+      </div>
+      <div data-reveal>
+        <p>
+          Dainu works at the point where strategy, market design and execution meet. His focus is practical: turn complex commercial questions into a clear sequence of evidence, decisions and accountable action.
+        </p>
+        <p>
+          His perspective is informed by work across international market strategy, growth, technology, construction, infrastructure and complex transformation mandates, including expert consultations through the Guidepoint network.
+        </p>
+        <a class="text-link text-link-light" href="/contact">Speak with Dainu <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">How the entities connect</p>
+          <h2>Clear roles. Shared accountability.</h2>
+        </div>
+        <p>
+          The structure keeps strategic independence while making practical delivery available without another hand-off.
+        </p>
+      </div>
+      <div class="entity-map" data-reveal>
+        <article>
+          <span>01 / Parent organisation</span>
+          <h3>Sharktech Global</h3>
+          <p>Technology, implementation and broader operating capability.</p>
+        </article>
+        <article>
+          <span>02 / Consultancy division</span>
+          <h3>DivineLab Worx</h3>
+          <p>Business strategy, market evidence, transformation, growth method and engagement leadership.</p>
+        </article>
+        <article>
+          <span>03 / Leadership</span>
+          <h3>Dainu Devis</h3>
+          <p>The accountable strategist leading the mandate and connecting the required work.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="A useful first conversation"
+    title="Bring the decision, not a polished brief."
+    copy="We will help frame the commercial question, the evidence required and the most useful contained first phase."
+  />
+</BaseLayout>
+
+<style>
+  .leadership-revamp{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(3rem,8vw,8rem)}
+  .leadership-revamp h2{margin:0;font-family:var(--display);font-size:clamp(4rem,8vw,9rem);font-weight:470;letter-spacing:-.055em;line-height:.86;text-transform:none}
+  .leadership-title{color:var(--orange);font-size:.72rem;font-weight:780;letter-spacing:.14em;text-transform:uppercase}
+  .leadership-revamp>div:last-child{align-self:end}
+  .leadership-revamp>div:last-child p{max-width:720px;color:rgba(255,255,255,.64);font-size:1.08rem}
+  .leadership-revamp .text-link{margin-top:1.5rem}
+  @media(max-width:760px){.leadership-revamp{grid-template-columns:1fr}}
+</style>

@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RevampHero from '../../components/RevampHero.astro';
+import FaqList from '../../components/FaqList.astro';
+import CTA from '../../components/CTA.astro';
+import { breadcrumbSchema, faqSchema, growthFaqs, process, site } from '../../data/site';
+
+const title = 'Capital-Efficient Growth Strategy Consultants | DivineLab Worx';
+const description =
+  'Capital-efficient growth strategy consulting for organisations across markets. Find more revenue in existing customers, assets, channels and capabilities.';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Capabilities', path: '/capabilities' },
+    { name: 'Capital-Efficient Growth', path: '/capabilities/capital-efficient-growth' },
+  ]),
+  faqSchema(growthFaqs),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Capital-Efficient Growth',
+    description,
+    provider: { '@id': `${site.url}/#organisation` },
+    areaServed: [
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Place', name: 'International markets' },
+    ],
+    serviceType: ['Growth strategy', 'Latent Growth Audit', 'Commercial adjacency strategy'],
+    offers: {
+      '@type': 'Offer',
+      name: 'Latent Growth Audit',
+      description: 'A fixed-scope, fixed-fee diagnostic with a board-ready shortlist of growth moves.',
+    },
+  },
+];
+
+const method = [
+  {
+    number: '01',
+    title: 'Map the base',
+    copy: 'Make the existing customers, assets, channels, data, relationships and capabilities visible.',
+  },
+  {
+    number: '02',
+    title: 'Find latent capacity',
+    copy: 'Locate underused assets, unmet customer needs, weak cross-sell and productive capability without enough demand.',
+  },
+  {
+    number: '03',
+    title: 'Rank adjacency moves',
+    copy: 'Compare moves by evidence, time to cash, capital intensity, strategic fit and execution risk.',
+  },
+  {
+    number: '04',
+    title: 'Fund it from within',
+    copy: 'Use cash flow, working-capital release, improved utilisation or a contained pilot before heavy new capital.',
+  },
+  {
+    number: '05',
+    title: 'Sequence and govern',
+    copy: 'Set ownership, measures and investment gates so each move proves the case for the next.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema} pageClass="revamp-page">
+  <RevampHero
+    eyebrow="Capital-efficient growth strategy"
+    title="Grow from what your business <em>already has.</em>"
+    support="More revenue from your existing base, without heavy new investment."
+    primaryLabel="Request a Latent Growth Audit"
+    primaryHref="/contact?type=latent-growth-audit"
+    secondaryLabel="See the method"
+    secondaryHref="#method"
+    image="/images/manufacturing-automation.jpg"
+    imageAlt="Automated manufacturing capacity in an established operating business"
+    code="CEG / 01"
+  />
+
+  <section class="revamp-answer">
+    <div class="shell revamp-answer-grid" data-reveal>
+      <div>
+        <p class="revamp-eyebrow">Direct answer</p>
+        <h2>What is capital-efficient growth?</h2>
+      </div>
+      <p>
+        Capital-efficient growth creates more revenue or margin from customers, assets, channels, data and capabilities the business already funds. It finds the value already present before asking for heavy new investment.
+      </p>
+    </div>
+  </section>
+
+  <section class="revamp-section">
+    <div class="shell article-grid">
+      <div class="article-sticky" data-reveal>
+        <p class="revamp-eyebrow">The operating premise</p>
+        <h2>Your business may contain more growth than the plan can currently see.</h2>
+      </div>
+      <div class="article-body" data-reveal>
+        <section>
+          <h2>Growth is often hidden in plain sight.</h2>
+          <p>
+            Businesses regularly fund productive capacity that is only partly used. A customer base knows one offer but needs another. A distribution relationship reaches only one segment. Technical capability solves more problems than the current proposition names.
+          </p>
+          <p>
+            The task is not to produce a long list of ideas. It is to identify which existing strengths can be converted into a credible revenue move and what evidence should be built before more capital is committed.
+          </p>
+        </section>
+        <section>
+          <h2>Start with the base, not the blank page.</h2>
+          <p>
+            New growth plans often begin by adding something: a product, market, team, platform or funding round. The Latent Growth Method begins by asking what the business has already paid to build and where productive capacity is trapped.
+          </p>
+          <p>
+            This changes the risk profile. Existing customers shorten the path to evidence. Existing assets reduce capital intensity. Existing channels offer a route to reach. Existing capability gives the business a right to win.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section revamp-section-dark" id="method">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">The Latent Growth Method</p>
+          <h2>Five steps from capacity to cash.</h2>
+        </div>
+        <p>
+          The method turns the existing business into a portfolio of testable growth moves, then sequences them by evidence and return.
+        </p>
+      </div>
+      <div class="method-grid" data-reveal>
+        {method.map((item) => (
+          <article class="method-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section">
+    <div class="shell">
+      <div class="quote-panel" data-reveal>
+        <p class="revamp-eyebrow">A useful analogy</p>
+        <blockquote>
+          An economy grows when existing people, infrastructure, knowledge and trade are used more productively.
+        </blockquote>
+        <p>
+          A business is similar. Capital-efficient growth raises productive use across the commercial base, then adds resources only where evidence shows they can compound the return.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">Fixed-scope first engagement</p>
+          <h2>The Latent Growth Audit.</h2>
+        </div>
+        <p>
+          A fixed-fee diagnostic that gives the board and executive team a ranked, evidence-led shortlist of growth moves.
+        </p>
+      </div>
+      <div class="detail-grid">
+        <article class="detail-card" data-reveal>
+          <small>01 / Map</small>
+          <h3>Commercial base map</h3>
+          <p>Customers, assets, channels, data, supplier relationships, capabilities and current constraints in one view.</p>
+        </article>
+        <article class="detail-card" data-reveal>
+          <small>02 / Identify</small>
+          <h3>Latent capacity register</h3>
+          <p>Evidence-backed areas where productive capacity, customer need or market reach is underused.</p>
+        </article>
+        <article class="detail-card" data-reveal>
+          <small>03 / Rank</small>
+          <h3>Board-ready shortlist</h3>
+          <p>Adjacency moves compared by likely value, time to cash, evidence strength, capital needs and execution risk.</p>
+        </article>
+        <article class="detail-card" data-reveal>
+          <small>04 / Govern</small>
+          <h3>First test and decision gates</h3>
+          <p>A contained next action, clear ownership and measures that determine whether the move should stop, adapt or scale.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section revamp-section-dark">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">Growth governance</p>
+          <h2>Make each move answerable.</h2>
+        </div>
+        <p>
+          Every opportunity is translated into four operating requirements before it enters the investment sequence.
+        </p>
+      </div>
+      <div class="governance-grid" data-reveal>
+        {process.map((item) => (
+          <article class="governance-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FaqList items={growthFaqs} heading="Capital-efficient growth, answered." />
+  <CTA
+    eyebrow="Fixed-scope first step"
+    title="Find the growth already inside the business."
+    copy="Request a Latent Growth Audit for a board-ready view of the strongest moves, required evidence and practical sequence."
+    label="Request a Latent Growth Audit"
+    href="/contact?type=latent-growth-audit"
+  />
+</BaseLayout>
