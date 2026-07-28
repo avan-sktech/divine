@@ -1,43 +1,9 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/services", "destination": "/capabilities", "permanent": true },
-
-    { "source": "/industries/electric-powersports", "destination": "/industries", "permanent": true },
-    { "source": "/industries/critical-infrastructure", "destination": "/infrastructure", "permanent": true },
-
-    { "source": "/capabilities/concurrent-product-process-design", "destination": "/product-commercialisation", "permanent": true },
-
-    { "source": "/blog/author/:slug", "destination": "/about", "permanent": true },
-
-    { "source": "/blog/margin-leakage-australia", "destination": "/blog/national-channel-that-does-not-fail", "permanent": true },
-    { "source": "/blog/channel-conflict-prevention", "destination": "/blog/national-channel-that-does-not-fail", "permanent": true },
-    { "source": "/blog/as-nzs-compliance", "destination": "/blog/scope-australian-approval-pathway-first", "permanent": true },
-    { "source": "/blog/deployment-architecture-vs-marketing", "destination": "/blog/concurrent-product-process-design-business-strategy", "permanent": true },
-    { "source": "/blog/infrastructure-deployment-australia", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/sovereign-observation-protocol", "destination": "/blog/national-channel-that-does-not-fail", "permanent": true },
-    { "source": "/blog/ai-data-centre-sites-australia", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/entering-australian-data-centre-market", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/infrastructure-moat-data-centre-selection", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/distribution-illusion-overseas-manufacturers", "destination": "/blog/national-channel-that-does-not-fail", "permanent": true },
-    { "source": "/blog/capital-ignores-physics", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/australia-datacentre-supercomputer-site-intelligence-2026", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/seven-variables-data-centre-site-australia", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
-    { "source": "/blog/dainu-devis-emerging-tech-ceo-australia", "destination": "/about", "permanent": true },
-
-    { "source": "/blog/business-consultancy-services-australia", "destination": "/blog/concurrent-product-process-design-business-strategy", "permanent": true },
-    { "source": "/blog/retail-business-consultancy-australia", "destination": "/industries", "permanent": true },
-    { "source": "/blog/retail-consulting-services-australia", "destination": "/industries", "permanent": true },
-    { "source": "/blog/australian-market-entry-consultant", "destination": "/market-entry-australia", "permanent": true },
-    { "source": "/blog/boots-on-the-ground-australia-market-entry", "destination": "/market-entry-australia", "permanent": true },
-    { "source": "/blog/manufacturing-product-launch-strategy-australia", "destination": "/blog/designing-market-into-product", "permanent": true },
-    { "source": "/blog/product-launch-strategy-australia", "destination": "/blog/designing-market-into-product", "permanent": true },
-    { "source": "/blog/product-launch-consulting-australia", "destination": "/blog/designing-market-into-product", "permanent": true },
-    { "source": "/blog/manufacturing-consultancy-australia", "destination": "/product-commercialisation", "permanent": true },
-    { "source": "/blog/go-to-market-strategist-vs-business-consultant", "destination": "/go-to-market-strategy", "permanent": true },
-    { "source": "/blog/ai-business-transformation-australia-market-entry", "destination": "/market-entry-australia", "permanent": true },
-    { "source": "/blog/agentic-ai-deployment-australia", "destination": "/market-entry-australia", "permanent": true },
-    { "source": "/blog/smb-ai-enablement-australia-market-entry", "destination": "/market-entry-australia", "permanent": true }
+  "version": 2,
+  "routes": [
+    { "src": "/industries/electric-powersports/?", "status": 301, "headers": { "Location": "/industries" } },
+    { "src": "/services/?", "status": 301, "headers": { "Location": "/capabilities" } },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
