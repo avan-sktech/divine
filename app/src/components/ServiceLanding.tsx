@@ -173,8 +173,16 @@ const ServiceLanding = (props: ServiceLandingProps) => {
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-optical-white leading-[1.08] mb-5">
-                {title}{titleAccent && <> <span className="text-gold">{titleAccent}</span></>}
+              <h1 className="text-display-1 font-semibold text-optical-white mb-6 max-w-[24ch]">
+                {title}
+                {titleAccent && (
+                  <>
+                    {' '}
+                    <em className="font-serif italic font-normal text-gold text-[1.06em] tracking-[-0.015em] pr-[0.05em]">
+                      {titleAccent}
+                    </em>
+                  </>
+                )}
               </h1>
               <div className="w-12 h-0.5 bg-gold mb-6" />
               <p className="text-base sm:text-lg text-accent-muted leading-relaxed max-w-2xl">
@@ -201,24 +209,25 @@ const ServiceLanding = (props: ServiceLandingProps) => {
         </section>
 
         {/* Direct answer */}
-        <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">
-          <div className="max-w-6xl mx-auto">
+        <section className="border-t-2 border-gold/70 bg-tile-bg/40">
+          <div className="max-w-shell mx-auto px-gutter py-section-tight">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start"
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-16 items-baseline"
             >
               <div>
-                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-3 block">
+                <span className="flex items-center gap-2.5 font-mono text-micro text-gold uppercase mb-4">
+                  <span aria-hidden="true" className="text-sm leading-none">+</span>
                   Direct answer
                 </span>
-                <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-optical-white">
+                <h2 className="text-display-3 font-semibold text-optical-white max-w-[22ch]">
                   {answerQuestion}
                 </h2>
               </div>
-              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">{answer}</p>
+              <p className="text-lede text-accent-muted max-w-measure">{answer}</p>
             </motion.div>
           </div>
         </section>
@@ -297,21 +306,24 @@ const ServiceLanding = (props: ServiceLandingProps) => {
           copy={scopeCopy}
           dark
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* Hairline matrix: gap-px over a rule-coloured backing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-silver-steel/15">
             {scopeItems.map((item, i) => (
               <motion.article
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="border border-silver-steel/20 p-6 hover:border-gold/50 transition-all duration-300 bg-obsidian/30"
+                transition={{ duration: 0.5, delay: (i % 3) * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative bg-obsidian p-6 sm:p-8 min-h-[190px] flex flex-col hover:bg-tile-bg transition-colors duration-300"
               >
-                <span className="text-2xl font-bold text-gold/20 block mb-3">{num(i)}</span>
-                <h3 className="text-base font-semibold text-optical-white mb-2 tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-accent-muted leading-relaxed">{item.description}</p>
+                <span className="font-mono text-micro-xs text-gold uppercase">{num(i)}</span>
+                <div className="mt-auto pt-8">
+                  <h3 className="text-base sm:text-lg font-semibold text-optical-white mb-2 tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-body-copy text-accent-muted">{item.description}</p>
+                </div>
               </motion.article>
             ))}
           </div>
@@ -396,67 +408,81 @@ const ServiceLanding = (props: ServiceLandingProps) => {
           </Section>
         )}
 
-        {/* FAQ */}
-        <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-          <div className="max-w-3xl mx-auto">
+        {/* FAQ: sticky rail plus native disclosure rows */}
+        <section className="border-t border-silver-steel/10">
+          <div className="max-w-shell mx-auto px-gutter py-section grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-16 items-start">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:sticky lg:top-32"
             >
-              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+              <span className="flex items-center gap-2.5 font-mono text-micro text-accent-muted uppercase mb-4">
+                <span aria-hidden="true" className="w-3 h-px bg-gold" />
                 Questions
               </span>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white">
+              <h2 className="text-display-3 font-semibold text-optical-white max-w-[18ch]">
                 {serviceName}, answered.
               </h2>
             </motion.div>
-            <div className="divide-y divide-silver-steel/10 border-t border-b border-silver-steel/10">
-              {faqs.map((faq, i) => (
-                <motion.div
+
+            <div className="border-t border-silver-steel/15">
+              {faqs.map((faq) => (
+                <details
                   key={faq.question}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.04 }}
-                  className="py-6"
+                  className="group border-b border-silver-steel/15 py-5 sm:py-6"
                 >
-                  <h3 className="text-base sm:text-lg font-semibold text-optical-white tracking-tight mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-sm text-accent-muted leading-relaxed">{faq.answer}</p>
-                </motion.div>
+                  <summary className="flex items-start justify-between gap-6 cursor-pointer list-none marker:hidden [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-base sm:text-lg font-semibold text-optical-white tracking-tight group-hover:text-gold transition-colors">
+                      {faq.question}
+                    </h3>
+                    <span
+                      aria-hidden="true"
+                      className="flex-shrink-0 mt-1 text-gold font-mono text-lg leading-none transition-transform duration-300 group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="text-body-copy text-accent-muted max-w-measure mt-4">
+                    {faq.answer}
+                  </p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* CTA: asymmetric closing band */}
+        <section className="border-t border-silver-steel/10 bg-tile-bg/40">
+          <div className="max-w-shell mx-auto px-gutter py-section grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-4 block">
+              <span className="flex items-center gap-2.5 font-mono text-micro text-gold uppercase mb-4">
+                <span aria-hidden="true" className="w-3 h-px bg-gold" />
                 {ctaEyebrow}
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-5">
+              <h2 className="text-display-2 font-semibold text-optical-white max-w-[20ch]">
                 {ctaTitle}
               </h2>
-              <p className="text-base text-accent-muted mb-8 max-w-2xl mx-auto leading-relaxed">
-                {ctaCopy}
-              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="text-lede text-accent-muted max-w-measure mb-8">{ctaCopy}</p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors"
+                className="group inline-flex items-center justify-between gap-8 min-w-[240px] min-h-[54px] px-5 bg-gold text-obsidian font-mono text-[11px] sm:text-xs font-bold tracking-[0.1em] uppercase hover:bg-gold-light transition-colors"
               >
                 {ctaLabel}
-                <ArrowRight size={18} />
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
           </div>
@@ -476,26 +502,25 @@ const Section = ({
   dark?: boolean;
   children: React.ReactNode;
 }) => (
-  <section
-    className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 ${
-      dark ? 'bg-tile-bg/40' : ''
-    }`}
-  >
-    <div className="max-w-6xl mx-auto">
+  <section className={`border-t border-silver-steel/10 ${dark ? 'bg-tile-bg/40' : ''}`}>
+    <div className="max-w-shell mx-auto px-gutter py-section">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="max-w-3xl mb-10"
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-6 lg:gap-16 items-baseline mb-section-heading"
       >
-        <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
-          {eyebrow}
-        </span>
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white mb-3">
-          {heading}
-        </h2>
-        <p className="text-sm sm:text-base text-accent-muted leading-relaxed">{copy}</p>
+        <div>
+          <span className="flex items-center gap-2.5 font-mono text-micro text-accent-muted uppercase mb-4">
+            <span aria-hidden="true" className="w-3 h-px bg-gold" />
+            {eyebrow}
+          </span>
+          <h2 className="text-display-2 font-semibold text-optical-white max-w-[20ch]">
+            {heading}
+          </h2>
+        </div>
+        <p className="text-lede text-accent-muted max-w-measure">{copy}</p>
       </motion.div>
       {children}
     </div>

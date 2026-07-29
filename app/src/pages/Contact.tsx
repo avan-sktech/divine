@@ -9,7 +9,7 @@ type VerticalType = 'consumer' | 'infrastructure' | null;
 const Contact = () => {
   const [selectedVertical, setSelectedVertical] = useState<VerticalType>(null);
   const [showForm, setShowForm] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [, setFormSubmitted] = useState(false);
 
   const handleVerticalSelect = (vertical: 'consumer' | 'infrastructure') => {
     setSelectedVertical(vertical);

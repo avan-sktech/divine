@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Capabilities from './pages/Capabilities';
@@ -23,7 +24,8 @@ import Terms from './pages/Terms';
 
 function App() {
   return (
-    <BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -64,7 +66,8 @@ function App() {
           <Route path="terms" element={<Terms />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </MotionConfig>
   );
 }
 

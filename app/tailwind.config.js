@@ -63,7 +63,38 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['Geist Mono', 'SF Mono', 'monospace'],
+        // Restricted accent face. Permitted only on the italic accent phrase
+        // inside a display heading, and on pull quotes. Never on eyebrows,
+        // code stamps, numerals, buttons, nav or body copy.
+        serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif'],
       },
+      // Display scale ported from the 2026 design package. Each token carries
+      // its own line-height and tracking so a heading needs one utility.
+      fontSize: {
+        'display-hero': ['clamp(2.5rem, 8.3vw, 8.6rem)', { lineHeight: '0.90', letterSpacing: '-0.020em' }],
+        'display-1': ['clamp(2.25rem, 6.1vw, 5.75rem)', { lineHeight: '0.94', letterSpacing: '-0.038em' }],
+        'display-2': ['clamp(2.1rem, 5.1vw, 4.25rem)', { lineHeight: '0.94', letterSpacing: '-0.036em' }],
+        'display-3': ['clamp(1.95rem, 3.8vw, 3.4rem)', { lineHeight: '0.97', letterSpacing: '-0.032em' }],
+        'display-4': ['clamp(1.45rem, 2.3vw, 2.1rem)', { lineHeight: '1.08', letterSpacing: '-0.028em' }],
+        lede: ['clamp(1rem, 1.35vw, 1.18rem)', { lineHeight: '1.65', letterSpacing: '-0.008em' }],
+        'body-copy': ['0.9375rem', { lineHeight: '1.75', letterSpacing: '0' }],
+        micro: ['0.6875rem', { lineHeight: '1.1', letterSpacing: '0.16em' }],
+        'micro-xs': ['0.625rem', { lineHeight: '1.1', letterSpacing: '0.18em' }],
+      },
+      maxWidth: {
+        shell: '1240px',
+        'shell-wide': '1440px',
+        lede: '36rem',
+        measure: '48ch',
+      },
+      spacing: {
+        gutter: 'clamp(1.25rem, 4vw, 3.5rem)',
+        section: 'clamp(4.5rem, 8vw, 8.5rem)',
+        'section-tight': 'clamp(3.25rem, 5.5vw, 5.5rem)',
+        'section-heading': 'clamp(2.5rem, 5vw, 5rem)',
+      },
+      transitionDuration: { 650: '650ms' },
+      transitionTimingFunction: { reveal: 'cubic-bezier(0.22, 1, 0.36, 1)' },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",

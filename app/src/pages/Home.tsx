@@ -6,6 +6,7 @@ import { capabilities, governance, workstreams, gates, homeFaqs } from '../data/
 import { blogPosts } from './Blog';
 import StrategyFilmstrip from '../components/StrategyFilmstrip';
 import EditorialVideo from '../components/EditorialVideo';
+import RevampHero from '../components/RevampHero';
 
 const industries = [
   {
@@ -126,126 +127,32 @@ const Home = () => {
       </Helmet>
 
       <div className="w-full overflow-x-hidden">
-        {/* Hero */}
-        <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 sm:pt-24 lg:pt-20 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover motion-reduce:hidden"
-              poster="/images/hero-robot-poster.jpg"
-            >
-              <source src="/videos/hero-robot.mp4" type="video/mp4" />
-            </video>
-            {/* Static fallback for reduced motion and low bandwidth */}
-            <img
-              src="/images/hero-robot-poster.jpg"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover hidden motion-reduce:block absolute inset-0"
-            />
-            <div className="absolute inset-0 bg-obsidian/70" />
-          </div>
-
-          {/* Technical grid */}
-          <div
-            className="absolute inset-0 z-0 pointer-events-none hidden sm:block"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, rgba(228, 228, 231, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(228, 228, 231, 0.05) 1px, transparent 1px)
-              `,
-              backgroundSize: '80px 80px',
-              maskImage: 'radial-gradient(ellipse 70% 80% at 60% 50%, rgba(0,0,0,0.6) 0%, transparent 80%)',
-            }}
-          />
-          <div
-            className="absolute z-0 pointer-events-none"
-            style={{
-              right: '-50px',
-              top: '30%',
-              transform: 'translateY(-50%)',
-              width: 'clamp(300px, 50vw, 700px)',
-              height: 'clamp(300px, 50vw, 700px)',
-              background: 'radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 65%)',
-            }}
-          />
-
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-3xl"
-            >
-              <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
-                <span className="font-mono text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.2em] text-gold uppercase">
-                  Divine Lab Worx · Consultancy arm of Sharktech Global
-                </span>
-              </div>
-
-              <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[54px] font-semibold tracking-tight text-optical-white leading-[1.06] mb-4 sm:mb-6">
-                From concept to after-sales.
-                <br />
-                <span className="text-gold">Strategy, engineering and market action</span>
-                <br />
-                in one accountable team.
-              </h1>
-
-              <div className="w-12 sm:w-14 h-0.5 bg-gold mb-4 sm:mb-6" />
-
-              <p className="font-mono text-[10px] sm:text-xs tracking-[0.12em] text-optical-white uppercase mb-4 sm:mb-6">
-                Workflow Design <span className="text-gold">+</span> Mechanical Engineering <span className="text-gold">+</span> CPPD <span className="text-gold">+</span> Go-to-Market Strategy <span className="text-gold">+</span> Software
-              </p>
-
-              <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-6 sm:mb-8 max-w-xl">
-                We bring products, systems and facilities to market in Australia. Retail,
-                manufacturing, housing and critical infrastructure. Held together by{' '}
-                <span className="text-optical-white font-medium">one accountable team</span>,
-                not four disconnected advisers.
-              </p>
-
-              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 bg-gold text-obsidian text-xs sm:text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors w-full sm:w-auto"
-                >
-                  Engage Our Strategists
-                  <ArrowRight size={16} />
-                </Link>
-                <Link
-                  to="/capabilities"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 border border-silver-steel/30 text-optical-white text-xs sm:text-sm font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors w-full sm:w-auto"
-                >
-                  What We Do →
-                </Link>
-              </div>
-
-              {/* Outlined service tags */}
-              <div className="flex flex-wrap gap-2.5 mt-8 sm:mt-10">
-                {heroTags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-mono text-[9px] sm:text-[10px] tracking-[0.1em] text-accent-muted border border-silver-steel/20 rounded-full px-3.5 py-1.5 bg-optical-white/[0.02]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Credibility band */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative z-10 border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
-          >
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-silver-steel/10 sm:divide-x">
+        {/* Hero, built to the 2026 design package template */}
+        <RevampHero
+          eyebrow="Divine Lab Worx · Consultancy arm of Sharktech Global"
+          title="From concept to after-sales."
+          titleAccent="Strategy that turns into market action."
+          support={
+            <>
+              We bring products, systems and facilities to market in Australia. Retail,
+              manufacturing, housing and critical infrastructure, held together by{' '}
+              <span className="text-optical-white font-medium">one accountable team</span>,
+              not four disconnected advisers.
+            </>
+          }
+          primaryLabel="Engage Our Strategists"
+          primaryHref="/contact"
+          secondaryLabel="What We Do"
+          secondaryHref="/capabilities"
+          video="/videos/hero-robot.mp4"
+          image="/images/hero-robot-poster.jpg"
+          imageAlt="Engineering and holographic product schematics representing product launch strategy"
+          code="DLW / INTL / 2026"
+          tags={heroTags}
+        >
+          {/* Credibility band sits directly beneath the hero stage */}
+          <div className="relative z-10 border-t border-silver-steel/10 bg-obsidian/70 backdrop-blur-sm">
+            <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-silver-steel/10 sm:divide-x">
               {credItems.map((item) => (
                 <div key={item.big} className="px-6 py-5 sm:py-6">
                   <div className="text-base sm:text-lg font-semibold tracking-tight text-optical-white">
@@ -257,8 +164,9 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
-        </section>
+          </div>
+        </RevampHero>
+
 
         {/* Direct answer */}
         <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, User, Bookmark, Twitter, Linkedin } from 'lucide-react';
 
 // Blog posts data with full content
 const blogPostsData: Record<string, BlogPostData> = {
@@ -1858,6 +1858,207 @@ const blogPostsData: Record<string, BlogPostData> = {
       <p>Both matter, but a specific, provable new revenue story tends to convert faster than an efficiency argument alone, particularly for SMBs already anxious about cash flow.</p>
 
       <p>If you're bringing an SMB AI enablement platform to the Australian market, this is exactly the kind of AI platform market entry Australia work <a href="/capabilities">our approach to market entry</a> is built around: distribution, channel and pricing sequenced to match how the buyer actually decides, not how the platform was sold in another market.</p>
+
+    `
+  }
+,
+  'concurrent-product-process-design-business-strategy': {
+    id: 28,
+    slug: 'concurrent-product-process-design-business-strategy',
+    title: 'Concurrent Product and Process Design for business strategy',
+    excerpt: 'How concurrent product and process design connects market strategy, the offer, delivery capability, economics and evidence before major commitments are made.',
+    author: 'Divine Lab Worx Editorial Team',
+    date: '2026-07-28',
+    readTime: '8 min read',
+    category: 'Methodology',
+    image: '/images/editorial/chess-executive-poster.webp',
+    seoTitle: 'Concurrent Product and Process Design | Divine Lab Worx',
+    metaDescription: 'How Concurrent Product and Process Design links strategy, the offer, delivery capability and economics before major commitments are made.',
+    keywords: ['Concurrent Product and Process Design', 'business strategy', 'product commercialisation'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> Concurrent Product and Process Design improves business strategy by developing what the organisation will offer and how it will sell, deliver, support and improve that offer at the same time. This exposes dependencies early and makes implementation part of the strategic decision.</p>
+
+      <h2>Concurrency is coordinated decision-making</h2>
+      <p>The method is not a request for every team to work at once. It gives customer, commercial, technical, operating and assurance decisions a shared line of sight, explicit dependencies and common evidence gates.</p>
+
+      <h2>The offer and delivery system mature together</h2>
+      <p>A value proposition is incomplete when the channel, operating process, service obligations, data, ownership and economics remain undefined. Concurrent design keeps the commercial promise connected to the system required to fulfil it.</p>
+
+      <h2>Evidence controls commitment</h2>
+      <p>Each gate identifies the decision being made, the evidence required, the failure being prevented and the commitment that can be released safely. Assumptions remain visible instead of becoming hidden foundations for larger investments.</p>
+
+      <h2>The method travels across operating contexts</h2>
+      <p>The workstreams change across international market entry, product commercialisation, business transformation, critical infrastructure and applied AI. The governing logic remains consistent: define the outcome, design interdependent work together, verify reality and learn before scaling.</p>
+
+      <p>For the full sequence of gates, workstreams and evidence requirements behind this approach, <a href="/methodology">Explore the DivineLab Concurrent Method</a>.</p>
+    `
+  },
+  'growth-you-have-already-paid-for': {
+    id: 29,
+    slug: 'growth-you-have-already-paid-for',
+    title: 'The growth you have already paid for',
+    excerpt: 'How to find underused commercial capacity in existing customers, channels, assets and capabilities, then sequence the strongest opportunities.',
+    author: 'Sarah Mitchell',
+    date: '2026-07-24',
+    readTime: '7 min read',
+    category: 'Growth strategy',
+    image: '/images/editorial/team-collaboration.webp',
+    seoTitle: 'Finding capital-efficient growth inside your business',
+    metaDescription: 'Find capital-efficient growth in the customers, channels, assets and capabilities you already fund, then sequence the strongest moves first.',
+    keywords: ['capital-efficient growth', 'growth strategy Australia', 'underused commercial capacity'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> The lowest-risk growth often sits inside the business already: unmet customer needs, idle asset capacity, underused channels and capabilities that can serve an adjacent demand pool.</p>
+
+      <h2>Map the base before adding to it</h2>
+      <p>List the customers, assets, channels, data, supplier relationships and capabilities the business already funds. The purpose is to see the commercial system as a portfolio of productive capacity, not a set of fixed departments.</p>
+
+      <h2>Look for friction and unused capacity</h2>
+      <p>Growth may be hidden in repeat customer problems, low utilisation, weak cross-sell, incomplete distribution or capabilities sold in only one form. Evidence matters more than brainstorming volume.</p>
+
+      <h2>Sequence the moves</h2>
+      <p>Rank each opportunity by customer evidence, time to cash, capital intensity and execution risk. Start with a contained move that can fund or de-risk the next one.</p>
+
+      <p>Divine Lab Worx applies this sequencing discipline when a growth programme has to be funded from the capacity a business already owns, <a href="/capabilities/capital-efficient-growth">Explore capital-efficient growth strategy</a>.</p>
+    `
+  },
+  'designing-market-into-product': {
+    id: 30,
+    slug: 'designing-market-into-product',
+    title: 'Designing the market into the product',
+    excerpt: 'Why the offer, production system, approval pathway and route to customer should be designed together.',
+    author: 'James Okonkwo',
+    date: '2026-07-18',
+    readTime: '8 min read',
+    category: 'Product strategy',
+    image: '/images/manufacturing-automation.jpg',
+    seoTitle: 'Designing product commercialisation as one system',
+    metaDescription: 'A product commercialisation approach that designs customer need, compliance, production, distribution, service and margin together, not in sequence.',
+    keywords: ['product commercialisation', 'concurrent product and process design', 'route to market design'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> A product becomes commercially ready when customer need, compliance, production, distribution, service and margin are designed as one system rather than solved in sequence.</p>
+
+      <h2>Begin with the buying decision</h2>
+      <p>Define who approves the purchase, what proof they require and what operational change follows. This prevents product development from drifting away from the real conversion mechanism.</p>
+
+      <h2>Treat delivery as part of the offer</h2>
+      <p>Installation, training, service response and channel incentives shape the customer experience and the unit economics. They belong in the product decision from the beginning.</p>
+
+      <h2>Use concurrent evidence</h2>
+      <p>Market, technical and process evidence should develop together. A change in one should update the others before cost and complexity become fixed.</p>
+
+      <p>If you are shaping the offer, the production system and the route to customer at the same time, <a href="/capabilities/concurrent-product-process-design">Explore product commercialisation strategy</a>.</p>
+    `
+  },
+  'scope-australian-approval-pathway-first': {
+    id: 31,
+    slug: 'scope-australian-approval-pathway-first',
+    title: 'Scope the Australian approval pathway first',
+    excerpt: 'How early regulatory mapping protects Australian launch timing, product claims, partner decisions and the commercial plan.',
+    author: 'Alexander Chen',
+    date: '2026-07-11',
+    readTime: '6 min read',
+    category: 'Market Entry',
+    image: '/images/compliance.jpg',
+    seoTitle: 'Scope the Australian approval pathway before launch',
+    metaDescription: 'Map the Australian approval pathway before launch commitments, because it shapes product claims, evidence, timing, partners and cost.',
+    keywords: ['Australian approval pathway', 'Australian regulatory compliance', 'market entry Australia'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> The Australian approval pathway should be mapped before launch commitments because it affects product claims, evidence requirements, timing, partners, cost and the first viable customer segment.</p>
+
+      <h2>Separate known requirements from assumptions</h2>
+      <p>Build an evidence register that shows the source, owner and confidence behind each requirement. Flag items that need legal, technical or regulatory confirmation.</p>
+
+      <h2>Connect approvals to the commercial plan</h2>
+      <p>A certification delay can change inventory timing, channel agreements and cash needs. The regulatory pathway is therefore a commercial workstream, not a final technical check.</p>
+
+      <h2>Design claims around evidence</h2>
+      <p>Marketing language should follow what can be substantiated in Australia. This creates a credible promise and reduces rework close to launch.</p>
+
+      <p>Regulatory mapping works best when it sits inside the wider entry plan rather than beside it, <a href="/capabilities/market-entry-strategy">Explore Australian market entry consulting</a>.</p>
+    `
+  },
+  'national-channel-that-does-not-fail': {
+    id: 32,
+    slug: 'national-channel-that-does-not-fail',
+    title: 'Building a national channel that does not fail',
+    excerpt: 'The partner economics, operating roles, coverage measures and service obligations that make national distribution durable.',
+    author: 'Sarah Mitchell',
+    date: '2026-07-05',
+    readTime: '8 min read',
+    category: 'Channel strategy',
+    image: '/images/distribution-network.jpg',
+    seoTitle: 'Building a national channel in Australia | Divine Lab Worx',
+    metaDescription: 'A durable national channel needs partner economics, clear ownership of service tasks and coverage measures set before agreements are signed.',
+    keywords: ['national channel strategy', 'distribution partner economics', 'channel coverage Australia'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> A durable national channel gives every participant a clear customer, economic reason to act, service obligation, territory logic and measure of productive performance.</p>
+
+      <h2>Make the incentive visible</h2>
+      <p>Margin alone is not a strategy. Partners need a reason to prioritise the offer, a credible demand plan and an operating model that protects their time.</p>
+
+      <h2>Specify ownership</h2>
+      <p>Lead generation, qualification, installation, training, warranty and account growth need explicit owners. Ambiguity becomes customer friction quickly.</p>
+
+      <h2>Measure productive coverage</h2>
+      <p>Count active opportunities, conversions, service performance and repeat demand rather than signed partner agreements. Coverage exists only when the channel can produce and support revenue.</p>
+
+      <p>Channel decisions are easier to hold when the economics and operating roles behind them are set out in one place, <a href="/capabilities/channel-strategy">Explore channel strategy consulting</a>.</p>
+    `
+  },
+  'fund-growth-from-within': {
+    id: 33,
+    slug: 'fund-growth-from-within',
+    title: 'Fund growth from within before you raise capital',
+    excerpt: 'A practical framework for releasing cash, improving working capital and building demand evidence before seeking outside funding.',
+    author: 'Dainu Devis',
+    date: '2026-06-28',
+    readTime: '7 min read',
+    category: 'Growth finance',
+    image: '/images/editorial/commercial-analysis.webp',
+    seoTitle: 'How to fund growth before raising capital | Divine Lab Worx',
+    metaDescription: 'You can often fund growth from within by releasing cash from operations, improving utilisation and proving demand before raising external capital.',
+    keywords: ['fund growth from within', 'capital efficient growth', 'working capital improvement'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> Businesses can often lower the cost and risk of growth by releasing cash from operations, improving utilisation and proving a contained demand case before raising external capital.</p>
+
+      <h2>Find the funding already trapped</h2>
+      <p>Slow inventory, weak pricing discipline, avoidable rework and underused assets can absorb cash that would otherwise support a focused growth move.</p>
+
+      <h2>Match capital to evidence</h2>
+      <p>Fund the smallest action that resolves the most important uncertainty. Each investment gate should have a customer, conversion and economic measure.</p>
+
+      <h2>Raise from a stronger position</h2>
+      <p>External capital is more useful when the business can show a proven demand signal, disciplined use of funds and a credible sequence for scaling.</p>
+
+      <p>To work out where cash is already trapped in your operations and what to fund first, <a href="/capabilities/capital-efficient-growth">Explore growth strategy consulting</a>.</p>
+    `
+  },
+  'where-critical-infrastructure-belongs': {
+    id: 34,
+    slug: 'where-critical-infrastructure-belongs',
+    title: 'Finding where critical infrastructure belongs',
+    excerpt: 'Why data centre and critical infrastructure site decisions require power, planning, fibre, water, land and delivery evidence in one view.',
+    author: 'Dainu Devis',
+    date: '2026-06-20',
+    readTime: '9 min',
+    category: 'Infrastructure',
+    image: '/images/data-center.jpg',
+    seoTitle: 'Critical Infrastructure Site Selection | Divine Lab Worx',
+    metaDescription: 'Choosing a site for critical infrastructure needs power, planning, fibre, water, land and delivery access assessed as one evidence base.',
+    keywords: ['critical infrastructure site selection', 'data centre site selection', 'power and planning constraints'],
+    content: `
+      <p class="lead-answer"><strong>The short version.</strong> Critical infrastructure belongs where land, utilities, planning, connectivity, delivery access and community context combine into a defensible operating and investment case.</p>
+
+      <h2>Power is necessary, but not sufficient</h2>
+      <p>Capacity, connection timing, redundancy and augmentation requirements must be assessed with planning and delivery constraints rather than in isolation.</p>
+
+      <h2>Build comparable evidence</h2>
+      <p>Every candidate should be tested against the same criteria, evidence standard and confidence level so that gaps and trade-offs remain visible.</p>
+
+      <h2>Shortlist before deep diligence</h2>
+      <p>Broad screening should remove locations that cannot meet the mandate. Specialist studies can then focus on candidates with a plausible route to delivery.</p>
+
+      <p>If a site decision needs power, planning, fibre, water, land and delivery access weighed in one view, <a href="/industries/critical-infrastructure">Explore data centre site selection advisory</a>.</p>
 
     `
   }

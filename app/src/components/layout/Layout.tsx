@@ -33,8 +33,9 @@ const Layout = () => {
   return (
     <GridBackground>
       <div className="min-h-screen flex flex-col">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main className="flex-1 pt-16 sm:pt-20">
+        <main id="main-content" className="flex-1 pt-16 sm:pt-20">
           <Outlet />
         </main>
         {/* Footer */}
