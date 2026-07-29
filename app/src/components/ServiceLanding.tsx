@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Check, X } from 'lucide-react';
+import EditorialVideo from './EditorialVideo';
 
 /**
  * Shared capability-page template.
@@ -43,7 +44,8 @@ export interface ServiceLandingProps {
   answerQuestion: string;
   answer: string;
   /** Optional editorial image band */
-  media?: { src: string; alt: string; caption?: string };
+  /** Editorial band image, with an optional film that plays while in view */
+  media?: { src: string; alt: string; caption?: string; video?: string };
   audienceHeading: string;
   audienceCopy: string;
   audienceItems: ServiceItem[];
@@ -231,12 +233,20 @@ const ServiceLanding = (props: ServiceLandingProps) => {
               transition={{ duration: 0.5 }}
               className="max-w-6xl mx-auto relative overflow-hidden border border-silver-steel/10 rounded-lg"
             >
-              <img
-                src={media.src}
-                alt={media.alt}
-                loading="lazy"
-                className="w-full h-[220px] sm:h-[320px] lg:h-[380px] object-cover"
-              />
+              {media.video ? (
+                <EditorialVideo
+                  src={media.video}
+                  poster={media.src}
+                  className="w-full h-[220px] sm:h-[320px] lg:h-[380px] object-cover"
+                />
+              ) : (
+                <img
+                  src={media.src}
+                  alt={media.alt}
+                  loading="lazy"
+                  className="w-full h-[220px] sm:h-[320px] lg:h-[380px] object-cover"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent" />
               <figcaption className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 flex flex-wrap items-end justify-between gap-3">
                 <span className="text-sm sm:text-base text-optical-white font-medium max-w-xl">

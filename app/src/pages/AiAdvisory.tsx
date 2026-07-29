@@ -22,9 +22,10 @@ const AiAdvisory = () => (
     answerQuestion="What does an AI advisory consultant do?"
     answer="An AI advisory consultant identifies where artificial intelligence can create measurable value, assesses organisational readiness, ranks use cases, defines governance and risk controls, builds the business case and plans a controlled implementation pathway."
     media={{
-      src: '/images/editorial/digital-business-systems-poster.webp',
-      alt: 'Connected digital business systems',
+      src: '/images/editorial/responsible-ai-poster.webp',
+      alt: 'Responsible AI governance and oversight',
       caption: 'Prioritise valuable use cases with accountable controls.',
+      video: '/video/editorial/responsible-ai.mp4',
     }}
     audienceHeading="Turn broad ambition into a controlled operating use case."
     audienceCopy="AI creates value when the use case, data, controls, human ownership and measurement method are designed as one operating system. Value, data, risk, adoption and ownership are decided together."

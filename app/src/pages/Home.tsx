@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ShoppingBag, Factory, Home as HomeIcon, Server } from 'lucide-react';
 import { capabilities, governance, workstreams, gates, homeFaqs } from '../data/capabilities';
 import { blogPosts } from './Blog';
+import StrategyFilmstrip from '../components/StrategyFilmstrip';
+import EditorialVideo from '../components/EditorialVideo';
 
 const industries = [
   {
@@ -289,6 +291,9 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Strategy in motion: chessboard filmstrip */}
+        <StrategyFilmstrip />
+
         {/* Client slider */}
         <section className="py-12 sm:py-16 border-t border-silver-steel/10 overflow-hidden">
           <motion.div
@@ -507,12 +512,20 @@ const Home = () => {
                   >
                     {cap.image && (
                       <>
-                        <img
-                          src={cap.image}
-                          alt=""
-                          loading="lazy"
-                          className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-50 transition-opacity duration-500"
-                        />
+                        {cap.video ? (
+                          <EditorialVideo
+                            src={cap.video}
+                            poster={cap.image}
+                            className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-55 transition-opacity duration-500"
+                          />
+                        ) : (
+                          <img
+                            src={cap.image}
+                            alt=""
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-50 transition-opacity duration-500"
+                          />
+                        )}
                         <span className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-obsidian/40" />
                       </>
                     )}

@@ -20,6 +20,8 @@ export interface Capability {
   tags: string[];
   /** Editorial image for the mosaic tile, empty for a text-only tile */
   image?: string;
+  /** Optional editorial film that plays in view, with the image as poster */
+  video?: string;
 }
 
 export const capabilities: Capability[] = [
@@ -89,6 +91,7 @@ export const capabilities: Capability[] = [
     href: '/capabilities/ai-advisory',
     tags: ['AI readiness', 'Use-case portfolio', 'Responsible AI'],
     image: '/images/editorial/digital-business-systems-poster.webp',
+    video: '/video/editorial/digital-business-systems.mp4',
   },
   {
     number: '08',
