@@ -17,11 +17,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { path: '/', label: 'HOME' },
     { path: '/capabilities', label: 'CAPABILITIES' },
+    { path: '/methodology', label: 'METHODOLOGY' },
     { path: '/industries', label: 'INDUSTRIES' },
     { path: '/blog', label: 'INSIGHTS' },
-    { path: '/about', label: 'ABOUT US' },
+    { path: '/about', label: 'ABOUT' },
     { path: '/contact', label: 'CONTACT' },
   ];
 

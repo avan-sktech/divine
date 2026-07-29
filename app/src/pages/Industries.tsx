@@ -184,8 +184,16 @@ const Industries = () => {
       {/* Industry Blocks */}
       {industryBlocks.map((block) => {
         const Icon = block.icon;
+        // Anchor ids match the deep links used on the home page and in the footer
+        const anchorId = block.title
+          .toLowerCase()
+          .replace(/&/g, 'and')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '')
+          .replace('sustainable-and-3d-homes', 'sustainable-homes')
+          .replace('critical-infrastructure', 'infrastructure');
         return (
-          <section key={block.title} className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+          <section key={block.title} id={anchorId} className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 scroll-mt-24">
             <div className="max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

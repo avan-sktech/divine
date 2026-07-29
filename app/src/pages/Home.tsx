@@ -1,183 +1,71 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import {
-  ArrowRight, Target, ShieldCheck, Network, Layers, Rocket, GitMerge,
-  ShoppingBag, Factory, Home as HomeIcon, Server, Check,
-} from 'lucide-react';
-
-const capabilities = [
-  {
-    number: '01',
-    title: 'Market-entry strategy',
-    description: 'Where to play and how to win: target customer, positioning, addressable market and the fastest legal route to volume.',
-    icon: Target,
-    link: null,
-  },
-  {
-    number: '02',
-    title: 'Regulatory & compliance pathway',
-    description: 'Homologation, standards, approvals and registration mapped and coordinated with qualified Australian specialists.',
-    icon: ShieldCheck,
-    link: null,
-  },
-  {
-    number: '03',
-    title: 'Distribution & channel design',
-    description: 'One accountable national backbone, partner sourcing, due diligence and agreements that prevent channel failure.',
-    icon: Network,
-    link: null,
-  },
-  {
-    number: '04',
-    title: 'Product-to-market (CPPD)',
-    description: 'Concurrent product, process and service design so local market realities are built into the specification, not discovered after launch.',
-    icon: Layers,
-    link: '/capabilities/concurrent-product-process-design',
-  },
-  {
-    number: '05',
-    title: 'Launch & demand generation',
-    description: 'Controlled pilots, trial-to-deposit conversion and measured demand before national inventory and spend.',
-    icon: Rocket,
-    link: null,
-  },
-  {
-    number: '06',
-    title: 'Programme integration',
-    description: 'A single accountable programme that keeps scope, claims, cost and unresolved risk visible to the board throughout.',
-    icon: GitMerge,
-    link: null,
-  },
-];
-
-const approachSteps = [
-  {
-    number: '01',
-    title: 'Diagnose & position',
-    description: 'Product reality check, target customer, positioning and the fastest defensible route to market.',
-    tag: 'DIVINE LAB OWNS',
-    active: true,
-  },
-  {
-    number: '02',
-    title: 'Specification & compliance',
-    description: 'Australian specification, evidence register and homologation scope, coordinated with specialists.',
-    tag: 'DIVINE LAB OWNS',
-    active: true,
-  },
-  {
-    number: '03',
-    title: 'Distribution & partners',
-    description: 'Partner sourcing, due diligence, channel economics and agreements to a signed, accountable distributor.',
-    tag: 'DIVINE LAB OWNS',
-    active: true,
-  },
-  {
-    number: '04',
-    title: 'Go-to-market & demand',
-    description: 'Trial, affiliate and scale phases, each with a defined audience, channel and measurable outcome.',
-    tag: 'DIVINE LAB OWNS',
-    active: true,
-  },
-  {
-    number: '05',
-    title: 'Launch',
-    description: 'Controlled pilots and first compliant sales, once product, service and channel operate together.',
-    tag: 'SHARED WITH CLIENT',
-    active: false,
-  },
-  {
-    number: '06',
-    title: 'Scale',
-    description: 'National rollout, demand generation and continuous optimisation for growth.',
-    tag: 'CLIENT / PARTNERS',
-    active: false,
-  },
-];
+import { ArrowRight, ShoppingBag, Factory, Home as HomeIcon, Server } from 'lucide-react';
+import { capabilities, governance, workstreams, gates, homeFaqs } from '../data/capabilities';
+import { blogPosts } from './Blog';
 
 const industries = [
   {
     icon: ShoppingBag,
+    code: 'RTL',
     title: 'Retail',
-    description: 'Retailers and wholesalers scaling a range in Australia',
-    link: '/industries',
+    description: 'Launch new ranges, improve channel economics and find more revenue in the customer base already earned.',
+    image: '/images/retail-deployment.jpg',
+    link: '/industries#retail',
   },
   {
     icon: Factory,
+    code: 'MFG',
     title: 'Manufacturing',
-    description: 'Manufacturers bringing a new product to market',
-    link: '/industries',
+    description: 'Commercialise new equipment, improve asset utilisation and turn technical capability into market demand.',
+    image: '/images/manufacturing-automation.jpg',
+    link: '/industries#manufacturing',
   },
   {
     icon: HomeIcon,
-    title: 'Sustainable & 3D homes',
-    description: 'Sustainable and 3D-printed homes, from concept to market',
-    link: '/industries',
+    code: 'BLD',
+    title: 'Sustainable and 3D homes',
+    description: 'Align approvals, build systems, pilots, buyer confidence and repeatable delivery for modern construction.',
+    image: '/images/construction-night.jpg',
+    link: '/industries#sustainable-homes',
   },
   {
     icon: Server,
+    code: 'INF',
     title: 'Critical infrastructure',
-    description: 'Data centres, AI factories and fabs, from site to build-ready',
-    link: '/industries/critical-infrastructure',
-  },
-];
-
-const whyItems = [
-  {
-    number: '01',
-    title: 'One accountable programme',
-    description: 'Specification, approval, warranty, service, channel and launch, aligned in one place rather than across four advisers.',
-  },
-  {
-    number: '02',
-    title: 'Evidence discipline',
-    description: 'Assumptions become written quotes, test records, named owners and issue registers the board can rely on.',
-  },
-  {
-    number: '03',
-    title: 'Australian market fluency',
-    description: 'Operator-level knowledge of regulation, distribution, consumer law and how launches actually work here.',
-  },
-  {
-    number: '04',
-    title: 'Concurrent product & process design',
-    description: 'Led by experienced CPPD practitioners, so market realities shape the product before launch, not after.',
-  },
-];
-
-const clientLogos = [
-  { name: 'Natridy', src: '/images/clients/natridy.png', href: 'https://www.natridy.com/' },
-  { name: 'Samaria Australia', src: '/images/clients/samaria.png', href: 'https://samaria.com.au/' },
-];
-
-// One half of the marquee strip; the strip is rendered twice and the
-// animation translates -50%, so the loop is seamless
-const clientStrip = Array.from({ length: 4 }).flatMap(() => clientLogos);
-
-const spotlights = [
-  {
-    eyebrow: 'Industry Spotlight · Retail',
-    title: 'Build and Scale a Retail Range in Australia',
-    description: 'For retailers and wholesalers building a product range. We define what to stock, make the range compliant and supportable, and launch it online and in store with measurable conversion.',
-    image: '/images/retail-deployment.jpg',
-    imageAlt: 'Retail deployment in Australia',
-    points: ['Range strategy and positioning', 'Supplier, compliance and warranty readiness', 'Channel, launch and demand generation'],
-    link: '/industries',
-    linkLabel: 'EXPLORE RETAIL',
-    imageRight: false,
-  },
-  {
-    eyebrow: 'Industry Spotlight · Critical Infrastructure',
-    title: 'We Find Where Critical Infrastructure Belongs',
-    description: 'Sites for hyperscale data centres, AI factories, semiconductor fabs and advanced cleanrooms. Validated for power, zoning, fibre and water, then managed through permits and delivery until build-ready.',
+    description: 'Build the site, stakeholder and delivery evidence required for complex infrastructure investment.',
     image: '/images/data-center.jpg',
-    imageAlt: 'Hyperscale data centre infrastructure',
-    points: ['Site intelligence and selection', 'Power, permits and utilities', 'Delivery, energisation and operations'],
     link: '/industries/critical-infrastructure',
-    linkLabel: 'EXPLORE CRITICAL INFRASTRUCTURE',
-    imageRight: true,
   },
+];
+
+const paths = [
+  {
+    number: 'PATH / 01',
+    title: 'Launch something new.',
+    description: 'Define the customer, commercial model and proof required before a major launch commitment.',
+    image: '/images/editorial/commercial-analysis.webp',
+    imageAlt: 'Commercial evidence under review before a new market decision',
+    link: '/capabilities',
+    linkLabel: 'EXPLORE LAUNCH CAPABILITY',
+  },
+  {
+    number: 'PATH / 02',
+    title: 'Grow what already works.',
+    description: 'Turn existing customers, assets, channels and capabilities into the next revenue move.',
+    image: '/images/editorial/team-collaboration.webp',
+    imageAlt: 'Business team identifying growth opportunities within existing capacity',
+    link: '/capabilities/capital-efficient-growth',
+    linkLabel: 'EXPLORE CAPITAL-EFFICIENT GROWTH',
+  },
+];
+
+const proofPoints = [
+  { code: 'DLW', label: 'Strategy and commercial direction' },
+  { code: 'STG', label: 'Technology and delivery capability' },
+  { code: 'INTL', label: 'Cross-market decision support' },
+  { code: '01', label: 'Accountable engagement' },
 ];
 
 const credItems = [
@@ -187,653 +75,813 @@ const credItems = [
   { big: 'Sharktech Global', label: 'Divine Lab Worx is its specialist consultancy arm' },
 ];
 
-const readinessRows = [
-  'Target customer',
-  'Acquisition channel',
-  'Conversion mechanism',
-  'Measurable outcome',
+const heroTags = [
+  'Market Entry',
+  'Regulatory Pathway',
+  'Distribution & Channel',
+  'Product-to-Market (CPPD)',
+  'Launch & Demand',
+  'Critical Infrastructure',
+  'AI Advisory',
 ];
 
-const heroTags = [
-  'Market entry',
-  'Regulatory pathway',
-  'Distribution & channel',
-  'Product-to-market (CPPD)',
-  'Launch & demand',
-  'Critical infrastructure',
+const clientLogos = [
+  { name: 'Natridy', src: '/images/clients/natridy.png', href: 'https://www.natridy.com/' },
+  { name: 'Samaria Australia', src: '/images/clients/samaria.png', href: 'https://samaria.com.au/' },
 ];
+
+// The strip is rendered twice and the marquee translates -50%, so the loop is seamless
+const clientStrip = Array.from({ length: 4 }).flatMap(() => clientLogos);
+
+const latestInsights = [...blogPosts]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 3);
+
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
 
 const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Divine Lab Worx | Go-to-Market Strategist for Australia</title>
-        <meta name="description" content="Divine Lab Worx is the go-to-market strategist for companies bringing products to the Australian market. Market entry, compliance, distribution, launch and demand, as one accountable programme. Part of Sharktech Global." />
+        <title>Divine Lab Worx | Product Launch and Go-to-Market Strategy</title>
+        <meta name="description" content="Divine Lab Worx turns strategy into market action. Product launch, market entry, compliance, channel, AI advisory and critical infrastructure, as one accountable team." />
         <link rel="canonical" href="https://divinelabworx.com" />
-        <meta property="og:title" content="Divine Lab Worx | Go-to-Market Strategist for Australia" />
-        <meta property="og:description" content="Complete product launch, from concept to after-sales. One accountable team for retail, manufacturing and sustainable housing in Australia." />
+        <meta property="og:title" content="Divine Lab Worx | From Concept to After-Sales" />
+        <meta property="og:description" content="Strategy, engineering and market action in one accountable team. Retail, manufacturing, sustainable housing and critical infrastructure in Australia." />
         <meta property="og:url" content="https://divinelabworx.com" />
         <meta property="og:image" content="https://divinelabworx.com/images/og-image.jpg" />
         <meta name="answer-engine:question" content="What does Divine Lab Worx do?" />
-        <meta name="answer-engine:answer" content="Divine Lab Worx is the go-to-market strategist and consultancy arm of Sharktech Global. It brings products to market in Australia for retail, manufacturing and sustainable housing, taking each launch from first concept and specification to compliance, distribution, demand and after-sales as one accountable programme." />
+        <meta name="answer-engine:answer" content="Divine Lab Worx turns a complex growth decision into market evidence, clear choices and accountable action. We take a product, a range, a build system or a facility from first concept and specification through compliance, distribution, demand and after-sales, as one accountable team." />
+        <script type="application/ld+json">{JSON.stringify(homeJsonLd)}</script>
       </Helmet>
+
       <div className="w-full overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 sm:pt-24 lg:pt-20 overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-            poster="/images/hero-robot-poster.jpg"
-          >
-            <source src="/videos/hero-robot.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-obsidian/70" />
-        </div>
+        {/* Hero */}
+        <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 sm:pt-24 lg:pt-20 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover motion-reduce:hidden"
+              poster="/images/hero-robot-poster.jpg"
+            >
+              <source src="/videos/hero-robot.mp4" type="video/mp4" />
+            </video>
+            {/* Static fallback for reduced motion and low bandwidth */}
+            <img
+              src="/images/hero-robot-poster.jpg"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover hidden motion-reduce:block absolute inset-0"
+            />
+            <div className="absolute inset-0 bg-obsidian/70" />
+          </div>
 
-        {/* Grid Background */}
-        <div
-          className="absolute inset-0 z-0 pointer-events-none hidden sm:block"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(228, 228, 231, 0.05) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(228, 228, 231, 0.05) 1px, transparent 1px)
-            `,
-            backgroundSize: '80px 80px',
-            maskImage: 'radial-gradient(ellipse 70% 80% at 60% 50%, rgba(0,0,0,0.6) 0%, transparent 80%)',
-          }}
-        />
+          {/* Technical grid */}
+          <div
+            className="absolute inset-0 z-0 pointer-events-none hidden sm:block"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(228, 228, 231, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(228, 228, 231, 0.05) 1px, transparent 1px)
+              `,
+              backgroundSize: '80px 80px',
+              maskImage: 'radial-gradient(ellipse 70% 80% at 60% 50%, rgba(0,0,0,0.6) 0%, transparent 80%)',
+            }}
+          />
+          <div
+            className="absolute z-0 pointer-events-none"
+            style={{
+              right: '-50px',
+              top: '30%',
+              transform: 'translateY(-50%)',
+              width: 'clamp(300px, 50vw, 700px)',
+              height: 'clamp(300px, 50vw, 700px)',
+              background: 'radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 65%)',
+            }}
+          />
 
-        {/* Gold Glow */}
-        <div
-          className="absolute z-0 pointer-events-none"
-          style={{
-            right: '-50px',
-            top: '30%',
-            transform: 'translateY(-50%)',
-            width: 'clamp(300px, 50vw, 700px)',
-            height: 'clamp(300px, 50vw, 700px)',
-            background: 'radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 65%)',
-          }}
-        />
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="max-w-3xl"
+            >
+              <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+                <span className="font-mono text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.2em] text-gold uppercase">
+                  Divine Lab Worx · Consultancy arm of Sharktech Global
+                </span>
+              </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-20">
+              <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[54px] font-semibold tracking-tight text-optical-white leading-[1.06] mb-4 sm:mb-6">
+                From concept to after-sales.
+                <br />
+                <span className="text-gold">Strategy, engineering and market action</span>
+                <br />
+                in one accountable team.
+              </h1>
+
+              <div className="w-12 sm:w-14 h-0.5 bg-gold mb-4 sm:mb-6" />
+
+              <p className="font-mono text-[10px] sm:text-xs tracking-[0.12em] text-optical-white uppercase mb-4 sm:mb-6">
+                Workflow Design <span className="text-gold">+</span> Mechanical Engineering <span className="text-gold">+</span> CPPD <span className="text-gold">+</span> Go-to-Market Strategy <span className="text-gold">+</span> Software
+              </p>
+
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-6 sm:mb-8 max-w-xl">
+                We bring products, systems and facilities to market in Australia. Retail,
+                manufacturing, housing and critical infrastructure. Held together by{' '}
+                <span className="text-optical-white font-medium">one accountable team</span>,
+                not four disconnected advisers.
+              </p>
+
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 bg-gold text-obsidian text-xs sm:text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors w-full sm:w-auto"
+                >
+                  Engage Our Strategists
+                  <ArrowRight size={16} />
+                </Link>
+                <Link
+                  to="/capabilities"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 border border-silver-steel/30 text-optical-white text-xs sm:text-sm font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors w-full sm:w-auto"
+                >
+                  What We Do →
+                </Link>
+              </div>
+
+              {/* Outlined service tags */}
+              <div className="flex flex-wrap gap-2.5 mt-8 sm:mt-10">
+                {heroTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-mono text-[9px] sm:text-[10px] tracking-[0.1em] text-accent-muted border border-silver-steel/20 rounded-full px-3.5 py-1.5 bg-optical-white/[0.02]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Credibility band */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="relative z-10 border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
           >
-            {/* Kicker */}
-            <div className="inline-flex items-center gap-2 mb-4 sm:mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
-              <span className="font-mono text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.2em] text-gold uppercase">
-                Divine Lab Worx · Consultancy arm of Sharktech Global
-              </span>
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-[30px] sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight text-optical-white leading-[1.05] mb-4 sm:mb-6">
-              Complete product launch,
-              <br />
-              <span className="text-gold">from concept to after-sales.</span>
-            </h1>
-
-            {/* Gold Rule */}
-            <div className="w-12 sm:w-14 h-0.5 bg-gold mb-4 sm:mb-6" />
-
-            {/* Discipline line */}
-            <p className="font-mono text-[10px] sm:text-xs tracking-[0.12em] text-optical-white uppercase mb-4 sm:mb-6">
-              Workflow Design <span className="text-gold">+</span> Mechanical Engineering <span className="text-gold">+</span> CPPD <span className="text-gold">+</span> Go-to-Market Strategy <span className="text-gold">+</span> Software
-            </p>
-
-            {/* Body Copy */}
-            <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-6 sm:mb-8 max-w-xl">
-              We bring products to market in Australia. Retail, manufacturing and housing.
-              From first concept to after sales. Held together by{' '}
-              <span className="text-optical-white font-medium">one accountable team</span>,
-              not four disconnected advisers.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 bg-gold text-obsidian text-xs sm:text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors w-full sm:w-auto"
-              >
-                Engage Our Strategists
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/capabilities"
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 sm:py-4 border border-silver-steel/30 text-optical-white text-xs sm:text-sm font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors w-full sm:w-auto"
-              >
-                What We Do →
-              </Link>
-            </div>
-
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2.5 mt-8 sm:mt-10">
-              {heroTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="font-mono text-[9px] sm:text-[10px] tracking-[0.1em] text-accent-muted border border-silver-steel/20 rounded-full px-3.5 py-1.5 bg-optical-white/[0.02]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Credibility Band */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="relative z-10 border-t border-silver-steel/10 bg-obsidian/50 backdrop-blur-sm mt-auto"
-        >
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-silver-steel/10 sm:divide-x">
-            {credItems.map((item) => (
-              <div key={item.big} className="px-6 py-5 sm:py-6">
-                <div className="text-base sm:text-lg font-semibold tracking-tight text-optical-white">
-                  {item.big}
-                </div>
-                <div className="text-xs sm:text-[13px] text-accent-muted mt-1.5 leading-snug">
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Capabilities Section */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 sm:mb-4 block">
-              What We Do
-            </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-optical-white mb-3 sm:mb-4">
-              One Team from Strategy to First Sale
-            </h2>
-            <p className="text-sm sm:text-base text-accent-muted max-w-2xl mx-auto px-4 sm:px-0">
-              Most launches fail on execution, not idea. We connect the specification, the approval
-              pathway, the channel economics and the launch evidence so decisions are made in one
-              room, against the same facts, by people accountable for the result.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-            {capabilities.map((cap, index) => {
-              const Icon = cap.icon;
-              const card = (
-                <motion.div
-                  key={cap.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  className={`relative h-full border rounded-lg p-5 sm:p-6 lg:p-8 transition-all duration-300 ${
-                    cap.link
-                      ? 'border-gold/50 bg-obsidian/50 hover:border-gold'
-                      : 'border-silver-steel/10 bg-obsidian/30 hover:border-gold/40'
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-4 sm:mb-6">
-                    <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gold/20">
-                      {cap.number}
-                    </span>
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-gold/50 text-gold flex items-center justify-center">
-                      <Icon size={20} />
-                    </div>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-silver-steel/10 sm:divide-x">
+              {credItems.map((item) => (
+                <div key={item.big} className="px-6 py-5 sm:py-6">
+                  <div className="text-base sm:text-lg font-semibold tracking-tight text-optical-white">
+                    {item.big}
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-optical-white mb-2 sm:mb-3 tracking-tight">
-                    {cap.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-accent-muted leading-relaxed">
-                    {cap.description}
-                  </p>
-                  {cap.link && (
-                    <span className="inline-flex items-center gap-1.5 mt-4 text-xs font-mono tracking-widest text-gold">
-                      EXPLORE CPPD
-                      <ArrowRight size={12} />
-                    </span>
-                  )}
-                </motion.div>
-              );
-              return cap.link ? (
-                <Link key={cap.number} to={cap.link} className="block h-full">
-                  {card}
-                </Link>
-              ) : (
-                card
-              );
-            })}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 text-center"
-          >
-            <Link
-              to="/capabilities"
-              className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
-            >
-              VIEW ALL CAPABILITIES
-              <ArrowRight size={14} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Clients Slider */}
-      <section className="py-12 sm:py-16 border-t border-silver-steel/10 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-8 sm:mb-10 block text-center px-4">
-            Some of Our Clients
-          </span>
-          <div className="relative">
-            {/* Edge fades */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-obsidian to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-obsidian to-transparent" />
-            <div className="flex w-max animate-marquee">
-              {[0, 1].map((half) => (
-                <div key={half} className="flex items-center" aria-hidden={half === 1}>
-                  {clientStrip.map((client, index) => (
-                    <a
-                      key={`${half}-${index}`}
-                      href={client.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      tabIndex={half === 1 ? -1 : undefined}
-                      className="flex items-center px-10 sm:px-16 flex-shrink-0"
-                      title={client.name}
-                    >
-                      <img
-                        src={client.src}
-                        alt={client.name}
-                        loading="lazy"
-                        className="h-9 sm:h-11 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
-                      />
-                    </a>
-                  ))}
+                  <div className="text-xs sm:text-[13px] text-accent-muted mt-1.5 leading-snug">
+                    {item.label}
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Approach Section */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 sm:mb-4 block">
-              Our Approach
-            </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-optical-white mb-3 sm:mb-4">
-              The Market-Entry Lifecycle
-            </h2>
-            <p className="text-sm sm:text-base text-accent-muted max-w-2xl mx-auto px-4 sm:px-0">
-              We compress the critical path so the launch starts ready, not waiting. We own the
-              strategy, evidence and channel work. You and your partners own manufacture, sale and scale.
-            </p>
           </motion.div>
+        </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-            {approachSteps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className={`relative border rounded-lg p-5 sm:p-6 lg:p-8 transition-all duration-300 ${
-                  step.active
-                    ? 'border-gold/50 bg-obsidian/50 hover:border-gold'
-                    : 'border-silver-steel/10 bg-obsidian/30 opacity-70'
-                }`}
-              >
-                <span className={`text-3xl sm:text-4xl lg:text-5xl font-bold block mb-4 sm:mb-6 ${
-                  step.active ? 'text-gold/20' : 'text-silver-steel/10'
-                }`}>
-                  {step.number}
-                </span>
-                <h3 className="text-base sm:text-lg font-semibold text-optical-white mb-2 sm:mb-3 tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-accent-muted leading-relaxed mb-4 sm:mb-6">
-                  {step.description}
-                </p>
-                <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-mono tracking-wider ${
-                  step.active
-                    ? 'bg-gold/20 text-gold border border-gold/30'
-                    : 'bg-silver-steel/10 text-silver-steel border border-silver-steel/20'
-                }`}>
-                  <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-current" />
-                  {step.tag}
-                </div>
-                {step.active && (
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
-                )}
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-silver-steel/10"
-          >
-            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-6 sm:w-8 h-1 bg-gold rounded-full" />
-                <span className="text-accent-muted">Divine Lab Worx owns this</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 sm:w-8 h-1 bg-silver-steel/30 rounded-full" />
-                <span className="text-accent-muted">Client / partners</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 sm:mb-4 block">
-              Who We Work With
-            </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-optical-white mb-3 sm:mb-4">
-              We Consult to Retail, Manufacturing, Housing and Infrastructure
-            </h2>
-            <p className="text-sm sm:text-base text-accent-muted max-w-2xl mx-auto px-4 sm:px-0">
-              We work with retailers, manufacturers, homebuilders and infrastructure operators,
-              turning a product, a range, a build system or a facility into compliance,
-              distribution, demand and revenue in the Australian market.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-            {industries.map((industry, index) => {
-              const Icon = industry.icon;
-              return (
-                <motion.div
-                  key={industry.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Link
-                    to={industry.link}
-                    className="flex items-start gap-4 border border-silver-steel/10 rounded-lg p-5 sm:p-6 bg-obsidian/30 hover:border-gold/50 transition-all duration-300 h-full"
-                  >
-                    <div className="w-10 h-10 rounded-lg border border-gold/50 text-gold flex items-center justify-center flex-shrink-0">
-                      <Icon size={18} />
-                    </div>
-                    <div>
-                      <span className="flex items-center gap-2 text-base font-semibold text-optical-white tracking-tight">
-                        {industry.title}
-                        <ArrowRight size={14} className="text-gold" />
-                      </span>
-                      <span className="block text-xs sm:text-sm text-accent-muted mt-1 leading-relaxed">
-                        {industry.description}
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Industry Spotlights */}
-          <div className="mt-10 sm:mt-14 space-y-6 sm:space-y-8">
-            {spotlights.map((spotlight) => (
-              <motion.div
-                key={spotlight.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 lg:grid-cols-2 border border-silver-steel/10 rounded-lg overflow-hidden bg-obsidian/30 hover:border-gold/40 transition-colors duration-300"
-              >
-                <div className={`relative min-h-[220px] sm:min-h-[280px] lg:min-h-0 ${spotlight.imageRight ? 'lg:order-2' : ''}`}>
-                  <img
-                    src={spotlight.image}
-                    alt={spotlight.imageAlt}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-obsidian/20" />
-                </div>
-                <div className={`p-6 sm:p-10 lg:p-12 ${spotlight.imageRight ? 'lg:order-1' : ''}`}>
-                  <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-4 block">
-                    {spotlight.eyebrow}
-                  </span>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-optical-white mb-3">
-                    {spotlight.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-5">
-                    {spotlight.description}
-                  </p>
-                  <ul className="space-y-2.5 mb-6">
-                    {spotlight.points.map((point) => (
-                      <li key={point} className="flex items-center gap-3 text-xs sm:text-sm text-accent-muted">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={spotlight.link}
-                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-gold hover:text-gold-light transition-colors"
-                  >
-                    {spotlight.linkLabel}
-                    <ArrowRight size={13} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        {/* Direct answer */}
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 sm:mb-4 block">
-                Why Divine Lab Worx
+              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-3 block">
+                Direct answer
               </span>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-optical-white mb-3 sm:mb-4">
-                The Enabler and the Integrator
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-optical-white">
+                What does Divine Lab Worx do?
               </h2>
-              <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-8">
-                A product without distribution is a liability. We exist to remove the friction
-                between a good product and a paying market, and to keep the whole launch
-                accountable to one team.
-              </p>
-              <ul className="divide-y divide-silver-steel/10">
-                {whyItems.map((item) => (
-                  <li key={item.number} className="flex gap-4 py-4">
-                    <span className="font-mono text-sm text-gold font-semibold min-w-[32px]">
-                      {item.number}
-                    </span>
-                    <div>
-                      <span className="block text-sm sm:text-base font-semibold text-optical-white tracking-tight">
-                        {item.title}
-                      </span>
-                      <p className="text-xs sm:text-sm text-accent-muted mt-1 leading-relaxed">
-                        {item.description}
-                        {item.number === '04' && (
-                          <>
-                            {' '}
-                            <Link
-                              to="/capabilities/concurrent-product-process-design"
-                              className="text-gold hover:text-gold-light transition-colors"
-                            >
-                              Explore CPPD →
-                            </Link>
-                          </>
-                        )}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
-
-            {/* Engagement Readiness Panel */}
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:sticky lg:top-32"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-sm sm:text-base text-accent-muted leading-relaxed"
             >
-              <div className="border border-silver-steel/10 bg-tile-bg/80 backdrop-blur-sm relative overflow-hidden">
-                <div
-                  className="absolute top-0 left-0 right-0 h-0.5"
-                  style={{ background: 'linear-gradient(90deg, #D4AF37 0%, transparent 100%)' }}
-                />
-                <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-silver-steel/10">
-                  <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.2em] text-gold uppercase">
-                    Engagement Readiness
-                  </span>
-                  <span className="flex items-center gap-1.5 font-mono text-[8px] sm:text-[9px] tracking-[0.12em] sm:tracking-[0.15em] text-emerald-500">
-                    <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
-                    Active
-                  </span>
-                </div>
-                <div className="divide-y divide-silver-steel/10">
-                  {readinessRows.map((row) => (
-                    <div key={row} className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4">
-                      <span className="text-sm font-semibold text-optical-white">{row}</span>
-                      <span className="flex items-center gap-1 font-mono text-[8px] sm:text-[9px] tracking-[0.15em] text-emerald-500">
-                        <Check size={10} />
-                        DEFINED
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <p className="px-4 sm:px-6 py-4 text-xs sm:text-[13px] text-accent-muted leading-relaxed border-t border-silver-steel/10">
-                  No initiative is complete unless it defines a target customer, an acquisition
-                  channel, a conversion mechanism and a measurable outcome. If one is missing,
-                  the work goes back for refinement.
-                </p>
-              </div>
-
-              {/* Advised by */}
-              <div className="mt-8">
-                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-4 block">
-                  Advised By
-                </span>
-                <a
-                  href="https://www.guidepoint.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                  title="Guidepoint"
-                >
-                  <img
-                    src="/images/partners/guidepoint.svg"
-                    alt="Guidepoint"
-                    loading="lazy"
-                    className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
-                  />
-                </a>
-                <p className="text-xs sm:text-[13px] text-accent-muted mt-3 max-w-md leading-relaxed">
-                  Our market evidence is strengthened by Guidepoint&apos;s global expert network.
-                </p>
-              </div>
-            </motion.div>
+              Divine Lab Worx turns a complex growth decision into market evidence, clear choices
+              and accountable action. We take a product, a range, a build system or a facility from
+              first concept and specification through compliance, distribution, demand and
+              after-sales, across Australia and international markets.
+            </motion.p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-0">
+        {/* Client slider */}
+        <section className="py-12 sm:py-16 border-t border-silver-steel/10 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 sm:mb-4 block">
-              Engage
+            <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-8 sm:mb-10 block text-center px-4">
+              Some of Our Clients
             </span>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-optical-white mb-4 sm:mb-6">
-              Bring Your Product to Market with One Accountable Team
-            </h2>
-            <p className="text-sm sm:text-base text-accent-muted mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
-              If you are launching a new product, growing a retail range, entering the Australian
-              market or building sustainable homes, engage our strategists to compress the critical
-              path and protect your capital.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-gold text-obsidian text-xs sm:text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors w-full sm:w-auto"
-              >
-                INITIATE STRATEGIC ENGAGEMENT
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/capabilities"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 border border-silver-steel/30 text-optical-white text-xs sm:text-sm font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors w-full sm:w-auto"
-              >
-                WHAT WE DO
-              </Link>
+            <div className="relative">
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-obsidian to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-obsidian to-transparent" />
+              <div className="flex w-max animate-marquee">
+                {[0, 1].map((half) => (
+                  <div key={half} className="flex items-center" aria-hidden={half === 1}>
+                    {clientStrip.map((client, index) => (
+                      <a
+                        key={`${half}-${index}`}
+                        href={client.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabIndex={half === 1 ? -1 : undefined}
+                        className="flex items-center px-10 sm:px-16 flex-shrink-0"
+                        title={client.name}
+                      >
+                        <img
+                          src={client.src}
+                          alt={client.name}
+                          loading="lazy"
+                          className="h-9 sm:h-11 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Methodology bridge */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-3 block">
+                The DivineLab Concurrent Method
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-4">
+                Strategy and delivery designed as one system.
+              </h2>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed mb-6">
+                Five workstreams mature together. Evidence controls when the next commercial
+                commitment is safe to make.
+              </p>
+              <Link
+                to="/methodology"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-gold hover:text-gold-light transition-colors"
+              >
+                EXPLORE OUR METHODOLOGY
+                <ArrowRight size={13} />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="border border-silver-steel/10 bg-tile-bg/60 p-6 sm:p-8"
+              aria-label="Five concurrent workstreams across six evidence gates"
+            >
+              {workstreams.map((track) => (
+                <div key={track} className="flex items-center gap-3 mb-2.5">
+                  <span className="font-mono text-[10px] tracking-wider text-accent-muted uppercase w-20 sm:w-24 flex-shrink-0">
+                    {track}
+                  </span>
+                  <div className="flex gap-1.5 flex-1">
+                    {gates.map((gate) => (
+                      <span
+                        key={gate}
+                        title={`${track}: ${gate}`}
+                        className="h-1.5 flex-1 rounded-full bg-gradient-to-r from-gold/50 to-gold/15"
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <div className="flex items-center gap-3 mt-4 pt-3 border-t border-silver-steel/10">
+                <span className="w-20 sm:w-24 flex-shrink-0" />
+                <div className="flex gap-1.5 flex-1">
+                  {gates.map((gate) => (
+                    <span
+                      key={gate}
+                      className="flex-1 font-mono text-[8px] sm:text-[10px] tracking-wider text-gold uppercase text-center"
+                    >
+                      {gate}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Two paths to revenue */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-end mb-10"
+            >
+              <div>
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                  Two paths to revenue
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  Build the new. Unlock the existing.
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
+                Different growth problems need different starting points. Both paths end with a
+                clear customer, a credible route to market and measurable commercial evidence.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              {paths.map((path, i) => (
+                <motion.article
+                  key={path.number}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="border border-silver-steel/15 bg-obsidian/40 overflow-hidden hover:border-gold/50 transition-colors duration-300 flex flex-col"
+                >
+                  <figure className="relative h-44 sm:h-52 overflow-hidden">
+                    <img
+                      src={path.image}
+                      alt={path.imageAlt}
+                      loading="lazy"
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent" />
+                    <span className="absolute top-4 left-4 font-mono text-[9px] tracking-[0.2em] text-gold uppercase">
+                      {path.number}
+                    </span>
+                  </figure>
+                  <div className="p-6 sm:p-8 flex flex-col flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-optical-white tracking-tight mb-2">
+                      {path.title}
+                    </h3>
+                    <p className="text-sm text-accent-muted leading-relaxed mb-5 flex-1">
+                      {path.description}
+                    </p>
+                    <Link
+                      to={path.link}
+                      className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-gold hover:text-gold-light transition-colors"
+                    >
+                      {path.linkLabel}
+                      <ArrowRight size={13} />
+                    </Link>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Capability mosaic */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-end mb-10"
+            >
+              <div>
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                  Complete capability
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  Eight moves. One commercial system.
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
+                Start with one decision. Keep the whole route to market in view.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {capabilities.map((cap, i) => (
+                <motion.div
+                  key={cap.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: (i % 4) * 0.06 }}
+                  className={cap.image ? 'sm:col-span-1' : ''}
+                >
+                  <Link
+                    to={cap.href}
+                    className="group relative block h-full min-h-[210px] border border-silver-steel/15 bg-obsidian/40 overflow-hidden hover:border-gold transition-colors duration-300"
+                    aria-label={`Explore ${cap.title}`}
+                  >
+                    {cap.image && (
+                      <>
+                        <img
+                          src={cap.image}
+                          alt=""
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-50 transition-opacity duration-500"
+                        />
+                        <span className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-obsidian/40" />
+                      </>
+                    )}
+                    <div className="relative h-full p-5 sm:p-6 flex flex-col">
+                      <span className="font-mono text-xs text-gold font-semibold tracking-widest">
+                        {cap.number}
+                      </span>
+                      <h3 className="text-base font-semibold text-optical-white tracking-tight mt-3 mb-2">
+                        {cap.title}
+                      </h3>
+                      <p className="text-xs text-accent-muted leading-relaxed flex-1">
+                        {cap.brief}
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 mt-4 text-[10px] font-mono tracking-widest text-accent-muted group-hover:text-gold transition-colors">
+                        VIEW CAPABILITY
+                        <ArrowRight size={11} />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-10 text-center"
+            >
+              <Link
+                to="/capabilities"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
+              >
+                VIEW ALL CAPABILITIES
+                <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Industries */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-end mb-10"
+            >
+              <div>
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                  Where we work
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  Markets where execution matters.
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
+                We work where regulation, physical delivery, channel design and buyer confidence
+                have to move together.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {industries.map((industry, i) => {
+                const Icon = industry.icon;
+                return (
+                  <motion.article
+                    key={industry.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.07 }}
+                  >
+                    <Link
+                      to={industry.link}
+                      className="group block h-full border border-silver-steel/15 bg-obsidian/30 overflow-hidden hover:border-gold/60 transition-colors duration-300"
+                    >
+                      <figure className="relative h-32 sm:h-36 overflow-hidden">
+                        <img
+                          src={industry.image}
+                          alt=""
+                          loading="lazy"
+                          className="w-full h-full object-cover opacity-45 group-hover:opacity-65 transition-opacity duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian to-transparent" />
+                        <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                          <Icon size={15} className="text-gold" />
+                          <span className="font-mono text-[9px] tracking-[0.2em] text-gold uppercase">
+                            {industry.code} / INTL
+                          </span>
+                        </div>
+                      </figure>
+                      <div className="p-5">
+                        <h3 className="text-base font-semibold text-optical-white tracking-tight mb-2">
+                          {industry.title}
+                        </h3>
+                        <p className="text-xs text-accent-muted leading-relaxed">
+                          {industry.description}
+                        </p>
+                      </div>
+                    </Link>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Governed by evidence */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-end mb-10"
+            >
+              <div>
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                  Governed by evidence
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  Every move answers four questions.
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
+                This keeps decisions close to the customer and makes progress visible before more
+                capital or effort is released.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {governance.map((item, i) => (
+                <motion.article
+                  key={item.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="relative border border-silver-steel/15 bg-obsidian/30 p-6 hover:border-gold/50 transition-colors duration-300"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-gold/60 to-transparent" />
+                  <span className="text-2xl font-bold text-gold/25 block mb-3">{item.number}</span>
+                  <h3 className="text-base font-semibold text-optical-white tracking-tight mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-accent-muted leading-relaxed">{item.description}</p>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Credibility / proof */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-end mb-10"
+            >
+              <div>
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                  Credibility in the room
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  Independent thinking. Delivery connected.
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
+                Divine Lab Worx is the consultancy division of Sharktech Global, led by strategist
+                Dainu Devis and informed by expert work through the Guidepoint network.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-silver-steel/10 border border-silver-steel/10">
+              {proofPoints.map((point) => (
+                <div key={point.code} className="px-5 py-6 sm:px-6 sm:py-7">
+                  <strong className="block text-xl sm:text-2xl font-semibold text-gold tracking-tight mb-1.5">
+                    {point.code}
+                  </strong>
+                  <span className="text-xs text-accent-muted leading-snug">{point.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Advised by */}
+            <div className="mt-10 pt-8 border-t border-silver-steel/10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase">
+                Advised By
+              </span>
+              <a
+                href="https://www.guidepoint.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Guidepoint"
+              >
+                <img
+                  src="/images/partners/guidepoint.svg"
+                  alt="Guidepoint"
+                  loading="lazy"
+                  className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
+              </a>
+              <p className="text-xs sm:text-[13px] text-accent-muted leading-relaxed max-w-md">
+                Our market evidence is strengthened by Guidepoint&apos;s global expert network.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Insights */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-end mb-10"
+            >
+              <div>
+                <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                  Continue the thinking
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white">
+                  Insight applied to real commercial decisions.
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-accent-muted leading-relaxed">
+                Practical perspectives on market entry, product launch, growth and infrastructure
+                decision-making.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              {latestInsights.map((post, i) => (
+                <motion.article
+                  key={post.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                >
+                  <Link to={`/blog/${post.slug}`} className="group block h-full">
+                    <div className="border border-silver-steel/15 h-full flex flex-col hover:border-gold transition-colors duration-300 overflow-hidden bg-obsidian/30">
+                      <div className="aspect-[16/10] relative overflow-hidden">
+                        <img
+                          src={post.image}
+                          alt=""
+                          loading="lazy"
+                          className="w-full h-full object-cover opacity-55 group-hover:opacity-75 transition-opacity duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
+                      </div>
+                      <div className="p-5 sm:p-6 flex flex-col flex-1">
+                        <span className="font-mono text-[9px] tracking-[0.2em] text-gold uppercase mb-3">
+                          {String(i + 1).padStart(2, '0')} / {post.category}
+                        </span>
+                        <h3 className="text-sm sm:text-base font-semibold text-optical-white tracking-tight mb-2 line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-xs text-accent-muted leading-relaxed line-clamp-3 flex-1">
+                          {post.excerpt}
+                        </p>
+                        <span className="inline-flex items-center gap-1.5 mt-4 text-[10px] font-mono tracking-widest text-accent-muted group-hover:text-gold transition-colors">
+                          READ INSIGHT
+                          <ArrowRight size={11} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-accent-muted hover:text-gold transition-colors"
+              >
+                VIEW ALL INSIGHTS
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-accent-muted uppercase mb-3 block">
+                Questions
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-optical-white">
+                Common questions.
+              </h2>
+            </motion.div>
+            <div className="divide-y divide-silver-steel/10 border-t border-b border-silver-steel/10">
+              {homeFaqs.map((faq, i) => (
+                <motion.div
+                  key={faq.question}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  className="py-6"
+                >
+                  <h3 className="text-base sm:text-lg font-semibold text-optical-white tracking-tight mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-sm text-accent-muted leading-relaxed">{faq.answer}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="font-mono text-[10px] sm:text-xs tracking-widest text-gold uppercase mb-4 block">
+                Start with the decision
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-optical-white mb-5">
+                Launch the new or unlock the growth already there.
+              </h2>
+              <p className="text-base text-accent-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+                Tell us where the business is now, what has to change and which commercial decision
+                is next.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-obsidian text-sm font-semibold tracking-tight hover:bg-gold-light transition-colors w-full sm:w-auto"
+                >
+                  ENGAGE OUR STRATEGISTS
+                  <ArrowRight size={18} />
+                </Link>
+                <Link
+                  to="/methodology"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-silver-steel/30 text-optical-white text-sm font-semibold tracking-tight hover:border-gold hover:text-gold transition-colors w-full sm:w-auto"
+                >
+                  SEE HOW WE WORK
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </>
   );
 };

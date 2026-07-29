@@ -3,6 +3,17 @@
   "routes": [
     { "src": "/industries/electric-powersports/?", "status": 301, "headers": { "Location": "/industries" } },
     { "src": "/services/?", "status": 301, "headers": { "Location": "/capabilities" } },
+    { "src": "/market-entry-australia/?", "status": 301, "headers": { "Location": "/capabilities/market-entry-strategy" } },
+    { "src": "/go-to-market-strategy/?", "status": 301, "headers": { "Location": "/capabilities/go-to-market-strategy" } },
+    { "src": "/channel-strategy/?", "status": 301, "headers": { "Location": "/capabilities/channel-strategy" } },
+    { "src": "/product-commercialisation/?", "status": 301, "headers": { "Location": "/capabilities/concurrent-product-process-design" } },
+    { "src": "/capital-efficient-growth/?", "status": 301, "headers": { "Location": "/capabilities/capital-efficient-growth" } },
+    { "src": "/advisory/?", "status": 301, "headers": { "Location": "/capabilities/ai-advisory" } },
+    { "src": "/work/?", "status": 301, "headers": { "Location": "/capabilities/strategy-and-transformation" } },
+    { "src": "/infrastructure/?", "status": 301, "headers": { "Location": "/industries/critical-infrastructure" } },
+    { "src": "/construction/?", "status": 301, "headers": { "Location": "/industries" } },
+    { "src": "/insights/?", "status": 301, "headers": { "Location": "/blog" } },
+    { "src": "/insights/(.*)", "status": 301, "headers": { "Location": "/blog" } },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]

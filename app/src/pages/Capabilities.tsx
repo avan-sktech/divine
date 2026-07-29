@@ -1,52 +1,19 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, ShieldCheck, Network, Layers, Rocket, GitMerge } from 'lucide-react';
+import { ArrowRight, Target, ShieldCheck, Network, Layers, Rocket, TrendingUp, Cpu, GitMerge } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { capabilities as capabilityData } from '../data/capabilities';
 
-const capabilities = [
-  {
-    number: '01',
-    title: 'Market-entry strategy',
-    description: 'Where to play and how to win. We define the target customer, the positioning, the addressable market and the fastest legal route to volume, so capital goes where the evidence points.',
-    icon: Target,
-    link: null,
-  },
-  {
-    number: '02',
-    title: 'Regulatory & compliance pathway',
-    description: 'Homologation, standards, approvals and registration mapped and coordinated with qualified Australian specialists. The pathway is scoped before commitments are made, not after.',
-    icon: ShieldCheck,
-    link: null,
-  },
-  {
-    number: '03',
-    title: 'Distribution & channel design',
-    description: 'One accountable national backbone. Partner sourcing, due diligence, channel economics and agreements that prevent channel failure before it starts.',
-    icon: Network,
-    link: null,
-  },
-  {
-    number: '04',
-    title: 'Concurrent Product & Process Design (CPPD)',
-    description: 'We design the product, its process, its compliance and its service together, from the concept stage. Local market realities are built into the specification, not discovered after launch.',
-    icon: Layers,
-    link: '/capabilities/concurrent-product-process-design',
-  },
-  {
-    number: '05',
-    title: 'Launch & demand generation',
-    description: 'Controlled pilots, trial-to-deposit conversion and measured demand before national inventory and spend. Launch when the evidence says ready.',
-    icon: Rocket,
-    link: null,
-  },
-  {
-    number: '06',
-    title: 'Programme integration',
-    description: 'A single accountable programme that keeps scope, claims, cost and unresolved risk visible to the board throughout, from first concept to after-sales.',
-    icon: GitMerge,
-    link: null,
-  },
-];
+const icons = [Target, ShieldCheck, Network, Layers, Rocket, TrendingUp, Cpu, GitMerge];
+
+const capabilities = capabilityData.map((cap, i) => ({
+  number: cap.number,
+  title: cap.title,
+  description: cap.description,
+  icon: icons[i],
+  link: cap.href,
+  tags: cap.tags,
+}));
 
 const faqs = [
   {
@@ -145,11 +112,7 @@ const Capabilities = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className={`h-full border p-6 sm:p-8 transition-all duration-300 ${
-                    cap.link
-                      ? 'border-gold/50 bg-obsidian/50 hover:border-gold'
-                      : 'border-silver-steel/20 hover:border-gold/50'
-                  }`}
+                  className="h-full border border-silver-steel/20 bg-obsidian/30 p-6 sm:p-8 transition-all duration-300 hover:border-gold flex flex-col"
                 >
                   <div className="flex items-center justify-between mb-5">
                     <span className="text-3xl sm:text-4xl font-bold text-gold/20">{cap.number}</span>
@@ -160,23 +123,29 @@ const Capabilities = () => {
                   <h2 className="text-lg sm:text-xl font-semibold text-optical-white mb-3 tracking-tight">
                     {cap.title}
                   </h2>
-                  <p className="text-sm text-accent-muted leading-relaxed">
+                  <p className="text-sm text-accent-muted leading-relaxed flex-1">
                     {cap.description}
                   </p>
-                  {cap.link && (
-                    <span className="inline-flex items-center gap-1.5 mt-5 text-xs font-mono tracking-widest text-gold">
-                      EXPLORE CPPD
-                      <ArrowRight size={12} />
-                    </span>
-                  )}
+                  <div className="flex flex-wrap gap-2 mt-5">
+                    {cap.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-mono text-[9px] tracking-[0.1em] text-accent-muted border border-silver-steel/20 rounded-full px-2.5 py-1"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 mt-5 text-xs font-mono tracking-widest text-gold">
+                    VIEW CAPABILITY
+                    <ArrowRight size={12} />
+                  </span>
                 </motion.div>
               );
-              return cap.link ? (
+              return (
                 <Link key={cap.number} to={cap.link} className="block h-full">
                   {inner}
                 </Link>
-              ) : (
-                <div key={cap.number}>{inner}</div>
               );
             })}
           </div>

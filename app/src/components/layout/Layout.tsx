@@ -4,10 +4,22 @@ import GridBackground from '../GridBackground';
 
 const exploreLinks = [
   { to: '/capabilities', label: 'Capabilities' },
-  { to: '/capabilities/concurrent-product-process-design', label: 'Concurrent Product & Process Design' },
+  { to: '/methodology', label: 'Methodology' },
   { to: '/industries', label: 'Industries' },
   { to: '/blog', label: 'Insights' },
   { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
+];
+
+const capabilityLinks = [
+  { to: '/capabilities/market-entry-strategy', label: 'Market-entry strategy' },
+  { to: '/capabilities/regulatory-and-compliance', label: 'Regulatory and compliance' },
+  { to: '/capabilities/channel-strategy', label: 'Distribution and channel' },
+  { to: '/capabilities/concurrent-product-process-design', label: 'Product-to-market (CPPD)' },
+  { to: '/capabilities/go-to-market-strategy', label: 'Launch and demand' },
+  { to: '/capabilities/capital-efficient-growth', label: 'Capital-efficient growth' },
+  { to: '/capabilities/ai-advisory', label: 'AI advisory' },
+  { to: '/capabilities/strategy-and-transformation', label: 'Strategy and transformation' },
 ];
 
 const industryLinks = [
@@ -28,9 +40,9 @@ const Layout = () => {
         {/* Footer */}
         <footer className="w-full px-4 sm:px-6 lg:px-8 pt-12 pb-8 border-t border-silver-steel/10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-10">
               {/* Brand */}
-              <div>
+              <div className="lg:col-span-2">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-sm font-semibold tracking-tight text-optical-white">
                     DIVINE LAB WORX
@@ -45,10 +57,27 @@ const Layout = () => {
                     />
                   </div>
                 </div>
-                <p className="text-xs text-accent-muted leading-relaxed max-w-[38ch]">
-                  The go-to-market strategist for retailers, manufacturers and homebuilders
-                  bringing products to the Australian market.
+                <p className="text-xs text-accent-muted leading-relaxed max-w-[42ch]">
+                  Strategy, engineering and market action in one accountable team. We take
+                  products, systems and facilities from concept to after-sales across Australia
+                  and international markets.
                 </p>
+              </div>
+
+              {/* Capabilities */}
+              <div>
+                <h4 className="font-mono text-[10px] tracking-[0.2em] text-accent-muted/60 uppercase mb-4">
+                  Capabilities
+                </h4>
+                <ul className="space-y-2.5">
+                  {capabilityLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link to={link.to} className="text-xs text-accent-muted hover:text-gold transition-colors">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Explore */}
