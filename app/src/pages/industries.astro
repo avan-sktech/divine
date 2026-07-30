@@ -28,9 +28,26 @@ const schema = [
 /* The proof strip runs as a continuous slider, so the set is duplicated in the
    markup and the second pass is hidden from assistive tech. Descriptors state
    the nature of the relationship only -- no outcomes or figures are claimed. */
+/* A cell shows the company's logo where we hold one and falls back to its
+   wordmark where we do not, so the strip never waits on a missing asset. The
+   logo variants are lifted for the dark ground: Natridy is monochrome so it is
+   flattened to white, while Samaria keeps its orange and blue untouched and only
+   its neutral blacks are raised. */
 const proofPoints = [
-  { name: 'Natridy', note: 'Commercial and market development' },
-  { name: 'Samaria', note: 'Strategic growth pathway' },
+  {
+    name: 'Natridy',
+    note: 'Commercial and market development',
+    logo: '/images/clients/natridy-light.png',
+    logoWidth: 542,
+    logoHeight: 176,
+  },
+  {
+    name: 'Samaria',
+    note: 'Strategic growth pathway',
+    logo: '/images/clients/samaria-light.png',
+    logoWidth: 300,
+    logoHeight: 84,
+  },
   { name: 'Ecostar Solar', note: 'Solar and renewable energy' },
   { name: 'INTL', note: 'Cross-market commercial context' },
   { name: '1', note: 'Accountable route to revenue' },
@@ -158,7 +175,21 @@ const industries = [
             [0, 1].map((pass) =>
               proofPoints.map((point) => (
                 <div class="proof-slider-cell" aria-hidden={pass === 1 ? 'true' : undefined}>
-                  <strong>{point.name}</strong>
+                  {
+                    point.logo ? (
+                      <img
+                        class="proof-slider-logo"
+                        src={point.logo}
+                        alt={point.name}
+                        width={point.logoWidth}
+                        height={point.logoHeight}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      <strong>{point.name}</strong>
+                    )
+                  }
                   <span>{point.note}</span>
                 </div>
               )),
@@ -215,6 +246,22 @@ const industries = [
     min-height:220px;
     padding:1.7rem;
     border-right:1px solid rgba(255,255,255,.2)
+  }
+  /* Logos run to a common height rather than a common width, which is what keeps
+     marks of different proportions reading at the same optical weight. The
+     width/height attributes reserve the box before the bytes arrive, so a lazy
+     logo cannot shift the track mid-travel and break the seamless -50% loop. */
+  /* Height is responsive because the cell narrows to 250px on small screens, where
+     a fixed 58px would push the wider marks past the padding. object-fit guards
+     the aspect if max-width ever does clamp the box -- with an explicit height a
+     capped width would otherwise squash the artwork. */
+  .proof-slider-logo{
+    width:auto;
+    height:clamp(40px,4.6vw,58px);
+    max-width:100%;
+    object-fit:contain;
+    object-position:left center;
+    align-self:start
   }
   .proof-slider-cell strong{
     display:block;
