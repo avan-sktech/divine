@@ -4,7 +4,7 @@
     { "source": "/services", "destination": "/capabilities", "permanent": true },
     { "source": "/industries/electric-powersports", "destination": "/industries", "permanent": true },
     { "source": "/industries/critical-infrastructure", "destination": "/infrastructure", "permanent": true },
-    { "source": "/methodology/:path*", "destination": "/methodology", "permanent": true },
+    { "source": "/methodology/:path+", "destination": "/methodology", "permanent": true },
 
     { "source": "/capabilities/market-entry-strategy", "destination": "/market-entry-australia", "permanent": true },
     { "source": "/capabilities/regulatory-and-compliance", "destination": "/market-entry-australia", "permanent": true },
