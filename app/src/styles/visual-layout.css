@@ -1,3 +1,30 @@
+/* Brand lockup: both wordmarks are now artwork rather than type. The assets are
+   trimmed to their alpha bounding box, so height alone sets the optical size and
+   there is no transparent padding to fight (the previous Sharktech PNG carried
+   its artwork inside a 500x500 canvas, which read as a broken gap). The Sharktech
+   mark sits taller than the old text line because its "GLOBAL" row is part of the
+   artwork and goes illegible below about 20px. */
+.brand-logo {
+  width: auto;
+  height: 42px;
+  flex: 0 0 auto;
+}
+
+.brand-parent-logo {
+  width: auto;
+  height: 30px;
+  margin-top: 0.28rem;
+}
+
+.brand-copy strong {
+  color: var(--white);
+}
+
+@media (max-width: 680px) {
+  .brand-logo { height: 34px; }
+  .brand-parent-logo { height: 24px; }
+}
+
 .path-card {
   min-height: 620px;
 }
