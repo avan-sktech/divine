@@ -1194,3 +1194,89 @@ h3,
     display: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Navigation drawer
+   The menu shipped as a full-screen two-column takeover, tiles at 135px
+   minimum with labels up to 4.8rem, which reads as a page rather than as
+   navigation. It becomes a right-hand drawer with a compact list.
+
+   These rules are top level on purpose: this site uses the Menu button and
+   the overlay at every width, not only on small screens, so scoping the
+   drawer to a breakpoint would leave the takeover in place on desktop.
+
+   The open state is carried by opacity and visibility only, with no slide
+   transform, so the panel can never be stranded off-screen if a transform
+   rule is overridden elsewhere in this cascade.
+   --------------------------------------------------------------------------- */
+.primary-nav {
+  inset: 0 0 0 auto;
+  width: min(360px, 86vw);
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 0;
+  padding: 96px 0 20px;
+  background: var(--black);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: -26px 0 60px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  transform: none;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.primary-nav[data-open='true'] {
+  display: grid;
+  transform: none;
+}
+
+/* Rows, not tiles */
+.primary-nav > a:not(.nav-contact),
+.primary-nav .nav-contact {
+  min-height: 0;
+  padding: 1rem 1.35rem;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+/* The takeover put a large plus in each tile corner. In a list it belongs at
+   the right of the row, at label scale. */
+.primary-nav > a:not(.nav-contact)::after {
+  right: 1.35rem;
+  top: 50%;
+  bottom: auto;
+  font-size: 0.95rem;
+  transform: translateY(-50%);
+}
+
+.primary-nav .nav-contact {
+  grid-column: 1 / -1;
+  margin: 1.25rem 1.35rem 0;
+  padding: 0.95rem 1.1rem;
+  border-bottom: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 680px) {
+  .primary-nav {
+    width: min(340px, 88vw);
+    padding-top: 84px;
+  }
+
+  .primary-nav > a:not(.nav-contact),
+  .primary-nav .nav-contact {
+    padding: 0.95rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .primary-nav > a:not(.nav-contact)::after {
+    right: 1.2rem;
+  }
+
+  .primary-nav .nav-contact {
+    margin: 1.1rem 1.2rem 0;
+  }
+}
