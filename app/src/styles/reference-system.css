@@ -1199,33 +1199,53 @@ h3,
    Navigation drawer
    The menu shipped as a full-screen two-column takeover, tiles at 135px
    minimum with labels up to 4.8rem, which reads as a page rather than as
-   navigation. It becomes a right-hand drawer with a compact list.
+   navigation. It is a right-hand drawer instead.
 
-   These rules are top level on purpose: this site uses the Menu button and
-   the overlay at every width, not only on small screens, so scoping the
-   drawer to a breakpoint would leave the takeover in place on desktop.
+   Top level on purpose: this site shows the Menu button and the overlay at
+   every width, so scoping the drawer to a breakpoint would leave the takeover
+   in place on desktop.
 
-   The open state is carried by opacity and visibility only, with no slide
-   transform, so the panel can never be stranded off-screen if a transform
-   rule is overridden elsewhere in this cascade.
+   The slide animates `right`, not `transform`. Several rules in this cascade
+   set `transform: none` on the open state, which strands a transform-based
+   slide off-screen. Offsetting by `right` cannot be cancelled by them, and
+   top/bottom/left/right are set as longhands so the earlier `inset: 0`
+   shorthand cannot reintroduce it.
    --------------------------------------------------------------------------- */
 .primary-nav {
-  inset: 0 0 0 auto;
-  width: min(360px, 86vw);
+  --drawer-width: min(420px, 90vw);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: calc(var(--drawer-width) * -1);
+  width: var(--drawer-width);
   grid-template-columns: 1fr;
   align-content: start;
   gap: 0;
-  padding: 96px 0 20px;
+  padding: 96px 0 24px;
   background: var(--black);
   border-left: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: -26px 0 60px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
   transform: none;
-  transition: opacity 180ms ease, visibility 180ms ease;
+  transition:
+    right 340ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 200ms ease,
+    visibility 200ms ease;
 }
 
-.primary-nav[data-open='true'] {
+/* Open state is keyed off both hooks the toggle sets: the data-open attribute
+   on the panel and the nav-open class on body. The body-class selector carries
+   higher specificity and is what actually drives the panel, because the
+   attribute selector alone was being dropped in at least one engine, leaving
+   the drawer stranded off-screen with visibility still hidden. */
+.primary-nav[data-open='true'],
+body.nav-open nav.primary-nav {
   display: grid;
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   transform: none;
 }
 
@@ -1233,28 +1253,33 @@ h3,
 .primary-nav > a:not(.nav-contact),
 .primary-nav .nav-contact {
   min-height: 0;
-  padding: 1rem 1.35rem;
+  padding: 1.05rem 1.9rem;
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   letter-spacing: 0.03em;
   line-height: 1.2;
 }
 
 /* The takeover put a large plus in each tile corner. In a list it belongs at
-   the right of the row, at label scale. */
+   the right of the row, at label scale. `left` has to be released explicitly:
+   global.css sets `inset: auto 0 0` on this pseudo-element, and with both left
+   and right resolved the box stretches the full row width, which parks the glyph
+   against the panel's left border instead of at the right inset. */
 .primary-nav > a:not(.nav-contact)::after {
-  right: 1.35rem;
+  left: auto;
+  right: 1.9rem;
   top: 50%;
   bottom: auto;
+  width: auto;
   font-size: 0.95rem;
   transform: translateY(-50%);
 }
 
 .primary-nav .nav-contact {
   grid-column: 1 / -1;
-  margin: 1.25rem 1.35rem 0;
-  padding: 0.95rem 1.1rem;
+  margin: 1.5rem 1.9rem 0;
+  padding: 1rem 1.1rem;
   border-bottom: 0;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
@@ -1262,21 +1287,27 @@ h3,
 
 @media (max-width: 680px) {
   .primary-nav {
-    width: min(340px, 88vw);
-    padding-top: 84px;
+    --drawer-width: min(360px, 88vw);
+    padding-top: 86px;
   }
 
   .primary-nav > a:not(.nav-contact),
   .primary-nav .nav-contact {
-    padding: 0.95rem 1.2rem;
-    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.05rem;
   }
 
   .primary-nav > a:not(.nav-contact)::after {
-    right: 1.2rem;
+    right: 1.5rem;
   }
 
   .primary-nav .nav-contact {
-    margin: 1.1rem 1.2rem 0;
+    margin: 1.35rem 1.5rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary-nav {
+    transition: opacity 120ms ease, visibility 120ms ease;
   }
 }

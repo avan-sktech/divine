@@ -2,9 +2,38 @@
   min-height: 620px;
 }
 
+/* This section used to sit on a paper ground, which put it at odds with the page
+   twice over: it broke the dark editorial run that the hero, the answer block and
+   the chessboard filmstrip build up, and it butted straight into the next paper
+   section, so the two read as one undifferentiated slab. It now stays on the dark
+   ground and carries a hairline to separate it from the filmstrip above. The
+   diagram below is inverted to match.
+
+   --accent-light is a legible tint of the brand blue, scoped to this section:
+   --blue sits at 2.9:1 on this ground, which is too weak for small type. */
 .methodology-bridge {
+  --accent-light: #8ea6ff;
+  --accent-node: #5f7dff;
   padding-block: clamp(5rem, 9vw, 9rem);
-  background: var(--paper);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--black);
+  color: var(--white);
+}
+
+.methodology-bridge h2 {
+  color: var(--white);
+}
+
+.methodology-bridge .revamp-eyebrow {
+  color: var(--accent-light);
+}
+
+.methodology-bridge .text-link {
+  color: var(--white);
+}
+
+.methodology-bridge .text-link::after {
+  background: var(--white);
 }
 
 .methodology-bridge-grid {
@@ -27,7 +56,7 @@
 .methodology-bridge [data-reveal] > p:not(.revamp-eyebrow) {
   max-width: 520px;
   margin: 1.6rem 0;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .methodology-map {
@@ -36,11 +65,11 @@
   gap: clamp(1.4rem, 3vw, 2.2rem);
   padding: clamp(2rem, 5vw, 4rem);
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   background:
-    linear-gradient(rgba(49,83,199,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(49,83,199,.06) 1px, transparent 1px),
-    var(--white);
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.028);
   background-size: 72px 72px;
 }
 
@@ -51,8 +80,8 @@
   bottom: 3.8rem;
   left: 31.5%;
   width: 1px;
-  background: linear-gradient(transparent, var(--blue) 20%, var(--blue) 80%, transparent);
-  box-shadow: 0 0 24px rgba(49,83,199,.35);
+  background: linear-gradient(transparent, var(--accent-node) 20%, var(--accent-node) 80%, transparent);
+  box-shadow: 0 0 24px rgba(95,125,255,.45);
 }
 
 .methodology-map > div {
@@ -63,7 +92,7 @@
 }
 
 .methodology-map > div span {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.66);
   font-size: .65rem;
   font-weight: 780;
   letter-spacing: .09em;
@@ -76,15 +105,15 @@
   width: 9px;
   height: 9px;
   justify-self: center;
-  border: 1px solid rgba(13,13,13,.38);
+  border: 1px solid rgba(255,255,255,.34);
   border-radius: 50%;
-  background: var(--white);
+  background: transparent;
 }
 
 .methodology-map i:nth-of-type(-n+2) {
-  border-color: var(--blue);
-  background: var(--blue);
-  box-shadow: 0 0 0 5px rgba(49,83,199,.08);
+  border-color: var(--accent-node);
+  background: var(--accent-node);
+  box-shadow: 0 0 0 5px rgba(95,125,255,.16);
 }
 
 .methodology-map > p {
@@ -93,7 +122,7 @@
   justify-content: flex-end;
   gap: .45rem;
   margin: .8rem 0 0;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.66);
   font-size: .6rem;
   font-weight: 780;
   letter-spacing: .08em;
@@ -101,7 +130,7 @@
 }
 
 .methodology-map > p span {
-  color: var(--blue-deep);
+  color: var(--accent-light);
 }
 
 .path-card-media {
