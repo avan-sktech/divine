@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceLanding from '../components/ServiceLanding.astro';
+import {
+  breadcrumbSchema,
+  commercialisationFaqs,
+  faqSchema,
+  serviceSchema,
+} from '../data/site';
+
+const title = 'Product Commercialisation Strategy Consultants | DivineLab Worx';
+const description =
+  'Product commercialisation consulting across markets. Connect customer demand, compliance, production, delivery, channels and pilot evidence before scaling.';
+const path = '/product-commercialisation';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Capabilities', path: '/capabilities' },
+    { name: 'Product commercialisation', path },
+  ]),
+  faqSchema(commercialisationFaqs),
+  serviceSchema({
+    name: 'Product Commercialisation Consulting',
+    path,
+    description,
+    serviceType: [
+      'Product commercialisation strategy',
+      'Concurrent Product and Process Design',
+      'Commercial readiness assessment',
+      'Pilot design',
+    ],
+    audience: ['Manufacturers', 'Technology businesses', 'Construction system providers', 'Product and innovation leaders'],
+    offerName: 'Commercialisation Pathway Assessment',
+  }),
+];
+
+const audienceItems = [
+  {
+    title: 'Technical products seeking first revenue',
+    copy: 'The prototype or core technology works, but the customer, offer, proof and delivery system are not yet commercially aligned.',
+  },
+  {
+    title: 'Products adapting for a new market',
+    copy: 'Local standards, claims, channels, service expectations and unit economics require coordinated product and process decisions.',
+  },
+  {
+    title: 'Manufacturers creating adjacent offers',
+    copy: 'Existing capability can address a new use case, but demand, configuration, capacity and route to market need evidence.',
+  },
+  {
+    title: 'Construction and industrial systems',
+    copy: 'Design, certification, production, logistics, site work and buyer confidence have to move together.',
+  },
+];
+
+const scopeItems = [
+  {
+    title: 'Customer and use case',
+    copy: 'Define the first buyer, operating problem, adoption criteria and evidence that makes the offer worth changing for.',
+  },
+  {
+    title: 'Offer and commercial model',
+    copy: 'Shape the product, service layers, price, margin, contract logic and customer outcome as one proposition.',
+  },
+  {
+    title: 'Evidence and compliance',
+    copy: 'Map tests, standards, claims, approvals, technical inputs and assurance into the commercial timeline.',
+  },
+  {
+    title: 'Production and delivery',
+    copy: 'Align capacity, quality, supply, installation, onboarding, support and operating responsibility with the promise.',
+  },
+  {
+    title: 'Channel and demand',
+    copy: 'Select how the offer reaches buyers, what partners need and how early demand will be created and converted.',
+  },
+  {
+    title: 'Pilot and scale criteria',
+    copy: 'Design a controlled first deployment with measures that support a responsible stop, adapt or scale decision.',
+  },
+];
+
+const processItems = [
+  {
+    number: '01',
+    title: 'Define the commercial hypothesis',
+    copy: 'Name the customer, use case, product advantage, buying trigger and economic outcome that must be proven.',
+  },
+  {
+    number: '02',
+    title: 'Map concurrent dependencies',
+    copy: 'Connect product, compliance, production, channel, demand, service and capital decisions in one evidence register.',
+  },
+  {
+    number: '03',
+    title: 'Design the first viable offer',
+    copy: 'Set the scope, price, claims, delivery model, responsibilities and minimum evidence required for a real customer decision.',
+  },
+  {
+    number: '04',
+    title: 'Run the commercial pilot',
+    copy: 'Observe technical, customer and operating performance together, then use the evidence to shape the next scale gate.',
+  },
+];
+
+const comparisonItems = [
+  {
+    question: 'Starting point',
+    weak: 'Finish the product, then ask marketing and operations how to sell and deliver it.',
+    strong: 'Begin with the buying decision and design product and process requirements together.',
+  },
+  {
+    question: 'Evidence',
+    weak: 'Treat technical performance as sufficient proof of commercial readiness.',
+    strong: 'Build customer, compliance, production, service and economic evidence alongside technical proof.',
+  },
+  {
+    question: 'Pilot',
+    weak: 'Run a demonstration without agreed customer and operating measures.',
+    strong: 'Use a controlled deployment to test adoption, outcome, delivery and repeatable economics.',
+  },
+  {
+    question: 'Scale',
+    weak: 'Add inventory, capacity or people before the delivery model is proven.',
+    strong: 'Release resources against explicit evidence and a clear repeatability threshold.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <ServiceLanding
+    eyebrow="Product commercialisation consulting"
+    title="Turn technical capability into a <em>commercial offer.</em>"
+    lede="Design the customer proposition, evidence, production, channel and delivery pathway together before expensive choices become fixed."
+    index="COM / INTL"
+    answerQuestion="What does a product commercialisation consultant do?"
+    answer="A product commercialisation consultant connects a product or technical capability to a defined customer, commercial model, compliance pathway, production and delivery system, route to market and measurable pilot so the offer can produce repeatable revenue."
+    audienceHeading="Commercialisation begins before product development ends."
+    audienceCopy="The strongest time to connect market and delivery decisions is while the offer, process and evidence pathway can still change."
+    audienceItems={audienceItems}
+    scopeHeading="Commercial readiness is a connected system."
+    scopeCopy="Concurrent Product and Process Design keeps customer, technical, operating and route-to-market choices aligned."
+    scopeItems={scopeItems}
+    processHeading="Build market and delivery evidence together."
+    processCopy="Each phase reduces a commercial uncertainty while preserving the ability to adjust the product and process."
+    processItems={processItems}
+    comparisonHeading="What changes when product and process are designed concurrently?"
+    comparisonCopy="The work moves from sequential hand-offs to shared decisions grounded in the same customer and commercial outcome."
+    comparisonItems={comparisonItems}
+    faqs={commercialisationFaqs}
+    faqHeading="Product commercialisation consulting, answered."
+    ctaEyebrow="Commercialisation pathway assessment"
+    ctaTitle="Test the route from capability to repeatable revenue."
+    ctaCopy="Define the first customer, commercial offer, evidence gaps, delivery dependencies, pilot and next investment gate."
+    ctaLabel="Request a pathway assessment"
+    ctaHref="/contact?type=product-commercialisation"
+    secondaryLabel="Explore our methodology"
+    secondaryHref="/methodology"
+  />
+</BaseLayout>

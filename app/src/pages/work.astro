@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import EditorialMedia from '../components/EditorialMedia.astro';
+import CTA from '../components/CTA.astro';
+import { breadcrumbSchema } from '../data/site';
+
+const title = 'Work and Engagement Models | DivineLab Worx';
+const description =
+  'See how DivineLab Worx structures international strategy, transformation, AI, market-entry, construction and infrastructure engagements around accountable decisions.';
+
+const cases = [
+  {
+    label: '01 / Market entry',
+    title: 'Launch pathway for an overseas product business',
+    mandate: 'Clarify the first customer, compliance inputs, channel structure and evidence required before national commitment.',
+    output: 'A staged roadmap with a contained demand test, accountable workstreams and explicit investment gates.',
+    image: '/images/editorial/commercial-analysis.webp',
+    alt: 'Commercial evidence being reviewed for a market-entry decision',
+  },
+  {
+    label: '02 / Applied AI',
+    title: 'From broad AI ambition to a governed operating use case',
+    mandate: 'Rank opportunities, define value, identify data dependencies and select a use case suitable for contained implementation.',
+    output: 'A funded priority, solution pathway, control model and measurement plan.',
+    image: '/images/editorial/responsible-ai-poster.webp',
+    alt: 'Robotic hand representing a controlled artificial intelligence use case',
+  },
+  {
+    label: '03 / Infrastructure',
+    title: 'Site screening for an energy-intensive advanced facility',
+    mandate: 'Compare locations across power, planning, connectivity, water, land and confidence of evidence.',
+    output: 'A defensible shortlist, evidence register and integrated route toward build-ready status.',
+    image: '/images/hero-infrastructure.jpg',
+    alt: 'Large-scale technical infrastructure under evaluation',
+  },
+  {
+    label: '04 / Construction',
+    title: 'Commercial pathway for a modern construction system',
+    mandate: 'Align the target project, approval requirements, supply model, pilot criteria and repeatable economics.',
+    output: 'A delivery pathway connecting the first demonstrator to a credible repeatable offer.',
+    image: '/images/concrete-structure.jpg',
+    alt: 'Modern concrete construction structure',
+  },
+  {
+    label: '05 / International strategy',
+    title: 'Cross-market growth and transformation',
+    mandate: 'Connect market evidence, customer journeys, distribution, discoverability, governance and operating readiness.',
+    output: 'A decision-ready evidence pack, prioritised roadmap and contained feasibility phase.',
+    image: '/images/editorial/executive-workshop.webp',
+    alt: 'Executive group aligning a complex international strategy',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schema={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Work', path: '/work' }])}
+>
+  <PageHero
+    eyebrow="Work"
+    title="Evidence designed to move the <em>next decision.</em>"
+    lede="Our work is measured by whether it creates a defensible decision, a controlled implementation pathway and visible ownership of the outcome."
+    index="WRK / 01"
+    secondaryLabel="How we work"
+    secondaryHref="/about"
+  />
+  <AnswerBlock
+    question="What does a DivineLab Worx engagement produce?"
+    answer="A DivineLab Worx engagement produces decision-ready evidence, a prioritised pathway, accountable workstreams and clear investment gates. Depending on the mandate, the work can continue into implementation, adoption and outcome measurement."
+  />
+
+  <EditorialMedia
+    image="/images/editorial/commercial-analysis.webp"
+    alt="Consultants reviewing commercial performance data during a business meeting"
+    eyebrow="Evidence before commitment"
+    caption="The work makes assumptions, constraints and confidence visible before a major market, technology or investment decision is released."
+    index="WRK / 02"
+    position="center"
+  />
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Selected engagement patterns</p>
+        <h2>Commercial, technical and operating questions held together.</h2>
+        <p>Client names and commercially sensitive details are withheld where engagements are confidential.</p>
+      </div>
+      <div class="case-gallery">
+        {cases.map((item) => (
+          <article class="case-card" data-reveal>
+            <figure>
+              <img src={item.image} alt={item.alt} width="1400" height="900" loading="lazy" decoding="async" />
+              <span>{item.label}</span>
+            </figure>
+            <div class="case-card-copy">
+              <h3>{item.title}</h3>
+              <details>
+                <summary>View engagement structure <span aria-hidden="true">+</span></summary>
+                <div>
+                  <p><strong>Mandate</strong>{item.mandate}</p>
+                  <p><strong>Output</strong>{item.output}</p>
+                </div>
+              </details>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="shell split-grid">
+      <div data-reveal>
+        <p class="eyebrow eyebrow-light">Evidence standard</p>
+        <h2>Confidence is made visible.</h2>
+      </div>
+      <div data-reveal>
+        <p class="prose-large" style="color:rgba(255,255,255,.66)">
+          We distinguish sourced facts, tested evidence, working assumptions and unresolved dependencies. Decision-makers can see not only the recommendation, but what it depends on and what would change it.
+        </p>
+        <div class="evidence-legend">
+          <span><i class="verified"></i>Verified evidence</span>
+          <span><i class="tested"></i>Tested assumption</span>
+          <span><i class="open"></i>Open dependency</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CTA title="Define the decision. Then build the evidence around it." />
+</BaseLayout>
+
+<style>
+  .case-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line)}
+  .case-card{background:var(--white)}
+  .case-card:last-child{grid-column:1/-1;display:grid;grid-template-columns:1.25fr .75fr}
+  .case-card figure{position:relative;aspect-ratio:16/10;margin:0;overflow:hidden;background:var(--black)}
+  .case-card:last-child figure{aspect-ratio:16/8}
+  .case-card figure::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,11,30,.62),transparent 55%)}
+  .case-card img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.72) contrast(1.05)}
+  .case-card figure>span{position:absolute;z-index:2;bottom:1.2rem;left:1.2rem;color:var(--white);font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .case-card-copy{padding:clamp(1.5rem,3vw,2.5rem)}
+  .case-card h3{max-width:18ch;margin:0 0 2rem;font-family:var(--display);font-size:clamp(1.9rem,3vw,3.1rem);font-weight:460;line-height:.98}
+  .case-card details{border-top:1px solid var(--line)}
+  .case-card summary{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;cursor:pointer;color:var(--blue-deep);font-size:.68rem;font-weight:780;letter-spacing:.12em;text-transform:uppercase}
+  .case-card summary::-webkit-details-marker{display:none}
+  .case-card details[open] summary span{transform:rotate(45deg)}
+  .case-card details>div{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:0 0 1rem}
+  .case-card p{margin:0;color:var(--muted);font-size:.86rem}
+  .case-card p strong{display:block;margin-bottom:.4rem;color:var(--black);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase}
+  .evidence-legend{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line-light)}
+  .evidence-legend span{display:flex;align-items:center;gap:.55rem;color:rgba(255,255,255,.58);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
+  .evidence-legend i{width:9px;height:9px;border-radius:50%}.verified{background:#89a4ff}.tested{background:#a68a5a}.open{border:1px solid rgba(255,255,255,.5)}
+  @media(max-width:850px){.case-gallery{grid-template-columns:1fr}.case-card:last-child{grid-column:auto;display:block}.case-card:last-child figure{aspect-ratio:16/10}}
+  @media(max-width:520px){.case-card details>div{grid-template-columns:1fr}}
+</style>

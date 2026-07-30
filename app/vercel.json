@@ -1,20 +1,51 @@
 {
-  "version": 2,
-  "routes": [
-    { "src": "/industries/electric-powersports/?", "status": 301, "headers": { "Location": "/industries" } },
-    { "src": "/services/?", "status": 301, "headers": { "Location": "/capabilities" } },
-    { "src": "/market-entry-australia/?", "status": 301, "headers": { "Location": "/capabilities/market-entry-strategy" } },
-    { "src": "/go-to-market-strategy/?", "status": 301, "headers": { "Location": "/capabilities/go-to-market-strategy" } },
-    { "src": "/channel-strategy/?", "status": 301, "headers": { "Location": "/capabilities/channel-strategy" } },
-    { "src": "/product-commercialisation/?", "status": 301, "headers": { "Location": "/capabilities/concurrent-product-process-design" } },
-    { "src": "/capital-efficient-growth/?", "status": 301, "headers": { "Location": "/capabilities/capital-efficient-growth" } },
-    { "src": "/advisory/?", "status": 301, "headers": { "Location": "/capabilities/ai-advisory" } },
-    { "src": "/work/?", "status": 301, "headers": { "Location": "/capabilities/strategy-and-transformation" } },
-    { "src": "/infrastructure/?", "status": 301, "headers": { "Location": "/industries/critical-infrastructure" } },
-    { "src": "/construction/?", "status": 301, "headers": { "Location": "/industries" } },
-    { "src": "/insights/?", "status": 301, "headers": { "Location": "/blog" } },
-    { "src": "/insights/(.*)", "status": 301, "headers": { "Location": "/blog" } },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/services", "destination": "/capabilities", "permanent": true },
+    { "source": "/industries/electric-powersports", "destination": "/industries", "permanent": true },
+    { "source": "/industries/critical-infrastructure", "destination": "/infrastructure", "permanent": true },
+    { "source": "/methodology/:path*", "destination": "/methodology", "permanent": true },
+
+    { "source": "/capabilities/market-entry-strategy", "destination": "/market-entry-australia", "permanent": true },
+    { "source": "/capabilities/regulatory-and-compliance", "destination": "/market-entry-australia", "permanent": true },
+    { "source": "/capabilities/channel-strategy", "destination": "/channel-strategy", "permanent": true },
+    { "source": "/capabilities/concurrent-product-process-design", "destination": "/product-commercialisation", "permanent": true },
+    { "source": "/capabilities/go-to-market-strategy", "destination": "/go-to-market-strategy", "permanent": true },
+    { "source": "/capabilities/ai-advisory", "destination": "/advisory", "permanent": true },
+    { "source": "/capabilities/strategy-and-transformation", "destination": "/work", "permanent": true },
+
+    { "source": "/blog/author/:slug*", "destination": "/blog", "permanent": true },
+
+    { "source": "/blog/business-consultancy-services-australia", "destination": "/capabilities", "permanent": true },
+    { "source": "/blog/go-to-market-strategist-vs-business-consultant", "destination": "/go-to-market-strategy", "permanent": true },
+    { "source": "/blog/product-launch-strategy-australia", "destination": "/go-to-market-strategy", "permanent": true },
+    { "source": "/blog/product-launch-consulting-australia", "destination": "/go-to-market-strategy", "permanent": true },
+    { "source": "/blog/manufacturing-product-launch-strategy-australia", "destination": "/product-commercialisation", "permanent": true },
+    { "source": "/blog/manufacturing-consultancy-australia", "destination": "/product-commercialisation", "permanent": true },
+    { "source": "/blog/australian-market-entry-consultant", "destination": "/market-entry-australia", "permanent": true },
+    { "source": "/blog/boots-on-the-ground-australia-market-entry", "destination": "/market-entry-australia", "permanent": true },
+    { "source": "/blog/as-nzs-compliance", "destination": "/blog/scope-australian-approval-pathway-first", "permanent": true },
+    { "source": "/blog/retail-business-consultancy-australia", "destination": "/industries", "permanent": true },
+    { "source": "/blog/retail-consulting-services-australia", "destination": "/industries", "permanent": true },
+    { "source": "/blog/distribution-illusion-overseas-manufacturers", "destination": "/channel-strategy", "permanent": true },
+    { "source": "/blog/channel-conflict-prevention", "destination": "/blog/national-channel-that-does-not-fail", "permanent": true },
+    { "source": "/blog/margin-leakage-australia", "destination": "/channel-strategy", "permanent": true },
+    { "source": "/blog/sovereign-observation-protocol", "destination": "/capabilities", "permanent": true },
+    { "source": "/blog/deployment-architecture-vs-marketing", "destination": "/methodology", "permanent": true },
+
+    { "source": "/blog/ai-business-transformation-australia-market-entry", "destination": "/advisory", "permanent": true },
+    { "source": "/blog/agentic-ai-deployment-australia", "destination": "/advisory", "permanent": true },
+    { "source": "/blog/smb-ai-enablement-australia-market-entry", "destination": "/advisory", "permanent": true },
+
+    { "source": "/blog/infrastructure-deployment-australia", "destination": "/infrastructure", "permanent": true },
+    { "source": "/blog/ai-data-centre-sites-australia", "destination": "/infrastructure", "permanent": true },
+    { "source": "/blog/entering-australian-data-centre-market", "destination": "/infrastructure", "permanent": true },
+    { "source": "/blog/infrastructure-moat-data-centre-selection", "destination": "/infrastructure", "permanent": true },
+    { "source": "/blog/australia-datacentre-supercomputer-site-intelligence-2026", "destination": "/infrastructure", "permanent": true },
+    { "source": "/blog/seven-variables-data-centre-site-australia", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
+    { "source": "/blog/capital-ignores-physics", "destination": "/blog/where-critical-infrastructure-belongs", "permanent": true },
+    { "source": "/blog/dainu-devis-emerging-tech-ceo-australia", "destination": "/about", "permanent": true },
+
+    { "source": "/blog/capabilities", "destination": "/capabilities", "permanent": true }
   ]
 }

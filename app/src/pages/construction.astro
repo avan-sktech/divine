@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import FaqList from '../components/FaqList.astro';
+import CTA from '../components/CTA.astro';
+import {
+  breadcrumbSchema,
+  constructionFaqs,
+  faqSchema,
+  serviceSchema,
+} from '../data/site';
+
+const title = 'Modern Methods of Construction Advisory Australia | DivineLab Worx';
+const description =
+  'Commercialisation strategy for modular, prefabricated, 3D-printed and modern construction systems entering or scaling in Australia.';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Construction', path: '/construction' },
+  ]),
+  faqSchema(constructionFaqs),
+  serviceSchema({
+    name: 'Construction system commercialisation',
+    path: '/construction',
+    serviceType: 'Construction market and delivery advisory',
+    description,
+    audience: ['Modular construction providers', 'Prefabrication businesses', 'Developers', 'Construction technology companies'],
+    offerName: 'Construction Commercialisation Assessment',
+    areaServed: { '@type': 'Country', name: 'Australia' },
+  }),
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="Construction and built environment"
+    title="Commercialise modern construction systems in <em>Australia.</em>"
+    lede="Align customer demand, engineering evidence, Australian approvals, manufacturing, delivery capability and a credible first project before wider scale."
+    index="BLD / AU"
+    secondaryLabel="Explore industries"
+    secondaryHref="/industries"
+  />
+  <AnswerBlock
+    question="How do you commercialise a construction system in Australia?"
+    answer="A construction system is commercialised by aligning the target customer and commercial model with engineering evidence, Australian standards and approvals, supply and delivery capability, a controlled pilot project and a repeatable route to demand."
+  />
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Commercialisation pathway</p>
+        <h2>The market, the evidence and the build must agree.</h2>
+      </div>
+      <div class="process-grid process-light" data-reveal>
+        <article class="process-step"><strong>01</strong><h3>Target market</h3><p>Define the first customer, project type, buying criteria and economic reason to change.</p></article>
+        <article class="process-step"><strong>02</strong><h3>Evidence pathway</h3><p>Map engineering, standards, certification, planning and specialist requirements into the programme.</p></article>
+        <article class="process-step"><strong>03</strong><h3>Delivery model</h3><p>Align design responsibility, supply chain, site work, warranties, quality and operating ownership.</p></article>
+        <article class="process-step"><strong>04</strong><h3>Pilot to scale</h3><p>Select a controlled first project, measure performance and convert the evidence into a repeatable offer.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell split-grid">
+      <div data-reveal>
+        <p class="eyebrow">Modern methods of construction</p>
+        <h2>Innovation needs a pathway, not just a prototype.</h2>
+        <p class="prose-large">
+          Modular, prefabricated and 3D-printed construction systems often cross design, manufacturing, certification, logistics and site delivery. The commercial plan must account for all of them.
+        </p>
+      </div>
+      <div class="principle-list" data-reveal>
+        <div class="principle"><strong>01</strong><div><h3>Customer and use case</h3><p>Where the system has a material advantage and who can authorise adoption.</p></div></div>
+        <div class="principle"><strong>02</strong><div><h3>Evidence and assurance</h3><p>The technical, regulatory and performance evidence required to support decisions and claims.</p></div></div>
+        <div class="principle"><strong>03</strong><div><h3>Repeatable economics</h3><p>Cost, capacity, site conditions, logistics and delivery risk across more than one project.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <FaqList items={constructionFaqs} heading="Construction commercialisation, answered." />
+  <CTA
+    eyebrow="Market and pathway assessment"
+    title="Test the commercial pathway before scaling the build system."
+    copy="Establish the customer, evidence gaps, stakeholder map, pilot criteria and route to a repeatable Australian offer."
+    href="/contact?type=product-commercialisation"
+  />
+</BaseLayout>
+
+<style>
+  .process-light { border-color:var(--line); }
+  .process-light .process-step { border-color:var(--line); }
+  .process-light .process-step p { color:var(--muted); }
+  .process-light .process-step strong { color:var(--blue-deep); }
+</style>

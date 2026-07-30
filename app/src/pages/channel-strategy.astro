@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceLanding from '../components/ServiceLanding.astro';
+import {
+  breadcrumbSchema,
+  channelStrategyFaqs,
+  faqSchema,
+  serviceSchema,
+} from '../data/site';
+
+const title = 'Channel and Distribution Strategy Consultants | DivineLab Worx';
+const description =
+  'Channel and distribution strategy consulting across markets. Design direct, distributor, reseller, retail and partner models around productive revenue coverage.';
+const path = '/channel-strategy';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Capabilities', path: '/capabilities' },
+    { name: 'Channel strategy', path },
+  ]),
+  faqSchema(channelStrategyFaqs),
+  serviceSchema({
+    name: 'Channel Strategy Consulting',
+    path,
+    description,
+    serviceType: [
+      'Channel strategy consulting',
+      'Distribution strategy',
+      'Route-to-market design',
+      'Partner model design',
+    ],
+    audience: ['Product companies', 'Manufacturers', 'Technology vendors', 'Retail and distribution leaders'],
+    offerName: 'Channel Strategy Review',
+  }),
+];
+
+const audienceItems = [
+  {
+    title: 'Entering a new market through partners',
+    copy: 'You need local reach without losing control of customer experience, economics, evidence or brand position.',
+  },
+  {
+    title: 'Resetting an existing distributor network',
+    copy: 'Partner count has grown, but productive pipeline, conversion, service quality or role clarity has not.',
+  },
+  {
+    title: 'Choosing direct, indirect or hybrid',
+    copy: 'The business needs a commercial decision based on buying behaviour, coverage, margin and support requirements.',
+  },
+  {
+    title: 'Launching a partner programme',
+    copy: 'Recruitment, enablement, incentives and governance need to support a defined customer and sales motion.',
+  },
+];
+
+const scopeItems = [
+  {
+    title: 'Customer buying pathway',
+    copy: 'Map where buyers discover, assess, purchase, implement and seek support for the offer.',
+  },
+  {
+    title: 'Route-to-market options',
+    copy: 'Compare direct, distributor, reseller, retail, marketplace and hybrid models against the commercial mandate.',
+  },
+  {
+    title: 'Partner profile and coverage',
+    copy: 'Define the capabilities, relationships, geography and operating commitment required from productive partners.',
+  },
+  {
+    title: 'Margin and unit economics',
+    copy: 'Make landed cost, partner margin, sales effort, service cost, working capital and customer economics visible.',
+  },
+  {
+    title: 'Roles and service ownership',
+    copy: 'Assign lead generation, qualification, sales, implementation, training, warranty and account growth explicitly.',
+  },
+  {
+    title: 'Activation and measurement',
+    copy: 'Build the enablement, demand support, pipeline rules and scorecard required to move from appointment to revenue.',
+  },
+];
+
+const processItems = [
+  {
+    number: '01',
+    title: 'Diagnose the current route',
+    copy: 'Review customer behaviour, pipeline, conversion, partner activity, economics, service performance and ownership gaps.',
+  },
+  {
+    number: '02',
+    title: 'Design the channel model',
+    copy: 'Choose the route, partner roles, customer coverage, incentives, commercial terms and operating requirements.',
+  },
+  {
+    number: '03',
+    title: 'Build the activation plan',
+    copy: 'Define recruitment or reset priorities, enablement, sales material, demand support and the first productive opportunities.',
+  },
+  {
+    number: '04',
+    title: 'Govern productive coverage',
+    copy: 'Measure qualified pipeline, conversion, service and repeat revenue rather than agreements or nominal territory coverage.',
+  },
+];
+
+const comparisonItems = [
+  {
+    question: 'Partner selection',
+    weak: 'Choose the largest distributor or recruit as many partners as possible.',
+    strong: 'Select partners against customer access, capability, incentive and operating commitment.',
+  },
+  {
+    question: 'Economics',
+    weak: 'Set a headline margin without modelling delivery and support obligations.',
+    strong: 'Model landed cost, sales effort, service, working capital and value created for every participant.',
+  },
+  {
+    question: 'Ownership',
+    weak: 'Assume the partner will create demand, sell, implement and support the offer.',
+    strong: 'Assign every stage of the customer journey and define hand-offs before launch.',
+  },
+  {
+    question: 'Performance',
+    weak: 'Count signed partners, regions or training completions.',
+    strong: 'Track active opportunities, conversion, service outcomes, repeat demand and profitable coverage.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <ServiceLanding
+    eyebrow="Channel strategy consulting"
+    title="Build a channel that produces <em>revenue.</em>"
+    lede="Design the partner roles, economics, service model and activation required to turn market coverage into customer outcomes."
+    index="CHN / INTL"
+    answerQuestion="What does a channel strategy consultant do?"
+    answer="A channel strategy consultant designs how a business should reach, convert and support customers through direct sales, distributors, resellers, retailers, digital channels or a hybrid model. The work aligns partner roles, economics, enablement, service ownership and performance measures."
+    audienceHeading="Use channel strategy when reach and control must be balanced."
+    audienceCopy="A credible partner network is not a substitute for market demand. The model has to work for the customer, the partner and the provider at the same time."
+    audienceItems={audienceItems}
+    scopeHeading="Productive coverage has an operating design."
+    scopeCopy="The channel is built around the customer journey and the economic reason each participant has to act."
+    scopeItems={scopeItems}
+    processHeading="Move from appointed partners to productive partners."
+    processCopy="The work clarifies what must be retained, reset or built before more channel investment is released."
+    processItems={processItems}
+    comparisonHeading="What separates a channel from a partner list?"
+    comparisonCopy="A channel exists only when the commercial and operating system can repeatedly create and support customer revenue."
+    comparisonItems={comparisonItems}
+    faqs={channelStrategyFaqs}
+    faqHeading="Channel strategy consulting, answered."
+    ctaEyebrow="Channel strategy review"
+    ctaTitle="Make the route to customer commercially explicit."
+    ctaCopy="Review the current model or design a new-market channel around productive coverage, clear ownership and accountable economics."
+    ctaLabel="Request a channel review"
+    ctaHref="/contact?type=channel-strategy"
+    secondaryLabel="Market entry capability"
+    secondaryHref="/market-entry-australia"
+  />
+</BaseLayout>

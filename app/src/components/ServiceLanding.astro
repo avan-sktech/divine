@@ -1,0 +1,397 @@
+---
+import PageHero from './PageHero.astro';
+import AnswerBlock from './AnswerBlock.astro';
+import FaqList from './FaqList.astro';
+import CTA from './CTA.astro';
+
+interface ContentItem {
+  title: string;
+  copy: string;
+}
+
+interface ProcessItem extends ContentItem {
+  number: string;
+}
+
+interface ComparisonItem {
+  question: string;
+  weak: string;
+  strong: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lede: string;
+  index: string;
+  answerQuestion: string;
+  answer: string;
+  audienceEyebrow?: string;
+  audienceHeading: string;
+  audienceCopy: string;
+  audienceItems: ContentItem[];
+  scopeEyebrow?: string;
+  scopeHeading: string;
+  scopeCopy: string;
+  scopeItems: ContentItem[];
+  processEyebrow?: string;
+  processHeading: string;
+  processCopy: string;
+  processItems: ProcessItem[];
+  comparisonEyebrow?: string;
+  comparisonHeading: string;
+  comparisonCopy: string;
+  comparisonItems: ComparisonItem[];
+  faqs: FaqItem[];
+  faqHeading: string;
+  ctaEyebrow: string;
+  ctaTitle: string;
+  ctaCopy: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  mediaImage?: string;
+  mediaAlt?: string;
+  mediaEyebrow?: string;
+  mediaCaption?: string;
+  mediaIndex?: string;
+  mediaPosition?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  lede,
+  index,
+  answerQuestion,
+  answer,
+  audienceEyebrow = 'Who this is for',
+  audienceHeading,
+  audienceCopy,
+  audienceItems,
+  scopeEyebrow = 'What the engagement covers',
+  scopeHeading,
+  scopeCopy,
+  scopeItems,
+  processEyebrow = 'How the work proceeds',
+  processHeading,
+  processCopy,
+  processItems,
+  comparisonEyebrow = 'Decision clarity',
+  comparisonHeading,
+  comparisonCopy,
+  comparisonItems,
+  faqs,
+  faqHeading,
+  ctaEyebrow,
+  ctaTitle,
+  ctaCopy,
+  ctaLabel = 'Start a conversation',
+  ctaHref = '/contact',
+  secondaryLabel = 'See all capabilities',
+  secondaryHref = '/capabilities',
+  mediaImage,
+  mediaAlt = '',
+  mediaEyebrow = 'Commercial context',
+  mediaCaption = '',
+  mediaIndex = 'DLW / 01',
+  mediaPosition = 'center',
+} = Astro.props;
+---
+
+<PageHero
+  eyebrow={eyebrow}
+  title={title}
+  lede={lede}
+  index={index}
+  primaryLabel="Start an engagement"
+  primaryHref={ctaHref}
+  secondaryLabel={secondaryLabel}
+  secondaryHref={secondaryHref}
+/>
+
+<AnswerBlock question={answerQuestion} answer={answer} />
+
+{
+  mediaImage && (
+    <section class="editorial-media-band editorial-media-band-compact">
+      <div class="shell">
+        <figure class="editorial-media" data-reveal>
+          <div class="editorial-media-visual" style={`--media-position:${mediaPosition}`}>
+            <img
+              src={mediaImage}
+              alt={mediaAlt}
+              width="2000"
+              height="1125"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="editorial-media-wash" aria-hidden="true"></span>
+            <span class="editorial-media-index">{mediaIndex}</span>
+          </div>
+          <figcaption>
+            <span>{mediaEyebrow}</span>
+            <p>{mediaCaption}</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  )
+}
+
+<section class="section section-white">
+  <div class="shell split-grid service-audience">
+    <div data-reveal>
+      <p class="eyebrow">{audienceEyebrow}</p>
+      <h2>{audienceHeading}</h2>
+      <p class="prose-large">{audienceCopy}</p>
+    </div>
+    <div class="principle-list" data-reveal>
+      {
+        audienceItems.map((item, index) => (
+          <div class="principle">
+            <strong>{String(index + 1).padStart(2, '0')}</strong>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="shell">
+    <div class="section-heading section-heading-light" data-reveal>
+      <p class="eyebrow eyebrow-light">{scopeEyebrow}</p>
+      <h2>{scopeHeading}</h2>
+      <p>{scopeCopy}</p>
+    </div>
+    <div class="service-scope-grid" data-reveal>
+      {
+        scopeItems.map((item, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-paper">
+  <div class="shell">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">{processEyebrow}</p>
+      <h2>{processHeading}</h2>
+      <p>{processCopy}</p>
+    </div>
+    <div class="service-process" data-reveal>
+      {
+        processItems.map((item) => (
+          <article>
+            <strong>{item.number}</strong>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="shell">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">{comparisonEyebrow}</p>
+      <h2>{comparisonHeading}</h2>
+      <p>{comparisonCopy}</p>
+    </div>
+    <div class="service-comparison" data-reveal>
+      <table aria-label={comparisonHeading}>
+        <thead>
+          <tr>
+            <th scope="col">Decision</th>
+            <th scope="col">Common weak approach</th>
+            <th scope="col">Decision-ready approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            comparisonItems.map((item) => (
+              <tr>
+                <th scope="row">{item.question}</th>
+                <td>{item.weak}</td>
+                <td>{item.strong}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<FaqList items={faqs} heading={faqHeading} />
+<CTA
+  eyebrow={ctaEyebrow}
+  title={ctaTitle}
+  copy={ctaCopy}
+  label={ctaLabel}
+  href={ctaHref}
+/>
+
+<style>
+  .service-audience > div:first-child {
+    align-self: start;
+    position: sticky;
+    top: 7rem;
+  }
+
+  .service-audience h2 {
+    max-width: 12ch;
+  }
+
+  .service-scope-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--line-light);
+    border-left: 1px solid var(--line-light);
+  }
+
+  .service-scope-grid article {
+    min-height: 310px;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-right: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .service-scope-grid span {
+    color: #9eb2ff;
+    font-size: .68rem;
+    font-weight: 820;
+    letter-spacing: .13em;
+  }
+
+  .service-scope-grid h3 {
+    margin: clamp(4rem, 7vw, 7rem) 0 .8rem;
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .service-scope-grid p {
+    max-width: 48ch;
+    margin: 0;
+    color: rgba(255,255,255,.62);
+  }
+
+  .service-process {
+    border-top: 2px solid var(--black);
+  }
+
+  .service-process article {
+    display: grid;
+    grid-template-columns: minmax(60px, .35fr) 1.65fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(1.8rem, 3vw, 3rem);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .service-process strong {
+    color: var(--blue-deep);
+    font-family: var(--sans);
+    font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+  }
+
+  .service-process h3 {
+    margin: 0 0 .6rem;
+    font-family: var(--sans);
+    font-size: clamp(1.25rem, 2.25vw, 2rem);
+    text-transform: uppercase;
+  }
+
+  .service-process p {
+    max-width: 72ch;
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .service-comparison {
+    overflow-x: auto;
+    border-top: 5px solid var(--orange);
+  }
+
+  .service-comparison table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+  }
+
+  .service-comparison th,
+  .service-comparison td {
+    padding: 1.25rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .service-comparison thead th {
+    background: var(--black);
+    color: var(--white);
+    font-size: .68rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .service-comparison tbody th {
+    width: 24%;
+    font-family: var(--sans);
+    font-size: .86rem;
+    text-transform: uppercase;
+  }
+
+  .service-comparison td {
+    color: var(--muted);
+  }
+
+  .service-comparison td:last-child {
+    background: var(--blue-pale);
+    color: var(--black);
+  }
+
+  @media (max-width: 880px) {
+    .service-audience > div:first-child {
+      position: static;
+    }
+
+    .service-scope-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 580px) {
+    .service-scope-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .service-scope-grid article {
+      min-height: 250px;
+    }
+  }
+</style>

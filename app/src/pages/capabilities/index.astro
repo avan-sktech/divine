@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RevampHero from '../../components/RevampHero.astro';
+import EditorialMedia from '../../components/EditorialMedia.astro';
+import CTA from '../../components/CTA.astro';
+import { breadcrumbSchema, process, services, site } from '../../data/site';
+
+const title = 'Business Strategy Consulting Services | DivineLab Worx';
+const description =
+  'Explore strategy, transformation, market entry, go-to-market, channel, commercialisation, AI advisory and growth consulting services.';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Capabilities', path: '/capabilities' },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'DivineLab Worx capabilities',
+    itemListElement: services.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: service.title,
+      url: `${site.url}${service.href}`,
+    })),
+  },
+];
+
+const details = [
+  {
+    id: 'market-entry',
+    number: '01',
+    title: 'Market-entry strategy',
+    copy: 'Identify the first viable Australian customer, test the need, set the commercial model and define the evidence required before inventory or launch spend is committed.',
+    outcome: 'A clear beachhead market, entry thesis and staged investment case.',
+    href: '/market-entry-australia',
+    label: 'Explore Australian market entry',
+  },
+  {
+    id: 'regulatory',
+    number: '02',
+    title: 'Regulatory and compliance',
+    copy: 'Map standards, registrations, claims, technical evidence and specialist advice into the commercial timeline while decisions are still flexible.',
+    outcome: 'An approval pathway that protects timing, positioning and capital.',
+    href: '/market-entry-australia',
+    label: 'See the market entry pathway',
+  },
+  {
+    id: 'distribution',
+    number: '03',
+    title: 'Distribution and channel',
+    copy: 'Design partner roles, incentives, territories, service ownership and landed economics around the route customers will actually use.',
+    outcome: 'A channel model built for productive coverage, not partner count.',
+    href: '/channel-strategy',
+    label: 'Explore channel strategy',
+  },
+  {
+    id: 'cppd',
+    number: '04',
+    title: 'Concurrent Product and Process Design',
+    copy: 'Develop the offer, operating process, compliance pathway and route to customer together so that a change in one updates the others.',
+    outcome: 'A commercially ready offer and a repeatable way to deliver it.',
+    href: '/product-commercialisation',
+    label: 'Explore product commercialisation',
+  },
+  {
+    id: 'launch',
+    number: '05',
+    title: 'Launch and demand generation',
+    copy: 'Translate the market case into positioning, channel activation, sales material and a controlled release with agreed conversion measures.',
+    outcome: 'Real demand evidence before a national or capital-heavy commitment.',
+    href: '/go-to-market-strategy',
+    label: 'Explore go-to-market strategy',
+  },
+  {
+    id: 'capital-efficient-growth',
+    number: '06',
+    title: 'Capital-Efficient Growth',
+    copy: 'Map existing customers, assets, channels, data and capabilities, then rank the adjacency moves that can produce more revenue with less new capital.',
+    outcome: 'A sequenced growth portfolio funded from evidence and internal capacity.',
+    href: '/capabilities/capital-efficient-growth',
+    label: 'Explore capital-efficient growth',
+  },
+  {
+    id: 'ai-advisory',
+    number: '07',
+    title: 'AI advisory and governance',
+    copy: 'Prioritise valuable AI use cases, assess readiness, build the business case and establish governance that supports controlled implementation.',
+    outcome: 'A ranked AI portfolio with accountable controls and an evidence-led delivery pathway.',
+    href: '/advisory',
+    label: 'Explore AI advisory',
+  },
+  {
+    id: 'strategy-transformation',
+    number: '08',
+    title: 'Strategy, transformation and feasibility',
+    copy: 'Frame complex growth and transformation mandates through executive research, cross-market evidence, stakeholder pathways, commercial options and staged feasibility.',
+    outcome: 'A decision-ready study, governed roadmap and contained next phase before major investment.',
+    href: '/work',
+    label: 'Explore engagement patterns',
+  },
+];
+
+const capabilityGroups = [
+  {
+    number: '01 / 03',
+    eyebrow: 'Enter and establish',
+    title: 'Make a market move with the whole route in view.',
+    copy: 'Customer, approvals and channel economics move together.',
+    image: '/images/editorial/commercial-analysis.webp',
+    items: details.slice(0, 3),
+  },
+  {
+    number: '04 / 05',
+    eyebrow: 'Design and launch',
+    title: 'Build the offer and the demand system as one.',
+    copy: 'Product, process, positioning and conversion share one evidence plan.',
+    image: '/images/editorial/marketing-operations.webp',
+    items: details.slice(3, 5),
+  },
+  {
+    number: '06 / 08',
+    eyebrow: 'Grow and transform',
+    title: 'Release value before adding unnecessary complexity.',
+    copy: 'Existing capacity and complex mandates become a governed growth portfolio.',
+    image: '/images/editorial/team-collaboration.webp',
+    items: [details[5], details[7]],
+  },
+  {
+    number: '07',
+    eyebrow: 'Apply AI responsibly',
+    title: 'Turn broad ambition into a controlled operating use case.',
+    copy: 'Value, data, risk, adoption and ownership are decided together.',
+    image: '/images/editorial/responsible-ai-poster.webp',
+    items: [details[6]],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema} pageClass="revamp-page">
+  <RevampHero
+    eyebrow="Capabilities"
+    title="Strategy consulting for markets, transformation and <em>growth.</em>"
+    support="Eight connected services align market evidence, commercial choices, stakeholders, technology and delivery around one accountable outcome."
+    primaryLabel="Start an engagement"
+    primaryHref="/contact"
+    secondaryLabel="Capital-efficient growth"
+    secondaryHref="/capabilities/capital-efficient-growth"
+    code="CAP / 01"
+  />
+
+  <section class="revamp-answer">
+    <div class="shell revamp-answer-grid" data-reveal>
+      <div>
+        <p class="revamp-eyebrow">Direct answer</p>
+        <h2>What capabilities does DivineLab Worx provide?</h2>
+      </div>
+      <p>
+        DivineLab Worx connects market entry, go-to-market strategy, channel design, product commercialisation, AI advisory, transformation and capital-efficient growth across Australian and international mandates.
+      </p>
+    </div>
+  </section>
+
+  <EditorialMedia
+    image="/images/editorial/team-collaboration.webp"
+    alt="Senior business team collaborating around commercial data and operating decisions"
+    eyebrow="One connected mandate"
+    caption="Market evidence, operating reality and implementation ownership are considered together, so each recommendation can move into accountable action."
+    index="CAP / 02"
+    position="center 47%"
+  />
+
+  <section class="revamp-section">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">Eight connected capabilities</p>
+          <h2>Four systems. Eight capabilities.</h2>
+        </div>
+        <p>
+          Begin with the immediate decision. Preserve the commercial logic around it.
+        </p>
+      </div>
+      <div class="capability-showcase">
+        {capabilityGroups.map((group) => (
+          <article class="capability-showcase-row" data-reveal>
+            <figure>
+              <img src={group.image} alt="" width="1400" height="900" loading="lazy" decoding="async" />
+              <span>{group.number}</span>
+            </figure>
+            <div class="capability-showcase-copy">
+              <p class="revamp-eyebrow">{group.eyebrow}</p>
+              <h2>{group.title}</h2>
+              <p>{group.copy}</p>
+              <nav aria-label={`${group.eyebrow} capabilities`}>
+                {group.items.map((item) => (
+                  <a href={item.href}>
+                    <span>{item.number}</span>
+                    {item.title}
+                    <i aria-hidden="true">↗</i>
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="revamp-section revamp-section-dark">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">Commercial governance</p>
+          <h2>Four requirements. Every engagement.</h2>
+        </div>
+        <p>
+          Strategy stays accountable when the customer, route, conversion and outcome are explicit from the beginning.
+        </p>
+      </div>
+      <div class="governance-grid" data-reveal>
+        {process.map((item) => (
+          <article class="governance-card">
+            <span>{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="Bring the commercial question"
+    title="Define the next decision before funding the next activity."
+    copy="A contained first phase can clarify the market, evidence gaps, route to revenue and most useful investment gate."
+  />
+</BaseLayout>

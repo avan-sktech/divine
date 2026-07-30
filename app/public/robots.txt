@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://divinelabworx.com/sitemap.xml
-
-# Structured summary for AI answer engines
-# https://divinelabworx.com/llms.txt

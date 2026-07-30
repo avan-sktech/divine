@@ -1,0 +1,93 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  support: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  image?: string;
+  imageAlt?: string;
+  video?: string;
+  code?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  support,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  image,
+  imageAlt = '',
+  video,
+  code = 'DLW / INTL',
+} = Astro.props;
+---
+
+<section class:list={['revamp-hero', { 'revamp-hero-image': image, 'revamp-hero-video': video }]}>
+  {image && <img class="revamp-hero-backdrop" src={image} alt={imageAlt} width="2400" height="1600" fetchpriority="high" />}
+  {video && (
+    <video
+      class="revamp-hero-motion"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster={image}
+      tabindex="-1"
+      aria-hidden="true"
+      data-hero-video
+    >
+      <source src={video} type="video/mp4" />
+    </video>
+  )}
+  <div class="revamp-hero-shade" aria-hidden="true"></div>
+  <div class="shell revamp-hero-inner">
+    <p class="revamp-eyebrow" data-reveal>{eyebrow}</p>
+    <h1 set:html={title} data-reveal />
+    <p class="revamp-hero-support" data-reveal>{support}</p>
+    {(primaryLabel || secondaryLabel) && (
+      <div class="revamp-actions" data-reveal>
+        {primaryLabel && primaryHref && <a class="revamp-button revamp-button-primary" href={primaryHref}>{primaryLabel}<span aria-hidden="true">↗</span></a>}
+        {secondaryLabel && secondaryHref && <a class="revamp-button revamp-button-secondary" href={secondaryHref}>{secondaryLabel}<span aria-hidden="true">→</span></a>}
+      </div>
+    )}
+    <p class="revamp-hero-code">{code}</p>
+  </div>
+</section>
+
+{video && (
+  <script>
+    const heroVideo = document.querySelector<HTMLVideoElement>('[data-hero-video]');
+    const connection = navigator.connection;
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileQuery = window.matchMedia('(max-width: 680px)');
+
+    const updateHeroPlayback = () => {
+      if (!heroVideo) return;
+
+      const shouldUsePoster =
+        motionQuery.matches ||
+        mobileQuery.matches ||
+        connection?.saveData === true;
+
+      if (shouldUsePoster) {
+        heroVideo.pause();
+        return;
+      }
+
+      heroVideo.play().catch(() => {
+        // The poster remains visible if a browser blocks autoplay.
+      });
+    };
+
+    updateHeroPlayback();
+    motionQuery.addEventListener('change', updateHeroPlayback);
+    mobileQuery.addEventListener('change', updateHeroPlayback);
+  </script>
+)}

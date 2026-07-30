@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import FaqList from '../components/FaqList.astro';
+import CTA from '../components/CTA.astro';
+import {
+  breadcrumbSchema,
+  faqSchema,
+  infrastructureFaqs,
+  serviceSchema,
+} from '../data/site';
+
+const title = 'Data Centre Site Selection Advisory Australia | DivineLab Worx';
+const description =
+  'Data centre site selection and due diligence advisory across power, planning, fibre, water, land and delivery pathways in Australia.';
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Critical infrastructure', path: '/infrastructure' },
+  ]),
+  faqSchema(infrastructureFaqs),
+  serviceSchema({
+    name: 'Critical infrastructure site intelligence',
+    path: '/infrastructure',
+    serviceType: 'Data centre and AI infrastructure site advisory',
+    description,
+    audience: ['Data centre developers', 'Infrastructure investors', 'Government stakeholders', 'Advanced facility sponsors'],
+    offerName: 'Data Centre Site Screening',
+    areaServed: { '@type': 'Country', name: 'Australia' },
+  }),
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    eyebrow="Critical infrastructure"
+    title="Data centre site selection built on <em>defensible evidence.</em>"
+    lede="Compare power, planning, fibre, water, land and delivery evidence under one decision framework for data centres, AI factories and advanced facilities."
+    index="INF / AU"
+    secondaryLabel="Read the site brief"
+    secondaryHref="/blog/where-critical-infrastructure-belongs"
+  />
+  <AnswerBlock
+    question="What is critical infrastructure site intelligence?"
+    answer="Critical infrastructure site intelligence combines land, power, planning, fibre, water, environmental and delivery evidence into a comparable assessment of candidate locations, allowing sponsors to shortlist sites and direct deeper diligence toward the strongest pathways."
+  />
+
+  <section class="section section-dark">
+    <div class="shell">
+      <div class="section-heading section-heading-light" data-reveal>
+        <p class="eyebrow eyebrow-light">Decision framework</p>
+        <h2>A site is only viable when its constraints are considered together.</h2>
+      </div>
+      <div class="site-matrix" data-reveal>
+        <article><span>01</span><h3>Power</h3><p>Capacity, timing, redundancy, augmentation, connection pathway and commercial structure.</p></article>
+        <article><span>02</span><h3>Planning</h3><p>Zoning, approvals, environmental constraints, community interface and development timing.</p></article>
+        <article><span>03</span><h3>Connectivity</h3><p>Carrier diversity, fibre pathways, latency context, resilience and future expansion.</p></article>
+        <article><span>04</span><h3>Water and cooling</h3><p>Availability, operating design assumptions, sustainability obligations and local constraints.</p></article>
+        <article><span>05</span><h3>Land and access</h3><p>Parcel suitability, tenure, logistics, construction access, hazards and expansion potential.</p></article>
+        <article><span>06</span><h3>Delivery pathway</h3><p>Evidence gaps, specialist studies, stakeholders, decision gates, programme and risk ownership.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell split-grid">
+      <div data-reveal>
+        <p class="eyebrow">From screening to build-ready</p>
+        <h2>Spend detailed diligence on fewer, stronger candidates.</h2>
+        <p class="prose-large">
+          Early-stage site comparison should remove locations that cannot support the mandate. A smaller shortlist can then receive the specialist, technical and commercial work needed for an investment decision.
+        </p>
+      </div>
+      <div class="principle-list" data-reveal>
+        <div class="principle"><strong>01</strong><div><h3>Mandate and criteria</h3><p>Capacity, timing, operating requirements, geography, risk tolerance and evidence standard.</p></div></div>
+        <div class="principle"><strong>02</strong><div><h3>Broad screening</h3><p>Comparable desktop evidence and clear confidence ratings across the candidate set.</p></div></div>
+        <div class="principle"><strong>03</strong><div><h3>Shortlist diligence</h3><p>Focused specialist studies, stakeholder engagement and commercial pathways.</p></div></div>
+        <div class="principle"><strong>04</strong><div><h3>Build-ready programme</h3><p>Integrated workstreams, approvals, risks, dependencies, gates and executive reporting.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <FaqList items={infrastructureFaqs} heading="Site intelligence, made decision-ready." />
+  <CTA
+    eyebrow="Site mandate"
+    title="Build the evidence before protecting a preferred site."
+    copy="A contained screening phase can define the criteria, compare candidates, expose critical gaps and identify where deeper diligence should begin."
+    href="/contact?type=infrastructure"
+  />
+</BaseLayout>
+
+<style>
+  .site-matrix { display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-light);border-left:1px solid var(--line-light); }
+  .site-matrix article { min-height:280px;padding:1.8rem;border-right:1px solid var(--line-light);border-bottom:1px solid var(--line-light); }
+  .site-matrix span { color:#9eb2ff;font-family:var(--display);font-size:1.4rem; }
+  .site-matrix h3 { margin-top:4.5rem; }
+  .site-matrix p { color:rgba(255,255,255,.58);font-size:.92rem; }
+  @media(max-width:850px){.site-matrix{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.site-matrix{grid-template-columns:1fr}}
+</style>

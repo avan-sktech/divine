@@ -1,0 +1,36 @@
+---
+interface Faq {
+  question: string;
+  answer: string;
+}
+interface Props {
+  items: Faq[];
+  heading?: string;
+  eyebrow?: string;
+}
+const { items, heading = 'Questions, answered.', eyebrow = 'Frequently asked' } = Astro.props;
+---
+
+<section class="section section-dark faq-section">
+  <div class="shell faq-grid">
+    <div class="section-heading section-heading-light" data-reveal>
+      <p class="eyebrow eyebrow-light">{eyebrow}</p>
+      <h2>{heading}</h2>
+      <p>Clear answers for decision-makers evaluating the next step.</p>
+    </div>
+    <div class="faq-list" data-reveal>
+      {
+        items.map((item, index) => (
+          <details>
+            <summary>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              {item.question}
+              <i aria-hidden="true">+</i>
+            </summary>
+            <div><p>{item.answer}</p></div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

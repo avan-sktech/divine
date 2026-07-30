@@ -1,0 +1,9 @@
+{
+  "name": "DivineLab Worx",
+  "short_name": "DivineLab Worx",
+  "description": "Business strategy, transformation, market entry and AI advisory consultancy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08111e",
+  "theme_color": "#08111e"
+}
