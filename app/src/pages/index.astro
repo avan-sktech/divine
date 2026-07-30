@@ -35,18 +35,25 @@ const homeCapabilities = services.map((service, index) => ({
   video: index === 6 ? '/video/editorial/digital-business-systems.mp4' : '',
 }));
 
+/* These two arrays are indexed against `sectors`, and both were written before
+   Retail was added at the top of that list -- so every entry had slid one position
+   out of step. Retail was showing the factory floor, Manufacturing the building
+   site, Construction the server racks, and Critical infrastructure a meeting room.
+   The briefs were shifted identically: "Connect site, power, planning and
+   investment decisions" is infrastructure language and was sitting on Construction.
+   Keep these aligned with `sectors` in site.ts if a vertical is ever added again. */
 const sectorImages = [
-  '/images/manufacturing-automation.jpg',
-  '/images/construction-night.jpg',
-  '/images/hero-infrastructure.jpg',
-  '/images/editorial/team-collaboration.webp',
+  '/images/editorial/commercial-analysis.webp', // Retail
+  '/images/manufacturing-automation.jpg', // Manufacturing
+  '/images/construction-night.jpg', // Construction
+  '/images/hero-infrastructure.jpg', // Critical infrastructure
 ];
 
 const sectorBriefs = [
+  'Launch new ranges and improve channel economics.',
   'Commercialise complex products and operating systems.',
   'Align approvals, delivery evidence and repeatable economics.',
   'Connect site, power, planning and investment decisions.',
-  'Turn multi-stakeholder mandates into an executable programme.',
 ];
 ---
 
