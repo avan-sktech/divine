@@ -127,46 +127,54 @@ const Home = () => {
       </Helmet>
 
       <div className="w-full overflow-x-hidden">
-        {/* Hero, built to the 2026 design package template */}
+        {/* Hero: the 2026 design package hero, in the black and gold identity */}
         <RevampHero
-          eyebrow="Divine Lab Worx · Consultancy arm of Sharktech Global"
-          title="From concept to after-sales."
-          titleAccent="Strategy that turns into market action."
-          support={
-            <>
-              We bring products, systems and facilities to market in Australia. Retail,
-              manufacturing, housing and critical infrastructure, held together by{' '}
-              <span className="text-optical-white font-medium">one accountable team</span>,
-              not four disconnected advisers.
-            </>
-          }
-          primaryLabel="Engage Our Strategists"
+          eyebrow="Business strategy and transformation consultancy"
+          title="Business strategy that turns into"
+          titleAccent="market action."
+          support="Enter a new market, launch an offer, evaluate a transformation or grow from existing capacity with one accountable strategy and delivery team."
+          primaryLabel="Start an Engagement"
           primaryHref="/contact"
-          secondaryLabel="What We Do"
+          secondaryLabel="See Capabilities"
           secondaryHref="/capabilities"
-          video="/videos/hero-robot.mp4"
-          image="/images/hero-robot-poster.jpg"
-          imageAlt="Engineering and holographic product schematics representing product launch strategy"
-          code="DLW / INTL / 2026"
-          tags={heroTags}
-        >
-          {/* Credibility band sits directly beneath the hero stage */}
-          <div className="relative z-10 border-t border-silver-steel/10 bg-obsidian/70 backdrop-blur-sm">
-            <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-silver-steel/10 sm:divide-x">
-              {credItems.map((item) => (
-                <div key={item.big} className="px-6 py-5 sm:py-6">
-                  <div className="text-base sm:text-lg font-semibold tracking-tight text-optical-white">
-                    {item.big}
-                  </div>
-                  <div className="text-xs sm:text-[13px] text-accent-muted mt-1.5 leading-snug">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </RevampHero>
+          video="/video/divinelab-hero-background.mp4"
+          image="/images/hero-strategy-poster.jpg"
+          imageAlt="Technical infrastructure representing complex commercial strategy and delivery"
+          code="DLW / International / 2026"
+        />
 
+        {/* Credibility band, kept from the current site, directly under the hero */}
+        <div className="border-t border-silver-steel/10 bg-obsidian">
+          <div className="max-w-shell mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-silver-steel/10">
+            {credItems.map((item) => (
+              <div key={item.big} className="bg-obsidian px-6 py-6 sm:py-7">
+                <div className="text-base sm:text-lg font-semibold tracking-tight text-optical-white">
+                  {item.big}
+                </div>
+                <div className="text-xs sm:text-[13px] text-accent-muted mt-1.5 leading-snug">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Service tags, the current site's technical vocabulary */}
+        <div className="border-t border-silver-steel/10 bg-obsidian">
+          <div className="max-w-shell mx-auto px-gutter py-6 flex flex-wrap items-center gap-x-3 gap-y-2.5">
+            <span className="font-mono text-micro-xs text-accent-muted/70 uppercase mr-1">
+              We work across
+            </span>
+            {heroTags.map((tag) => (
+              <span
+                key={tag}
+                className="font-mono text-[9px] sm:text-[10px] tracking-[0.1em] text-accent-muted border border-silver-steel/20 rounded-full px-3.5 py-1.5"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
 
         {/* Direct answer */}
         <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-silver-steel/10 bg-tile-bg/40">

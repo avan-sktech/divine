@@ -56,15 +56,27 @@ const RevampHero = ({
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobileQuery = window.matchMedia('(max-width: 680px)');
 
-    const update = () => {
+    const shouldUsePoster = () => {
       // navigator.connection is not in the DOM lib types
       const connection = (navigator as unknown as { connection?: { saveData?: boolean } }).connection;
-      const usePoster = motionQuery.matches || mobileQuery.matches || connection?.saveData === true;
-      if (usePoster) {
+      return motionQuery.matches || mobileQuery.matches || connection?.saveData === true;
+    };
+
+    const update = () => {
+      if (shouldUsePoster()) {
         el.pause();
         return;
       }
-      el.play().catch(() => undefined);
+      // With preload="metadata" there may be no frames yet at mount, in which
+      // case play() rejects. Retry once the film has data so the hero is never
+      // left on a still when motion was wanted.
+      el.play().catch(() => {
+        const retry = () => {
+          if (!shouldUsePoster()) el.play().catch(() => undefined);
+        };
+        el.addEventListener('canplay', retry, { once: true });
+        el.addEventListener('loadeddata', retry, { once: true });
+      });
     };
 
     update();
