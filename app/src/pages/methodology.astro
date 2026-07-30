@@ -16,6 +16,15 @@ const title = 'Concurrent Product and Process Design Methodology | DivineLab Wor
 const description =
   'Explore the DivineLab Worx evidence-led business strategy methodology for market entry, product commercialisation, transformation, AI and capital-efficient growth.';
 
+// Evidence discipline. Stated as refusals so the standard is unambiguous.
+const rules = [
+  'No specification without a test that proves it.',
+  'No feature without a full burden analysis of its cost, weight, risk and service impact.',
+  'No launch before after-sales, parts and support are ready.',
+  'Marketing stays subordinate to a defensible product and a working supply and service chain.',
+  'Every assumption becomes a written quote, a test record, a named owner or an issue on the register.',
+];
+
 const methodologyFaqs = [
   {
     question: 'What is the DivineLab Concurrent Method?',
@@ -258,6 +267,26 @@ const applications = [
     </div>
   </section>
 
+  <section class="revamp-section revamp-section-dark">
+    <div class="shell">
+      <div class="revamp-heading" data-reveal>
+        <div>
+          <p class="revamp-eyebrow">05 / Evidence discipline</p>
+          <h2>Five rules we hold the work to.</h2>
+        </div>
+        <p>These are refusals, not aspirations. They are what stops a plan being approved on confidence alone.</p>
+      </div>
+      <ol class="method-rules">
+        {rules.map((rule, index) => (
+          <li data-reveal>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <p>{rule}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
   <section class="revamp-section">
     <div class="shell method-foundation">
       <div data-reveal>
@@ -324,6 +353,12 @@ const applications = [
   .method-principles span{color:var(--blue-deep);font-size:.68rem;font-weight:820;letter-spacing:.13em}
   .method-principles h3{margin:6rem 0 .8rem;font-family:var(--display);font-size:clamp(1.7rem,2.6vw,2.7rem);font-weight:470;line-height:.98}
   .method-principles p{margin:0;color:var(--muted);font-size:.9rem}
+  .method-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:0;padding:0;list-style:none;background:rgba(255,255,255,.16)}
+  .method-rules li{display:grid;grid-template-columns:52px 1fr;gap:1.1rem;align-items:start;padding:1.6rem 1.5rem;background:var(--black)}
+  .method-rules li:first-child{grid-column:1/-1}
+  .method-rules span{color:var(--orange);font-size:.7rem;font-weight:820;letter-spacing:.13em;padding-top:.3rem}
+  .method-rules p{max-width:52ch;margin:0;color:rgba(255,255,255,.82);font-size:clamp(1rem,1.5vw,1.25rem);line-height:1.45}
+  .method-rules li:first-child p{max-width:38ch;font-size:clamp(1.25rem,2.4vw,2rem);line-height:1.2}
   .method-system{padding-block:clamp(6rem,10vw,10rem);background:var(--black)}
   .method-applications{border-top:2px solid var(--black)}
   .method-applications article{display:grid;grid-template-columns:65px 1fr 1.1fr auto;gap:clamp(1rem,3vw,3rem);align-items:start;padding-block:2rem;border-bottom:1px solid var(--line)}
@@ -349,5 +384,5 @@ const applications = [
   .method-insight-grid h3{max-width:16ch;margin:auto 0 1.4rem;font-family:var(--display);font-size:clamp(1.7rem,2.7vw,2.8rem);font-weight:470;line-height:.98}
   .method-all-insights{display:inline-flex;margin-top:2rem}
   @media(max-width:920px){.method-principles{grid-template-columns:repeat(2,minmax(0,1fr))}.method-applications article{grid-template-columns:45px 1fr}.method-applications p,.method-applications a{grid-column:2}.method-foundation{grid-template-columns:1fr}.method-insight-grid{grid-template-columns:1fr}}
-  @media(max-width:620px){.method-principles,.method-comparison{grid-template-columns:1fr}.method-principles article{min-height:240px}.method-principles h3{margin-top:4rem}.method-sources a{grid-template-columns:1fr;gap:.4rem}}
+  @media(max-width:620px){.method-principles,.method-comparison,.method-rules{grid-template-columns:1fr}.method-rules li{grid-template-columns:38px 1fr;gap:.8rem;padding:1.3rem 1.1rem}.method-principles article{min-height:240px}.method-principles h3{margin-top:4rem}.method-sources a{grid-template-columns:1fr;gap:.4rem}}
 </style>

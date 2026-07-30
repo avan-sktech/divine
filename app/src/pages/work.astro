@@ -10,6 +10,90 @@ const title = 'Work and Engagement Models | DivineLab Worx';
 const description =
   'See how DivineLab Worx structures international strategy, transformation, AI, market-entry, construction and infrastructure engagements around accountable decisions.';
 
+// Who carries each phase of an engagement. Ownership is stated explicitly so a
+// prospective client can see where our responsibility ends and theirs begins.
+const lifecycle = [
+  {
+    number: '01',
+    title: 'Diagnose and position',
+    description: 'Product reality check, target customer, positioning and the fastest defensible route to market.',
+    owner: 'We own this',
+    ownerKey: 'dlw',
+  },
+  {
+    number: '02',
+    title: 'Specification and compliance',
+    description: 'Australian specification, evidence register and approval scope, coordinated with qualified specialists.',
+    owner: 'We own this',
+    ownerKey: 'dlw',
+  },
+  {
+    number: '03',
+    title: 'Distribution and partners',
+    description: 'Partner sourcing, due diligence, channel economics and agreements to a signed, accountable distributor.',
+    owner: 'We own this',
+    ownerKey: 'dlw',
+  },
+  {
+    number: '04',
+    title: 'Go-to-market and demand',
+    description: 'Trial, affiliate and scale phases, each with a defined audience, channel and measurable outcome.',
+    owner: 'We own this',
+    ownerKey: 'dlw',
+  },
+  {
+    number: '05',
+    title: 'Launch',
+    description: 'Controlled pilots and first compliant sales, once product, service and channel operate together.',
+    owner: 'Shared with you',
+    ownerKey: 'shared',
+  },
+  {
+    number: '06',
+    title: 'Scale',
+    description: 'National rollout, demand generation and continuous optimisation for growth.',
+    owner: 'You and your partners',
+    ownerKey: 'client',
+  },
+];
+
+// The first ninety days, so the timing of the first useful output is explicit.
+const ninetyDays = [
+  {
+    window: 'Days 1 to 30',
+    title: 'Validate',
+    items: [
+      'Clarify the target customer and the decision being made',
+      'Review product and offer readiness',
+      'Map the approval and compliance questions',
+      'Build the first cost and margin model',
+      'Record assumptions, risks and unknowns',
+    ],
+  },
+  {
+    window: 'Days 31 to 60',
+    title: 'Prove',
+    items: [
+      'Obtain specialist input where the mandate requires it',
+      'Test the claims, pricing and channel economics',
+      'Assess partner and distributor candidates',
+      'Define service, warranty and support responsibility',
+      'Design the contained pilot and its measures',
+    ],
+  },
+  {
+    window: 'Days 61 to 90',
+    title: 'Commit carefully',
+    items: [
+      'Release a controlled first volume or pilot',
+      'Measure conversion, delivery effort and faults',
+      'Correct the offer and the operating process',
+      'Agree partner obligations and ownership',
+      'Decide whether to scale, adapt, pause or stop',
+    ],
+  },
+];
+
 const cases = [
   {
     label: '01 / Market entry',
@@ -111,6 +195,57 @@ const cases = [
     </div>
   </section>
 
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">Ownership</p>
+        <h2>Where our responsibility ends and yours begins.</h2>
+        <p>An engagement is only accountable if ownership is explicit. We carry the strategy, evidence and channel work. You and your partners carry manufacture, sale and scale, with the handover agreed in advance rather than assumed.</p>
+      </div>
+      <ol class="lifecycle">
+        {lifecycle.map((phase) => (
+          <li data-reveal>
+            <span class="lifecycle-index">{phase.number}</span>
+            <div class="lifecycle-copy">
+              <h3>{phase.title}</h3>
+              <p>{phase.description}</p>
+            </div>
+            <span class:list={['lifecycle-owner', `owner-${phase.ownerKey}`]}>{phase.owner}</span>
+          </li>
+        ))}
+      </ol>
+      <div class="lifecycle-legend" data-reveal>
+        <span><i class="owner-dot-dlw"></i>Divine Lab Worx owns and is accountable</span>
+        <span><i class="owner-dot-shared"></i>Shared, run together</span>
+        <span><i class="owner-dot-client"></i>You and your partners</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow">The first ninety days</p>
+        <h2>What you would be stepping into.</h2>
+        <p>Most engagements begin with a contained diagnostic. This is the shape of it, so the timing of the first useful output is clear before anything is signed.</p>
+      </div>
+      <div class="ninety">
+        {ninetyDays.map((stage) => (
+          <article data-reveal>
+            <span class="ninety-window">{stage.window}</span>
+            <h3>{stage.title}</h3>
+            <ul>
+              {stage.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <p class="ninety-note" data-reveal>
+        Scope and sequence change with the mandate. The principle does not: each stage has to earn the next commitment of capital, inventory or leadership attention.
+      </p>
+    </div>
+  </section>
+
   <section class="section section-dark">
     <div class="shell split-grid">
       <div data-reveal>
@@ -150,9 +285,40 @@ const cases = [
   .case-card details>div{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:0 0 1rem}
   .case-card p{margin:0;color:var(--muted);font-size:.86rem}
   .case-card p strong{display:block;margin-bottom:.4rem;color:var(--black);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase}
+  /* Ownership by phase */
+  .lifecycle{display:grid;grid-template-columns:1fr;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+  .lifecycle li{display:grid;grid-template-columns:70px 1fr auto;gap:1.5rem;align-items:start;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+  .lifecycle-index{color:var(--blue-deep);font-size:.72rem;font-weight:820;letter-spacing:.13em;padding-top:.35rem}
+  .lifecycle-copy h3{margin:0 0 .45rem;font-family:var(--display);font-size:clamp(1.35rem,2.1vw,1.95rem);font-weight:470;line-height:1.05}
+  .lifecycle-copy p{max-width:62ch;margin:0;color:var(--muted);font-size:.9rem}
+  .lifecycle-owner{align-self:center;justify-self:end;white-space:nowrap;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;font-size:.62rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+  /* The package collapses --brass, --blue and --orange to one accent, so the
+     three ownership states are distinguished by treatment, not by hue:
+     filled = ours, outlined = shared, muted = yours. */
+  .owner-dlw{border-color:var(--blue-deep);background:var(--blue-deep);color:var(--white)}
+  .owner-shared{border-color:var(--blue-deep);background:transparent;color:var(--blue-deep)}
+  .owner-client{border-color:var(--line);background:transparent;color:var(--muted)}
+  .lifecycle-legend{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.75rem}
+  .lifecycle-legend span{display:flex;align-items:center;gap:.55rem;color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+  .lifecycle-legend i{width:9px;height:9px;border-radius:50%;flex:none}
+  .owner-dot-dlw{background:var(--blue-deep)}
+  .owner-dot-shared{border:2px solid var(--blue-deep)}
+  .owner-dot-client{border:1px solid var(--muted)}
+
+  /* First ninety days */
+  .ninety{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .ninety article{background:var(--white);padding:clamp(1.4rem,2.4vw,2.1rem)}
+  .ninety-window{display:block;color:var(--blue-deep);font-size:.66rem;font-weight:820;letter-spacing:.13em;text-transform:uppercase}
+  .ninety h3{margin:.5rem 0 1.4rem;font-family:var(--display);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:470;line-height:1}
+  .ninety ul{margin:0;padding:0;list-style:none;display:grid;gap:.7rem}
+  .ninety li{position:relative;padding-left:1.1rem;color:var(--muted);font-size:.86rem;line-height:1.55}
+  .ninety li::before{content:'';position:absolute;left:0;top:.55rem;width:5px;height:5px;border-radius:50%;background:var(--brass)}
+  .ninety-note{max-width:70ch;margin:1.75rem 0 0;color:var(--muted);font-size:.86rem}
+
   .evidence-legend{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line-light)}
   .evidence-legend span{display:flex;align-items:center;gap:.55rem;color:rgba(255,255,255,.58);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
   .evidence-legend i{width:9px;height:9px;border-radius:50%}.verified{background:#89a4ff}.tested{background:#a68a5a}.open{border:1px solid rgba(255,255,255,.5)}
-  @media(max-width:850px){.case-gallery{grid-template-columns:1fr}.case-card:last-child{grid-column:auto;display:block}.case-card:last-child figure{aspect-ratio:16/10}}
+  @media(max-width:850px){.case-gallery{grid-template-columns:1fr}.case-card:last-child{grid-column:auto;display:block}.case-card:last-child figure{aspect-ratio:16/10}.ninety{grid-template-columns:1fr}}
+  @media(max-width:620px){.lifecycle li{grid-template-columns:44px 1fr;gap:1rem;row-gap:.9rem}.lifecycle-owner{grid-column:2;justify-self:start}}
   @media(max-width:520px){.case-card details>div{grid-template-columns:1fr}}
 </style>
