@@ -217,6 +217,17 @@
   min-height: 430px;
 }
 
+/* Eight tiles with a two-column opener put eight cells ahead of the full-width
+   closer, and eight is not a multiple of three: the third cell of the last row
+   was never filled, so the mosaic's own hairline background showed through it as
+   a grey block. Widening the seventh tile makes the pre-closer count nine, so the
+   rows resolve exactly. It also gives the one tile carrying video room to read.
+   Reset at the narrower breakpoints below, where the column count changes and a
+   second wide tile would reintroduce the same gap. */
+.capability-tile:nth-child(7) {
+  grid-column: span 2;
+}
+
 .capability-tile:nth-child(2) {
   background: var(--blue-deep);
 }
@@ -485,6 +496,11 @@
     grid-column: span 2;
   }
 
+  /* Two columns: a wide seventh tile would leave the same hole one row earlier. */
+  .capability-tile:nth-child(7) {
+    grid-column: auto;
+  }
+
   .capability-showcase-row {
     min-height: 0;
     grid-template-columns: 1fr;
@@ -535,7 +551,8 @@
   }
 
   .capability-tile:first-child,
-  .capability-tile:last-child {
+  .capability-tile:last-child,
+  .capability-tile:nth-child(7) {
     grid-column: auto;
   }
 
