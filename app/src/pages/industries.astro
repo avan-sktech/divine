@@ -6,7 +6,7 @@ import { breadcrumbSchema, sectors, site } from '../data/site';
 
 const title = 'Industries | Commercial Strategy Consultants | DivineLab Worx';
 const description =
-  'Commercial strategy for retail, manufacturing, sustainable homes, modern construction and critical infrastructure across Australian and international markets.';
+  'Commercial strategy for retail, manufacturing, construction and critical infrastructure across Australian and international markets.';
 const schema = [
   breadcrumbSchema([
     { name: 'Home', path: '/' },
@@ -28,6 +28,14 @@ const schema = [
 /* The proof strip runs as a continuous slider, so the set is duplicated in the
    markup and the second pass is hidden from assistive tech. Descriptors state
    the nature of the relationship only -- no outcomes or figures are claimed. */
+/* This vertical was published as "Sustainable and 3D homes" under the anchor
+   #sustainable-homes. A fragment never reaches the server, so it cannot be 301'd
+   like a path can -- an old link would silently land at the top of the page. An
+   empty anchor element is not an option either: every child of .industry-feature
+   becomes a grid item and a third one breaks its two-column layout. So the retired
+   fragment is remapped on arrival instead. */
+const retiredAnchors: Record<string, string> = { 'sustainable-homes': 'construction' };
+
 /* A cell shows the company's logo where we hold one and falls back to its
    wordmark where we do not, which is what INTL and the accountability marker
    below still use. Each logo is prepared for the dark ground: Natridy is
@@ -56,9 +64,27 @@ const proofPoints = [
     logoWidth: 641,
     logoHeight: 176,
   },
+  {
+    name: 'Flagman',
+    note: 'Industrial safety technology',
+    logo: '/images/clients/flagman-light.png',
+    logoWidth: 733,
+    logoHeight: 176,
+  },
+  {
+    name: 'LaunchYourDream.AI',
+    note: 'AI platform launch',
+    logo: '/images/clients/lyd-light.png',
+    logoWidth: 534,
+    logoHeight: 176,
+  },
   { name: 'INTL', note: 'Cross-market commercial context' },
   { name: '1', note: 'Accountable route to revenue' },
 ];
+
+/* Travel is one cell per ~7.6s, so adding a client lengthens the loop instead of
+   speeding it up. At five cells this reproduces the original 38s. */
+const slideDuration = `${(proofPoints.length * 7.6).toFixed(1)}s`;
 
 const industries = [
   {
@@ -67,8 +93,8 @@ const industries = [
     title: 'Retail',
     launch: 'Enter the market with a defined customer, credible range, compliant claims, channel economics and controlled demand test.',
     growth: 'Use customer behaviour, range performance, supplier leverage and existing channels to improve cross-sell, repeat demand and margin.',
-    image: '/images/hero-infrastructure.jpg',
-    imageAlt: 'Connected operating systems supporting modern retail',
+    image: '/images/editorial/commercial-analysis.webp',
+    imageAlt: 'Range performance and channel economics under review',
   },
   {
     id: 'manufacturing',
@@ -80,9 +106,9 @@ const industries = [
     imageAlt: 'Industrial automation operating in a modern manufacturing facility',
   },
   {
-    id: 'sustainable-homes',
+    id: 'construction',
     code: 'BLD / 03',
-    title: 'Sustainable and 3D homes',
+    title: 'Construction',
     launch: 'Align the customer promise, engineering evidence, approvals, supply chain, pilot project and route to repeatable delivery.',
     growth: 'Extend proven build capability into new buyer segments, project types, locations or service layers without losing delivery discipline.',
     image: '/images/construction-night.jpg',
@@ -94,8 +120,8 @@ const industries = [
     title: 'Critical infrastructure',
     launch: 'Build the site, stakeholder, utility, planning and commercial evidence required to take a complex proposition toward investment.',
     growth: 'Use existing sites, technical relationships, approvals knowledge and operating capability to create the next defensible infrastructure move.',
-    image: '/images/concrete-structure.jpg',
-    imageAlt: 'Large concrete infrastructure structure under development',
+    image: '/images/hero-infrastructure.jpg',
+    imageAlt: 'Rack and cabling infrastructure inside a live facility',
   },
 ];
 ---
@@ -121,7 +147,7 @@ const industries = [
         <h2>Which industries does DivineLab Worx support?</h2>
       </div>
       <p>
-        DivineLab Worx works across retail, manufacturing, sustainable and 3D homes, and critical infrastructure. We support both new-market launch and growth from the assets and relationships already in place.
+        DivineLab Worx works across retail, manufacturing, construction and critical infrastructure. We support both new-market launch and growth from the assets and relationships already in place.
       </p>
     </div>
   </section>
@@ -177,7 +203,7 @@ const industries = [
         </p>
       </div>
       <div class="proof-slider" data-reveal>
-        <div class="proof-slider-track">
+        <div class="proof-slider-track" style={`--proof-duration:${slideDuration}`}>
           {
             [0, 1].map((pass) =>
               proofPoints.map((point) => (
@@ -214,6 +240,21 @@ const industries = [
   />
 </BaseLayout>
 
+<script is:inline define:vars={{ retiredAnchors }}>
+  (function () {
+    function remap() {
+      var to = retiredAnchors[location.hash.slice(1)];
+      if (!to) return;
+      var target = document.getElementById(to);
+      if (!target) return;
+      history.replaceState(null, '', location.pathname + '#' + to);
+      target.scrollIntoView();
+    }
+    remap();
+    window.addEventListener('hashchange', remap);
+  })();
+</script>
+
 <style>
   .industry-feature-grid{display:grid;gap:1rem}
   .industry-feature{display:grid;grid-template-columns:1.05fr .95fr;min-height:600px;background:#fff;border:1px solid var(--line)}
@@ -242,7 +283,7 @@ const industries = [
   .proof-slider-track{
     display:flex;
     width:max-content;
-    animation:proof-slide 38s linear infinite
+    animation:proof-slide var(--proof-duration,38s) linear infinite
   }
   .proof-slider:hover .proof-slider-track,
   .proof-slider:focus-within .proof-slider-track{animation-play-state:paused}
