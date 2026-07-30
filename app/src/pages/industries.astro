@@ -29,10 +29,11 @@ const schema = [
    markup and the second pass is hidden from assistive tech. Descriptors state
    the nature of the relationship only -- no outcomes or figures are claimed. */
 /* A cell shows the company's logo where we hold one and falls back to its
-   wordmark where we do not, so the strip never waits on a missing asset. The
-   logo variants are lifted for the dark ground: Natridy is monochrome so it is
-   flattened to white, while Samaria keeps its orange and blue untouched and only
-   its neutral blacks are raised. */
+   wordmark where we do not, which is what INTL and the accountability marker
+   below still use. Each logo is prepared for the dark ground: Natridy is
+   monochrome so it is flattened to white, Samaria keeps its orange and blue
+   untouched with only its neutral blacks raised, and Ecostar needs no adjustment
+   at all -- its wordmark is yellow and green and its tagline already white. */
 const proofPoints = [
   {
     name: 'Natridy',
@@ -48,7 +49,13 @@ const proofPoints = [
     logoWidth: 300,
     logoHeight: 84,
   },
-  { name: 'Ecostar Solar', note: 'Solar and renewable energy' },
+  {
+    name: 'Ecostar Solar',
+    note: 'Solar and battery systems',
+    logo: '/images/clients/ecostar-solar.png',
+    logoWidth: 641,
+    logoHeight: 176,
+  },
   { name: 'INTL', note: 'Cross-market commercial context' },
   { name: '1', note: 'Accountable route to revenue' },
 ];
