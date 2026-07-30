@@ -2,7 +2,7 @@ export const site = {
   name: 'DivineLab Worx',
   legalName: 'DivineLab Worx, a division of Sharktech Global',
   url: 'https://divinelabworx.com',
-  email: 'dainudevis@sharktech.com.au',
+  email: 'admin@sharktech.com.au',
   phoneDisplay: '+61 468 017 373',
   phone: '+61468017373',
   address: 'Level 1, 244 Macquarie Street, Liverpool NSW 2170',
@@ -102,10 +102,10 @@ export const sectors = [
     code: 'MFG',
   },
   {
-    title: 'Sustainable and 3D homes',
+    title: 'Construction',
     description:
       'Align approvals, build systems, pilots, buyer confidence and repeatable delivery for modern construction.',
-    href: '/industries#sustainable-homes',
+    href: '/industries#construction',
     code: 'BLD',
   },
   {
