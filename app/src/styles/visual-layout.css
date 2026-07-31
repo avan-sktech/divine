@@ -10,6 +10,19 @@
   flex: 0 0 auto;
 }
 
+/* The winged monogram does not spell the name, so the wordmark carries it in type.
+   That makes the mark decorative, hence alt="" on the image -- otherwise the name
+   is announced twice. */
+.brand-wordmark {
+  font-family: var(--sans);
+  font-size: 1.04rem;
+  font-weight: 820;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--white);
+}
+
 .brand-parent-logo {
   width: auto;
   height: 30px;
@@ -23,6 +36,7 @@
 @media (max-width: 680px) {
   .brand-logo { height: 34px; }
   .brand-parent-logo { height: 24px; }
+  .brand-wordmark { font-size: 0.92rem; }
 }
 
 .path-card {
