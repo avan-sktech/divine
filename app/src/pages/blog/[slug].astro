@@ -2,7 +2,19 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RevampHero from '../../components/RevampHero.astro';
 import CTA from '../../components/CTA.astro';
-import { breadcrumbSchema, insights, site } from '../../data/site';
+import FaqList from '../../components/FaqList.astro';
+import { breadcrumbSchema, faqSchema, insights, site } from '../../data/site';
+import '../../styles/article.css';
+
+// Long-form posts keep their body as HTML alongside the metadata, keyed on slug.
+const articleBodies = import.meta.glob<string>('../../data/articles/*.html', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+const bodyBySlug = Object.fromEntries(
+  Object.entries(articleBodies).map(([path, html]) => [path.split('/').pop()!.replace('.html', ''), html]),
+);
 
 export function getStaticPaths() {
   return insights.map((insight) => ({
@@ -12,8 +24,17 @@ export function getStaticPaths() {
 }
 
 const { insight } = Astro.props;
-const title = `${insight.title} | DivineLab Worx`;
+const body = bodyBySlug[insight.slug];
+const title = insight.seoTitle ?? `${insight.title} | DivineLab Worx`;
 const description = insight.excerpt;
+const url = `${site.url}/blog/${insight.slug}`;
+
+const publishedLabel = new Date(insight.published).toLocaleDateString('en-AU', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -24,12 +45,19 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Dainu Devis',
+    jobTitle: 'Chief Executive Officer, Sharktech Global',
+    worksFor: { '@type': 'Organization', name: 'Sharktech Global' },
     url: `${site.url}/about`,
   },
   publisher: { '@id': `${site.url}/#organisation` },
-  mainEntityOfPage: `${site.url}/blog/${insight.slug}`,
+  image: `${site.url}/og.png`,
+  mainEntityOfPage: url,
+  articleSection: insight.category,
   inLanguage: 'en-AU',
+  ...(insight.keywords ? { keywords: insight.keywords.join(', ') } : {}),
+  ...(insight.about ? { about: insight.about } : {}),
 };
+
 const schema = [
   breadcrumbSchema([
     { name: 'Home', path: '/' },
@@ -37,14 +65,21 @@ const schema = [
     { name: insight.title, path: `/blog/${insight.slug}` },
   ]),
   articleSchema,
+  ...(insight.faqs?.length ? [faqSchema(insight.faqs)] : []),
 ];
+
+const relatedPosts = (insight.relatedPosts ?? [])
+  .map((slug) => insights.find((item) => item.slug === slug))
+  .filter((item): item is (typeof insights)[number] => Boolean(item));
 ---
 
 <BaseLayout title={title} description={description} schema={schema} article pageClass="revamp-page">
   <RevampHero
     eyebrow={`${insight.category} / ${insight.readTime}`}
-    title={insight.title}
-    support={insight.excerpt}
+    title={insight.heroHeading ?? insight.title}
+    support={insight.heroSupport ?? insight.excerpt}
+    image={insight.heroImage}
+    imageAlt={insight.heroAlt ?? ''}
     primaryLabel="Discuss this issue"
     primaryHref="/contact"
     secondaryLabel="All insights"
@@ -56,7 +91,7 @@ const schema = [
     <div class="shell revamp-answer-grid" data-reveal>
       <div>
         <p class="revamp-eyebrow">Direct answer</p>
-        <h2>The short version.</h2>
+        <h2>{insight.answerQuestion ?? 'The short version.'}</h2>
       </div>
       <p>{insight.answer}</p>
     </div>
@@ -64,34 +99,113 @@ const schema = [
 
   <article class="revamp-section">
     <div class="shell article-grid">
-      <aside class="article-sticky" data-reveal>
+      <aside class:list={['article-sticky', { 'article-sticky-longform': body }]} data-reveal>
         <p class="revamp-eyebrow">Briefing note</p>
         <h2>{insight.title}</h2>
         <p>
-          Published {new Date(insight.published).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
+          Published {publishedLabel}{insight.updatedLabel ? ` · ${insight.updatedLabel}` : ''}
         </p>
       </aside>
       <div class="article-body" data-reveal>
-        {insight.sections.map((section) => (
-          <section>
-            <h2>{section.heading}</h2>
-            <p>{section.body}</p>
-          </section>
-        ))}
-        <section>
-          <h2>The decision standard</h2>
-          <p>
-            The objective is not to remove all uncertainty. It is to make the customer, commercial logic, evidence, dependencies and next test visible enough for a responsible decision.
-          </p>
-          <a class="text-link" href={insight.related.href}>{insight.related.label} <span aria-hidden="true">↗</span></a>
-        </section>
+        {
+          body ? (
+            <Fragment>
+              <p class="article-byline">
+                By <b>Dainu Devis</b>, Chief Executive Officer,{' '}
+                <a href="https://www.sharktech.com.au" rel="noopener">Sharktech Global</a>
+              </p>
+              <div class="article-prose" set:html={body} />
+              <div class="author-bio">
+                <div class="author-bio__mark" aria-hidden="true">D</div>
+                <div>
+                  <h3>Dainu Devis</h3>
+                  <span class="author-bio__role">Chief Executive Officer, Sharktech Global</span>
+                  <p>
+                    Dainu Devis is the Chief Executive Officer of{' '}
+                    <a href="https://www.sharktech.com.au" rel="noopener">Sharktech Global</a>, the Australian
+                    technology group building products for a world being reshaped and displaced by artificial
+                    intelligence. Through its advisory arm, DivineLab Worx, and ventures across critical
+                    infrastructure, hospitality and industrial safety, Sharktech backs the operators, builders and
+                    businesses that intend to still be standing on the other side of the AI transition. Dainu advises
+                    operators, developers, boards and governments on where to build, what to secure, and how to turn
+                    strategy into revenue. <a href="/about">More about DivineLab Worx and Sharktech Global</a>.
+                  </p>
+                </div>
+              </div>
+              {(insight.sources?.length ?? 0) > 0 && (
+                <div class="article-sources">
+                  <h2>Sources and further reading</h2>
+                  <ul>
+                    {insight.sources.map((source) => (
+                      <li>
+                        <a href={source.href} rel="nofollow noopener" target="_blank">{source.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                  {insight.disclaimer && <p class="article-disclaimer">{insight.disclaimer}</p>}
+                </div>
+              )}
+            </Fragment>
+          ) : (
+            <Fragment>
+              {insight.sections?.map((section) => (
+                <section>
+                  <h2>{section.heading}</h2>
+                  <p>{section.body}</p>
+                </section>
+              ))}
+              <section>
+                <h2>The decision standard</h2>
+                <p>
+                  The objective is not to remove all uncertainty. It is to make the customer, commercial logic,
+                  evidence, dependencies and next test visible enough for a responsible decision.
+                </p>
+                <a class="text-link" href={insight.related.href}>{insight.related.label} <span aria-hidden="true">↗</span></a>
+              </section>
+            </Fragment>
+          )
+        }
       </div>
     </div>
   </article>
 
+  {(insight.faqs?.length ?? 0) > 0 && <FaqList items={insight.faqs!} eyebrow="Answers" heading="Common questions." />}
+
+  {
+    relatedPosts.length > 0 && (
+      <section class="revamp-section">
+        <div class="shell">
+          <div class="revamp-heading" data-reveal>
+            <div>
+              <p class="revamp-eyebrow">Keep reading</p>
+              <h2>Related insights.</h2>
+            </div>
+            <a class="text-link" href={insight.related.href}>
+              {insight.related.label} <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="editorial-list">
+            {relatedPosts.map((item, index) => (
+              <article class="editorial-row" data-reveal>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <p class="revamp-eyebrow">{item.category} / {item.readTime}</p>
+                  <h3>{item.title}</h3>
+                </div>
+                <p>{item.excerpt}</p>
+                <a href={`/blog/${item.slug}`} aria-label={`Read ${item.title}`}>↗</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   <CTA
     eyebrow="Apply the thinking"
-    title="Turn the framework into a decision for your organisation."
+    title={insight.cta?.title ?? 'Turn the framework into a decision for your organisation.'}
     copy="A contained engagement can establish the evidence, ownership and practical next step for the issue in front of you."
+    label={insight.cta?.label ?? 'Start a conversation'}
   />
 </BaseLayout>

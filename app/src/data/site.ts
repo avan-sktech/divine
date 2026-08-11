@@ -376,7 +376,645 @@ export const constructionFaqs = [
   },
 ];
 
-export const insights = [
+export interface InsightSection {
+  heading: string;
+  body: string;
+}
+
+export interface InsightFaq {
+  question: string;
+  answer: string;
+}
+
+export interface InsightLink {
+  label: string;
+  href: string;
+}
+
+export interface Insight {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  readTime: string;
+  published: string;
+  answer: string;
+  related: InsightLink;
+  /** Short briefing notes carry their body as heading and paragraph sections. */
+  sections?: InsightSection[];
+  /**
+   * Long-form articles carry their body as HTML in src/data/articles/<slug>.html,
+   * keyed on slug, and use the fields below. Both shapes render through
+   * the same /blog/<slug> template.
+   */
+  seoTitle?: string;
+  updatedLabel?: string;
+  heroHeading?: string;
+  heroSupport?: string;
+  heroImage?: string;
+  heroAlt?: string;
+  answerQuestion?: string;
+  keywords?: string[];
+  about?: string[];
+  cta?: { title: string; label: string };
+  relatedPosts?: string[];
+  faqs?: InsightFaq[];
+  sources?: InsightLink[];
+  disclaimer?: string;
+}
+
+export const insights: Insight[] = [
+  {
+    slug: "how-to-start-a-solar-and-battery-business-australia",
+    title: "How to start a solar and battery business in Australia (2026 guide)",
+    seoTitle: "How to Start a Solar and Battery Business in Australia | LYD Solar",
+    excerpt:
+      "How to start a solar and battery installation business in Australia in 2026: licensing, SAA accreditation, and the system that wins customers.",
+    category: "Launch Your Dream",
+    readTime: "9 min read",
+    published: "2026-08-11",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "How to start a solar and battery business in Australia, <em>and actually win customers.</em>",
+    heroSupport:
+      "Demand is surging and the installer base is shrinking. Here is how to set up a solar and battery business properly in 2026, and the growth system that turns setup into booked installs.",
+    heroImage: "/images/market-analysis.jpg",
+    heroAlt: "Market and demand analysis dashboards",
+    answerQuestion: "How do you start a solar and battery business in Australia?",
+    answer:
+      "To start a solar and battery business in Australia you need a registered business with insurance, an electrical licence, SAA accreditation (which makes you SRES-eligible for STC rebates), battery accreditation, and a clean STC compliance workflow. The harder part is winning customers: the industry averages a 22-hour lead response and booking rates fall from about 43 per cent to 2 per cent once a day passes. LydSolarBattery, the solar vertical of Sharktech Global's Launch Your Dream series, gives a new installer a converting website, SEO, AEO, instant AI lead response and the Pylon connector, from $360 a month.",
+    keywords: [
+      "how to start a solar business Australia",
+      "how to start a solar installation business",
+      "start a solar and battery business",
+      "become a solar installer",
+      "SAA accreditation",
+      "solar installer marketing",
+      "LydSolarBattery",
+      "LYDSOLARBATTERY",
+    ],
+    about: [
+      "how to start a solar business",
+      "solar installer",
+      "SAA accreditation",
+      "LydSolarBattery",
+      "Sharktech Global",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    cta: {
+      title: "Starting a solar business? Build the growth engine in from day one.",
+      label: "Request a LydSolarBattery demo",
+    },
+    relatedPosts: [
+      "how-to-start-an-ndis-provider-business-australia",
+      "surviving-the-ai-era-business-consulting",
+      "designing-market-into-product",
+    ],
+    faqs: [
+      {
+        question: "How do I start a solar and battery business in Australia?",
+        answer:
+          "Register the business with an ABN, GST and insurance, hold or employ an electrical licence, gain SAA accreditation so you are SRES-eligible for STC rebates, add battery accreditation, and set up an accurate STC documentation workflow. Confirm current requirements with Solar Accreditation Australia and the Clean Energy Regulator. Once you are licensed and accredited, your next task is winning customers, which is where most new installers struggle.",
+      },
+      {
+        question: "Do I need SAA accreditation to install solar?",
+        answer:
+          "To create STCs under the Small-scale Renewable Energy Scheme, the installation must be done by an SAA-accredited installer. Accreditation moved from the Clean Energy Council to Solar Accreditation Australia in early 2024, so always describe yourself as SAA-accredited and SRES-eligible. Battery work requires its own accreditation, which only about half of installers currently hold.",
+      },
+      {
+        question: "How do new solar installers get customers?",
+        answer:
+          "The biggest lever is speed to lead. The industry averages a 22-hour response and booking rates fall from about 43 per cent when a lead is answered within minutes to roughly 2 per cent after a day. Buying shared leads that convert at 8 to 15 per cent is expensive and slow. A compounding channel of search visibility, reviews, paid ads and instant automated response wins more jobs for less. LydSolarBattery is built to deliver exactly that.",
+      },
+      {
+        question: "How much does LydSolarBattery cost?",
+        answer:
+          "Plans start from $360 a month. It gives a new installer a converting website, dedicated service-page SEO, AEO for AI answers, instant lead response, Google Business Profile and local search setup, and the Pylon connector, all white-labelled to their brand. Framed against the cost of a single poorly converting shared lead, the platform is designed to pay for itself on the jobs it saves.",
+      },
+    ],
+    sources: [
+      {
+        label: "energy.gov.au, Cheaper Home Batteries Program",
+        href: "https://www.energy.gov.au/rebates/cheaper-home-batteries-program",
+      },
+      {
+        label: "Solar Accreditation Australia, accreditation and SRES eligibility",
+        href: "https://www.solaraccreditation.com.au/",
+      },
+      {
+        label: "Clean Energy Regulator, Small-scale Renewable Energy Scheme",
+        href: "https://cer.gov.au/",
+      },
+      {
+        label: "Sharktech Global, Launch Your Dream and LydSolarBattery",
+        href: "https://www.sharktech.com.au",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for business owners and operators. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
+  {
+    slug: "how-to-start-an-ndis-provider-business-australia",
+    title: "How to start an NDIS provider business in Australia (2026 guide)",
+    seoTitle: "How to Start an NDIS Provider Business in Australia | LYD NDIS",
+    excerpt:
+      "How to start an NDIS provider business in Australia in 2026: registration, worker screening, and the growth system that wins participants.",
+    category: "Launch Your Dream",
+    readTime: "9 min read",
+    published: "2026-08-11",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "How to start an NDIS provider business in Australia, <em>and win the families searching.</em>",
+    heroSupport:
+      "The NDIS is a large market that is under-served on the basics of winning clients. Here is how to set up a provider business in 2026, and the system that turns setup into signed participants.",
+    heroImage: "/images/team-meeting.jpg",
+    heroAlt: "A provider team planning service delivery around a table",
+    answerQuestion: "How do you start an NDIS provider business in Australia?",
+    answer:
+      "To start an NDIS provider business in Australia you register the business with insurance, decide whether to register with the NDIS Quality and Safeguards Commission (self-managed and plan-managed participants can use unregistered providers, which is the largest and least gate-kept way to start), arrange NDIS Worker Screening, choose your service categories, and stand up credible systems. Because families choose their own provider, being found and trusted online is the biggest lever on growth. LydNDIS, the NDIS vertical of Sharktech Global's Launch Your Dream series, gives a new provider a search-optimised, trust-building site, instant AI response and a CRM, from $295 a month.",
+    keywords: [
+      "how to start an NDIS business",
+      "how to become an NDIS provider",
+      "start NDIS provider business Australia",
+      "register as NDIS provider",
+      "NDIS provider setup",
+      "NDIS marketing",
+      "LydNDIS",
+      "LYDNDIS",
+    ],
+    about: [
+      "how to start an NDIS business",
+      "NDIS provider",
+      "NDIS registration",
+      "LydNDIS",
+      "Sharktech Global",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    cta: {
+      title: "Starting an NDIS business? Be findable and trusted from day one.",
+      label: "Request a LYD NDIS demo",
+    },
+    relatedPosts: [
+      "how-to-start-a-solar-and-battery-business-australia",
+      "surviving-the-ai-era-business-consulting",
+      "designing-market-into-product",
+    ],
+    faqs: [
+      {
+        question: "How do I start an NDIS provider business in Australia?",
+        answer:
+          "Register your business with an ABN and insurance, decide whether to register with the NDIS Quality and Safeguards Commission or operate unregistered for self-managed and plan-managed participants, arrange NDIS Worker Screening for your workers, choose your service categories such as Personal Care, In-Home Support or Support Coordination, and stand up credible systems to be found and to respond to enquiries. Confirm current requirements with the NDIS Quality and Safeguards Commission.",
+      },
+      {
+        question: "Do I need to register as an NDIS provider?",
+        answer:
+          "Not always. Participants whose plans are NDIA-managed can generally only use registered providers, but self-managed and plan-managed participants can use unregistered providers. That unregistered segment is the largest and least gate-kept way for a new provider to start, and about 94 per cent of providers operate unregistered today. Note that from 1 July 2026, Supported Independent Living and NDIS digital platform providers must register.",
+      },
+      {
+        question: "How do new NDIS providers get clients?",
+        answer:
+          "Because families choose their own provider and research online first, the biggest lever is being found and trusted. Most provider sites show no checkable proof and use the same generic language. Winning means dedicated service pages, registration, screening and insurance shown as facts, real reviews, and instant response to every enquiry. LydNDIS is built to deliver all of this for a new provider.",
+      },
+      {
+        question: "How much does LydNDIS cost?",
+        answer:
+          "Plans start from $295 a month (billed annually, $345 billed monthly). The entry tier includes a website, Google Business Profile setup, an AI chat widget, a CRM pipeline and a booking calendar. Higher tiers add advanced SEO and AEO, social media management, paid ads and deeper automation. A one-off onboarding fee applies where a full website or automation build is needed, scoped before work starts.",
+      },
+    ],
+    sources: [
+      {
+        label: "NDIS Quality and Safeguards Commission, provider registration and worker screening",
+        href: "https://www.ndiscommission.gov.au/",
+      },
+      {
+        label: "National Disability Insurance Scheme",
+        href: "https://www.ndis.gov.au/",
+      },
+      {
+        label: "Sharktech Global, Launch Your Dream and LYD NDIS",
+        href: "https://www.sharktech.com.au",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for business owners and operators. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
+  {
+    slug: "surviving-the-ai-era-business-consulting",
+    title: "How to survive the AI era: a business consulting guide",
+    seoTitle: "How to Survive the AI Era: A Business Consulting Guide | DivineLab Worx",
+    excerpt:
+      "About 95% of AI pilots return nothing measurable. Surviving the AI era is a business problem, not a tech one. What separates the winners, and how to be one.",
+    category: "AI Advisory",
+    readTime: "8 min read",
+    published: "2026-08-11",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "Surviving the AI era is a business problem, <em>not a technology one.</em>",
+    heroSupport:
+      "Adopting AI tools is not the same as surviving the AI era. Most businesses that adopt see no return. Here is what separates the survivors, and where a consultant actually earns their fee.",
+    heroImage: "/images/hero-robot-poster.jpg",
+    heroAlt: "Artificial intelligence systems represented by a humanoid figure and data flows",
+    answerQuestion: "How do businesses survive in the AI era?",
+    answer:
+      "Surviving the AI era is a business and governance problem, not a technology one. Around 95 per cent of generative AI pilots return nothing measurable and more than 80 per cent of AI projects fail, almost always for organisational reasons. The businesses that survive define success before they start, build data foundations first, keep executive ownership, treat AI as business transformation rather than an IT project, and govern it. DivineLab Worx advises businesses on where AI creates real, measured value before capital is committed.",
+    keywords: [
+      "surviving the AI era",
+      "AI business strategy Australia",
+      "AI transformation consulting",
+      "business consultant AI era",
+      "why AI projects fail",
+      "AI governance for business",
+    ],
+    about: [
+      "AI strategy",
+      "AI transformation",
+      "business consulting",
+      "AI governance",
+      "Australia",
+    ],
+    related: {
+      label: "Explore AI advisory and governance",
+      href: "/advisory",
+    },
+    cta: {
+      title: "Adopting AI is easy. Getting a return is the work. Let us find yours.",
+      label: "Book an AI strategy engagement",
+    },
+    relatedPosts: [
+      "soci-act-data-centre-critical-infrastructure-2026",
+      "australia-data-centre-power-constraints-2026",
+      "growth-you-have-already-paid-for",
+    ],
+    faqs: [
+      {
+        question: "How do businesses survive in the AI era?",
+        answer:
+          "By treating AI as a business transformation rather than a technology purchase. The businesses that get real value define a quantified success measure before starting, build their data foundations first, keep an accountable executive sponsor throughout, redesign the operating model around the technology, and govern it with human oversight. Adopting tools without these behaviours is why about 95 per cent of generative AI pilots return nothing measurable.",
+      },
+      {
+        question: "Why do most AI projects fail?",
+        answer:
+          "Research from RAND found more than 80 per cent of AI projects fail to deliver their intended business value, roughly twice the rate of comparable technology projects. The causes are organisational, not technical: a purpose no one agreed on, weak data foundations discovered mid-project, executive sponsorship that fades after launch, and chasing the technology instead of a business outcome.",
+      },
+      {
+        question: "Are Australian businesses adopting AI successfully?",
+        answer:
+          "Adoption is high and rising. The National AI Centre reported about 43 per cent of Australian small and medium enterprises had some AI adoption across the December 2025 to February 2026 quarter. The return lags the adoption: many businesses do not measure impact at all, and only a small minority have built AI into the products and services they sell. Activity is running ahead of proven value.",
+      },
+      {
+        question: "What does an AI business consultant actually do?",
+        answer:
+          "A good one does not start with a tool. They start with the commercial question of where AI creates measurable value in your specific business, what would prove it, and what must be true in your data, operating model and governance for that value to be real. The output is a board-grade view of where to act, where to wait, and how to measure the result before capital is committed.",
+      },
+    ],
+    sources: [
+      {
+        label: "National AI Centre, AI adoption insights, December 2025 to February 2026",
+        href: "https://www.ai.gov.au/news-and-insights/blog/ai-adoption-insights-december-2025-february-2026",
+      },
+      {
+        label: "RAND Corporation, causes of AI project failure",
+        href: "https://www.rand.org/",
+      },
+      {
+        label: "S&P Global Market Intelligence, AI initiative abandonment, 2025",
+        href: "https://www.spglobal.com/market-intelligence/",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for business owners, executives and investors. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
+  {
+    slug: "australia-data-centre-power-constraints-2026",
+    title: "Why power, not capital, now decides Australia's data centre boom",
+    seoTitle: "Why Power, Not Capital, Decides Australia's Data Centre Boom | DivineLab Worx",
+    excerpt:
+      "Australia has 5.4 GW of data centre demand stuck in AEMO's grid queue. Why power, not capital, is now the binding constraint on development in 2026.",
+    category: "Infrastructure",
+    readTime: "8 min read",
+    published: "2026-08-11",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "Why power, not capital, now decides <em>Australia's data centre boom.</em>",
+    heroSupport:
+      "Around 5.4 gigawatts of data centre demand is sitting in AEMO's connection queue. The money is here. The kilowatts are the bottleneck. Here is what that means for anyone building in Australia.",
+    heroImage: "/images/hero-infrastructure.jpg",
+    heroAlt: "Server racks and power distribution inside a data centre",
+    answerQuestion: "What is the biggest constraint on Australian data centres in 2026?",
+    answer:
+      "Power, not capital, is now the binding constraint on Australian data centre development. As at June 2026, AEMO reported about 5.4 gigawatts of data centre demand in the National Electricity Market connection queue, several times the operational base, with an approximate two year timeframe from connection application to energisation. Developers who confirm a validated power position before committing land and design capital move fastest.",
+    keywords: [
+      "Australia data centre power constraints",
+      "AEMO connection queue",
+      "data centre grid connection Australia",
+      "hyperscale data centre power",
+      "data centre site selection Australia",
+    ],
+    about: [
+      "Australian data centres",
+      "grid connection",
+      "power constraints",
+      "AEMO",
+      "site selection",
+    ],
+    related: {
+      label: "Explore critical infrastructure advisory",
+      href: "/infrastructure",
+    },
+    cta: {
+      title: "Confirm your power position before you commit the capital.",
+      label: "Validate a site with us",
+    },
+    relatedPosts: [
+      "how-to-choose-a-data-centre-site-in-australia",
+      "aemc-30mw-data-centre-grid-connection-rule",
+      "soci-act-data-centre-critical-infrastructure-2026",
+    ],
+    faqs: [
+      {
+        question: "How much data centre demand is in Australia's grid connection queue?",
+        answer:
+          "As at its June 2026 disclosure, AEMO reported about 5.4 gigawatts of data centre maximum demand in the National Electricity Market transmission connection queue, made up of eleven large scale projects each above five megawatts. Around 60 per cent sits in New South Wales and 40 per cent in Victoria.",
+      },
+      {
+        question: "How long does it take to connect a data centre to the grid in Australia?",
+        answer:
+          "AEMO has described an approximate two year timeframe from connection application to energisation, while noting that timelines vary with project readiness and system conditions. For most developments the grid connection, not construction or capital, is the longest and least certain part of the schedule.",
+      },
+      {
+        question: "Why is power the main constraint rather than capital?",
+        answer:
+          "Capital for Australian data centres is abundant, with commitments such as Microsoft's twenty five billion Australian dollar investment by 2029. What is scarce is firm grid capacity in the corridors operators want, particularly Western Sydney and Melbourne's west. Substation headroom and connection timelines now decide which projects proceed.",
+      },
+      {
+        question: "What should a developer confirm before committing to a site?",
+        answer:
+          "Confirm the power position first: the responsible network, available capacity in megavolt amperes, who pays for any augmentation, and whether a dual feed is possible for the required redundancy tier. Only then assess zoning, fibre, water and regulatory readiness. A site without confirmed power should be treated as a bet, not an asset.",
+      },
+    ],
+    sources: [
+      {
+        label: "AEMO, Data Centre Energy Demand and 2026 connection queue disclosures",
+        href: "https://www.aemo.com.au/",
+      },
+      {
+        label: "AEMC, grid connection standards for large loads",
+        href: "https://www.aemc.gov.au/",
+      },
+      {
+        label: "Microsoft, A$25 billion Australian AI infrastructure investment",
+        href: "https://news.microsoft.com/source/asia/",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for infrastructure operators, developers and investors. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
+  {
+    slug: "aemc-30mw-data-centre-grid-connection-rule",
+    title: "The AEMC 30MW rule and what it means for Australian data centres",
+    seoTitle: "The AEMC 30MW Rule for Data Centre Grid Connections | DivineLab Worx",
+    excerpt:
+      "The AEMC's 2026 draft rule raises the large load threshold to 30 MW and mandates ride through for data centres. What Australian operators must now do.",
+    category: "Regulatory",
+    readTime: "7 min read",
+    published: "2026-08-08",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "The AEMC 30MW rule, and what it means for <em>Australian data centres.</em>",
+    heroSupport:
+      "A quiet regulatory change is reshaping how large data centre loads join the grid. Here is what the AEMC has proposed, why it matters, and what to do before your connection agreement is written.",
+    heroImage: "/images/distribution-network.jpg",
+    heroAlt: "Network topology diagram of distributed connection nodes",
+    answerQuestion: "What is the new AEMC rule for data centre grid connections?",
+    answer:
+      "The AEMC's March 2026 draft rule raises the threshold for large inverter based loads from five megawatts to thirty megawatts and requires large data centres to ride through grid disturbances rather than disconnecting. The aim is grid stability, informed by a July 2024 event in Virginia where sixty data centres shed about 1,500 megawatts at once. A final determination is expected around mid 2026, with compliance embedded in connection agreements.",
+    keywords: [
+      "AEMC data centre rule",
+      "30MW threshold",
+      "data centre grid connection standards Australia",
+      "inverter based load ride through",
+      "National Electricity Rules data centres",
+    ],
+    about: [
+      "AEMC",
+      "grid connection standards",
+      "data centres",
+      "National Electricity Rules",
+      "ride through",
+    ],
+    related: {
+      label: "Explore regulatory and compliance advisory",
+      href: "/market-entry-australia",
+    },
+    cta: {
+      title: "Model the regulation before you sign the connection agreement.",
+      label: "Scope your compliance path",
+    },
+    relatedPosts: [
+      "australia-data-centre-power-constraints-2026",
+      "soci-act-data-centre-critical-infrastructure-2026",
+      "how-to-choose-a-data-centre-site-in-australia",
+    ],
+    faqs: [
+      {
+        question: "What does the AEMC 30MW threshold mean for data centres?",
+        answer:
+          "The draft rule raises the threshold for large inverter based loads from five megawatts to thirty megawatts. Facilities above that line must meet firm performance standards, including staying connected during voltage and frequency disturbances and recovering their power draw within defined timeframes. Below the line, obligations are lighter, so the threshold directly shapes your design and compliance burden.",
+      },
+      {
+        question: "Why is the AEMC introducing ride through requirements?",
+        answer:
+          "The concern is grid stability. If many large facilities disconnect at once during a fault, the grid can face cascading instability. The regulator cites a July 2024 event in Virginia where sixty data centres pulled about 1,500 megawatts off the grid simultaneously during a single fault. As data centres become a material share of national load, that risk has to be managed.",
+      },
+      {
+        question: "When does the AEMC data centre rule take effect?",
+        answer:
+          "Consultation on the draft rule closed on 7 May 2026, with a final determination expected around the middle of 2026. Once finalised, compliance is expected to be embedded in connection agreements, including terms that keep non registered data centres compliant and require them to provide performance data to the network.",
+      },
+      {
+        question: "How should developers prepare for the new standards?",
+        answer:
+          "Design for disturbance ride through from the outset rather than retrofitting it, confirm whether each stage of a phased build sits above or below the thirty megawatt threshold, and treat the connection agreement as a compliance document. Aligning to the Texas, Ireland and Finland standards the AEMC is matching also reduces cost.",
+      },
+    ],
+    sources: [
+      {
+        label: "AEMC, proposed grid standards for data centre connections",
+        href: "https://www.aemc.gov.au/news-centre/media-releases/aemc-proposes-new-grid-standards-data-centre-connections",
+      },
+      {
+        label: "AEMO, data centre pipeline and connection guidance",
+        href: "https://www.aemo.com.au/",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for infrastructure operators, developers and investors. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
+  {
+    slug: "soci-act-data-centre-critical-infrastructure-2026",
+    title: "Is your data centre a critical infrastructure asset? A 2026 SOCI Act guide",
+    seoTitle: "Is Your Data Centre a Critical Infrastructure Asset? | DivineLab Worx",
+    excerpt:
+      "The SOCI Act can capture data centres based on whose data they hold, not their size. A 2026 guide to the obligations and incident reporting clocks.",
+    category: "Compliance",
+    readTime: "8 min read",
+    published: "2026-08-05",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "Is your data centre a <em>critical infrastructure asset?</em>",
+    heroSupport:
+      "The businesses most surprised to find themselves inside the SOCI Act are in data storage and processing. The test is not your size. It is whose data you hold. Here is what applies in 2026.",
+    heroImage: "/images/compliance.jpg",
+    heroAlt: "Standards and compliance obligations represented as a shield grid",
+    answerQuestion: "Does the SOCI Act apply to data centres in Australia?",
+    answer:
+      "The SOCI Act can capture data centres under the data storage and processing sector based on whose data they hold, not their size. Responsible entities must maintain a board owned Critical Infrastructure Risk Management Program, report significant cyber incidents within twelve hours and lesser incidents within seventy two hours, and register the asset. Enhanced obligations commenced on 10 June 2026 and tighten through 2027 and 2028, with director level accountability.",
+    keywords: [
+      "SOCI Act data centre",
+      "critical infrastructure compliance Australia",
+      "data storage and processing SOCI",
+      "CIRMP data centre",
+      "critical infrastructure incident reporting",
+    ],
+    about: [
+      "SOCI Act",
+      "critical infrastructure",
+      "data centres",
+      "compliance",
+      "incident reporting",
+    ],
+    related: {
+      label: "Explore critical infrastructure advisory",
+      href: "/infrastructure",
+    },
+    cta: {
+      title: "Close the compliance uncertainty before it becomes a liability.",
+      label: "Scope your SOCI position",
+    },
+    relatedPosts: [
+      "how-to-choose-a-data-centre-site-in-australia",
+      "australia-data-centre-power-constraints-2026",
+      "aemc-30mw-data-centre-grid-connection-rule",
+    ],
+    faqs: [
+      {
+        question: "Does the SOCI Act apply to data centres?",
+        answer:
+          "It can. Data storage and processing is one of the eleven sectors covered by the Act. Whether a specific data centre is captured depends on the nature of the data and the customers it serves, including data linked to government and to other critical infrastructure sectors. The test turns on whose data you hold rather than the size of the facility.",
+      },
+      {
+        question: "What is a Critical Infrastructure Risk Management Program?",
+        answer:
+          "A CIRMP is a written, board owned program that identifies the material risks to a critical infrastructure asset and sets out how they are minimised and mitigated across four domains: cyber and information security, personnel, supply chain, and physical and natural hazards. It must be reviewed at least annually, with an annual report to the regulator within ninety days of the end of the financial year.",
+      },
+      {
+        question: "How quickly must a data centre report a cyber incident?",
+        answer:
+          "A significant impact incident must be reported to the Australian Cyber Security Centre within twelve hours of the entity becoming aware of it. A lesser impact incident must be reported within seventy two hours. Meeting the twelve hour clock reliably requires a designed internal process, not an ad hoc response.",
+      },
+      {
+        question: "What changed under the SOCI Act in 2026?",
+        answer:
+          "Enhanced obligations commenced on 10 June 2026 and phase in over subsequent years. By mid 2027 expect a stronger focus on personnel security and legacy technology, and by mid 2028 an uplift to a higher framework maturity level, phishing resistant multifactor authentication and lateral movement controls. Penalties for corporations can reach into the millions, with accountability at board level.",
+      },
+    ],
+    sources: [
+      {
+        label: "Cyber and Infrastructure Security Centre, SOCI Act regulatory obligations",
+        href: "https://www.cisc.gov.au/how-we-support-industry/regulatory-obligations",
+      },
+      {
+        label: "Department of Home Affairs, Security of Critical Infrastructure",
+        href: "https://www.homeaffairs.gov.au/",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for infrastructure operators, developers and investors. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
+  {
+    slug: "how-to-choose-a-data-centre-site-in-australia",
+    title: "How to choose a data centre site in Australia: the five tests that decide viability",
+    seoTitle: "How to Choose a Data Centre Site in Australia: The Five Tests | DivineLab Worx",
+    excerpt:
+      "How to choose a data centre site in Australia: the five pillar test of power, zoning, fibre, water and readiness that shows if a site is build ready.",
+    category: "Infrastructure",
+    readTime: "9 min read",
+    published: "2026-08-01",
+    updatedLabel: "Updated August 2026",
+    heroHeading: "How to choose a data centre site in Australia: <em>the five tests that decide viability.</em>",
+    heroSupport:
+      "A site can pass on price, location and first impressions and still fail on the one thing that stops the build. The five pillar test that separates a build ready site from an expensive mistake.",
+    heroImage: "/images/data-center.jpg",
+    heroAlt: "Wireframe model of a data centre facility",
+    answerQuestion: "How do you choose a viable data centre site in Australia?",
+    answer:
+      "A viable Australian data centre site must pass five tests: power proximity, which now decides most projects given grid constraints; zoning clearance and approval pathway; a route diverse fibre path; secure water access with social licence; and regulatory and work health and safety readiness, including SOCI Act obligations. A site that fails any one pillar fails the project, so all five should be validated with evidence before capital is committed.",
+    keywords: [
+      "data centre site selection Australia",
+      "how to choose a data centre site",
+      "data centre site validation",
+      "build ready site Australia",
+      "critical infrastructure site selection",
+    ],
+    about: [
+      "data centre site selection",
+      "site validation",
+      "critical infrastructure",
+      "Australia",
+      "build ready",
+    ],
+    related: {
+      label: "Explore data centre site selection advisory",
+      href: "/infrastructure",
+    },
+    cta: {
+      title: "Find out whether your site actually passes, before you commit.",
+      label: "Request a site validation",
+    },
+    relatedPosts: [
+      "australia-data-centre-power-constraints-2026",
+      "soci-act-data-centre-critical-infrastructure-2026",
+      "aemc-30mw-data-centre-grid-connection-rule",
+    ],
+    faqs: [
+      {
+        question: "What makes a good data centre site in Australia?",
+        answer:
+          "A good site passes five tests: power proximity with genuine substation headroom, zoning clearance with a workable approval pathway, a route diverse fibre path, secure water access with social licence, and regulatory and work health and safety readiness including SOCI Act obligations. Passing four out of five is not enough, because a single failed pillar can stop the entire project.",
+      },
+      {
+        question: "Which factor matters most in data centre site selection?",
+        answer:
+          "Power proximity. In 2026, firm grid capacity is the scarcest input, with AEMO reporting about 5.4 gigawatts of data centre demand in the connection queue and an approximate two year path from application to energisation. A site with no substation headroom and no funded upgrade pathway should be ruled out early, whatever its other merits.",
+      },
+      {
+        question: "How long does it take to validate a data centre site?",
+        answer:
+          "A structured validation returns a clear recommendation in weeks rather than the many months a full engineering study can take. The point is speed with rigour: enough evidence across all five pillars for a decision maker to proceed, proceed on conditions, or walk away, before land and design capital are committed.",
+      },
+      {
+        question: "Why not just use a commercial property agent?",
+        answer:
+          "Property agents find land, but they generally cannot confirm that power is available, that fibre is genuinely diverse, or that the water authority will supply. Large engineering firms can, but slowly and expensively. A focused site validation fills the gap, combining property, utility and regulatory intelligence to confirm whether a site is actually build ready.",
+      },
+    ],
+    sources: [
+      {
+        label: "AEMO, data centre demand and connection queue data",
+        href: "https://www.aemo.com.au/",
+      },
+      {
+        label: "Department of Industry, Science and Resources, expectations of data centres and AI infrastructure developers",
+        href: "https://www.industry.gov.au/publications/expectations-data-centres-and-ai-infrastructure-developers",
+      },
+      {
+        label: "Cyber and Infrastructure Security Centre, SOCI Act obligations",
+        href: "https://www.cisc.gov.au/how-we-support-industry/regulatory-obligations",
+      },
+    ],
+    disclaimer:
+      "This article is general commentary for infrastructure operators, developers and investors. It is not legal, planning or engineering advice. DivineLab Worx coordinates qualified Australian specialists within each engagement.",
+  },
   {
     slug: 'concurrent-product-process-design-business-strategy',
     title: 'Concurrent Product and Process Design for business strategy',
