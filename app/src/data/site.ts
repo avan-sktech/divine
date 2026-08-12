@@ -1244,6 +1244,747 @@ export const insights: Insight[] = [
       },
     ],
   },
+  {
+    slug: "smb-ai-enablement-australia-market-entry",
+    title: "Taking an SMB AI Enablement Platform to Market in Australia",
+    excerpt:
+      "SMB AI platforms sell on a different cycle to enterprise. Distribution through trusted intermediaries, fast onboarding and a provable new-revenue story decide whether it scales.",
+    category: "AI & Technology",
+    readTime: "6 min read",
+    published: "2026-07-15",
+    heroImage: "/images/command-center.jpg",
+    heroAlt: "Operations command centre",
+    answer:
+      "SMB AI platforms sell on a different cycle to enterprise. Distribution through trusted intermediaries, onboarding measured in minutes rather than months, and a provable new-revenue story decide whether the platform scales.",
+    keywords: [
+      "SMB AI enablement Australia",
+      "AI platform market entry Australia",
+      "business diversification technology Australia",
+    ],
+    related: {
+      label: "Explore market entry",
+      href: "/market-entry-australia",
+    },
+    relatedPosts: [
+      "agentic-ai-deployment-australia",
+      "ai-business-transformation-australia-market-entry",
+    ],
+  },
+  {
+    slug: "agentic-ai-deployment-australia",
+    title: "What Agentic AI Deployment in Australia Actually Requires From a Vendor",
+    excerpt:
+      "Australian organisations want agentic AI and worry about governance in equal measure. What a vendor needs resolved before enterprise buyers commit past the pilot.",
+    category: "AI & Technology",
+    readTime: "6 min read",
+    published: "2026-07-10",
+    heroImage: "/images/hero-robot-poster.jpg",
+    heroAlt: "AI platform deployment",
+    answer:
+      "Australian organisations want agentic AI and worry about its governance in equal measure. A vendor needs governance, compliance and pilot evidence resolved before enterprise buyers will commit past the pilot.",
+    keywords: [
+      "agentic AI deployment Australia",
+      "agentic AI market entry Australia",
+      "AI governance compliance Australia",
+    ],
+    related: {
+      label: "Explore market entry",
+      href: "/market-entry-australia",
+    },
+    relatedPosts: [
+      "ai-business-transformation-australia-market-entry",
+      "smb-ai-enablement-australia-market-entry",
+    ],
+  },
+  {
+    slug: "ai-business-transformation-australia-market-entry",
+    title: "Bringing an AI Business Transformation Platform to Market in Australia",
+    excerpt:
+      "Australian SMEs hit 44 percent AI adoption, but an AI platform still needs the Privacy Act mapped, a channel strategy and pilot evidence before the sales team goes wide.",
+    category: "AI & Technology",
+    readTime: "6 min read",
+    published: "2026-07-08",
+    heroImage: "/images/hero-robot-poster.jpg",
+    heroAlt: "AI platform deployment",
+    answer:
+      "Australian SME AI adoption has reached 44 per cent, but an AI transformation platform still needs the Privacy Act mapped, a channel strategy and pilot evidence before the sales team goes wide.",
+    keywords: [
+      "AI business transformation Australia",
+      "AI go-to-market strategy Australia",
+      "enterprise AI vendor market entry",
+    ],
+    related: {
+      label: "Explore market entry",
+      href: "/market-entry-australia",
+    },
+    relatedPosts: [
+      "agentic-ai-deployment-australia",
+      "smb-ai-enablement-australia-market-entry",
+    ],
+  },
+  {
+    slug: "product-launch-consulting-australia",
+    title: "Product Launch Consulting Australia: Why Strategy Needs Boots on the Ground",
+    excerpt:
+      "A launch plan created overseas can look complete and still fail in execution. Why product launch consulting needs local validation, controlled pilots and boots on the ground.",
+    category: "Product Launch",
+    readTime: "11 min read",
+    published: "2026-07-03",
+    heroImage: "/images/australia-market.jpg",
+    heroAlt: "Australian market skyline",
+    answer:
+      "A launch plan created overseas can look complete and still fail in execution. Product launch consulting has to include local validation, controlled pilots and boots on the ground, connecting product, compliance, distribution, demand and after-sales in one Australian programme.",
+    keywords: [
+      "product launch consulting Australia",
+      "go-to-market strategy Australia",
+      "on-the-ground business support Australia",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "product-launch-strategy-australia",
+    ],
+  },
+  {
+    slug: "product-launch-strategy-australia",
+    title: "Three Patterns Behind Every Stalled Product Launch Strategy in Australia",
+    excerpt:
+      "When a launch stalls in Australia, the product is rarely the problem. Three sequencing patterns explain most of them, and all three are avoidable before the budget is committed.",
+    category: "Product Launch",
+    readTime: "6 min read",
+    published: "2026-07-01",
+    heroImage: "/images/distribution-network.jpg",
+    heroAlt: "Distribution network across Australian channels",
+    answer:
+      "Three sequencing patterns explain most stalled Australian launches: compliance discovered after the specification is locked, national inventory ordered before pilot evidence, and channel economics assumed rather than tested. All three are avoidable before the budget is committed.",
+    keywords: [
+      "product launch strategy Australia",
+      "manufacturing product launch strategy",
+      "market entry Australia",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "product-launch-consulting-australia",
+    ],
+  },
+  {
+    slug: "retail-consulting-services-australia",
+    title: "Retail Consulting Services Australia: From Product Range to First Sale",
+    excerpt:
+      "Good retail consulting is not marketing or store design. From range architecture and supplier readiness to landed cost, channel and after-sales, a range has to work as one commercial system.",
+    category: "Consumer & Retail",
+    readTime: "12 min read",
+    published: "2026-06-26",
+    heroImage: "/images/retail-deployment.jpg",
+    heroAlt: "Product range deployed in Australian retail",
+    answer:
+      "Retail consulting is not marketing or store design. A range has to work as one commercial system: range architecture, supplier readiness, compliance, landed cost, channel and after-sales, designed together before launch rather than repaired afterwards.",
+    keywords: [
+      "retail consulting services Australia",
+      "go-to-market strategy Australia",
+      "on-the-ground business support Australia",
+    ],
+    related: {
+      label: "Explore industry work",
+      href: "/industries",
+    },
+    relatedPosts: [
+      "retail-business-consultancy-australia",
+      "distribution-illusion-overseas-manufacturers",
+    ],
+  },
+  {
+    slug: "go-to-market-strategist-vs-business-consultant",
+    title: "Go-to-Market Strategist vs Business Consultant, Compared Honestly",
+    excerpt:
+      "Both titles show up on the same shortlist. Compared side by side, the scope splits at one question: who owns the outcome when compliance and channel timing collide.",
+    category: "Deployment Strategy",
+    readTime: "5 min read",
+    published: "2026-06-24",
+    heroImage: "/images/team-meeting.jpg",
+    heroAlt: "Strategy working session",
+    answer:
+      "The two titles overlap until one question splits them: who owns the outcome when compliance and channel timing collide. Choose whichever role stays accountable through to first sale rather than to the recommendation.",
+    keywords: [
+      "go-to-market strategist Australia",
+      "business consultancy services Australia",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "business-consultancy-services-australia",
+      "seven-variables-data-centre-site-australia",
+      "infrastructure-moat-data-centre-selection",
+    ],
+  },
+  {
+    slug: "manufacturing-consultancy-australia",
+    title: "Manufacturing Consultancy Australia: Designing Products for Australian Conditions",
+    excerpt:
+      "A product is not ready for Australia simply because it can be manufactured. How CPPD connects design, compliance, landed cost, service and route to market before tooling locks in.",
+    category: "Manufacturing",
+    readTime: "11 min read",
+    published: "2026-06-19",
+    heroImage: "/images/market-analysis.jpg",
+    heroAlt: "Market and demand analysis dashboards",
+    answer:
+      "A product is not ready for Australia simply because it can be manufactured. Concurrent product and process design connects design, compliance, landed cost, service and route to market before tooling locks in, so the offer arrives compliant, supportable and commercially viable.",
+    keywords: [
+      "manufacturing consultancy Australia",
+      "go-to-market strategy Australia",
+      "on-the-ground business support Australia",
+    ],
+    related: {
+      label: "Explore product commercialisation",
+      href: "/product-commercialisation",
+    },
+    relatedPosts: [
+      "manufacturing-product-launch-strategy-australia",
+    ],
+  },
+  {
+    slug: "boots-on-the-ground-australia-market-entry",
+    title: "What \"Boots on the Ground\" Should Actually Mean for Your Australian Launch",
+    excerpt:
+      "A distributor agreement signed over video calls is not a market entry strategy. What genuine local presence means for compliance, channel relationships and reading the Australian market in real time.",
+    category: "Market Entry",
+    readTime: "7 min read",
+    published: "2026-06-17",
+    heroImage: "/images/australia-skyline.jpg",
+    heroAlt: "Australian city skyline",
+    answer:
+      "A distributor agreement signed over video calls is not a market entry strategy. Genuine local presence means someone operating inside the Australian regulatory and retail reality: compliance coordination, channel relationships and reading the market in real time.",
+    keywords: [
+      "boots on the ground Australia",
+      "local market presence Australia",
+      "Australian market entry strategy",
+    ],
+    related: {
+      label: "Explore market entry",
+      href: "/market-entry-australia",
+    },
+    relatedPosts: [
+      "australian-market-entry-consultant",
+    ],
+  },
+  {
+    slug: "manufacturing-product-launch-strategy-australia",
+    title: "A Manufacturing Product Launch Strategy Only Works in One Order",
+    excerpt:
+      "Most manufacturing launch plans fail on sequencing, not engineering. Compliance shapes the specification, channel economics decide the cost structure, and the pilot comes before national inventory.",
+    category: "Manufacturing",
+    readTime: "6 min read",
+    published: "2026-06-12",
+    heroImage: "/images/video-frame-1.jpg",
+    heroAlt: "Production and launch operations",
+    answer:
+      "A manufacturing launch only works in one order: compliance shapes the specification, channel economics set the cost structure, and a controlled pilot precedes national inventory. Most failed launches broke that sequence, not the engineering.",
+    keywords: [
+      "manufacturing product launch strategy",
+      "bringing a new product to market Australia",
+      "manufacturing product development",
+    ],
+    related: {
+      label: "Explore product commercialisation",
+      href: "/product-commercialisation",
+    },
+    relatedPosts: [
+      "manufacturing-consultancy-australia",
+    ],
+  },
+  {
+    slug: "australian-market-entry-consultant",
+    title: "Australian Market Entry Consultant: What Overseas Manufacturers Need Before Launching",
+    excerpt:
+      "What an Australian market entry consultant should deliver before you commit inventory, appoint a distributor or launch: compliance scope, channel economics, pilot evidence and a costed path to first sale.",
+    category: "Market Entry",
+    readTime: "12 min read",
+    published: "2026-06-10",
+    heroImage: "/images/australia-market.jpg",
+    heroAlt: "Australian market skyline",
+    answer:
+      "Before you commit inventory or appoint a distributor, an Australian market entry consultant should deliver four things: a compliance scope, channel economics, pilot evidence and a costed path to first sale. If those are missing, you are buying a report, not a market entry.",
+    keywords: [
+      "Australian market entry consultant",
+      "go-to-market strategy Australia",
+      "on-the-ground business support Australia",
+    ],
+    related: {
+      label: "Explore market entry",
+      href: "/market-entry-australia",
+    },
+    relatedPosts: [
+      "boots-on-the-ground-australia-market-entry",
+    ],
+  },
+  {
+    slug: "retail-business-consultancy-australia",
+    title: "The Retail Business Consultancy Checklist Category Buyers Wish You'd Use First",
+    excerpt:
+      "A category buyer can spot an underprepared range pitch within the first few questions. This checklist closes the compliance, warranty and range-story gaps before the meeting, not after.",
+    category: "Consumer & Retail",
+    readTime: "6 min read",
+    published: "2026-06-05",
+    heroImage: "/images/retail-deployment.jpg",
+    heroAlt: "Product range deployed in Australian retail",
+    answer:
+      "Category buyers disqualify underprepared range pitches within the first few questions. Before the meeting, close the gaps a buyer’s legal and category team will probe: compliance evidence, warranty and service arrangements, landed-cost margin and a coherent range story.",
+    keywords: [
+      "retail business consultancy Australia",
+      "retail consulting Australia",
+      "scaling a retail range Australia",
+    ],
+    related: {
+      label: "Explore industry work",
+      href: "/industries",
+    },
+    relatedPosts: [
+      "retail-consulting-services-australia",
+      "distribution-illusion-overseas-manufacturers",
+    ],
+  },
+  {
+    slug: "business-consultancy-services-australia",
+    title: "What Actually Separates Good Business Consultancy Services From a Wasted Retainer",
+    excerpt:
+      "Comparing business consultancy services across Australia? What separates a firm that gets you to first sale from one that leaves a report is who owns the outcome after the recommendation lands.",
+    category: "Deployment Strategy",
+    readTime: "6 min read",
+    published: "2026-06-03",
+    heroImage: "/images/partnership.jpg",
+    heroAlt: "Advisory partnership working session",
+    answer:
+      "The test that separates good business consultancy services from a wasted retainer is outcome ownership: who is accountable after the recommendation lands. Choose a firm that stays engaged through compliance, channel and first sale, not one that leaves a report.",
+    keywords: [
+      "business consultancy services Australia",
+      "business consulting firm Australia",
+      "go-to-market strategist Australia",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "seven-variables-data-centre-site-australia",
+      "go-to-market-strategist-vs-business-consultant",
+      "infrastructure-moat-data-centre-selection",
+    ],
+  },
+  {
+    slug: "australia-datacentre-supercomputer-site-intelligence-2026",
+    title: "Australia's $100 Billion Data Centre and Supercomputer Build-Out: Why Site Intelligence Is Now the Scarcest Resource in the Market",
+    excerpt:
+      "Microsoft, Amazon and the Australian Government have committed over $100 billion to AI infrastructure. The bottleneck is not capital. It is the right site, understood correctly, secured fast.",
+    category: "Infrastructure",
+    readTime: "9 min read",
+    published: "2026-05-22",
+    heroImage: "/images/data-center.jpg",
+    heroAlt: "Data centre server halls",
+    answer:
+      "More than $100 billion is committed to Australian AI infrastructure, so the bottleneck is no longer capital. It is site intelligence: the right site, understood across power, connectivity, approvals, water, hazard and community, and secured faster than competitors can move.",
+    keywords: [
+      "Dainu Devis",
+      "Divine Lab Worx",
+      "Sharktech Global",
+      "data centre site selection Australia",
+      "supercomputer location Australia",
+      "AI factory site Australia",
+      "site intelligence Australia",
+      "hyperscale data centre consultant",
+      "sovereign AI factory Australia",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "dainu-devis-emerging-tech-ceo-australia",
+      "capital-ignores-physics",
+      "ai-data-centre-sites-australia",
+    ],
+  },
+  {
+    slug: "seven-variables-data-centre-site-australia",
+    title: "Seven Variables That Determine Whether Your Australian Data Centre or Supercomputer Site Will Actually Work",
+    excerpt:
+      "Most infrastructure site decisions fail because they optimise for one variable. Site intelligence means evaluating all seven, simultaneously, before a single dollar is committed. Here is how we do it.",
+    category: "Deployment Strategy",
+    readTime: "11 min read",
+    published: "2026-05-22",
+    heroImage: "/images/hero-infrastructure.jpg",
+    heroAlt: "Critical infrastructure at scale",
+    answer:
+      "A viable Australian data centre or supercomputer site has to clear seven variables at once: power, connectivity, planning, water and cooling, natural hazard, community and sovereignty, and time to energisation. Most site decisions fail because they optimise for one variable and discover the others after commitment.",
+    keywords: [
+      "data centre site selection Australia",
+      "supercomputer infrastructure",
+      "site intelligence",
+      "deployment strategy",
+      "Divine Lab Worx",
+      "Dainu Devis",
+      "Sharktech Global",
+      "AEMO connection",
+      "sovereign AI Australia",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "business-consultancy-services-australia",
+      "go-to-market-strategist-vs-business-consultant",
+      "infrastructure-moat-data-centre-selection",
+    ],
+  },
+  {
+    slug: "dainu-devis-emerging-tech-ceo-australia",
+    title: "Dainu Devis: The Emerging Tech CEO Bridging Infrastructure Intelligence and AI Platform Deployment in Australia",
+    excerpt:
+      "He built it without salary, without external capital, and without permission. Now the platforms Dainu Devis constructed inside the problem are the infrastructure layer that positions Sharktech Global and Australia for the sovereign AI era.",
+    category: "Infrastructure",
+    readTime: "9 min read",
+    published: "2026-05-22",
+    heroImage: "/images/hero-infrastructure.jpg",
+    heroAlt: "Critical infrastructure at scale",
+    answer:
+      "Dainu Devis built Sharktech Global’s platforms without salary, external capital or permission. The result is an infrastructure-intelligence and AI-deployment layer, spanning site selection, advisory and platform products, positioned for Australia’s sovereign AI era.",
+    keywords: [
+      "Dainu Devis",
+      "Sharktech Global",
+      "emerging tech CEO Australia",
+      "Divine Lab Worx",
+      "AI infrastructure Australia",
+      "Flagman ANZ",
+      "VCPility",
+      "eTakeaway Max",
+      "seed investment Australia",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "australia-datacentre-supercomputer-site-intelligence-2026",
+      "capital-ignores-physics",
+      "ai-data-centre-sites-australia",
+    ],
+  },
+  {
+    slug: "capital-ignores-physics",
+    title: "Capital Ignores Physics at Its Peril: What Palm Jumeirah Teaches Infrastructure Investors in 2026",
+    excerpt:
+      "Palm Jumeirah cost $5 billion and is visibly decaying less than twenty years later. That is not a construction problem. It is what happens when you commit capital before you truly understand the site. Dainu Devis on the discipline that separates infrastructure that endures from infrastructure that corrodes.",
+    category: "Infrastructure",
+    readTime: "8 min read",
+    published: "2026-04-24",
+    heroImage: "/images/hero-infrastructure.jpg",
+    heroAlt: "Critical infrastructure at scale",
+    answer:
+      "Palm Jumeirah cost $5 billion and is visibly decaying less than twenty years later. That is not a construction failure; it is capital committed before the site was understood. Infrastructure that endures starts with site intelligence: the physics, approvals and dependencies of a location, established before the money moves.",
+    keywords: [
+      "Dainu Devis",
+      "Divine Lab Worx",
+      "Sharktech Global",
+      "predictive maintenance",
+      "mission critical infrastructure",
+      "Palm Jumeirah",
+      "site intelligence Australia",
+      "hyperscale data centre",
+      "sovereign AI factory",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "australia-datacentre-supercomputer-site-intelligence-2026",
+      "dainu-devis-emerging-tech-ceo-australia",
+      "ai-data-centre-sites-australia",
+    ],
+  },
+  {
+    slug: "distribution-illusion-overseas-manufacturers",
+    title: "The Distribution Illusion: Why Overseas Manufacturers Fail in Australian Retail (And How to Actually Win)",
+    excerpt:
+      "Australia is one of the most profitable retail markets on the planet. It is also one of the most aggressively concentrated. For high-capacity overseas manufacturers, finding a local distributor is usually where the capital is killed.",
+    category: "Consumer & Retail",
+    readTime: "10 min read",
+    published: "2026-02-25",
+    heroImage: "/images/retail-deployment.jpg",
+    heroAlt: "Product range deployed in Australian retail",
+    answer:
+      "Appointing a local distributor is usually where overseas manufacturers’ capital is killed. Winning in Australia’s concentrated retail market means owning the channel design: compliance, landed cost, pricing integrity and retailer relationships built as one system.",
+    keywords: [
+      "overseas manufacturers",
+      "Australian retail",
+      "distribution strategy",
+      "Woolworths",
+      "Coles",
+      "market entry",
+    ],
+    related: {
+      label: "Explore industry work",
+      href: "/industries",
+    },
+    relatedPosts: [
+      "retail-business-consultancy-australia",
+      "retail-consulting-services-australia",
+    ],
+  },
+  {
+    slug: "ai-data-centre-sites-australia",
+    title: "Identifying AI Data Centre Sites in Australia: The Hidden Telco Moat and Enterprise On-Ramp",
+    excerpt:
+      "When international infrastructure providers search for a strategic consultant to help launch a new data centre in Australia, they are fundamentally looking to mitigate risk and guarantee day-one scale.",
+    category: "Infrastructure",
+    readTime: "12 min read",
+    published: "2026-02-20",
+    heroImage: "/images/data-center.jpg",
+    heroAlt: "Data centre server halls",
+    answer:
+      "An AI data centre site in Australia is won or lost on the telco moat and the enterprise on-ramp: fibre paths, network adjacency and access to the customers who will consume the capacity. Site selection is a risk-mitigation exercise that has to guarantee day-one scale, not a property search.",
+    keywords: [
+      "AI data centre",
+      "telco infrastructure",
+      "Australia",
+      "enterprise workloads",
+      "deployment architecture",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "entering-australian-data-centre-market",
+      "infrastructure-deployment-australia",
+      "capital-ignores-physics",
+    ],
+  },
+  {
+    slug: "entering-australian-data-centre-market",
+    title: "Entering the Australian Data Centre Market: Why Global Infrastructure Providers Need a Deployment Architect, Not a Real Estate Broker",
+    excerpt:
+      "When a Tier-1 global infrastructure provider is planning to set up a new data centre in Australia, the initial instinct is to search for local real estate brokers. This is a massive misallocation of capital and time.",
+    category: "Infrastructure",
+    readTime: "10 min read",
+    published: "2026-02-18",
+    heroImage: "/images/hero-infrastructure.jpg",
+    heroAlt: "Critical infrastructure at scale",
+    answer:
+      "A real estate broker finds land; a deployment architect finds a site that can be energised, connected, approved and filled with enterprise demand. Global providers entering Australia need the latter, because the constraint is not property, it is power, approvals and time to revenue.",
+    keywords: [
+      "data centre market entry",
+      "Australia",
+      "infrastructure providers",
+      "deployment architect",
+      "real estate",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "ai-data-centre-sites-australia",
+      "infrastructure-deployment-australia",
+      "capital-ignores-physics",
+    ],
+  },
+  {
+    slug: "margin-leakage-australia",
+    title: "The Hidden Cost of Margin Leakage in Australian Retail",
+    excerpt:
+      "MNCs entering Australia face a unique challenge: concentrated retail markets create pricing pressure that erodes margins within months. Learn how Sovereign Observation prevents capital erosion before it begins.",
+    category: "Capital Protection",
+    readTime: "8 min read",
+    published: "2026-02-15",
+    heroImage: "/images/market-analysis.jpg",
+    heroAlt: "Market and demand analysis dashboards",
+    answer:
+      "MNCs entering Australia routinely lose 15 to 25 per cent of planned margin within 12 to 18 months, because the concentrated retail market spreads pricing violations within days. The protection is structural: independent, always-on channel monitoring that detects variance early and provides the evidence to enforce pricing policy before erosion becomes market-wide.",
+    keywords: [
+      "margin leakage",
+      "Australia retail",
+      "pricing violations",
+      "capital protection",
+      "MNC Australia",
+    ],
+    related: {
+      label: "Explore capital-efficient growth",
+      href: "/capital-efficient-growth",
+    },
+    relatedPosts: [
+      "sovereign-observation-protocol",
+    ],
+  },
+  {
+    slug: "infrastructure-moat-data-centre-selection",
+    title: "The Infrastructure Moat: Why Data Centre Selection is No Longer an IT Procurement Exercise",
+    excerpt:
+      "Right now, the entire tech ecosystem is obsessed with hardware. But raw compute is a commodity if it sits idle. The true bottleneck is the friction of enterprise deployment.",
+    category: "Deployment Strategy",
+    readTime: "8 min read",
+    published: "2026-02-12",
+    heroImage: "/images/integrity-visual.jpg",
+    heroAlt: "Independent market monitoring visual",
+    answer:
+      "Raw compute is a commodity if it sits idle. Data centre selection is now a strategic infrastructure decision spanning power, connectivity, approvals and enterprise adjacency, not an IT procurement exercise.",
+    keywords: [
+      "infrastructure moat",
+      "data centre selection",
+      "enterprise deployment",
+      "AI infrastructure",
+      "Australia",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "deployment-architecture-vs-marketing",
+      "seven-variables-data-centre-site-australia",
+      "business-consultancy-services-australia",
+    ],
+  },
+  {
+    slug: "channel-conflict-prevention",
+    title: "Channel Conflict: Why Your Australian Distributors Are Undercutting Each Other",
+    excerpt:
+      "Unauthorized cross-selling between distribution channels destroys pricing integrity. We examine the structural causes and present the Market Integrity Framework solution.",
+    category: "Market Integrity",
+    readTime: "6 min read",
+    published: "2026-02-08",
+    heroImage: "/images/distribution-network.jpg",
+    heroAlt: "Distribution network across Australian channels",
+    answer:
+      "Channel conflict in Australia is structural, not relational: 85 per cent of the population lives in five cities, so geographic channel boundaries fail. The fix is unified monitoring across every channel, immediate alerts backed by evidence, and consistent enforcement before undercutting escalates into broken partnerships.",
+    keywords: [
+      "channel conflict",
+      "distribution strategy",
+      "Australia market",
+      "pricing integrity",
+      "MNC",
+    ],
+    related: {
+      label: "Explore channel strategy",
+      href: "/channel-strategy",
+    },
+  },
+  {
+    slug: "as-nzs-compliance",
+    title: "AS/NZS Compliance: The Non-Negotiable Entry Requirement",
+    excerpt:
+      "Australian standards are not suggestions, they are legal requirements. This guide covers the essential compliance checkpoints for engineered products entering the market.",
+    category: "Regulatory",
+    readTime: "10 min read",
+    published: "2026-01-28",
+    heroImage: "/images/compliance.jpg",
+    heroAlt: "Compliance and standards documentation review",
+    answer:
+      "AS/NZS standards are legally binding requirements, not guidelines. Engineered products need compliance scoped into the specification before launch: identify the applicable standards, certification pathways and documentation early, because retrofitting compliance after market entry costs multiples of designing it in.",
+    keywords: [
+      "AS/NZS compliance",
+      "Australian standards",
+      "product certification",
+      "regulatory requirements",
+      "market entry",
+    ],
+    related: {
+      label: "Explore market entry",
+      href: "/market-entry-australia",
+    },
+  },
+  {
+    slug: "deployment-architecture-vs-marketing",
+    title: "Deployment Architecture vs. Marketing: Why Engineering Firms Fail in Australia",
+    excerpt:
+      "The most brilliantly engineered products often fail in market deployment. The difference? Architecture. We explain why structure beats strategy in concentrated markets.",
+    category: "Deployment Strategy",
+    readTime: "7 min read",
+    published: "2026-01-15",
+    heroImage: "/images/hero-infrastructure.jpg",
+    heroAlt: "Critical infrastructure at scale",
+    answer:
+      "Engineering excellence gets a product considered; deployment architecture gets it deployed. In Australia’s concentrated market, structure, meaning compliance, channel design, pricing integrity and service, decides the outcome more reliably than marketing spend.",
+    keywords: [
+      "deployment architecture",
+      "market entry",
+      "engineering firms",
+      "Australia market",
+      "go-to-market",
+    ],
+    related: {
+      label: "Explore go-to-market strategy",
+      href: "/go-to-market-strategy",
+    },
+    relatedPosts: [
+      "infrastructure-moat-data-centre-selection",
+      "seven-variables-data-centre-site-australia",
+      "business-consultancy-services-australia",
+    ],
+  },
+  {
+    slug: "infrastructure-deployment-australia",
+    title: "Data Centre Deployment in Australia: The Regulatory Maze",
+    excerpt:
+      "From grid connection to environmental approvals, infrastructure deployment requires navigating complex regulatory pathways. Our advisory framework maps the route.",
+    category: "Infrastructure",
+    readTime: "9 min read",
+    published: "2026-01-05",
+    heroImage: "/images/data-center.jpg",
+    heroAlt: "Data centre server halls",
+    answer:
+      "Data centre deployment in Australia runs through grid connection, planning, environmental approvals and utility coordination, each with its own authority and timeline. Map the whole regulatory pathway before committing capital, because sequencing errors add years.",
+    keywords: [
+      "data centre",
+      "infrastructure deployment",
+      "Australia",
+      "regulatory pathway",
+      "grid connection",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "entering-australian-data-centre-market",
+      "ai-data-centre-sites-australia",
+      "capital-ignores-physics",
+    ],
+  },
+  {
+    slug: "sovereign-observation-protocol",
+    title: "Sovereign Observation: Independent Market Monitoring for MNCs",
+    excerpt:
+      "Why do MNCs need independent market observation? Because self-reported channel data is inherently compromised. We explain the Sovereign Observation protocol.",
+    category: "Capital Protection",
+    readTime: "5 min read",
+    published: "2025-12-20",
+    heroImage: "/images/integrity-visual.jpg",
+    heroAlt: "Independent market monitoring visual",
+    answer:
+      "Self-reported channel data is inherently compromised, because the parties reporting it are the parties being measured. Sovereign Observation is independent, always-on market monitoring that gives MNCs unfiltered visibility of pricing and channel behaviour in Australia.",
+    keywords: [
+      "sovereign observation",
+      "market monitoring",
+      "MNC",
+      "independent monitoring",
+      "capital protection",
+    ],
+    related: {
+      label: "Explore capital-efficient growth",
+      href: "/capital-efficient-growth",
+    },
+    relatedPosts: [
+      "margin-leakage-australia",
+    ],
+  },
 ];
 
 export const organisationSchema = {
