@@ -426,8 +426,8 @@ export interface Insight {
 export const insights: Insight[] = [
   {
     slug: "how-to-start-a-solar-and-battery-business-australia",
+    seoTitle: "Start a Solar and Battery Business in Australia | LYD Solar",
     title: "How to start a solar and battery business in Australia (2026 guide)",
-    seoTitle: "How to Start a Solar and Battery Business in Australia | LYD Solar",
     excerpt:
       "How to start a solar and battery installation business in Australia in 2026: licensing, SAA accreditation, and the system that wins customers.",
     category: "Launch Your Dream",
@@ -517,8 +517,8 @@ export const insights: Insight[] = [
   },
   {
     slug: "how-to-start-an-ndis-provider-business-australia",
+    seoTitle: "Start an NDIS Provider Business in Australia | LYD NDIS",
     title: "How to start an NDIS provider business in Australia (2026 guide)",
-    seoTitle: "How to Start an NDIS Provider Business in Australia | LYD NDIS",
     excerpt:
       "How to start an NDIS provider business in Australia in 2026: registration, worker screening, and the growth system that wins participants.",
     category: "Launch Your Dream",
@@ -604,8 +604,8 @@ export const insights: Insight[] = [
   },
   {
     slug: "surviving-the-ai-era-business-consulting",
+    seoTitle: "Surviving the AI Era: Business Consulting | DivineLab Worx",
     title: "How to survive the AI era: a business consulting guide",
-    seoTitle: "How to Survive the AI Era: A Business Consulting Guide | DivineLab Worx",
     excerpt:
       "About 95% of AI pilots return nothing measurable. Surviving the AI era is a business problem, not a tech one. What separates the winners, and how to be one.",
     category: "AI Advisory",
@@ -689,8 +689,8 @@ export const insights: Insight[] = [
   },
   {
     slug: "australia-data-centre-power-constraints-2026",
+    seoTitle: "Power Decides Australia's Data Centre Boom | DivineLab Worx",
     title: "Why power, not capital, now decides Australia's data centre boom",
-    seoTitle: "Why Power, Not Capital, Decides Australia's Data Centre Boom | DivineLab Worx",
     excerpt:
       "Australia has 5.4 GW of data centre demand stuck in AEMO's grid queue. Why power, not capital, is now the binding constraint on development in 2026.",
     category: "Infrastructure",
@@ -773,8 +773,8 @@ export const insights: Insight[] = [
   },
   {
     slug: "aemc-30mw-data-centre-grid-connection-rule",
+    seoTitle: "AEMC 30MW Rule for Data Centre Connections | DivineLab Worx",
     title: "The AEMC 30MW rule and what it means for Australian data centres",
-    seoTitle: "The AEMC 30MW Rule for Data Centre Grid Connections | DivineLab Worx",
     excerpt:
       "The AEMC's 2026 draft rule raises the large load threshold to 30 MW and mandates ride through for data centres. What Australian operators must now do.",
     category: "Regulatory",
@@ -853,8 +853,8 @@ export const insights: Insight[] = [
   },
   {
     slug: "soci-act-data-centre-critical-infrastructure-2026",
+    seoTitle: "Data Centres as Critical Infrastructure | DivineLab Worx",
     title: "Is your data centre a critical infrastructure asset? A 2026 SOCI Act guide",
-    seoTitle: "Is Your Data Centre a Critical Infrastructure Asset? | DivineLab Worx",
     excerpt:
       "The SOCI Act can capture data centres based on whose data they hold, not their size. A 2026 guide to the obligations and incident reporting clocks.",
     category: "Compliance",
@@ -933,8 +933,8 @@ export const insights: Insight[] = [
   },
   {
     slug: "how-to-choose-a-data-centre-site-in-australia",
+    seoTitle: "Choosing a Data Centre Site in Australia | DivineLab Worx",
     title: "How to choose a data centre site in Australia: the five tests that decide viability",
-    seoTitle: "How to Choose a Data Centre Site in Australia: The Five Tests | DivineLab Worx",
     excerpt:
       "How to choose a data centre site in Australia: the five pillar test of power, zoning, fibre, water and readiness that shows if a site is build ready.",
     category: "Infrastructure",
@@ -1017,6 +1017,7 @@ export const insights: Insight[] = [
   },
   {
     slug: 'concurrent-product-process-design-business-strategy',
+    seoTitle: "Concurrent Product and Process Design | DivineLab Worx",
     title: 'Concurrent Product and Process Design for business strategy',
     excerpt:
       'How concurrent product and process design connects market strategy, the offer, delivery capability, economics and evidence before major commitments are made.',
@@ -1150,6 +1151,7 @@ export const insights: Insight[] = [
   },
   {
     slug: 'national-channel-that-does-not-fail',
+    seoTitle: "A National Channel That Does Not Fail | DivineLab Worx",
     title: 'Building a national channel that does not fail',
     excerpt:
       'The partner economics, operating roles, coverage measures and service obligations that make national distribution durable.',
@@ -1182,6 +1184,7 @@ export const insights: Insight[] = [
   },
   {
     slug: 'fund-growth-from-within',
+    seoTitle: "Fund Growth From Within | DivineLab Worx",
     title: 'Fund growth from within before you raise capital',
     excerpt:
       'A practical framework for releasing cash, improving working capital and building demand evidence before seeking outside funding.',
@@ -1214,6 +1217,7 @@ export const insights: Insight[] = [
   },
   {
     slug: 'where-critical-infrastructure-belongs',
+    seoTitle: "Where Critical Infrastructure Belongs | DivineLab Worx",
     title: 'Finding where critical infrastructure belongs',
     excerpt:
       'Why data centre and critical infrastructure site decisions require power, planning, fibre, water, land and delivery evidence in one view.',
@@ -1246,9 +1250,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "smb-ai-enablement-australia-market-entry",
+    seoTitle: "SMB AI Enablement Platform Market Entry | DivineLab Worx",
     title: "Taking an SMB AI Enablement Platform to Market in Australia",
     excerpt:
-      "SMB AI platforms sell on a different cycle to enterprise. Distribution through trusted intermediaries, fast onboarding and a provable new-revenue story decide whether it scales.",
+      "SMB AI platforms sell on a different cycle to enterprise. Distribution through trusted intermediaries and a provable revenue story decide whether it scales.",
     category: "AI & Technology",
     readTime: "6 min read",
     published: "2026-07-15",
@@ -1272,9 +1277,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "agentic-ai-deployment-australia",
+    seoTitle: "Agentic AI Deployment Australia | DivineLab Worx",
     title: "What Agentic AI Deployment in Australia Actually Requires From a Vendor",
     excerpt:
-      "Australian organisations want agentic AI and worry about governance in equal measure. What a vendor needs resolved before enterprise buyers commit past the pilot.",
+      "What an agentic AI vendor needs resolved on governance, compliance and pilot evidence before Australian enterprise buyers commit past the pilot.",
     category: "AI & Technology",
     readTime: "6 min read",
     published: "2026-07-10",
@@ -1298,9 +1304,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "ai-business-transformation-australia-market-entry",
+    seoTitle: "AI Transformation Platform Market Entry | DivineLab Worx",
     title: "Bringing an AI Business Transformation Platform to Market in Australia",
     excerpt:
-      "Australian SMEs hit 44 percent AI adoption, but an AI platform still needs the Privacy Act mapped, a channel strategy and pilot evidence before the sales team goes wide.",
+      "Australian SMEs hit 44 per cent AI adoption, but an AI platform still needs the Privacy Act mapped, a channel strategy and pilot evidence before selling wide.",
     category: "AI & Technology",
     readTime: "6 min read",
     published: "2026-07-08",
@@ -1324,9 +1331,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "product-launch-consulting-australia",
+    seoTitle: "Product Launch Consulting Australia | DivineLab Worx",
     title: "Product Launch Consulting Australia: Why Strategy Needs Boots on the Ground",
     excerpt:
-      "A launch plan created overseas can look complete and still fail in execution. Why product launch consulting needs local validation, controlled pilots and boots on the ground.",
+      "A launch plan created overseas can look complete and still fail in execution. Why launch consulting needs local validation, pilots and boots on the ground.",
     category: "Product Launch",
     readTime: "11 min read",
     published: "2026-07-03",
@@ -1349,9 +1357,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "product-launch-strategy-australia",
+    seoTitle: "Product Launch Strategy Australia | DivineLab Worx",
     title: "Three Patterns Behind Every Stalled Product Launch Strategy in Australia",
     excerpt:
-      "When a launch stalls in Australia, the product is rarely the problem. Three sequencing patterns explain most of them, and all three are avoidable before the budget is committed.",
+      "When a launch stalls in Australia, the product is rarely the problem. Three avoidable sequencing patterns explain most of them.",
     category: "Product Launch",
     readTime: "6 min read",
     published: "2026-07-01",
@@ -1374,9 +1383,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "retail-consulting-services-australia",
+    seoTitle: "Retail Consulting Services Australia | DivineLab Worx",
     title: "Retail Consulting Services Australia: From Product Range to First Sale",
     excerpt:
-      "Good retail consulting is not marketing or store design. From range architecture and supplier readiness to landed cost, channel and after-sales, a range has to work as one commercial system.",
+      "Retail consulting is not marketing or store design. From range architecture to landed cost and after-sales, a range has to work as one commercial system.",
     category: "Consumer & Retail",
     readTime: "12 min read",
     published: "2026-06-26",
@@ -1400,9 +1410,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "go-to-market-strategist-vs-business-consultant",
+    seoTitle: "Go-to-Market Strategist vs Business Consultant",
     title: "Go-to-Market Strategist vs Business Consultant, Compared Honestly",
     excerpt:
-      "Both titles show up on the same shortlist. Compared side by side, the scope splits at one question: who owns the outcome when compliance and channel timing collide.",
+      "Both titles appear on the same shortlist. The scope splits at one question: who owns the outcome when compliance and channel timing collide.",
     category: "Deployment Strategy",
     readTime: "5 min read",
     published: "2026-06-24",
@@ -1426,9 +1437,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "manufacturing-consultancy-australia",
+    seoTitle: "Manufacturing Consultancy Australia | DivineLab Worx",
     title: "Manufacturing Consultancy Australia: Designing Products for Australian Conditions",
     excerpt:
-      "A product is not ready for Australia simply because it can be manufactured. How CPPD connects design, compliance, landed cost, service and route to market before tooling locks in.",
+      "How CPPD connects design, compliance, landed cost, service and route to market before tooling locks in, so the product arrives ready for Australia.",
     category: "Manufacturing",
     readTime: "11 min read",
     published: "2026-06-19",
@@ -1451,9 +1463,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "boots-on-the-ground-australia-market-entry",
+    seoTitle: "Boots on the Ground: Australia Launch | DivineLab Worx",
     title: "What \"Boots on the Ground\" Should Actually Mean for Your Australian Launch",
     excerpt:
-      "A distributor agreement signed over video calls is not a market entry strategy. What genuine local presence means for compliance, channel relationships and reading the Australian market in real time.",
+      "A distributor agreement signed over video calls is not a market entry strategy. What local presence really means for compliance and channel relationships.",
     category: "Market Entry",
     readTime: "7 min read",
     published: "2026-06-17",
@@ -1476,9 +1489,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "manufacturing-product-launch-strategy-australia",
+    seoTitle: "Manufacturing Product Launch Strategy | DivineLab Worx",
     title: "A Manufacturing Product Launch Strategy Only Works in One Order",
     excerpt:
-      "Most manufacturing launch plans fail on sequencing, not engineering. Compliance shapes the specification, channel economics decide the cost structure, and the pilot comes before national inventory.",
+      "Most manufacturing launch plans fail on sequencing, not engineering. Compliance shapes the spec, channel economics set costs, and the pilot precedes inventory.",
     category: "Manufacturing",
     readTime: "6 min read",
     published: "2026-06-12",
@@ -1501,9 +1515,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "australian-market-entry-consultant",
+    seoTitle: "Australian Market Entry Consultant | DivineLab Worx",
     title: "Australian Market Entry Consultant: What Overseas Manufacturers Need Before Launching",
     excerpt:
-      "What an Australian market entry consultant should deliver before you commit inventory, appoint a distributor or launch: compliance scope, channel economics, pilot evidence and a costed path to first sale.",
+      "What a market entry consultant should deliver before you commit inventory: compliance scope, channel economics, pilot evidence and a costed path to first sale.",
     category: "Market Entry",
     readTime: "12 min read",
     published: "2026-06-10",
@@ -1526,9 +1541,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "retail-business-consultancy-australia",
+    seoTitle: "Retail Business Consultancy Checklist | DivineLab Worx",
     title: "The Retail Business Consultancy Checklist Category Buyers Wish You'd Use First",
     excerpt:
-      "A category buyer can spot an underprepared range pitch within the first few questions. This checklist closes the compliance, warranty and range-story gaps before the meeting, not after.",
+      "A category buyer spots an underprepared range pitch within minutes. The checklist that closes compliance, warranty and range-story gaps before the meeting.",
     category: "Consumer & Retail",
     readTime: "6 min read",
     published: "2026-06-05",
@@ -1552,9 +1568,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "business-consultancy-services-australia",
+    seoTitle: "Business Consultancy Services Australia | DivineLab Worx",
     title: "What Actually Separates Good Business Consultancy Services From a Wasted Retainer",
     excerpt:
-      "Comparing business consultancy services across Australia? What separates a firm that gets you to first sale from one that leaves a report is who owns the outcome after the recommendation lands.",
+      "What separates a consultancy that gets you to first sale from one that leaves a report: who owns the outcome after the recommendation lands.",
     category: "Deployment Strategy",
     readTime: "6 min read",
     published: "2026-06-03",
@@ -1579,9 +1596,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "australia-datacentre-supercomputer-site-intelligence-2026",
+    seoTitle: "Data Centre Site Intelligence Australia | DivineLab Worx",
     title: "Australia's $100 Billion Data Centre and Supercomputer Build-Out: Why Site Intelligence Is Now the Scarcest Resource in the Market",
     excerpt:
-      "Microsoft, Amazon and the Australian Government have committed over $100 billion to AI infrastructure. The bottleneck is not capital. It is the right site, understood correctly, secured fast.",
+      "Over $100 billion is committed to Australian AI infrastructure. The bottleneck is not capital. It is the right site, understood correctly, secured fast.",
     category: "Infrastructure",
     readTime: "9 min read",
     published: "2026-05-22",
@@ -1612,9 +1630,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "seven-variables-data-centre-site-australia",
+    seoTitle: "Seven Variables of a Data Centre Site | DivineLab Worx",
     title: "Seven Variables That Determine Whether Your Australian Data Centre or Supercomputer Site Will Actually Work",
     excerpt:
-      "Most infrastructure site decisions fail because they optimise for one variable. Site intelligence means evaluating all seven, simultaneously, before a single dollar is committed. Here is how we do it.",
+      "Most site decisions fail because they optimise one variable. The seven that decide whether an Australian data centre site will actually work.",
     category: "Deployment Strategy",
     readTime: "11 min read",
     published: "2026-05-22",
@@ -1645,9 +1664,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "dainu-devis-emerging-tech-ceo-australia",
+    seoTitle: "Dainu Devis: Emerging Tech CEO Australia | DivineLab Worx",
     title: "Dainu Devis: The Emerging Tech CEO Bridging Infrastructure Intelligence and AI Platform Deployment in Australia",
     excerpt:
-      "He built it without salary, without external capital, and without permission. Now the platforms Dainu Devis constructed inside the problem are the infrastructure layer that positions Sharktech Global and Australia for the sovereign AI era.",
+      "How Dainu Devis built Sharktech Global's platforms without salary or external capital, and why they now position Australia for the sovereign AI era.",
     category: "Infrastructure",
     readTime: "9 min read",
     published: "2026-05-22",
@@ -1678,9 +1698,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "capital-ignores-physics",
+    seoTitle: "Capital Ignores Physics at Its Peril | DivineLab Worx",
     title: "Capital Ignores Physics at Its Peril: What Palm Jumeirah Teaches Infrastructure Investors in 2026",
     excerpt:
-      "Palm Jumeirah cost $5 billion and is visibly decaying less than twenty years later. That is not a construction problem. It is what happens when you commit capital before you truly understand the site. Dainu Devis on the discipline that separates infrastructure that endures from infrastructure that corrodes.",
+      "Palm Jumeirah cost $5 billion and is decaying within twenty years. What committing capital before understanding the site really costs infrastructure investors.",
     category: "Infrastructure",
     readTime: "8 min read",
     published: "2026-04-24",
@@ -1711,9 +1732,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "distribution-illusion-overseas-manufacturers",
+    seoTitle: "Distribution Illusion in Australian Retail | DivineLab Worx",
     title: "The Distribution Illusion: Why Overseas Manufacturers Fail in Australian Retail (And How to Actually Win)",
     excerpt:
-      "Australia is one of the most profitable retail markets on the planet. It is also one of the most aggressively concentrated. For high-capacity overseas manufacturers, finding a local distributor is usually where the capital is killed.",
+      "Australia is among the most profitable and most concentrated retail markets. Why appointing a distributor is where overseas manufacturers' capital gets killed.",
     category: "Consumer & Retail",
     readTime: "10 min read",
     published: "2026-02-25",
@@ -1740,9 +1762,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "ai-data-centre-sites-australia",
+    seoTitle: "AI Data Centre Sites Australia | DivineLab Worx",
     title: "Identifying AI Data Centre Sites in Australia: The Hidden Telco Moat and Enterprise On-Ramp",
     excerpt:
-      "When international infrastructure providers search for a strategic consultant to help launch a new data centre in Australia, they are fundamentally looking to mitigate risk and guarantee day-one scale.",
+      "How Australia's retrofittable telco estate and a mapped enterprise on-ramp decide which AI data centre sites actually work, and how fast they reach revenue.",
     category: "Infrastructure",
     readTime: "12 min read",
     published: "2026-02-20",
@@ -1769,9 +1792,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "entering-australian-data-centre-market",
+    seoTitle: "Entering the Australian Data Centre Market | DivineLab Worx",
     title: "Entering the Australian Data Centre Market: Why Global Infrastructure Providers Need a Deployment Architect, Not a Real Estate Broker",
     excerpt:
-      "When a Tier-1 global infrastructure provider is planning to set up a new data centre in Australia, the initial instinct is to search for local real estate brokers. This is a massive misallocation of capital and time.",
+      "Global infrastructure providers entering Australia don't need a real estate broker. They need a deployment architect who controls enterprise utilisation.",
     category: "Infrastructure",
     readTime: "10 min read",
     published: "2026-02-18",
@@ -1798,9 +1822,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "margin-leakage-australia",
+    seoTitle: "Margin Leakage in Australian Retail | DivineLab Worx",
     title: "The Hidden Cost of Margin Leakage in Australian Retail",
     excerpt:
-      "MNCs entering Australia face a unique challenge: concentrated retail markets create pricing pressure that erodes margins within months. Learn how Sovereign Observation prevents capital erosion before it begins.",
+      "Concentrated Australian retail erodes MNC margins within months. How independent monitoring prevents capital erosion before it begins.",
     category: "Capital Protection",
     readTime: "8 min read",
     published: "2026-02-15",
@@ -1825,9 +1850,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "infrastructure-moat-data-centre-selection",
+    seoTitle: "Infrastructure Moat: Data Centre Selection | DivineLab Worx",
     title: "The Infrastructure Moat: Why Data Centre Selection is No Longer an IT Procurement Exercise",
     excerpt:
-      "Right now, the entire tech ecosystem is obsessed with hardware. But raw compute is a commodity if it sits idle. The true bottleneck is the friction of enterprise deployment.",
+      "Raw compute is a commodity if it sits idle. Why data centre selection is now a strategic infrastructure decision, not an IT procurement exercise.",
     category: "Deployment Strategy",
     readTime: "8 min read",
     published: "2026-02-12",
@@ -1854,9 +1880,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "channel-conflict-prevention",
+    seoTitle: "Channel Conflict in Australian Distribution | DivineLab Worx",
     title: "Channel Conflict: Why Your Australian Distributors Are Undercutting Each Other",
     excerpt:
-      "Unauthorized cross-selling between distribution channels destroys pricing integrity. We examine the structural causes and present the Market Integrity Framework solution.",
+      "Unauthorized cross-selling between distribution channels destroys pricing integrity. The structural causes and the monitoring that prevents them.",
     category: "Market Integrity",
     readTime: "6 min read",
     published: "2026-02-08",
@@ -1878,9 +1905,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "as-nzs-compliance",
+    seoTitle: "AS/NZS Compliance for Market Entry | DivineLab Worx",
     title: "AS/NZS Compliance: The Non-Negotiable Entry Requirement",
     excerpt:
-      "Australian standards are not suggestions, they are legal requirements. This guide covers the essential compliance checkpoints for engineered products entering the market.",
+      "AS/NZS standards are legal requirements, not suggestions. The essential compliance checkpoints for engineered products entering the Australian market.",
     category: "Regulatory",
     readTime: "10 min read",
     published: "2026-01-28",
@@ -1902,9 +1930,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "deployment-architecture-vs-marketing",
+    seoTitle: "Deployment Architecture vs Marketing | DivineLab Worx",
     title: "Deployment Architecture vs. Marketing: Why Engineering Firms Fail in Australia",
     excerpt:
-      "The most brilliantly engineered products often fail in market deployment. The difference? Architecture. We explain why structure beats strategy in concentrated markets.",
+      "Brilliantly engineered products still fail in deployment. Why structure beats strategy in Australia's concentrated markets.",
     category: "Deployment Strategy",
     readTime: "7 min read",
     published: "2026-01-15",
@@ -1931,9 +1960,10 @@ export const insights: Insight[] = [
   },
   {
     slug: "infrastructure-deployment-australia",
+    seoTitle: "Data Centre Regulatory Pathways Australia | DivineLab Worx",
     title: "Data Centre Deployment in Australia: The Regulatory Maze",
     excerpt:
-      "From grid connection to environmental approvals, infrastructure deployment requires navigating complex regulatory pathways. Our advisory framework maps the route.",
+      "From grid connection to environmental approvals, the regulatory pathways that decide Australian data centre deployment timelines.",
     category: "Infrastructure",
     readTime: "9 min read",
     published: "2026-01-05",
@@ -1960,6 +1990,7 @@ export const insights: Insight[] = [
   },
   {
     slug: "sovereign-observation-protocol",
+    seoTitle: "Sovereign Observation: Market Monitoring | DivineLab Worx",
     title: "Sovereign Observation: Independent Market Monitoring for MNCs",
     excerpt:
       "Why do MNCs need independent market observation? Because self-reported channel data is inherently compromised. We explain the Sovereign Observation protocol.",
