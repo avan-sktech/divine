@@ -18,8 +18,8 @@ const description =
     eyebrow="Contact"
     title="Start an <em>engagement.</em>"
     support="Tell us where you are and what the decision is."
-    primaryLabel="Send an enquiry"
-    primaryHref="#enquiry-form"
+    primaryLabel="Email us directly"
+    primaryHref={`mailto:${site.email}`}
     secondaryLabel="Call us"
     secondaryHref={`tel:${site.phone}`}
     code="ENG / INTL"
@@ -53,32 +53,114 @@ const description =
         </div>
       </div>
 
-      <div class="contact-form-embed" id="enquiry-form" data-reveal>
-        <iframe
-          src="https://ghllinks.sharktech.com.au/widget/form/IlR1NFfnUvT1ZjzbF9jB"
-          style="width:100%;height:100%;border:none;border-radius:8px"
-          id="inline-IlR1NFfnUvT1ZjzbF9jB"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="divinelabworx form"
-          data-height="853"
-          data-layout-iframe-id="inline-IlR1NFfnUvT1ZjzbF9jB"
-          data-form-id="IlR1NFfnUvT1ZjzbF9jB"
-          title="divinelabworx form"
-        >
-        </iframe>
-        <script is:inline src="https://ghllinks.sharktech.com.au/js/form_embed.js"></script>
-      </div>
+      <form class="contact-form" id="contact-form" data-reveal>
+        <fieldset>
+          <legend>What would you like to discuss?</legend>
+          <div class="contact-choice">
+            <label>
+              <input type="radio" name="enquiry_type" value="Go-to-market strategy and market entry" checked />
+              <span>Go-to-market and market entry</span>
+            </label>
+            <label>
+              <input type="radio" name="enquiry_type" value="Channel strategy" />
+              <span>Channel strategy</span>
+            </label>
+            <label>
+              <input type="radio" name="enquiry_type" value="Product and construction commercialisation" />
+              <span>Product commercialisation</span>
+            </label>
+            <label>
+              <input type="radio" name="enquiry_type" value="AI advisory and governance" />
+              <span>AI advisory</span>
+            </label>
+            <label>
+              <input type="radio" name="enquiry_type" value="Capital-efficient growth and Latent Growth Audit" />
+              <span>Capital-efficient growth</span>
+            </label>
+            <label>
+              <input type="radio" name="enquiry_type" value="Critical infrastructure" />
+              <span>Critical infrastructure</span>
+            </label>
+            <label>
+              <input type="radio" name="enquiry_type" value="General enquiry" />
+              <span>General enquiry</span>
+            </label>
+          </div>
+        </fieldset>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="company">Organisation</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">What decision are you working toward?</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="button button-primary" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+        <p class="form-note">Submitting opens your email application with the enquiry prepared. No information is sent to a third-party form service.</p>
+      </form>
     </div>
   </section>
+
+  <script define:vars={{ recipient: site.email }}>
+    const form = document.getElementById('contact-form');
+    const requestedType = new URLSearchParams(window.location.search).get('type');
+    const typeMap = {
+      'latent-growth-audit': 'Capital-efficient growth and Latent Growth Audit',
+      'capital-efficient-growth': 'Capital-efficient growth and Latent Growth Audit',
+      'go-to-market': 'Go-to-market strategy and market entry',
+      'market-entry': 'Go-to-market strategy and market entry',
+      'channel-strategy': 'Channel strategy',
+      'product-commercialisation': 'Product and construction commercialisation',
+      'ai-advisory': 'AI advisory and governance',
+      infrastructure: 'Critical infrastructure',
+      retail: 'Go-to-market strategy and market entry',
+      manufacturing: 'Go-to-market strategy and market entry',
+      construction: 'Product and construction commercialisation',
+      // retired key: /contact?type=sustainable-homes links are still in the wild
+      'sustainable-homes': 'Product and construction commercialisation',
+    };
+    if (requestedType && typeMap[requestedType]) {
+      const preferred = form?.querySelector(`input[name="enquiry_type"][value="${typeMap[requestedType]}"]`);
+      if (preferred instanceof HTMLInputElement) preferred.checked = true;
+    }
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!(form instanceof HTMLFormElement) || !form.reportValidity()) return;
+      const data = new FormData(form);
+      const name = String(data.get('name') || '');
+      const company = String(data.get('company') || '');
+      const email = String(data.get('email') || '');
+      const phone = String(data.get('phone') || '');
+      const enquiryType = String(data.get('enquiry_type') || '');
+      const message = String(data.get('message') || '');
+      const subject = encodeURIComponent(`DivineLab Worx enquiry: ${enquiryType}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nOrganisation: ${company}\nEmail: ${email}\nPhone: ${phone}\nEnquiry: ${enquiryType}\n\nDecision and context:\n${message}`,
+      );
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    });
+  </script>
 </BaseLayout>
 
 <style>
-  .contact-form-embed iframe{min-height:853px}
+  .contact-form fieldset{padding:0;margin:0;border:0}
+  .contact-form legend{margin-bottom:1rem;font-size:.75rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
   .contact-grid>div h2{font-family:var(--display);font-size:clamp(3rem,5vw,5.8rem);font-weight:470;letter-spacing:-.045em;line-height:.92;text-transform:none}
 </style>
