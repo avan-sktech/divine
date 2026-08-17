@@ -18,8 +18,8 @@ const description =
     eyebrow="Contact"
     title="Start an <em>engagement.</em>"
     support="Tell us where you are and what the decision is."
-    primaryLabel="Email us directly"
-    primaryHref={`mailto:${site.email}`}
+    primaryLabel="Send an enquiry"
+    primaryHref="#enquiry-form"
     secondaryLabel="Call us"
     secondaryHref={`tel:${site.phone}`}
     code="ENG / INTL"
@@ -53,7 +53,7 @@ const description =
         </div>
       </div>
 
-      <div class="contact-form-embed" data-reveal>
+      <div class="contact-form-embed" id="enquiry-form" data-reveal>
         <iframe
           src="https://ghllinks.sharktech.com.au/widget/form/IlR1NFfnUvT1ZjzbF9jB"
           style="width:100%;height:100%;border:none;border-radius:8px"
