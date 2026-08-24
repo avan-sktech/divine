@@ -27,6 +27,7 @@ interface Props {
   pageClass?: string;
   article?: boolean;
   noindex?: boolean;
+  keywords?: string;
 }
 
 const {
@@ -41,6 +42,7 @@ const {
   pageClass = '',
   article = false,
   noindex = false,
+  keywords,
 } = Astro.props;
 const canonical = new URL(canonicalPath, site.url).toString();
 const socialImage = new URL(image, site.url).toString();
@@ -76,6 +78,7 @@ const schemas = [organisationSchema, websiteSchema, webPageSchema, ...pageSchema
     <meta name="format-detection" content="telephone=no" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta name="author" content={site.legalName} />
     <meta
       name="robots"
