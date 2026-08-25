@@ -425,6 +425,271 @@ export interface Insight {
 
 export const insights: Insight[] = [
   {
+    slug: "designing-safety-into-industrial-systems-north",
+    seoTitle: "Designing Safety Into Industrial Systems | DivineLab Worx",
+    title: "Designing Safety Into the Industrial Systems of the North",
+    excerpt:
+      "Safety added late fights the system. Safety designed in strengthens it. The Northern Territory and Western Australia can still build it right the first time.",
+    category: "Infrastructure",
+    readTime: "6 min read",
+    published: "2026-08-25",
+    heroImage: "/images/concrete-structure.jpg",
+    heroAlt: "Industrial structure under construction",
+    heroHeading: "Designing safety into <em>the industrial systems of the north.</em>",
+    heroSupport:
+      "Most problems on a site were decided long before it opened. Safety is no different. Added late, it fights the design. Built in, it becomes part of how the system wins. The north can still choose the second path.",
+    answerQuestion: "Why does designing safety in beat bolting it on?",
+    answer:
+      "Safety bolted on fights the system it was added to; safety designed in strengthens it. Much of the north's next capacity is still on the drawing board, so safety can be developed concurrently with process, economics and evidence rather than retrofitted at far greater cost. Do that, and the region skips the expensive retrofits every mature economy is now stuck with.",
+    keywords: [
+      "safety by design",
+      "industrial systems design",
+      "concurrent design method",
+      "infrastructure design Australia",
+      "mine site planning",
+      "industrial intelligence architecture",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "site-data-economic-asset-industrial-risk",
+      "edge-and-sovereignty-design-principle-remote-australia",
+    ],
+    faqs: [
+      {
+        question: "What does designing safety into a system mean?",
+        answer:
+          "It means building safety into how an operation is designed, alongside process, economics and evidence. Not adding monitoring after the site is running. Designed in, safety shapes layout, data and workflow. Added on, it fights them.",
+      },
+      {
+        question: "Why can the north build this correctly the first time?",
+        answer:
+          "Much of the Northern Territory and Western Australia's next capacity is still on the drawing board. New systems can carry safety intelligence from the outset. That is far cheaper and more effective than retrofitting mature sites.",
+      },
+      {
+        question: "What is concurrent design?",
+        answer:
+          "It develops strategy, offer, operations, economics and evidence at the same time, not in sequence. Decisions are tested against each other early. Safety, process and economics get resolved together instead of traded off late.",
+      },
+    ],
+  },
+  {
+    slug: "site-data-economic-asset-industrial-risk",
+    seoTitle: "Site Data Is an Economic Asset | DivineLab Worx",
+    title: "The Data a Site Produces Is an Economic Asset: Rethinking Industrial Risk in the North",
+    excerpt:
+      "Every site already produces a record of how it runs. Most of it is thrown away, including the near misses that predict the next incident.",
+    category: "Infrastructure",
+    readTime: "6 min read",
+    published: "2026-08-25",
+    heroImage: "/images/command-center.jpg",
+    heroAlt: "Operations centre monitoring live site data",
+    heroHeading: "The data a site produces is <em>an economic asset.</em>",
+    heroSupport:
+      "Every site already records how it truly runs. Most of that record is watched for a second, then thrown away. Inside it sits some of the most valuable information the operation will ever produce.",
+    answerQuestion: "What is a site's data actually worth?",
+    answer:
+      "A site's data is an asset, not exhaust. Read properly, it shows where risk, waste and lost output gather. Near misses are the richest safety signal an operation produces and the one most reliably discarded, because reporting them depends on people volunteering information they are too busy to write up. Capture and read that data automatically and risk management shifts from reacting to preventing.",
+    keywords: [
+      "industrial data as an asset",
+      "near miss reporting",
+      "operational risk management",
+      "site data analytics",
+      "predictive safety",
+      "mining risk intelligence",
+    ],
+    related: {
+      label: "Explore infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "designing-safety-into-industrial-systems-north",
+      "edge-and-sovereignty-design-principle-remote-australia",
+    ],
+    faqs: [
+      {
+        question: "Why is operational site data an economic asset?",
+        answer:
+          "A site's cameras, sensors and machines record how it really runs. Read well, that record shows where risk, waste and lost production gather. That is information an operator can act on to cut cost and lift output. Left unread, it is value discarded.",
+      },
+      {
+        question: "Why are near misses so valuable?",
+        answer:
+          "A near miss could have caused harm but did not. Near misses come before almost every serious incident. They point to where the next one is likely. People under report them, so capturing them automatically turns the best safety signal from invisible into usable.",
+      },
+      {
+        question: "How does this change risk management in the NT and WA?",
+        answer:
+          "It shifts risk from reacting after an incident to acting on patterns before one. In remote, high consequence Northern Territory and Western Australia operations, that shift lowers both human and economic risk.",
+      },
+    ],
+  },
+  {
+    slug: "edge-and-sovereignty-design-principle-remote-australia",
+    seoTitle: "Edge and Sovereignty as One Design Choice | DivineLab Worx",
+    title: "Why Edge and Sovereignty Belong Together: An Infrastructure Design Principle for Remote Australia",
+    excerpt:
+      "Poor connectivity and data sovereignty look like separate problems. Processing at the edge answers both, which makes it a founding principle for the NT and WA.",
+    category: "Infrastructure",
+    readTime: "6 min read",
+    published: "2026-08-25",
+    heroImage: "/images/data-center.jpg",
+    heroAlt: "Edge compute infrastructure",
+    heroHeading: "Why edge and sovereignty <em>belong together.</em>",
+    heroSupport:
+      "Remote Australia has two hard problems. Connectivity is poor, so cloud-dependent systems struggle. And we do not want the operating data of strategic sites leaving the country. They look like two problems. One design decision solves both.",
+    answerQuestion: "Why are edge and sovereignty the same decision?",
+    answer:
+      "Poor connectivity and data sovereignty are usually treated as separate problems with separate solutions. Processing at the edge solves both at once: the system keeps working where networks are thin, and sensitive data never has to leave the site to be useful. For the Northern Territory and Western Australia, that makes edge-first a founding principle rather than an afterthought.",
+    keywords: [
+      "edge computing industrial",
+      "data sovereignty Australia",
+      "remote operations technology",
+      "sovereign infrastructure design",
+      "edge AI mining",
+      "Australian data control",
+    ],
+    related: {
+      label: "Explore critical infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "sovereign-industrial-intelligence-design-choice",
+      "designing-safety-into-industrial-systems-north",
+    ],
+    faqs: [
+      {
+        question: "What is edge computing in industry?",
+        answer:
+          "It runs the analysis on hardware at the site, not in a distant cloud. In industry that lets a system read camera and sensor data in real time on the floor. It keeps working even where connectivity is poor or absent.",
+      },
+      {
+        question: "Why do edge and sovereignty go together?",
+        answer:
+          "When processing happens at the edge, sensitive data does not have to leave the site. That one choice delivers real-time performance in remote conditions and local control of the data. Edge and data sovereignty become the same decision.",
+      },
+      {
+        question: "Why does this matter for the NT and WA?",
+        answer:
+          "Remote Northern Territory and Western Australia sites have thin connectivity and often sit on strategic assets. Edge processing solves the connectivity problem and the sovereignty problem at once. That makes it a sound founding principle.",
+      },
+    ],
+  },
+  {
+    slug: "sovereign-industrial-intelligence-design-choice",
+    seoTitle: "Sovereign Industrial Intelligence Is a Design Choice | DivineLab Worx",
+    title: "Sovereign Industrial Intelligence: A Design Choice, Not a Procurement One",
+    excerpt:
+      "Sovereignty does not come from the logo on the invoice. It comes from the architecture, and it is decided at the design stage, not the buying stage.",
+    category: "Infrastructure",
+    readTime: "6 min read",
+    published: "2026-08-25",
+    heroImage: "/images/australia-technical-architecture.svg",
+    heroAlt: "Technical architecture diagram",
+    heroHeading: "Sovereign industrial intelligence is <em>a design choice.</em>",
+    heroSupport:
+      "People talk about sovereignty as something you buy. Pick the local supplier. Tick the box. Done. That misses where sovereignty comes from. It is set in the design of the system, and by the time you choose a vendor the big decisions are often already made.",
+    answerQuestion: "Where does sovereignty actually come from?",
+    answer:
+      "Sovereignty comes from the architecture, not the logo on the invoice. Where data is processed, who governs the platform and under whose law, and whether the skills to run it exist locally are all design decisions. A site built around offshore data flows cannot be made sovereign later without a rebuild, so ownership, edge processing and local skills have to be written into the design brief from the start.",
+    keywords: [
+      "sovereign industrial intelligence",
+      "industrial architecture design",
+      "data control Australia",
+      "Australian owned AI",
+      "infrastructure procurement strategy",
+      "sovereign technology design",
+    ],
+    related: {
+      label: "Explore critical infrastructure advisory",
+      href: "/infrastructure",
+    },
+    relatedPosts: [
+      "edge-and-sovereignty-design-principle-remote-australia",
+      "designing-safety-into-industrial-systems-north",
+    ],
+    faqs: [
+      {
+        question: "What is sovereign industrial intelligence?",
+        answer:
+          "It is industrial AI owned and governed within Australia that keeps a site's operating data under local control. It contrasts with platforms where ownership, governance and data may sit beyond Australian reach.",
+      },
+      {
+        question: "Why is sovereignty a design choice, not a purchase?",
+        answer:
+          "Sovereignty depends on how a system is built, where its data is processed and who controls it. Those are set at design. Once a site is built around offshore data flows, no purchase can make it sovereign without a rebuild.",
+      },
+      {
+        question: "What should NT and WA operators build in from the start?",
+        answer:
+          "Local ownership and governance, edge processing that keeps sensitive data on site, and the local skills to run and improve the system. Designed in early, these cost little. Added later, they need expensive rework.",
+      },
+    ],
+  },
+  {
+    slug: "compliance-as-infrastructure-nt-wa",
+    seoTitle: "Compliance as Infrastructure in the NT and WA | DivineLab Worx",
+    title: "Compliance as Infrastructure: Turning Safety Duty Into Economic Strength in the NT and WA",
+    excerpt:
+      "The proof that satisfies a work health and safety regulator is the same proof that lowers insurance and wins capital. Handled well, compliance is not a cost.",
+    category: "Compliance",
+    readTime: "7 min read",
+    published: "2026-08-25",
+    heroImage: "/images/compliance.jpg",
+    heroAlt: "Work health and safety compliance documentation",
+    heroHeading: "Compliance as <em>infrastructure, not cost.</em>",
+    heroSupport:
+      "Most operators treat safety compliance as a cost to endure. That quietly throws away an asset. The proof that satisfies a regulator is the same proof that lowers insurance, reassures a community and wins capital.",
+    answerQuestion: "How does compliance become economic strength?",
+    answer:
+      "The Northern Territory and Western Australia both run modern work health and safety law built on a duty to manage risk so far as is reasonably practicable, which means controlling risk and being able to prove it. The proof built for the regulator is the same proof that lowers insurance, reassures communities and wins investor confidence. Treated as infrastructure rather than paperwork, compliance becomes a durable asset instead of a recurring cost.",
+    keywords: [
+      "WHS compliance Australia",
+      "compliance as infrastructure",
+      "work health and safety evidence",
+      "WHS Northern Territory",
+      "WHS Western Australia",
+      "industrial risk evidence",
+    ],
+    related: {
+      label: "Explore regulatory and compliance advisory",
+      href: "/market-entry-australia",
+    },
+    relatedPosts: [
+      "site-data-economic-asset-industrial-risk",
+      "designing-safety-into-industrial-systems-north",
+    ],
+    faqs: [
+      {
+        question: "What work health and safety law applies in the Northern Territory?",
+        answer:
+          "The Northern Territory operates under the Work Health and Safety (National Uniform Legislation) Act 2011, regulated by NT WorkSafe. It places a primary duty of care on a person conducting a business or undertaking to ensure health and safety so far as is reasonably practicable.",
+      },
+      {
+        question: "What work health and safety law applies in Western Australia?",
+        answer:
+          "Western Australia operates under the Work Health and Safety Act 2020, which commenced on 31 March 2022, with the WHS (General) Regulations 2022 and the WHS (Mines) Regulations 2022, administered by WorkSafe WA and, for mining, by the department responsible for mines safety.",
+      },
+      {
+        question: "How can compliance become economic strength?",
+        answer:
+          "The proof an operator builds to meet its safety duty, a live and credible record of how the site runs, is the same proof that lowers insurance, reassures communities and wins investor confidence. Treated as infrastructure, compliance makes an asset, not just a cost.",
+      },
+    ],
+    sources: [
+      {
+        label: "Work Health and Safety (National Uniform Legislation) Act 2011, Northern Territory Legislation",
+        href: "https://legislation.nt.gov.au/en/Legislation/WORK-HEALTH-AND-SAFETY-NATIONAL-UNIFORM-LEGISLATION-ACT-2011",
+      },
+      { label: "NT WorkSafe", href: "https://worksafe.nt.gov.au/" },
+      { label: "Laws and regulations, WorkSafe WA", href: "https://www.worksafe.wa.gov.au/laws-and-regulations" },
+    ],
+    disclaimer:
+      "This article is general information, not legal advice. Confirm your specific obligations with the relevant regulator or a qualified adviser.",
+  },
+  {
     slug: "how-to-start-a-solar-and-battery-business-australia",
     seoTitle: "Start a Solar and Battery Business in Australia | LYD Solar",
     title: "How to start a solar and battery business in Australia (2026 guide)",

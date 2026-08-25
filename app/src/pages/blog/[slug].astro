@@ -73,7 +73,14 @@ const relatedPosts = (insight.relatedPosts ?? [])
   .filter((item): item is (typeof insights)[number] => Boolean(item));
 ---
 
-<BaseLayout title={title} description={description} schema={schema} article pageClass="revamp-page">
+<BaseLayout
+  title={title}
+  description={description}
+  schema={schema}
+  keywords={insight.keywords?.join(', ')}
+  article
+  pageClass="revamp-page"
+>
   <RevampHero
     eyebrow={`${insight.category} / ${insight.readTime}`}
     title={insight.heroHeading ?? insight.title}
